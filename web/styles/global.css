@@ -1,5 +1,21 @@
+@import url('https://fonts.cdnfonts.com/css/sudo-var');
+
 h1 {
     font-size: 4rem;
     color: blueviolet;
 }
 
+.header-text {
+    color: #AA12FE;
+    font-family: 'Sudo Var', sans-serif;
+    font-style: italic;
+    text-align: center;
+}
+
+header {
+    justify-content: space-evenly;
+    display: flex;
+    position: fixed;
+    width: 100%;
+    top: 0;
+}
