@@ -13,7 +13,6 @@
     background-color: #000000;
 }
 
-
 header {
     justify-content: space-between;
     align-items: center;
@@ -24,27 +23,39 @@ header {
     top: 0;
 }
 
-header nav {
+#header_left-nav {
     width: 30%;
     padding: 0;
     display: flex;
     justify-content: flex-start;
+    align-items: center;
 }
 
-header nav > h3 {
+#header_left-nav > h3 {
+    letter-spacing: 7px;
+    font-weight: bold;
     padding: 20px;
-    margin: 0 10px;
+    margin: 1.5em;
+}
+
+#header_right-nav {
+    display: flex;
+    justify-content: flex-start;
+    width: 13%;
+}
+
+#header_right-nav > h3 {
+    flex-grow: 3;
+    text-wrap: nowrap;
 }
 
 .header-text {
     font-family: 'Sudo Var', sans-serif;
     font-style: italic;
     text-align: center;
-    text-wrap: wrap;
-    font-size: 2.2em;
-    position: relative;
+    text-wrap: auto;
+    font-size: 1.8em;
     width: 25%;
-
 }
 
 header #logo {
@@ -52,5 +63,5 @@ header #logo {
     width: 512px;
     height: auto;
     flex-basis: min-content;
-    transform: translate(-2vw, 50px);
+    transform: translate(-7.75vw, 50px);
 }
