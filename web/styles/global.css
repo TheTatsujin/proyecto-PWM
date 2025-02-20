@@ -13,6 +13,18 @@
     background-color: #000000;
 }
 
+#test-content {
+    height: 2000000px;
+}
+
+body {
+    height: 100%;
+    background-image: url("../images/background-turquoise.png");
+    background-attachment: fixed;
+    background-size: 100% auto;
+    overflow: hidden;
+}
+
 header {
     justify-content: space-between;
     align-items: center;
