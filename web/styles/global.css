@@ -9,6 +9,11 @@
     color: #AA12FE;
 }
 
+.techno-turquoise {
+    color: #05FCFE;
+}
+
+
 .black-bg {
     background-color: #000000;
 }
@@ -22,7 +27,6 @@ body {
     background-image: url("../images/background-turquoise.png");
     background-attachment: fixed;
     background-size: 100% auto;
-    overflow: hidden;
 }
 
 header {
@@ -76,4 +80,35 @@ header #logo {
     height: auto;
     flex-basis: min-content;
     transform: translate(-7.75vw, 50px);
+}
+
+
+footer {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    justify-items: center;
+    border-top-style: solid;
+    border-top-color: #05FCFE;
+    border-top-width: 2px;
+}
+
+footer > p {
+    flex-grow: 4;
+}
+
+.footer_main-text {
+    font-weight: bold;
+    font-size: 1.5em;
+}
+
+.footer_icon {
+    scale: 0.5;
+    filter: invert(50%) sepia(100%) hue-rotate(130deg) saturate(500%);
+}
+
+.footer_row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
 }
