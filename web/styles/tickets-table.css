@@ -1,0 +1,35 @@
+@import url('https://fonts.cdnfonts.com/css/sudo-var');
+
+.ticket-table {
+    width: 1213px;
+    height: 370px;
+    border-color: #AA12FE ;
+    border-width: 1px;
+    border-bottom-width: 6px;
+    border-style: solid;
+    border-radius: 8px;
+    margin-top: 4px;
+
+    /* TODO Just to see the background should remove it ( i think)*/
+    background-image: url("../images/background-turquoise.png");
+}
+
+tr {
+    color: #05FCFE;
+    text-align: left;
+    font-family: 'Sudo Var', sans-serif;
+    font-style: italic;
+}
+
+th {
+    font-size: 50px;
+    font-weight: bold;
+    padding-top: 15px;
+    padding-left: 10px;
+}
+
+td {
+    font-size: 40px;
+    padding-top: 15px;
+    padding-left: 10px;
+}
