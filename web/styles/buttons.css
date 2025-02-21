@@ -1,12 +1,6 @@
-.btn {
-    background-color: black;
-    border-color: #05FCFE;
-    color: #05FCFE;
-}
-
 .return {
-    padding: 10px 15px;
-    font-size: 15px;
+    padding: 1em 1.2em;
+    font-size: 1em;
     border-radius: 100%;
 }
 

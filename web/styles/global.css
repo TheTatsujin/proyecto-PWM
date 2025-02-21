@@ -5,28 +5,21 @@
     padding: 0;
 }
 
-.techno-violet {
-    color: #AA12FE;
+
+body {
+    height: 100%;
 }
 
-.techno-turquoise {
-    color: #05FCFE;
-}
-
-
-.black-bg {
-    background-color: #000000;
+.bg-image {
+    background-image: url("../images/background-turquoise.png");
+    background-attachment: fixed;
+    background-size: 100% auto;
 }
 
 #test-content {
     height: 2000000px;
-}
-
-body {
-    height: 100%;
-    background-image: url("../images/background-turquoise.png");
-    background-attachment: fixed;
-    background-size: 100% auto;
+    margin-left: 20vw;
+    margin-top: 30vh;
 }
 
 header {
@@ -34,7 +27,7 @@ header {
     align-items: center;
     display: flex;
     position: fixed;
-    height: 100px;
+    height: 6em;
     width: 100%;
     top: 0;
 }
