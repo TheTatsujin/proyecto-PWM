@@ -1,0 +1,16 @@
+.btn {
+    background-color: black;
+    border-color: #05FCFE;
+    color: #05FCFE;
+}
+
+.return {
+    padding: 10px 15px;
+    font-size: 15px;
+    border-radius: 100%;
+}
+
+.account {
+    padding: 15px 40px;
+    font-size: 20px;
+}
