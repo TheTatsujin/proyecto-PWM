@@ -1,0 +1,25 @@
+@import url('https://fonts.cdnfonts.com/css/sudo-var');
+@import url('https://fonts.cdnfonts.com/css/tektur');
+
+h1 {
+    color: #05FCFE;
+    font-family: 'Tektur', sans-serif;
+    justify-content: center;
+    text-align: center;
+    font-size: 64px;
+    font-style: normal;
+    font-weight: 900;
+    line-height: normal;
+    text-shadow: 0px -2px 0 #FFFFFF
+}
+
+.form-label {
+    color: #05FCFE;
+    font-family: 'Sudo Var', sans-serif;
+    font-size: 24px;
+    text-align: center;
+}
+
+#login {
+    background-color: #000000;
+}
