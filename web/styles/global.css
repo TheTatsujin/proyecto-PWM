@@ -48,9 +48,9 @@ header {
 }
 
 #header_left-nav > h3 {
-    letter-spacing: 7px;
+    letter-spacing: 0.25em;
     font-weight: bold;
-    padding: 20px;
+    padding: 1vw;
     margin: 1.5em;
 }
 
@@ -86,15 +86,10 @@ header #logo {
 footer {
     display: flex;
     flex-direction: column;
-    justify-content: space-evenly;
-    justify-items: center;
     border-top-style: solid;
     border-top-color: #05FCFE;
     border-top-width: 2px;
-}
-
-footer > p {
-    flex-grow: 4;
+    margin-bottom: 2vh;
 }
 
 .footer_main-text {
@@ -105,9 +100,16 @@ footer > p {
 .footer_icon {
     scale: 0.5;
     filter: invert(50%) sepia(100%) hue-rotate(130deg) saturate(500%);
+    margin: -1em;
+    padding-left: 0.5em;
+    padding-right: 0.5em;
 }
 
+
 .footer_row {
+    margin-top: 2vh;
+    margin-left: 2vw;
+    margin-right: 2vw;
     display: flex;
     justify-content: space-between;
     align-items: center;
