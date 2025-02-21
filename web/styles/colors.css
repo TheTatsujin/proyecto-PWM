@@ -5,6 +5,10 @@
     color: #05FCFE;
 }
 
+.color-beige {
+    color: #FFEA9F;
+}
+
 .border-violet {
     border-color: #AA12FE;
 }
@@ -16,3 +20,4 @@
 .bg-black {
     background-color: #000000;
 }
+
