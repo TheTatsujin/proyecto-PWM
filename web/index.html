@@ -2,21 +2,78 @@
 <html lang="es">
 <head>
     <meta charset="UTF-8">
+    <link rel="stylesheet" href="styles/forms.css">
+    <link rel="stylesheet" href="styles/colors.css">
+    <link rel="stylesheet" href="styles/tickets-table.css">
     <link rel="stylesheet" href="styles/global.css">
     <link rel="stylesheet" href="styles/buttons.css">
     <title>PWM</title>
 </head>
-<body>
+<body class="bg-image">
     <header>
-
+        <nav id="header_left-nav">
+            <h3 class="color-violet header-text" id="header-faq">Preguntas frecuentes</h3>
+            <h3 class="color-violet header-text" id="header-contacts">Calendario</h3>
+        </nav>
+        <img id="logo" src="images/logo.png" alt="logo de pagina">
+        <nav id="header_right-nav">
+            <h3 class="color-violet header-text" id="account-section">Iniciar sesion</h3>
+        </nav>
     </header>
-    <h1><button class="btn return"><</button></h1>
-    <input class="btn account" id="register-submit" type="submit" value="Sign up">
-
+    <div id="test-content">
+        <section id="login" class="bg-black">
+            <a class="return-btn">Return</a>
+            <h1 class="color-turquoise">Login</h1>
+            <form id="login_form" method="POST" action="#">
+                <p>
+                    <label class="form-label color-turquoise" for="login_email">Email:</label>
+                    <input id="login_email" class="color-turquoise" type="email" name="email" placeholder="email">
+                </p>
+                <p>
+                    <label class="form-label color-turquoise" for="login_password">Password:</label>
+                    <input id="login_password" class="color-turquoise" type="password" name="password" placeholder="password">
+                </p>
+            </form>
+            <p>
+                <a class="color-beige form-alternative-link" href="#">Forgot password?</a>
+            </p>
+            <p>
+                <a class="color-beige form-alternative-link" href="#">Register here</a>
+            </p>
+        </section>
+    </div>
     <footer>
-
+        <p class="footer_row">
+            <span class="color-turquoise footer_main-text">Follow Us</span>
+            <span class="color-turquoise footer_main-text">Support</span>
+        </p>
+        <nav class="footer_row">
+            <p>
+                <a href="https://x.com/kanyewest?git ">
+                    <img class="footer_icon" src="images/icons/twitter-icon.svg" alt="twitter icon">
+                </a>
+                <a href="https://www.youtube.com/@joserafaelmoreyt5311/featured">
+                    <img class="footer_icon" src="images/icons/youtube-icon.svg" alt="youtube icon">
+                </a>
+            </p>
+            <span class="color-turquoise">Contact Us</span>
+        </nav>
+        <nav class="footer_row">
+            <p>
+                <a href="https://www.tiktok.com/@tiktok_es?lang=es">
+                    <img class="footer_icon" src="images/icons/tiktok-icon.svg" alt="tiktok icon">
+                </a>
+                <a href="https://www.instagram.com/dylancas16/">
+                    <img class="footer_icon" src="images/icons/instagram-icon.svg" alt="instagram icon">
+                </a>
+            </p>
+            <p>
+                <a><img class="footer_icon" src="images/icons/telephone-icon.svg" alt="telephone icon"></a>
+                <a><img class="footer_icon" src="images/icons/message-icon.svg" alt="message icon"></a>
+                <a><img class="footer_icon" src="images/icons/email-icon.svg" alt="mail icon"></a>
+            </p>
+        </nav>
     </footer>
 </body>
     <script src="scripts/main.js"></script>
-
 </html>
