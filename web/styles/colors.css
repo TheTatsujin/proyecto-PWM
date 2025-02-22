@@ -9,12 +9,16 @@
     color: #FFEA9F;
 }
 
+.color-white {
+    color: #FFEEFF;
+}
+
 .border-violet {
     border-color: #AA12FE;
 }
 
 .border-turquoise {
-    border-color: #05FCFE;
+    border: #05FCFE solid 1px;
 }
 
 .bg-black {
