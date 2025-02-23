@@ -1,0 +1,30 @@
+
+.artist-banner {
+    margin-top: 2vh;
+    height: 20vh;
+    display: flex;
+    overflow: hidden;
+    justify-content: space-around;
+}
+
+.artist-banner > img {
+    margin-top: -20vh;
+    margin-left: -20vh;
+    height: 60vh;
+    width: auto;
+}
+
+.artist-banner > .date-caption {
+    padding: 1.5em;
+}
+
+.artist-caption {
+    border-width: 2px;
+    position: absolute;
+    margin-right: 52.3vw;
+    margin-top: 17vh;
+    width: 20vw;
+    text-align: center;
+    padding: 0.4em 0 0.4em 0;
+    font-size: 2em;
+}

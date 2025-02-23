@@ -45,12 +45,41 @@ body {
 }
 
 
+/* Colors  */
+.color-violet {
+    color: #AA12FE;
+}
+.color-turquoise {
+    color: #05FCFE;
+}
+
+.color-beige {
+    color: #FFEA9F;
+}
+
+.color-white {
+    color: #FFEEFF;
+}
+
+.border-violet {
+    border: #AA12FE solid 1px;
+}
+
+.border-turquoise {
+    border: #05FCFE solid 1px;
+}
+
+.bg-black {
+    background-color: #000000;
+}
+
 .bg-image {
     background-image: url("../images/background-turquoise.png");
     background-attachment: fixed;
     background-size: 100% auto;
 }
 
+/* TODO: Delete when testing is done*/
 #test-content {
     height: 2000000px;
     width: 70%;
