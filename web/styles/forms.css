@@ -16,7 +16,7 @@ h1 {
     font-family: 'Sudo Var', sans-serif;
     font-size: 1.5em;
     text-align: right;
-    width: 5em;
+    width: 8em;
 }
 
 p input {
@@ -33,7 +33,7 @@ p input {
     border-bottom-width: .7em;
     border-radius: 1.5em;
     width: 40em;
-    height: 24em;
+    height: 26em;
     margin: auto;
 }
 
@@ -42,8 +42,22 @@ p input {
     border-bottom-width: .7em;
     border-radius: 1.5em;
     width: 40em;
-    height: 40em;
+    height: 45em;
     margin: auto;
+}
+
+#account-recovery {
+    border: 0.2em solid #05FCFE;
+    border-bottom-width: .7em;
+    border-radius: 1.5em;
+    width: 50em;
+    height: 25em;
+    margin: auto;
+}
+
+p {
+    text-align: center;
+    line-height: 4em;
 }
 
 .form-alternative-link {
@@ -67,12 +81,16 @@ form p {
     height: 3em;
 }
 
-.return {
-    position: relative;
+.terms {
+    font-size: 0.75em;
+    text-align: left;
+    width: 50%;
+    font-style: italic;
+    margin: .1em;
 }
 
-#login-submit {
-    scale: 75%;
+.return {
+    position: relative;
 }
 
 form {

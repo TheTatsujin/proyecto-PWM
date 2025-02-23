@@ -1,5 +1,5 @@
 <section id="register" class="bg-black border-turquoise">
-  <a class="return color-turquoise border-turquoise bg-black"><</a>
+  <button class="return color-turquoise border-turquoise bg-black"><</button>
   <h1 class="color-turquoise">Sign up</h1>
   <form id="register-form" method="POST" action="#">
     <p>
@@ -31,22 +31,22 @@
       <label for="confirm-password" class="form-label color-turquoise">Confirm password:</label>
       <input class="color-white" type=password id="confirm-password" name="confirm-password" placeholder="Confirm password">
     </p>
+
+    <p>
+      <input type=checkbox id="terms-conditions" name="terms-conditions">
+      <label  for="terms-conditions" class="form-label terms color-white">I accept terms of service.</label>
+    </p>
+
+    <p>
+      <input type=checkbox id="receive-information" name="receive-information">
+      <label for="receive-information" class="form-label terms color-white">Receive information on event updates and related things.</label>
+    </p>
+
+    <p>
+      <input type=checkbox id="notifications" name="notifications">
+      <label for="notifications" class="form-label terms color-white">I don't allow notifications and subscribe to the newsletter.</label>
+    </p>
+
+    <input class="action border-turquoise color-turquoise bg-black" id="register-submit" type="submit" value="Sign up">
   </form>
-
-  <p>
-    <input type=checkbox id="terms-conditions" name="terms-conditions">
-    <label  for="terms-conditions" class="form-label color-white">I accept terms of service.</label>
-  </p>
-
-  <p>
-    <input type=checkbox id="receive-information" name="receive-information">
-    <label for="receive-information" class="form-label color-white">Receive information on event updates and related things.</label>
-  </p>
-
-  <p>
-    <input type=checkbox id="notifications" name="notifications">
-    <label for="notifications" class="form-label color-white">I don't allow notifications and subscribe to the newsletter.</label>
-  </p>
-
-  <input class="action border-turquoise color-turquoise bg-black" id="register-submit" type="submit" value="Sign up">
 </section>
