@@ -16,7 +16,7 @@ h1 {
     font-family: 'Sudo Var', sans-serif;
     font-size: 1.5em;
     text-align: right;
-    width: 5em;
+    width: 8em;
 }
 
 p input {
@@ -24,7 +24,7 @@ p input {
     border: none;
     border-bottom: 1px solid #FFFFFF;
     background: transparent;
-    width: 6em;
+    width: 10em;
     height: 1em;
 }
 
@@ -32,7 +32,32 @@ p input {
     border: 0.2em solid #05FCFE;
     border-bottom-width: .7em;
     border-radius: 1.5em;
-    width: 70vw;
+    width: 40em;
+    height: 26em;
+    margin: auto;
+}
+
+#register {
+    border: 0.2em solid #05FCFE;
+    border-bottom-width: .7em;
+    border-radius: 1.5em;
+    width: 40em;
+    height: 45em;
+    margin: auto;
+}
+
+#account-recovery {
+    border: 0.2em solid #05FCFE;
+    border-bottom-width: .7em;
+    border-radius: 1.5em;
+    width: 50em;
+    height: 25em;
+    margin: auto;
+}
+
+p {
+    text-align: center;
+    line-height: 4em;
 }
 
 .form-alternative-link {
@@ -45,7 +70,7 @@ p input {
     display: block;
     text-decoration: none;
     letter-spacing: .01rem;
-    line-height: .5;
+    line-height: 2em;
 }
 
 form p {
@@ -53,16 +78,19 @@ form p {
     align-items: center;
     gap: 1em;
     justify-content: center;
+    height: 3em;
+}
+
+.terms {
+    font-size: 0.75em;
+    text-align: left;
+    width: 50%;
+    font-style: italic;
+    margin: .1em;
 }
 
 .return {
-    position: absolute;
-    top: 1.5em;
-    left: 1.5em;
-}
-
-#login-submit {
-    scale: 75%;
+    position: relative;
 }
 
 form {
