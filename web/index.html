@@ -3,10 +3,10 @@
 <head>
     <meta charset="UTF-8">
     <link rel="stylesheet" href="styles/forms.css">
-    <link rel="stylesheet" href="styles/colors.css">
     <link rel="stylesheet" href="styles/tickets-table.css">
     <link rel="stylesheet" href="styles/global.css">
     <link rel="stylesheet" href="styles/buttons.css">
+    <link rel="stylesheet" href="styles/banners.css">
     <title>PWM</title>
 </head>
 <body class="bg-image">
@@ -21,26 +21,34 @@
         </nav>
     </header>
     <div id="test-content">
-        <section id="login" class="bg-black">
-            <a class="return-btn">Return</a>
-            <h1 class="color-turquoise">Login</h1>
-            <form id="login_form" method="POST" action="#">
-                <p>
-                    <label class="form-label color-turquoise" for="login_email">Email:</label>
-                    <input id="login_email" class="color-turquoise" type="email" name="email" placeholder="email">
-                </p>
-                <p>
-                    <label class="form-label color-turquoise" for="login_password">Password:</label>
-                    <input id="login_password" class="color-turquoise" type="password" name="password" placeholder="password">
-                </p>
-            </form>
-            <p>
-                <a class="color-beige form-alternative-link" href="#">Forgot password?</a>
-            </p>
-            <p>
-                <a class="color-beige form-alternative-link" href="#">Register here</a>
-            </p>
-        </section>
+        <article>
+            <table class="border-violet ticket-table">
+                <thead>
+                <tr class="color-turquoise">
+                    <th id="ticket-table-left-column">One day Passes</th>
+                    <th id="ticket-table-center-column">Two Day Passes</th>
+                    <th id="ticket-table-right-column">Three Day Passes</th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr class="color-turquoise">
+                    <td id="one-day-normal-ticket">Normal Ticket XXX$</td>
+                    <td id="two-day-normal-ticket">Normal Ticket XXX$</td>
+                    <td id="three-day-normal-ticket">Normal Ticket XXX$</td>
+                </tr>
+                <tr class="color-turquoise">
+                    <td id="one-day-early-ticket">Early Access Ticket XXX$</td>
+                    <td id="two-day-early-ticket">Early Access Ticket XXX$</td>
+                    <td id="three-day-early-ticket">Early Access Ticket XXX$</td>
+                </tr>
+                <tr class="color-turquoise">
+                    <td id="one-day-vip-ticket">VIP Ticket XXX$</td>
+                    <td id="two-day-vip-ticket">VIP Ticket XXX$</td>
+                    <td id="three-day-vip-ticket">VIP Ticket XXX$</td>
+                </tr>
+                </tbody>
+            </table>
+        </article>
     </div>
     <footer>
         <p class="footer_row">
