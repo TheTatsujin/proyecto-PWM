@@ -10,46 +10,62 @@
     <title>PWM</title>
 </head>
 <body class="bg-image">
-    <header>
+    <header class="bg-black">
         <nav id="header_left-nav">
             <h3 class="color-violet header-text" id="header-faq">Preguntas frecuentes</h3>
             <h3 class="color-violet header-text" id="header-contacts">Calendario</h3>
         </nav>
         <img id="logo" src="images/logo.png" alt="logo de pagina">
         <nav id="header_right-nav">
-            <h3 class="color-violet header-text" id="account-section">Iniciar sesion</h3>
+            <button class="sign-up color-violet bg-black border-violet header-text" id="account-section"
+                onclick="location.href='index.html'">
+                    Iniciar Sesion
+            </button>
         </nav>
     </header>
-    <div id="test-content">
-        <article>
-            <table class="border-violet ticket-table">
-                <thead>
-                <tr class="color-turquoise">
-                    <th id="ticket-table-left-column">One day Passes</th>
-                    <th id="ticket-table-center-column">Two Day Passes</th>
-                    <th id="ticket-table-right-column">Three Day Passes</th>
-                </tr>
-                </thead>
-                <tbody>
-                <tr class="color-turquoise">
-                    <td id="one-day-normal-ticket">Normal Ticket XXX$</td>
-                    <td id="two-day-normal-ticket">Normal Ticket XXX$</td>
-                    <td id="three-day-normal-ticket">Normal Ticket XXX$</td>
-                </tr>
-                <tr class="color-turquoise">
-                    <td id="one-day-early-ticket">Early Access Ticket XXX$</td>
-                    <td id="two-day-early-ticket">Early Access Ticket XXX$</td>
-                    <td id="three-day-early-ticket">Early Access Ticket XXX$</td>
-                </tr>
-                <tr class="color-turquoise">
-                    <td id="one-day-vip-ticket">VIP Ticket XXX$</td>
-                    <td id="two-day-vip-ticket">VIP Ticket XXX$</td>
-                    <td id="three-day-vip-ticket">VIP Ticket XXX$</td>
-                </tr>
-                </tbody>
-            </table>
+    <main>
+        <img id="test-img" src="images/MockupSquare.png" alt="Mockup image">
+        <section id="button-section">
+            <button class="btn-action btn-main border-violet color-violet bg-black">
+                Comprar Entradas
+            </button>
+            <button class="btn-action btn-main border-violet color-violet bg-black">
+                Artistas
+            </button>
+        </section>
+        <section id="map-section">
+            <img src="images/MockupSquare.png" alt="Mockup image">
+        </section>
+        <article id="faq-section">
+            <h1 class="color-turquoise">FAQ</h1>
+            <section id="faq-questions">
+                <div class="accordion">
+                    <button class="color-violet border-violet bg-black">How many owls can i carry to the event? </button>
+                    <div class="panel color-beige border-violet bg-black">
+                        <p>You can bring as much as you want because we are doing a contest.</p>
+                    </div>
+                </div>
+                <div class="accordion">
+                    <button class="color-violet border-violet bg-black">How many owls can i carry to the event? </button>
+                    <div class="panel color-beige border-violet bg-black">
+                        <p>You can bring as much as you want because we are doing a contest.</p>
+                    </div>
+                </div>
+                <div class="accordion">
+                    <button class="color-violet border-violet bg-black">How many owls can i carry to the event? </button>
+                    <div class="panel color-beige border-violet bg-black">
+                        <p>You can bring as much as you want because we are doing a contest.</p>
+                    </div>
+                </div>
+                <div class="accordion">
+                    <button class="color-violet border-violet bg-black">How many owls can i carry to the event? </button>
+                    <div class="panel color-beige border-violet bg-black">
+                        <p>You can bring as much as you want because we are doing a contest.</p>
+                    </div>
+                </div>
+            </section>
         </article>
-    </div>
+    </main>
     <footer>
         <p class="footer_row">
             <span class="color-turquoise footer_main-text">Follow Us</span>
