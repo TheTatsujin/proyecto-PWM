@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="../styles/global.css">
+    <link rel="stylesheet" href="../styles/buttons.css">
+    <link rel="stylesheet" href="../styles/forms.css">
+    <link rel="stylesheet" href="../styles/tickets-table.css">
+    <link rel="stylesheet" href="../styles/banners.css">
+    <title>Account</title>
+</head>
+<body class="bg-black">
+    <main class="test-container color-turquoise">
+        <section id="account-recovery" class="form-box bg-black border-turquoise">
+            <div class="form-header">
+                <button class="btn-return color-turquoise border-turquoise bg-black"
+                onclick="location.href='../index.html'"><</button>
+                <h1 class="color-turquoise font-tektur">Account recovery</h1>
+            </div>
+            <p class="color-white color-turquoise">We will send to you an email to verify your identity and help you recovery your account with us.</p>
+            <form id="recovery-form" method="POST" action="#">
+                <p class="form-field">
+                    <label for="email" class="form-label color-turquoise">email: </label>
+                    <input class="color-white" type=email id="email" name="email" placeholder="Email">
+                </p>
+                <button class="btn-submit color-turquoise border-turquoise font-sudovar bg-black" id="recovery-submit" type="submit">
+                    Send mail
+                </button>
+            </form>
+        </section>
+    </main>
+    <footer>
+        <p class="footer_row">
+            <span class="color-turquoise footer_main-text">Follow Us</span>
+            <span class="color-turquoise footer_main-text">Support</span>
+        </p>
+        <nav class="footer_row">
+            <p>
+                <a href="https://x.com/kanyewest?git ">
+                    <img class="footer_icon" src="../images/icons/twitter-icon.svg" alt="twitter icon">
+                </a>
+                <a href="https://www.youtube.com/@joserafaelmoreyt5311/featured">
+                    <img class="footer_icon" src="../images/icons/youtube-icon.svg" alt="youtube icon">
+                </a>
+            </p>
+            <span class="color-turquoise">Contact Us</span>
+        </nav>
+        <nav class="footer_row">
+            <p>
+                <a href="https://www.tiktok.com/@tiktok_es?lang=es">
+                    <img class="footer_icon" src="../images/icons/tiktok-icon.svg" alt="tiktok icon">
+                </a>
+                <a href="https://www.instagram.com/dylancas16/">
+                    <img class="footer_icon" src="../images/icons/instagram-icon.svg" alt="instagram icon">
+                </a>
+            </p>
+            <p>
+                <a><img class="footer_icon" src="../images/icons/telephone-icon.svg" alt="telephone icon"></a>
+                <a><img class="footer_icon" src="../images/icons/message-icon.svg" alt="message icon"></a>
+                <a><img class="footer_icon" src="../images/icons/email-icon.svg" alt="mail icon"></a>
+            </p>
+        </nav>
+    </footer>
+</body>
+</html>

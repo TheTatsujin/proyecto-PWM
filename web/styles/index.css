@@ -1,0 +1,68 @@
+h1 {
+    text-align: center;
+    font-size: 8em;
+    font-weight: 900;
+    text-shadow: 0 -5px 0 #AA12FE;
+}
+
+main {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+}
+
+#main-image {
+    height: 80vh;
+    width: auto;
+}
+
+#main-button-section {
+    margin-top: 10vh;
+    display: flex;
+    justify-content: space-evenly;
+}
+
+#main-button-section > button {
+    font-size: 2em;
+    width: 15em;
+}
+
+/* Map */
+
+#map-section {
+    margin-top: 10vh;
+}
+
+#map-section > img {
+    align-self: center;
+    width: 80vw;
+    height: 20vh;
+}
+
+
+/* FAQ */
+
+#faq-section{
+    margin-top: 20vh;
+}
+
+#faq-section > section {
+    margin-top: 10vh;
+}
+
+.accordion {
+    font-size: 1em;
+    display: flex;
+    flex-direction: column;
+}
+
+.accordion > button {
+    cursor: pointer;
+    font-size: 1.2em;
+    padding: 0.6em;
+    text-align: left;
+}
+.accordion > .panel {
+    padding: 0.5em;
+    display: none;
+}

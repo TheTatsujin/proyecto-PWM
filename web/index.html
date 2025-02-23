@@ -2,34 +2,32 @@
 <html lang="es">
 <head>
     <meta charset="UTF-8">
-    <link rel="stylesheet" href="styles/forms.css">
-    <link rel="stylesheet" href="styles/tickets-table.css">
     <link rel="stylesheet" href="styles/global.css">
     <link rel="stylesheet" href="styles/buttons.css">
-    <link rel="stylesheet" href="styles/banners.css">
+    <link rel="stylesheet" href="styles/index.css">
     <title>PWM</title>
 </head>
 <body class="bg-image">
     <header class="bg-black">
         <nav id="header_left-nav">
-            <h3 class="color-violet header-text" id="header-faq">Preguntas frecuentes</h3>
-            <h3 class="color-violet header-text" id="header-contacts">Calendario</h3>
+            <h3 class="color-violet header-text font-sudovar">Preguntas frecuentes</h3>
+            <h3 class="color-violet header-text font-sudovar">Calendario</h3>
         </nav>
-        <img id="logo" src="images/logo.png" alt="logo de pagina">
-        <nav id="header_right-nav">
-            <button class="sign-up color-violet bg-black border-violet header-text" id="account-section"
-                onclick="location.href='index.html'">
-                    Iniciar Sesion
-            </button>
-        </nav>
+        <div>
+            <img id="logo" src="images/logo.png" alt="Logo de pagina">
+        </div>
+        <button class="btn-main font-sudovar color-violet bg-black border-violet header-text" id="account-section"
+            onclick="location.href='index.html'">
+                Iniciar Sesion
+        </button>
     </header>
     <main>
-        <img id="test-img" src="images/MockupSquare.png" alt="Mockup image">
-        <section id="button-section">
-            <button class="btn-action btn-main border-violet color-violet bg-black">
+        <img id="main-image" src="images/MockupSquare.png" alt="Mockup image">
+        <section id="main-button-section">
+            <button class="btn-main font-sudovar border-violet color-violet bg-black">
                 Comprar Entradas
             </button>
-            <button class="btn-action btn-main border-violet color-violet bg-black">
+            <button class="btn-main font-sudovar border-violet color-violet bg-black">
                 Artistas
             </button>
         </section>
@@ -37,7 +35,7 @@
             <img src="images/MockupSquare.png" alt="Mockup image">
         </section>
         <article id="faq-section">
-            <h1 class="color-turquoise">FAQ</h1>
+            <h1 class="color-turquoise font-tektur">FAQ</h1>
             <section id="faq-questions">
                 <div class="accordion">
                     <button class="color-violet border-violet bg-black">How many owls can i carry to the event? </button>
@@ -99,5 +97,5 @@
         </nav>
     </footer>
 </body>
-    <script src="scripts/main.js"></script>
+<script src="scripts/main.js"></script>
 </html>

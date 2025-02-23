@@ -1,4 +1,3 @@
-
 .artist-banner {
     margin-top: 2vh;
     height: 20vh;
@@ -18,7 +17,7 @@
     padding: 1.5em;
 }
 
-.artist-caption {
+.artist-banner > .artist-caption {
     border-width: 2px;
     position: absolute;
     margin-right: 52.3vw;

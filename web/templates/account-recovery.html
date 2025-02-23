@@ -1,12 +1,17 @@
-<section id="account-recovery" class="bg-black border-turquoise">
-  <button class="return color-turquoise border-turquoise bg-black"><</button>
-  <h1 class="color-turquoise">Account recovery</h1>
-  <p class="form-description color-turquoise">We will send to you an email to verify your identity and help you recovery your account with us.</p>
+<section id="account-recovery" class="form-box bg-black border-turquoise">
+  <div class="form-header">
+    <button class="btn-return color-turquoise border-turquoise bg-black"
+            onclick="location.href='../index.html'"><</button>
+    <h1 class="color-turquoise font-tektur">Account recovery</h1>
+  </div>
+  <p class="color-white color-turquoise">We will send to you an email to verify your identity and help you recovery your account with us.</p>
   <form id="recovery-form" method="POST" action="#">
-    <p>
+    <p class="form-field">
       <label for="email" class="form-label color-turquoise">email: </label>
       <input class="color-white" type=email id="email" name="email" placeholder="Email">
     </p>
-    <input class="btn-action color-turquoise border-turquoise bg-black" id="recovery-submit" type="submit" value="Send email">
+    <button class="btn-submit color-turquoise border-turquoise font-sudovar bg-black" id="recovery-submit" type="submit">
+      Send mail
+    </button>
   </form>
 </section>
