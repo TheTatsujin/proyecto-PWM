@@ -9,6 +9,42 @@ body {
     height: 100%;
 }
 
+.accordion {
+    cursor: pointer;
+    padding: 1em;
+    border: 0.2em solid;
+    outline: none;
+    font-size: 1em;
+    text-align: left;
+    transition: 0.4s;
+
+}
+
+.active, .accordion:hover {
+    background-color: black;
+}
+
+.accordion:after {
+    content: "+";
+    font-weight: bold;
+    float: right;
+
+}
+
+.active:after {
+    content: "-";
+}
+
+.panel {
+    padding: 0.5em;
+    border-bottom: 0.2em solid;
+    border-left: 0.2em solid;
+    border-right: 0.2em solid;
+    overflow: hidden;
+    transition: max-height 0.2s ease-in-out;
+}
+
+
 .bg-image {
     background-image: url("../images/background-turquoise.png");
     background-attachment: fixed;

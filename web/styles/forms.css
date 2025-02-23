@@ -29,10 +29,12 @@ input {
 }
 
 #login {
+    margin: 1em auto;
     border: 0.2em solid #05FCFE;
     border-bottom-width: .7em;
     border-radius: 1.5em;
-    width: 70vw;
+    width: 35em;
+    height: 22em;
 }
 
 .form-alternative-link {
@@ -45,7 +47,7 @@ input {
     display: block;
     text-decoration: none;
     letter-spacing: .01rem;
-    line-height: .5;
+    line-height: 1.5em;
 }
 
 form p {
@@ -54,6 +56,6 @@ form p {
     gap: 1em;
     justify-content: center;
     align-self: center;
-    margin: 0;
+    margin: 1em;
     text-align: left;
 }
