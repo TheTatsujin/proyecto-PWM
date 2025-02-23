@@ -24,7 +24,7 @@ p input {
     border: none;
     border-bottom: 1px solid #FFFFFF;
     background: transparent;
-    width: 6em;
+    width: 10em;
     height: 1em;
 }
 
@@ -32,7 +32,18 @@ p input {
     border: 0.2em solid #05FCFE;
     border-bottom-width: .7em;
     border-radius: 1.5em;
-    width: 70vw;
+    width: 40em;
+    height: 24em;
+    margin: auto;
+}
+
+#register {
+    border: 0.2em solid #05FCFE;
+    border-bottom-width: .7em;
+    border-radius: 1.5em;
+    width: 40em;
+    height: 40em;
+    margin: auto;
 }
 
 .form-alternative-link {
@@ -45,7 +56,7 @@ p input {
     display: block;
     text-decoration: none;
     letter-spacing: .01rem;
-    line-height: .5;
+    line-height: 2em;
 }
 
 form p {
@@ -53,12 +64,11 @@ form p {
     align-items: center;
     gap: 1em;
     justify-content: center;
+    height: 3em;
 }
 
 .return {
-    position: absolute;
-    top: 1.5em;
-    left: 1.5em;
+    position: relative;
 }
 
 #login-submit {
