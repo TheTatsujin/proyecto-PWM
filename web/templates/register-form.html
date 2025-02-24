@@ -1,52 +1,58 @@
-<section id="register" class="bg-black border-turquoise">
+<link rel="stylesheet" href="../styles/global.css">
+<link rel="stylesheet" href="../styles/buttons.css">
+<link rel="stylesheet" href="../styles/forms.css">
+
+<body class="bg-black">
+<section id="register" class="form-box bg-black border-turquoise">
   <button class="btn-return color-turquoise border-turquoise bg-black"><</button>
-  <h1 class="color-turquoise">Sign up</h1>
+  <h1 class="form-header font-tektur color-turquoise">Sign up</h1>
   <form id="register-form" method="POST" action="#">
     <p>
-      <label for="name" class="form-label color-turquoise">Full name:</label>
-      <input class="color-white" type=text id="name" name="name" placeholder="Full name">
+      <label for="name" class="form-label font-sudovar color-turquoise">Full name:</label>
+      <input class="input-box color-white" type=text id="name" name="name" placeholder="Full name">
     </p>
 
     <p>
-      <label for="register-email" class="form-label color-turquoise">Email:</label>
-      <input class="color-white" type=email id="register-email" name="email" placeholder="Email">
+      <label for="register-email" class="form-label font-sudovar color-turquoise">Email:</label>
+      <input class="input-box color-white" type=email id="register-email" name="email" placeholder="Email">
     </p>
 
     <p>
-      <label for="phone-number" class="form-label color-turquoise">Phone number:</label>
-      <input class="color-white" type=tel id="phone-number" name="Phone number" placeholder="Phone number" pattern="6[0-9]{2}-[0-9]{3}-[0-9]{3}" required>
+      <label for="phone-number" class="form-label font-sudovar color-turquoise">Phone number:</label>
+      <input class="input-box color-white" type=tel id="phone-number" name="Phone number" placeholder="Phone number" pattern="6[0-9]{2}-[0-9]{3}-[0-9]{3}" required>
     </p>
 
     <p>
-      <label for="birthdate" class="form-label color-turquoise">Birthdate:</label>
-      <input class="color-white" type=date id="birthdate" name="birthdate">
+      <label for="birthdate" class="form-label font-sudovar color-turquoise">Birthdate:</label>
+      <input class="input-box color-white" type=date id="birthdate" name="birthdate">
     </p>
 
     <p>
-      <label for="password" class="form-label color-turquoise">Password:</label>
-      <input class="color-white" type=password id="password" name="password" placeholder="Password">
+      <label for="password" class="form-label font-sudovar color-turquoise">Password:</label>
+      <input class="input-box color-white" type=password id="password" name="password" placeholder="Password">
     </p>
 
     <p>
-      <label for="confirm-password" class="form-label color-turquoise">Confirm password:</label>
-      <input class="color-white" type=password id="confirm-password" name="confirm-password" placeholder="Confirm password">
+      <label for="confirm-password" class="form-label font-sudovar color-turquoise">Confirm password:</label>
+      <input class="input-box color-white" type=password id="confirm-password" name="confirm-password" placeholder="Confirm password">
     </p>
 
     <p>
       <input type=checkbox id="terms-conditions" name="terms-conditions">
-      <label  for="terms-conditions" class="form-label terms color-white">I accept terms of service.</label>
+      <label  for="terms-conditions" class="form-label font-sudovar terms color-white">I accept terms of service.</label>
     </p>
 
     <p>
       <input type=checkbox id="receive-information" name="receive-information">
-      <label for="receive-information" class="form-label terms color-white">Receive information on event updates and related things.</label>
+      <label for="receive-information" class="form-label font-sudovar terms color-white">Receive information on event updates and related things.</label>
     </p>
 
     <p>
       <input type=checkbox id="notifications" name="notifications">
-      <label for="notifications" class="form-label terms color-white">I don't allow notifications and subscribe to the newsletter.</label>
+      <label for="notifications" class="form-label font-sudovar terms color-white">I don't allow notifications and subscribe to the newsletter.</label>
     </p>
 
-    <input class="btn-submit border-turquoise color-turquoise bg-black" id="register-submit" type="submit" value="Sign up">
   </form>
+  <input class="btn-submit font-sudovar border-turquoise color-turquoise bg-black" id="register-submit" type="submit" value="Sign up">
 </section>
+</body>
