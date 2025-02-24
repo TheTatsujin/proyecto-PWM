@@ -1,56 +1,61 @@
 main {
-    height: 40vh;
+    height: 30em;
 }
 
 .form-box {
     margin: auto;
     overflow: scroll;
     padding: 1.2em;
-    width: 40vw;
-    height: 100%;
+    width: 60em;
+    height: 30em;
     border-radius: 2em;
-    border-bottom-width: .7em;
+    border-width: 3px 3px 8px 3px;
     display: flex;
     flex-direction: column;
-    justify-content: space-evenly;
+    justify-content: flex-start;
 }
 
 .form-box > .form-header {
     display: flex;
     align-items: center;
-    justify-content: space-around;
+    justify-content: flex-start;
 }
 
 .form-box > .form-header > h1 {
-    flex-grow: 2;
+    flex-grow: 1;
     text-align: center;
-    font-size: 4em;
+    font-size: 5em;
     font-weight: 900;
     text-shadow: 0 -2px 0 #FFFFFF
 }
 
 .form-box > p {
     padding: 2em 3em 1em 3em;
-    font-size: 1.3em;
+    font-size: 2em;
     text-align: left;
+
 }
 
 form {
     display: flex;
     flex-direction: column;
-    justify-content: center;
+    justify-content: flex-start;
     align-items: center;
 }
 
 form > .form-field {
     display: flex;
+    margin-top: 1.5em;
     justify-content: center;
-    padding: 2em;
+    flex-direction: row;
+    margin-bottom: 1em;
+
 }
 
 /* TODO: Make the fields look like the mockup */
 
-.form-field > label {}
+.form-field > label {
+}
 
 .form-field > input {
     border: none;
@@ -84,7 +89,7 @@ form > .form-field {
 */
 
 .form-alternative-link {
-    font-size: 1em;
+    font-size: 0.7em;
     font-style: italic;
     font-weight: bold;
     text-align: center;
