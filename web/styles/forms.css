@@ -3,44 +3,59 @@ main {
 }
 
 .form-box {
-    margin-left: 32%;
-    margin-right: 10%;
-    width: 35vw;
-    height: 42em;
+    margin: auto;
+    overflow: scroll;
+    padding: 1.2em;
+    width: 40vw;
+    height: 100%;
     border-radius: 2em;
     border-bottom-width: .7em;
+    display: flex;
     flex-direction: column;
-
+    justify-content: space-evenly;
 }
 
 .form-box > .form-header {
-    font-size: 4em;
     display: flex;
     align-items: center;
     justify-content: space-around;
-    margin-bottom: .5em;
+}
+
+.form-box > .form-header > h1 {
+    flex-grow: 2;
+    text-align: center;
+    font-size: 4em;
     font-weight: 900;
-    text-shadow: 0 -2px 0 #FFFFFF;
+    text-shadow: 0 -2px 0 #FFFFFF
+}
+
+.form-box > p {
+    padding: 2em 3em 1em 3em;
+    font-size: 1.3em;
+    text-align: left;
 }
 
 form {
-    margin-left: 8em;
     display: flex;
     flex-direction: column;
     justify-content: center;
+    align-items: center;
 }
 
-.form-label {
-    font-size: 1.3em;
-    margin: 1.5em;
-    line-height: 2.5em;
+form > .form-field {
+    display: flex;
+    justify-content: center;
+    padding: 2em;
 }
 
-.input-box {
+/* TODO: Make the fields look like the mockup */
+
+.form-field > label {}
+
+.form-field > input {
     border: none;
     border-bottom: 1px solid #FFFFFF;
     background: transparent;
-    justify-content: center;
 }
 
 /*
@@ -80,11 +95,11 @@ form {
     line-height: 2em;
 }
 
+
 .terms {
     font-size: 0.75em;
     text-align: left;
     width: 50%;
     font-style: italic;
-    line-height: 1.5em;
+    margin: .1em;
 }
-
