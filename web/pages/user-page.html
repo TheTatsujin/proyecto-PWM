@@ -5,21 +5,22 @@
     <link rel="stylesheet" href="../styles/global.css">
     <link rel="stylesheet" href="../styles/buttons.css">
     <link rel="stylesheet" href="../styles/forms.css">
-    <link rel="stylesheet" href="../styles/tickets-table.css">
-    <link rel="stylesheet" href="../styles/banners.css">
     <title>Account</title>
 </head>
 <body class="bg-black">
+<header>
+    <button class="btn-return color-turquoise border-turquoise bg-black"
+            onclick="location.href='../index.html'"><</button>
+</header>
 <main class="test-container color-turquoise">
     <section id = "user-page" class="bg-black border-turquoise form-box">
         <div class="form-header">
-            <button class="btn-return color-turquoise border-turquoise bg-black" onclick="location.href='../index.html'"><</button>
+            <a id="profile-link" href="#">
+                <img id="profile-picture" src="../images/icons/man-user-circle-icon.svg" alt="profile picture" height="64" width="64">
+            </a>
+            <h1 class="color-turquoise font-tektur">Welcome pepe</h1>
         </div>
         <form id="user-page-form">
-            <p class="greeting-header">
-                <!-- <img id="user-icon" src="../images/MockupSquare.png" alt="Mockup image"> -->
-                <label class="form-label color-turquoise font-sudovar">Welcome pepe</label>
-            </p>
             <p class="form-field">
                 <label class="form-label color-turquoise font-sudovar">Full name: </label>
                 <label class="color-white font-sudovar" id="full-name-field" name=""> MOCKUP TEXT</label>
@@ -38,10 +39,41 @@
             </p>
             <p class="form-field">
                 <label class="form-label color-turquoise font-sudovar">Your tickets:</label>
-                <!-- <img id="your-tickets-image" src="../images/MockupSquare.png" alt="Mockup image"> -->
             </p>
         </form>
     </section>
 </main>
+<footer>
+    <p class="footer_row">
+        <span class="color-turquoise footer_main-text">Follow Us</span>
+        <span class="color-turquoise footer_main-text">Support</span>
+    </p>
+    <nav class="footer_row">
+        <p>
+            <a href="https://x.com/kanyewest?git ">
+                <img class="footer_icon" src="../images/icons/twitter-icon.svg" alt="twitter icon">
+            </a>
+            <a href="https://www.youtube.com/@joserafaelmoreyt5311/featured">
+                <img class="footer_icon" src="../images/icons/youtube-icon.svg" alt="youtube icon">
+            </a>
+        </p>
+        <span class="color-turquoise">Contact Us</span>
+    </nav>
+    <nav class="footer_row">
+        <p>
+            <a href="https://www.tiktok.com/@tiktok_es?lang=es">
+                <img class="footer_icon" src="../images/icons/tiktok-icon.svg" alt="tiktok icon">
+            </a>
+            <a href="https://www.instagram.com/dylancas16/">
+                <img class="footer_icon" src="../images/icons/instagram-icon.svg" alt="instagram icon">
+            </a>
+        </p>
+        <p>
+            <a><img class="footer_icon" src="../images/icons/telephone-icon.svg" alt="telephone icon"></a>
+            <a><img class="footer_icon" src="../images/icons/message-icon.svg" alt="message icon"></a>
+            <a><img class="footer_icon" src="../images/icons/email-icon.svg" alt="mail icon"></a>
+        </p>
+    </nav>
+</footer>
 </body>
 </html>
