@@ -1,10 +1,3 @@
-h1 {
-    text-align: center;
-    font-size: 8em;
-    font-weight: 900;
-    text-shadow: 0 -5px 0 #AA12FE;
-}
-
 main {
     display: flex;
     flex-direction: column;
