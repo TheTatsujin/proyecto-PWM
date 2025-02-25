@@ -120,6 +120,14 @@ header #logo {
     transform: translate(-7.75vw, 50px);
 }
 
+/* Sections */
+.section-header {
+    text-align: center;
+    font-size: 10em;
+    font-weight: 900;
+    text-shadow: 0 -.035em 0 #AA12FE;
+    padding: .2em;
+}
 
 /* Footer bar */
 
