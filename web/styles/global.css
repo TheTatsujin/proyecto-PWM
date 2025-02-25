@@ -107,12 +107,16 @@ header > button {
     font-style: italic;
     text-align: center;
     text-wrap: auto;
-    font-size: 1.8em;
+    font-size: 1.5em;
 }
 
 header div {
-    display: flex;
+    display: block;
     justify-content: center;
+}
+
+header img {
+    margin-left: 8.7em;
 }
 
 header #logo {
