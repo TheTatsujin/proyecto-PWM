@@ -92,11 +92,12 @@ header {
     width: 20vw;
 }
 
-#header_left-nav > h3 {
+#header_left-nav > a {
     letter-spacing: 0.25em;
     font-weight: bold;
     padding: 1vw;
     margin: 1.5em;
+    text-decoration: none;
 }
 
 header > button {
