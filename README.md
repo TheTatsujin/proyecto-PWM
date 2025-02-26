@@ -23,7 +23,7 @@ de entradas.
 ### Localización de mockups y storyboard
 - Los mockups se encuentran en el directorio ```mockups/```.
 - Los storyboards se encuentran en el directorio ```mockups/storyboard/```.
-- Adicionalmente las capturas del progreso de trello se encuentran en ```trello```, el nombre del archivo corresponde con la fecha de la captura.
+- Adicionalmente las capturas del progreso de trello se encuentran en ```trello/```, el nombre del archivo corresponde con la fecha de la captura.
 
 ## Listado de páginas HTML
 
@@ -58,6 +58,17 @@ Los templates se encuentran en el directorio ```web/templates/```.
 | Register Form | [register-form.html](web/templates/register-form.html)|
 | Account Recovery Form | [account-recovery.html](web/templates/account-recovery.html)|
 | Accordion | [accordion.html](web/templates/accordion.html)|
+
+
+### Respecto a la hojas de estilo.
+Las hojas de estilo se encuentran en ```web/styles/``` y siguen la siguiente filosofía para separarlas:
+- Todos los estilos comunes en toda la web se especifican en ```web/styles/global.css```.
+- Todos los botones quedan definidos en ```web/styles/buttons.css```.
+- Las hojas de estilo específcas a las páginas son:
+	- ```index.css``` para ```index.html```.
+	- ```forms.css``` para todos los formularios, que son: ```login.html```, ```register.html```, ```recovery.html``` y ```user-page.html```.
+	- ```tickets-table.css``` para ```tickets.html```.
+	- ```banners.css``` para ```artists.html```.
 
 ### Enlaces de interés
 - Link al repositorio de github: [Github](https://github.com/TheTatsujin/proyecto-PWM/tree/sprint-1)
