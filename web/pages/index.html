@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <script src="../scripts/xlu-include-file.js"></script>
+    <link rel="stylesheet" href="../styles/global.css">
+    <link rel="stylesheet" href="../styles/buttons.css">
+    <link rel="stylesheet" href="../styles/index.css">
+    <title>PWM</title>
+</head>
+<body class="bg-image">
+    <header xlu-include-file="../templates/header.html" class="bg-black">
+    </header>
+    <main>
+        <img id="main-image" src="../images/the-festival2.png" alt="The festival image">
+        <section id="main-button-section">
+            <button class="btn-main font-sudovar border-violet color-violet bg-black"
+                onclick="location.href='tickets.html'">
+                Comprar Entradas
+            </button>
+            <button class="btn-main font-sudovar border-violet color-violet bg-black"
+                onclick="location.href='artists.html'">
+                Artistas
+            </button>
+        </section>
+        <section id="map-section" class="bg-transparent border-turquoise">
+            <img src="../images/calendar.png" alt="Mockup image">
+        </section>
+        <article id="faq-section">
+            <h1 class="color-turquoise font-tektur section-header">FAQ</h1>
+            <section id="faq-questions">
+                <article xlu-include-file="../templates/accordion.html"></article>
+                <article xlu-include-file="../templates/accordion.html"></article>
+                <article xlu-include-file="../templates/accordion.html"></article>
+                <article xlu-include-file="../templates/accordion.html"></article>
+            </section>
+        </article>
+    </main>
+    <footer xlu-include-file="../templates/footer.html"></footer>
+</body>
+<script>
+    xLuIncludeFile();
+</script>
+</html>
