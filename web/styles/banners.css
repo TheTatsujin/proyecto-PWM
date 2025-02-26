@@ -7,7 +7,7 @@
 }
 
 .artist-banner > img {
-    margin-top: -20vh;
+    margin-top: -11vh;
     margin-left: -20vh;
     height: 60vh;
     width: auto;
@@ -26,4 +26,5 @@
     text-align: center;
     padding: 0.4em 0 0.4em 0;
     font-size: 2em;
+    font-weight: bold;
 }

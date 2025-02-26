@@ -1,3 +1,8 @@
+button:hover {
+    cursor: pointer;
+}
+
+
 .btn-return {
     padding: 0.5em 0.75em;
     font-size: 1.3em;
@@ -7,13 +12,12 @@
 
 
 .btn-submit {
+    font-weight: bold;
     margin-top: 1em;
     padding: .5em;
-    font-size: 1.3em;
+    font-size: 2em;
     width: 9em;
     text-wrap: nowrap;
-    font-weight: bold;
-    border-radius: 0.3em;
 }
 
 .btn-main {

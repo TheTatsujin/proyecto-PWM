@@ -1,53 +1,42 @@
+
 <section id="register" class="form-box bg-black border-turquoise">
   <div class="form-header">
-    <button class="btn-return color-turquoise border-turquoise bg-black"><</button>
+    <button class="btn-return color-turquoise border-turquoise bg-black"
+            onclick="location.href='../index.html'"><</button>
     <h1 class="form-header font-tektur color-turquoise">Sign up</h1>
   </div>
   <form id="register-form" method="POST" action="#">
-    <p class="form-field">
-      <label for="name" class="form-label font-sudovar color-turquoise">Full name:</label>
-      <input class="input-box color-white" type=text id="name" name="name" placeholder="Full name">
-    </p>
+    <div class="form-fields">
+      <div class="form_label-column">
+        <label for="name" class="form-label font-sudovar color-turquoise">Full name:</label>
+        <label for="register-email" class="form-label font-sudovar color-turquoise">Email:</label>
+        <label for="phone-number" class="form-label font-sudovar color-turquoise">Phone number:</label>
+        <label for="birthdate" class="form-label font-sudovar color-turquoise">Birthdate:</label>
+        <label for="password" class="form-label font-sudovar color-turquoise">Password:</label>
+        <label for="confirm-password" class="form-label font-sudovar color-turquoise">Confirm:</label>
+      </div>
+      <div class="form_input-column">
+        <input class="input-box color-white" type=text id="name" name="name" placeholder="Full name">
+        <input class="input-box color-white" type=email id="register-email" name="email" placeholder="Email">
+        <input class="input-box color-white" type=tel id="phone-number" name="Phone number" placeholder="Phone number" pattern="6[0-9]{2}-[0-9]{3}-[0-9]{3}" required>
+        <input class="input-box color-white birth-input" type=date id="birthdate" name="birthdate">
+        <input class="input-box color-white" type=password id="password" name="password" placeholder="Password">
+        <input class="input-box color-white" type=password id="confirm-password" name="confirm-password" placeholder="Confirm password">
+      </div>
+    </div>
 
-    <p class="form-field">
-      <label for="register-email" class="form-label font-sudovar color-turquoise">Email:</label>
-      <input class="input-box color-white" type=email id="register-email" name="email" placeholder="Email">
-    </p>
-
-    <p class="form-field">
-      <label for="phone-number" class="form-label font-sudovar color-turquoise">Phone number:</label>
-      <input class="input-box color-white" type=tel id="phone-number" name="Phone number" placeholder="Phone number" pattern="6[0-9]{2}-[0-9]{3}-[0-9]{3}" required>
-    </p>
-
-    <p class="form-field">
-      <label for="birthdate" class="form-label font-sudovar color-turquoise">Birthdate:</label>
-      <input class="input-box color-white" type=date id="birthdate" name="birthdate">
-    </p>
-
-    <p class="form-field">
-      <label for="password" class="form-label font-sudovar color-turquoise">Password:</label>
-      <input class="input-box color-white" type=password id="password" name="password" placeholder="Password">
-    </p>
-
-    <p class="form-field">
-      <label for="confirm-password" class="form-label font-sudovar color-turquoise">Confirm password:</label>
-      <input class="input-box color-white" type=password id="confirm-password" name="confirm-password" placeholder="Confirm password">
-    </p>
-
-    <p class="form-field">
-      <input type=checkbox id="terms-conditions" name="terms-conditions">
-      <label  for="terms-conditions" class="form-label font-sudovar terms color-white">I accept terms of service.</label>
-    </p>
-
-    <p class="form-field">
-      <input type=checkbox id="receive-information" name="receive-information">
-      <label for="receive-information" class="form-label font-sudovar terms color-white">Receive information on event updates and related things.</label>
-    </p>
-
-    <p class="form-field">
-      <input type=checkbox id="notifications" name="notifications">
-      <label for="notifications" class="form-label font-sudovar terms color-white">I don't allow notifications and subscribe to the newsletter.</label>
-    </p>
-    <button class="btn-submit font-sudovar border-turquoise color-turquoise bg-black" id="register-submit" type="submit">Sign up</button>
+    <div class="form_checkbox-area">
+      <div class="form_checkbox-area_buttons">
+        <input type=checkbox id="terms-conditions" name="terms-conditions">
+        <input type=checkbox id="receive-information" name="receive-information">
+        <input type=checkbox id="notifications" name="notifications">
+      </div>
+      <div class="form_checkbox-area_labels">
+        <label  for="terms-conditions" class="form-label font-sudovar color-white">I accept terms of service.</label>
+        <label for="receive-information" class="form-label font-sudovar color-white">Receive information on event updates and related things.</label>
+        <label for="notifications" class="form-label font-sudovar color-white">I don't allow notifications and subscribe to the newsletter.</label>
+      </div>
+    </div>
+    <button class="btn-submit font-sudovar border-turquoise color-turquoise bg-black" id="register-submit" type="submit">OK</button>
   </form>
 </section>

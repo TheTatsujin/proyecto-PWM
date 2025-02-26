@@ -12,7 +12,7 @@ main {
     border-width: 3px 3px 8px 3px;
     display: flex;
     flex-direction: column;
-    justify-content: flex-start;
+    justify-content: space-evenly;
 }
 
 .form-box > .form-header {
@@ -29,11 +29,10 @@ main {
     text-shadow: 0 -2px 0 #FFFFFF
 }
 
-.form-box > p {
+.form-box > .form-description {
     padding: 2em 3em 1em 3em;
     font-size: 2em;
     text-align: left;
-
 }
 
 form {
@@ -43,68 +42,83 @@ form {
     align-items: center;
 }
 
-form > .form-field {
+form > .form-fields {
     display: flex;
-    margin-top: 1.5em;
-    justify-content: center;
-    flex-direction: row;
-    margin-bottom: 1em;
-
 }
+
+form > .form-fields > .form_label-column {
+    display: flex;
+    flex-direction: column;
+    align-items: end;
+    justify-content: space-between;
+}
+
+form > .form-fields > .form_input-column {
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    justify-content: space-between;
+}
+
+form > .form-fields > .form_input-column > input {
+    margin-left: 1.5em;
+}
+
 
 /* TODO: Make the fields look like the mockup */
 
-.form-field > label {
+.form-fields label {
+    font-size: 1.5em;
+    font-weight: bold;
+    text-align: right;
 }
 
-.form-field > input {
+.form-fields input {
+    font-size: 1.5em;
+    margin-left: 1em;
     border: none;
     border-bottom: 1px solid #FFFFFF;
     background: transparent;
 }
 
-/*
-    TODO:
-        El CSS tiene que funcionar para todos los formularios en general
-        Los ID de los formularios deberian ser solo para cosas con JS
-
-
-#login {
-    border: 0.2em solid #05FCFE;
-    border-bottom-width: .7em;
-    border-radius: 1.5em;
-    width: 40em;
-    height: 26em;
-    margin: auto;
-}
-
-#register {
-    border: 0.2em solid #05FCFE;
-    border-bottom-width: .7em;
-    border-radius: 1.5em;
-    width: 40em;
-    height: 45em;
-    margin: auto;
-}
-*/
-
 .form-alternative-link {
-    font-size: 0.7em;
+    font-size: 1.2em;
     font-style: italic;
-    font-weight: bold;
     text-align: center;
     justify-content: center;
     display: block;
     text-decoration: none;
     letter-spacing: .01rem;
-    line-height: 2em;
 }
 
+.form_checkbox-area {
+    display: flex;
+    margin-top: 1em;
+    margin-left: 10em;
+}
 
-.terms {
-    font-size: 0.75em;
+.form_checkbox-area_buttons {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+}
+
+.form_checkbox-area_buttons > input {
+    width: 6em;
+    height: 1.2em;
+    cursor: pointer;
+}
+
+.form_checkbox-area_labels {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+
+    margin-left: 1.5em;
+    font-size: 1.1em;
     text-align: left;
-    width: 50%;
     font-style: italic;
-    margin: .1em;
+    text-wrap: auto;
 }
+
+

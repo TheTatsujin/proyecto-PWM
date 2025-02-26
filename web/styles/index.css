@@ -5,8 +5,8 @@ main {
 }
 
 #main-image {
-    height: 80vh;
-    width: auto;
+    width: 40vw;
+    margin: auto;
 }
 
 #main-button-section {
@@ -29,7 +29,6 @@ main {
 #map-section > img {
     align-self: center;
     width: 80vw;
-    height: 20vh;
 }
 
 
