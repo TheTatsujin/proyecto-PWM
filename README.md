@@ -31,7 +31,7 @@ La página de inicio ```index.html``` se encuentra en el directorio ```web/index
 
 | Mockup                                                                          | HTML |
 |---------------------------------------------------------------------------------| ---  |
-| <a href="mockups/Mockup Main Page.png"> Mockup Main Page.png </a>               | [index.html](web/index.html)|
+| <a href="mockups/Mockup Main Page.png"> Mockup Main Page.png </a>               | [index.html](web/pages/index.html)|
 | <a href="mockups/Mockup artistas.png"> Mockup artistas.png </a>                 | [artists.html](web/pages/artists.html)|
 | <a href="mockups/Mockup login.png"> Mockup login.png </a>                       | [login.html](web/pages/login.html) |
 | <a href="mockups/Mockup recuperar cuenta.png"> Mockup recuperar cuenta.png </a> | [recovery.html](web/pages/recovery.html)|
