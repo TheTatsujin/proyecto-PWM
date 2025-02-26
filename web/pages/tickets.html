@@ -14,41 +14,10 @@
 </header>
 <main>
   <h1 class="font-tektur color-turquoise section-header">
-    <label for="dropdown">Tickets</label>
+    <label>Tickets</label>
   </h1>
-  <select id="dropdown" name="dropdown" class="dropdown-box border-turquoise color-turquoise bg-black">
-    <option>Arquitectura</option>
-    <option>Telecomuncaciones</option>
-  </select>
-
-  <article>
-    <table class="border-violet ticket-table bg-transparent">
-      <thead>
-      <tr class="color-turquoise">
-        <th id="ticket-table-left-column">One day Passes</th>
-        <th id="ticket-table-center-column">Two Day Passes</th>
-        <th id="ticket-table-right-column">Three Day Passes</th>
-      </tr>
-      </thead>
-      <tbody>
-      <tr class="color-turquoise">
-        <td id="one-day-normal-ticket">Normal Ticket XXX$</td>
-        <td id="two-day-normal-ticket">Normal Ticket XXX$</td>
-        <td id="three-day-normal-ticket">Normal Ticket XXX$</td>
-      </tr>
-      <tr class="color-turquoise">
-        <td id="one-day-early-ticket">Early Access Ticket XXX$</td>
-        <td id="two-day-early-ticket">Early Access Ticket XXX$</td>
-        <td id="three-day-early-ticket">Early Access Ticket XXX$</td>
-      </tr>
-      <tr class="color-turquoise">
-        <td id="one-day-vip-ticket">VIP Ticket XXX$</td>
-        <td id="two-day-vip-ticket">VIP Ticket XXX$</td>
-        <td id="three-day-vip-ticket">VIP Ticket XXX$</td>
-      </tr>
-      </tbody>
-    </table>
-  </article>
+  <article xlu-include-file="../templates/dropdown.html"></article>
+  <article xlu-include-file="../templates/ticket-table.html"></article>
 </main>
 <footer xlu-include-file="../templates/footer.html">
 </footer>
