@@ -27,7 +27,7 @@ de entradas.
 
 ## Listado de páginas HTML
 
-La página de inicio ```index.html``` se encuentra en el directorio ```web/index.html``` y las demás páginas en ```web/pages/```.
+La página de inicio ```index.html``` se encuentra en el directorio ```web/pages/index.html``` y las demás páginas en ```web/pages/```.
 
 | Mockup                                                             | HTML |
 |--------------------------------------------------------------------| ---  |
