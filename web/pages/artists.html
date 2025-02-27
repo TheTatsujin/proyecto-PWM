@@ -2,102 +2,27 @@
 <html lang="es">
 <head>
     <meta charset="UTF-8">
-  <link rel="stylesheet" href="../styles/global.css">
-  <link rel="stylesheet" href="../styles/buttons.css">
-  <link rel="stylesheet" href="../styles/banners.css">
-    <title>Title</title>
+    <script src="../scripts/xlu-include-file.js"></script>
+    <link rel="stylesheet" href="../styles/global.css">
+    <link rel="stylesheet" href="../styles/buttons.css">
+    <link rel="stylesheet" href="../styles/banners.css">
+    <title>Line up</title>
 </head>
 <body class="bg-black">
 
-<header>
-  <nav class="header_left-nav">
-    <button class="btn-return color-turquoise border-turquoise bg-black"
-            onclick="location.href='index.html'"><</button>
-  </nav>
-
-  <button class="btn-main font-sudovar color-violet bg-black border-violet header-text" id="account-section"
-          onclick="location.href='login.html'">
-    Iniciar Sesion
-  </button>
+<header xlu-include-file="../templates/second-header.html" class="bg-black">
 </header>
 
 <main>
-<figure class="artist-banner bg-black border-turquoise">
-  <img class="artist-image" src="../images/artist1.png" alt="Artist Banner">
-  <figcaption class="artist-caption color-turquoise bg-black border-turquoise">Matryoshkav</figcaption>
-  <figcaption class="date-caption color-white">
-    <h2>DATES</h2>
-    <ul>
-      <li>TAFIRA 12-05-2025</li>
-    </ul>
-  </figcaption>
-</figure>
-
-<figure class="artist-banner bg-black border-turquoise">
-  <img class="artist-image" src="../images/artist2.png" alt="Artist Banner">
-  <figcaption class="artist-caption color-turquoise bg-black border-turquoise">大遠忌</figcaption>
-  <figcaption class="date-caption color-white">
-    <h2>DATES</h2>
-    <ul>
-      <li>TAFIRA 12-05-2025</li>
-    </ul>
-  </figcaption>
-</figure>
-
-<figure class="artist-banner bg-black border-turquoise">
-  <img class="artist-image" src="../images/artist3.png" alt="Artist Banner">
-  <figcaption class="artist-caption color-turquoise bg-black border-turquoise">_void()</figcaption>
-  <figcaption class="date-caption color-white">
-    <h2>DATES</h2>
-    <ul>
-      <li>TAFIRA 12-05-2025</li>
-    </ul>
-  </figcaption>
-</figure>
-
-<figure class="artist-banner bg-black border-turquoise">
-  <img class="artist-image" src="../images/artist4.png" alt="Artist Banner">
-  <figcaption class="artist-caption color-turquoise bg-black border-turquoise">Dj Santa</figcaption>
-  <figcaption class="date-caption color-white">
-    <h2>DATES</h2>
-    <ul>
-      <li>TAFIRA 12-05-2025</li>
-    </ul>
-  </figcaption>
-</figure>
+  <article xlu-include-file="../templates/artist-banner.html"></article>
+  <article xlu-include-file="../templates/artist-banner.html"></article>
+  <article xlu-include-file="../templates/artist-banner.html"></article>
+  <article xlu-include-file="../templates/artist-banner.html"></article>
 </main>
 
-<footer>
-  <p class="footer_row">
-    <span class="color-turquoise footer_main-text">Follow Us</span>
-    <span class="color-turquoise footer_main-text">Support</span>
-  </p>
-  <nav class="footer_row">
-    <p>
-      <a href="https://x.com/kanyewest?git ">
-        <img class="footer_icon" src="../images/icons/twitter-icon.svg" alt="twitter icon">
-      </a>
-      <a href="https://www.youtube.com/@joserafaelmoreyt5311/featured">
-        <img class="footer_icon" src="../images/icons/youtube-icon.svg" alt="youtube icon">
-      </a>
-    </p>
-    <span class="color-turquoise">Contact Us</span>
-  </nav>
-  <nav class="footer_row">
-    <p>
-      <a href="https://www.tiktok.com/@tiktok_es?lang=es">
-        <img class="footer_icon" src="../images/icons/tiktok-icon.svg" alt="tiktok icon">
-      </a>
-      <a href="https://www.instagram.com/dylancas16/">
-        <img class="footer_icon" src="../images/icons/instagram-icon.svg" alt="instagram icon">
-      </a>
-    </p>
-    <p>
-      <a><img class="footer_icon" src="../images/icons/telephone-icon.svg" alt="telephone icon"></a>
-      <a><img class="footer_icon" src="../images/icons/message-icon.svg" alt="message icon"></a>
-      <a><img class="footer_icon" src="../images/icons/email-icon.svg" alt="mail icon"></a>
-    </p>
-  </nav>
+<footer xlu-include-file="../templates/footer.html">
 </footer>
+
 </body>
+<script>xLuIncludeFile();</script>
 </html>

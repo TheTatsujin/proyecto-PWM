@@ -2,56 +2,18 @@
 <html lang="es">
 <head>
     <meta charset="UTF-8">
+    <script src="../scripts/xlu-include-file.js"></script>
     <link rel="stylesheet" href="../styles/global.css">
     <link rel="stylesheet" href="../styles/buttons.css">
     <link rel="stylesheet" href="../styles/forms.css">
     <title>Sign up</title>
 </head>
 <body class="bg-black">
-<main>
 
-<section id="register" class="form-box bg-black border-turquoise">
-    <div class="form-header">
-        <button class="btn-return color-turquoise border-turquoise bg-black"
-                onclick="location.href='index.html'"><</button>
-        <h1 class="form-header font-tektur color-turquoise">Sign up</h1>
-    </div>
-    <form id="register-form" method="POST" action="#">
-        <div class="form-fields">
-            <div class="form_label-column">
-                <label for="name" class="form-label font-sudovar color-turquoise">Full name:</label>
-                <label for="register-email" class="form-label font-sudovar color-turquoise">Email:</label>
-                <label for="phone-number" class="form-label font-sudovar color-turquoise">Phone number:</label>
-                <label for="birthdate" class="form-label font-sudovar color-turquoise">Birthdate:</label>
-                <label for="password" class="form-label font-sudovar color-turquoise">Password:</label>
-                <label for="confirm-password" class="form-label font-sudovar color-turquoise">Confirm:</label>
-            </div>
-            <div class="form_input-column">
-                <input class="input-box color-white" type=text id="name" name="name" placeholder="Full name">
-                <input class="input-box color-white" type=email id="register-email" name="email" placeholder="Email">
-                <input class="input-box color-white" type=tel id="phone-number" name="Phone number" placeholder="Phone number" pattern="6[0-9]{2}-[0-9]{3}-[0-9]{3}" required>
-                <input class="input-box color-white birth-input" type=date id="birthdate" name="birthdate">
-                <input class="input-box color-white" type=password id="password" name="password" placeholder="Password">
-                <input class="input-box color-white" type=password id="confirm-password" name="confirm-password" placeholder="Confirm password">
-            </div>
-        </div>
-
-        <div class="form_checkbox-area">
-            <div class="form_checkbox-area_buttons">
-                <input type=checkbox id="terms-conditions" name="terms-conditions">
-                <input type=checkbox id="receive-information" name="receive-information">
-                <input type=checkbox id="notifications" name="notifications">
-            </div>
-            <div class="form_checkbox-area_labels">
-                <label  for="terms-conditions" class="form-label font-sudovar color-white">I accept terms of service.</label>
-                <label for="receive-information" class="form-label font-sudovar color-white">Receive information on event updates and related things.</label>
-                <label for="notifications" class="form-label font-sudovar color-white">I don't allow notifications and subscribe to the newsletter.</label>
-            </div>
-        </div>
-        <button class="btn-submit font-sudovar border-turquoise color-turquoise bg-black" id="register-submit" type="submit">OK</button>
-    </form>
-</section>
-</main>
+    <main>
+        <article xlu-include-file="../templates/register-form.html"></article>
+    </main>
 
 </body>
+<script>xLuIncludeFile();</script>
 </html>

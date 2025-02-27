@@ -2,37 +2,18 @@
 <html lang="es">
 <head>
     <meta charset="UTF-8">
+    <script src="../scripts/xlu-include-file.js"></script>
     <link rel="stylesheet" href="../styles/global.css">
     <link rel="stylesheet" href="../styles/buttons.css">
     <link rel="stylesheet" href="../styles/forms.css">
-    <link rel="stylesheet" href="../styles/tickets-table.css">
-    <link rel="stylesheet" href="../styles/banners.css">
-    <title>Account</title>
+    <title>Account recovery</title>
 </head>
 <body class="bg-black">
+
     <main class="test-container color-turquoise">
-        <section id="account-recovery" class="form-box bg-black border-turquoise">
-            <div class="form-header">
-                <button class="btn-return color-turquoise border-turquoise bg-black"
-                onclick="location.href='index.html'"><</button>
-                <h1 class="color-turquoise font-tektur">Account recovery</h1>
-            </div>
-            <p class="color-faint-white form-description font-style-italic font-sudovar">We will send to you an email to verify your identity and help you recovery your account with us.</p>
-            <form id="recovery-form" method="POST" action="#">
-                <div class="form-fields">
-                    <div class="form_label-column">
-                        <label for="email" class="form-label color-turquoise font-sudovar">Email: </label>
-                    </div>
-                    <div class="form_input-column">
-                        <input class="color-white font-sudovar" type=email id="email" name="email" placeholder="Email">
-                    </div>
-                </div>
-                <button class="btn-submit color-turquoise border-turquoise font-sudovar bg-black" id="recovery-submit" type="submit">
-                    Send mail
-                </button>
-            </form>
-        </section>
+        <article xlu-include-file="../templates/account-recovery.html"></article>
     </main>
 
 </body>
+<script>xLuIncludeFile();</script>
 </html>

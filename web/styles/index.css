@@ -48,13 +48,12 @@ main {
     flex-direction: column;
 }
 
-.accordion > button {
+.accordion > summary {
     cursor: pointer;
     font-size: 1.2em;
     padding: 0.6em;
     text-align: left;
 }
-.accordion > .panel {
-    padding: 0.5em;
-    display: none;
+.accordion > p {
+    padding: 1em;
 }
