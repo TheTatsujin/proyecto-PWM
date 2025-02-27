@@ -14,6 +14,7 @@ de venta online y premitirá iniciar sesión para la compra y consulta
 de entradas.
 
 ### Requisitos Funcionales
+> Para mas informacion dirijirse a el documento ***REQUISITOS PAGINA WEB PWM.pdf*** localizado en la raiz del directorio.
 - **Registrarse:** los usuarios nuevos podrán registrarse para tener una cuenta.
 - **Iniciar sesión:** los usuarios registrados podrán iniciar sesión para consultar las entradas.
 - **Recuperar cuenta:** se podrá recuperar la cuenta en caso de pérdida.
