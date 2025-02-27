@@ -29,15 +29,15 @@ de entradas.
 
 La página de inicio ```index.html``` se encuentra en el directorio ```web/index.html``` y las demás páginas en ```web/pages/```.
 
-| Mockup                                                                          | HTML |
-|---------------------------------------------------------------------------------| ---  |
-| <a href="mockups/Mockup Main Page.png"> Mockup Main Page.png </a>               | [index.html](web/pages/index.html)|
-| <a href="mockups/Mockup artistas.png"> Mockup artistas.png </a>                 | [artists.html](web/pages/artists.html)|
-| <a href="mockups/Mockup login.png"> Mockup login.png </a>                       | [login.html](web/pages/login.html) |
-| <a href="mockups/Mockup recuperar cuenta.png"> Mockup recuperar cuenta.png </a> | [recovery.html](web/pages/recovery.html)|
-| <a href="mockups/Mockup register.png"> Mockup register.png </a>                | [register.html](web/pages/register.html)|
-| <a href="mockups/Mockup tickets.png"> Mockup tickets.png </a>                   | [tickets.html](web/pages/tickets.html)|
-| <a href="mockups/Mockup usuario.png"> Mockup usuario.png </a>                   | [user-page.html](web/pages/user-page.html)|
+| Mockup                                                             | HTML |
+|--------------------------------------------------------------------| ---  |
+| [Mockup Main Page.png](mockups/Mockup-Main-Page.png)               | [index.html](web/pages/index.html)|
+| [Mockup artistas.png](mockups/Mockup-artistas.png)                 | [artists.html](web/pages/artists.html)|
+| [Mockup login.png](mockups/Mockup-login.png)                       | [login.html](web/pages/login.html) |
+| [Mockup recuperar cuenta.png](mockups/Mockup-recuperar-cuenta.png) | [recovery.html](web/pages/recovery.html)|
+| [Mockup register.png](mockups/Mockup-register.png)                 | [register.html](web/pages/register.html)|
+| [Mockup tickets.png](mockups/Mockup-Tickets.png)                   | [tickets.html](web/pages/tickets.html)|
+| [Mockup usuario.png](mockups/Mockup-usuario.png)                   | [user-page.html](web/pages/user-page.html)|
 
 ### Listado de templates
 
