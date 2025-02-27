@@ -59,8 +59,8 @@ Los templates se encuentran en el directorio ```web/templates/```.
 | Account Recovery Form | [account-recovery.html](web/templates/account-recovery.html)|
 | Accordion | [accordion.html](web/templates/accordion.html)|
 
-
-### Respecto a la hojas de estilo.
+### Otros aspectos
+#### Respecto a la hojas de estilo.
 Las hojas de estilo se encuentran en ```web/styles/``` y siguen la siguiente filosofía para separarlas:
 - Todos los estilos comunes en toda la web se especifican en ```web/styles/global.css```.
 - Todos los botones quedan definidos en ```web/styles/buttons.css```.
@@ -69,6 +69,20 @@ Las hojas de estilo se encuentran en ```web/styles/``` y siguen la siguiente fil
 	- ```forms.css``` para todos los formularios, que son: ```login.html```, ```register.html```, ```recovery.html``` y ```user-page.html```.
 	- ```tickets-table.css``` para ```tickets.html```.
 	- ```banners.css``` para ```artists.html```.
+
+#### Respecto a tareas implementadas con JavaScript
+- Los scripts de JavaScript se encuentran en el directorio ```web/scripts/``` 
+- En este primer sprint se han implementado dos tareas con JavaScript:
+  - Cargar los templates mediante el uso del script ```xlu-include-file.js``` proporcionado en el material de la asginatura.
+  - Para navegar cuando se presiona sobre un botón mediante el evento ```onclick``` en las etíquetas ```<button>```.
+
+#### Aspectos de Look and Feel
+La paleta de colores elegida para la página web ha sido diseñada teniendo en cuenta 
+la temática de la misma, que es un festival de música techno. Es por ello que hemos
+elegido el usar un fondo negro con unos colores turquesa y violeta vivos para que 
+resalten como si de un neón se tratase, transmitiendo la estética de este tipo de 
+eventos en donde predominan muchas luces, que resaltan aún más cuando hay menos luz
+solar.
 
 ### Enlaces de interés
 - Link al repositorio de github: [Github](https://github.com/TheTatsujin/proyecto-PWM/tree/sprint-1)
