@@ -14,14 +14,14 @@
 }
 
 .ticket-table th {
-    font-size: 2em;
+    font-size: 3em;
     font-weight: bold;
     padding-top: 15px;
     padding-left: 10px;
 }
 
 .ticket-table td {
-    font-size: 1.5em;
+    font-size: 2em;
     padding-top: 15px;
     padding-left: 10px;
 }
