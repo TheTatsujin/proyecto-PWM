@@ -21,7 +21,6 @@ main {
 }
 
 /* Map */
-
 #map-section {
     margin-top: 10vh;
 }
@@ -40,6 +39,16 @@ main {
 
 #faq-section > section {
     margin-top: 10vh;
+}
+
+#faq-section > figure {
+    height: 25vh;
+    display: flex;
+    justify-content: center;
+}
+
+#faq-section > figure > img {
+    height: 100%;
 }
 
 .accordion {
