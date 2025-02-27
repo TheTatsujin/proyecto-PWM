@@ -1,43 +1,19 @@
 <!DOCTYPE html>
-<html lang="es">
+<html lang="es" xmlns="">
 <head>
     <meta charset="UTF-8">
+    <script src="../scripts/xlu-include-file.js"></script>
     <link rel="stylesheet" href="../styles/global.css">
     <link rel="stylesheet" href="../styles/buttons.css">
     <link rel="stylesheet" href="../styles/forms.css">
-    <link rel="stylesheet" href="../styles/tickets-table.css">
-    <link rel="stylesheet" href="../styles/banners.css">
     <title>Login</title>
 </head>
 <body class="bg-black">
 
     <main class="test-container color-turquoise">
-        <section id="login" class="bg-black border-turquoise form-box">
-            <div class="form-header">
-                <button class="btn-return color-turquoise border-turquoise bg-black" onclick="location.href='index.html'"><</button>
-                <h1 class="color-turquoise form-header font-tektur">Login</h1>
-            </div>
-            <form id="login_form" method="POST" action="#">
-                <div class="form-fields">
-                    <div class="form_label-column">
-                        <label class="form-label color-turquoise font-sudovar" for="login_email">Email:</label>
-                        <label class="form-label color-turquoise font-sudovar" for="login_password">Password:</label>
-                    </div>
-                    <div class="form_input-column">
-                        <input class="color-white font-sudovar" id="login_email" type="email" name="email" placeholder="email">
-                        <input id="login_password" class="color-white font-sudovar" type="password" name="password" placeholder="password">
-                    </div>
-                </div>
-                <button class="btn-submit color-turquoise border-turquoise font-sudovar bg-black" id="login-submit" type="submit">
-                    OK
-                </button>
-            </form>
-            <p>
-                <a class="form-alternative-link font-sudovar color-beige" href="../pages/recovery.html">Forgot password? Click here</a>
-                <a class="form-alternative-link font-sudovar color-beige" href="../pages/register.html">Register here</a>
-            </p>
-        </section>
+        <article xlu-include-file="../templates/login-form.html"></article>
     </main>
 
 </body>
+<script>xLuIncludeFile();</script>
 </html>
