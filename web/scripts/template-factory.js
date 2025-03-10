@@ -32,12 +32,14 @@ const GET_NULL_ELEMENT = function () {
 
 
 function parseJsonTemplateToHtml(templateJsonDefinition) {
-    if (!templateJsonDefinition || !templateJsonDefinition.tag || !templateJsonDefinition.tag.classes) return GET_NULL_ELEMENT();
+    if (!templateJsonDefinition || !templateJsonDefinition.tag)
+        return GET_NULL_ELEMENT();
 
     const templateHtmlElement = document.createElement(templateJsonDefinition.tag.name);
     templateHtmlElement.id = templateJsonDefinition.tag.id;
 
-    templateJsonDefinition.tag.classes.forEach(className => templateHtmlElement.classList.add(className));
+    for (const classKey in templateJsonDefinition.tag.classes)
+        templateHtmlElement.classList.add(templateJsonDefinition.tag.classes[classKey]);
 
     if (templateJsonDefinition.tag.hasOwnProperty("innerText"))
         templateHtmlElement.innerText = templateJsonDefinition.tag.innerText;
