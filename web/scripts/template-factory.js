@@ -32,18 +32,19 @@ const GET_NULL_ELEMENT = function () {
 
 
 function parseJsonTemplateToHtml(templateJsonDefinition) {
-    if (!templateJsonDefinition || !templateJsonDefinition.tag)
+    if (!templateJsonDefinition || !templateJsonDefinition.tag || !templateJsonDefinition.tag.name)
         return GET_NULL_ELEMENT();
 
     const templateHtmlElement = document.createElement(templateJsonDefinition.tag.name);
-    templateHtmlElement.id = templateJsonDefinition.tag.id;
+
+    if (templateJsonDefinition.tag.hasOwnProperty("id"))
+        templateHtmlElement.id = templateJsonDefinition.tag.id;
 
     for (const classKey in templateJsonDefinition.tag.classes)
         templateHtmlElement.classList.add(templateJsonDefinition.tag.classes[classKey]);
 
     if (templateJsonDefinition.tag.hasOwnProperty("innerText"))
         templateHtmlElement.innerText = templateJsonDefinition.tag.innerText;
-
 
     for (const childKey in templateJsonDefinition.tag.children) {
         const childTemplateJsonDefinition = templateJsonDefinition.tag.children[childKey];
@@ -54,5 +55,4 @@ function parseJsonTemplateToHtml(templateJsonDefinition) {
 
     return templateHtmlElement;
 }
-
 
