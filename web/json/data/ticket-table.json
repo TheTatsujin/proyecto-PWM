@@ -1,0 +1,14 @@
+{
+  "left-column-header": "One day Passes",
+  "center-column-header": "Two day Passes",
+  "right-column-header": "Three day Passes",
+  "normal-ticket-left": "Normal Ticket 150$",
+  "normal-ticket-center": "Normal Ticket 300$",
+  "normal-ticket-right": "Normal Ticket 400$",
+  "early-ticket-left": "Early Access Ticket 300$",
+  "early-ticket-center": "Early Access Ticket 600$",
+  "early-ticket-right": "Early Access Ticket 800$",
+  "vip-ticket-left": "VIP Ticket 1000$",
+  "vip-ticket-center": "VIP Ticket 1500$",
+  "vip-ticket-right": "VIP Ticket 2000$"
+}
