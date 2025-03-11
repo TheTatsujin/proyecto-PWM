@@ -4,12 +4,12 @@ const jsonDummy = {
     tag: {
         name: "div",
         id: "test-id",
-        classes: ["blue-background", "screen-absolute-center"],
+        classes: ["blue-background", "absolute-screen-center"],
         children: [{
             tag: {
                 name: "span",
                 id: "test-span",
-                classes: ["big-text", "screen-absolute-center"],
+                classes: ["big-text", "absolute-screen-center"],
                 innerText: "Hello World."
             }
         }]
@@ -29,19 +29,19 @@ const GET_NULL_ELEMENT = function () {
 }
 
 function fillDocumentWithTemplates(){
-    const documentEmptyTags = document.querySelectorAll(".template");
-    for(const elementKey of documentEmptyTags){
-        const templateName = documentEmptyTags[elementKey].getAttribute("template-name");
+    const documentEmptyElementList = document.querySelectorAll(".template");
+    for(const documentEmptyElement of documentEmptyElementList){
+        const templateName = documentEmptyElement.getAttribute("template-name");
         const templateJsonDefinition = fetchJsonTemplateDefinition(templateName);
         const newElement = document.createDocumentFragment().appendChild(parseJsonTemplateToHtml(templateJsonDefinition));
 
-        documentEmptyTags[elementKey].appendChild(newElement);
+        documentEmptyElement.appendChild(newElement);
     }
 }
 
 function fetchJsonTemplateDefinition(templateName){
     // TODO: Asynchronous template json definition fetch
-    console.log(templateName);
+    console.log(`Loading template: ${templateName}`);
     return jsonDummy;
 }
 
@@ -54,17 +54,16 @@ function parseJsonTemplateToHtml(templateJsonDefinition) {
     if (templateJsonDefinition.tag.hasOwnProperty("id"))
         templateHtmlElement.id = templateJsonDefinition.tag.id;
 
-    for (const classKey in templateJsonDefinition.tag.classes)
-        templateHtmlElement.classList.add(templateJsonDefinition.tag.classes[classKey]);
+    for (const templateJsonTagClass of templateJsonDefinition.tag.classes)
+        templateHtmlElement.classList.add(templateJsonTagClass);
 
     if (templateJsonDefinition.tag.hasOwnProperty("innerText"))
         templateHtmlElement.innerText = templateJsonDefinition.tag.innerText;
 
     for (const childKey in templateJsonDefinition.tag.children) {
-        const childTemplateJsonDefinition = templateJsonDefinition.tag.children[childKey];
-
-        const childTemplateHtmlElement = parseJsonTemplateToHtml(childTemplateJsonDefinition);
-        templateHtmlElement.appendChild(childTemplateHtmlElement);
+        const templateChildJsonDefinition = templateJsonDefinition.tag.children[childKey];
+        const templateChildHtmlElement = parseJsonTemplateToHtml(templateChildJsonDefinition);
+        templateHtmlElement.appendChild(templateChildHtmlElement);
     }
 
     return templateHtmlElement;
