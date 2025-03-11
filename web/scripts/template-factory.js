@@ -42,14 +42,14 @@ function parseJsonTemplateToHtml(templateJsonDefinition) {
     if (templateJsonDefinition.tag.hasOwnProperty("id"))
         templateHtmlElement.id = templateJsonDefinition.tag.id;
 
-    for (const templateJsonTagClass of templateJsonDefinition.tag.classes)
+    for (const templateJsonTagClass of templateJsonDefinition.tag.classList)
         templateHtmlElement.classList.add(templateJsonTagClass);
 
     if (templateJsonDefinition.tag.hasOwnProperty("innerText"))
         templateHtmlElement.innerText = templateJsonDefinition.tag.innerText;
 
-    for (const childKey in templateJsonDefinition.tag.children) {
-        const templateChildJsonDefinition = templateJsonDefinition.tag.children[childKey];
+    for (const childKey in templateJsonDefinition.tag.childList) {
+        const templateChildJsonDefinition = templateJsonDefinition.tag.childList[childKey];
         const templateChildHtmlElement = parseJsonTemplateToHtml(templateChildJsonDefinition);
         templateHtmlElement.appendChild(templateChildHtmlElement);
     }

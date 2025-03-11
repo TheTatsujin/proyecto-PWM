@@ -2,12 +2,12 @@
   "tag": {
     "name": "div",
     "id": "test-id",
-    "classes": ["blue-background", "absolute-screen-center"],
-    "children": [{
+    "classList": ["blue-background", "absolute-screen-center"],
+    "childList": [{
       "tag": {
         "name": "span",
         "id": "test-span",
-        "classes": ["big-text", "absolute-screen-center"],
+        "classList": ["big-text", "absolute-screen-center"],
         "innerText": "Hello World."
       }
     }]
