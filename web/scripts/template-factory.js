@@ -28,7 +28,7 @@ function fetchTemplateJsonDefinition(templateName){
     console.log(`Fetching template: ${templateName}\n`);
     console.log(`directory: ../json/templates/${templateName}.json\n`);
 
-    return fetch(`../json/templates/${templateName}.json`).then(response => response.json());
+    return fetch(`../json/templates/template-${templateName}.json`).then(response => response.json());
 }
 
 function parseJsonTemplateToHtml(templateJsonDefinition) {

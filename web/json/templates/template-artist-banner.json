@@ -1,0 +1,18 @@
+{
+  "tag": {
+    "name": "figure",
+    "classList": ["artist-banner", "border-turquoise", "bg-black"],
+    "childrenList": [
+      {"tag": {"name": "img", "classList": ["artist-image"], "src": ""}},
+      {
+        "tag": {
+          "name": "figcaption",
+          "classList": ["artist-caption", "color-turquoise", "bg-black", "border-turquoise"],
+          "innerText": "artist caption placeholder"
+        }
+      }
+
+    ]
+
+  }
+}

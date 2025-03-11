@@ -1,0 +1,12 @@
+{
+  "tag": {
+    "name": "select",
+    "id": "dropdown",
+    "form-name": "dropdown",
+    "classList": ["dropdown-box", "border-turquoise", "color-turquoise", "bg-black"],
+    "childrenList": [
+      {"tag": { "name": "option", "innerText": "Arquitectura"}},
+      {"tag": { "name": "option", "innerText": "Telecomunicaciones"}}
+    ]
+  }
+}
