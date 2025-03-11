@@ -21,3 +21,14 @@ body {
     left: 50%;
     transform: translate(-50%, -50%);
 }
+
+.NULL_ELEMENT {
+    background: crimson;
+    text-align: center;
+}
+
+.NULL_ELEMENT:before {
+    content: "NULL";
+    font-size: 2em;
+    color: whitesmoke;
+}

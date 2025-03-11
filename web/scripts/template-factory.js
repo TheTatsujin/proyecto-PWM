@@ -18,7 +18,7 @@ function fillDocumentWithTemplates(){
             newTemplateElement.appendChild(parseJsonTemplateToHtml(templateJsonDefinition));
             documentEmptyElement.appendChild(newTemplateElement);
         }).catch(error => {
-            console.error(`Error loading template: ${templateName}`, error)
+            console.error(`Error loading template "${templateName}": `, error)
             documentEmptyElement.appendChild(GET_NULL_ELEMENT());
         });
     }
