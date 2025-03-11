@@ -1,23 +1,25 @@
 function addLoginSubmitEventListener() {
     setTimeout(function() {
-        const loginSubmit = document.getElementById("login-submit");
-        loginSubmit.addEventListener("click", ev => {
+        const loginSubmit = document.getElementById("login_form");
+        loginSubmit.addEventListener("submit", ev => {
             ev.preventDefault();
-            Login();
-
+            const mail = document.getElementById("login_email").value;
+            const password = document.getElementById("login_password").value;
+            isRegistered(mail, password).then(isLogged => {
+                if (isLogged) {
+                    sessionStorage.setItem("login", mail);
+                }
+            });
         })
     }, 1000);
 }
 
 
-function Login() {
-    const mail = document.getElementById("login_email").value;
-    const password = document.getElementById("login_password").value;
-    console.log(mail, password);
-    fetch("../json/data/user.json")
+function isRegistered(mail, password) {
+    return fetch("../json/data/user.json")
         .then(response => response.json())
         .then(userData => {
-            return userData["email"] === mail && userData["password"] === password;
+            return (userData["email"] === mail && userData["password"] === atob(password));
         })
         .catch(error => console.log(error));
 }
