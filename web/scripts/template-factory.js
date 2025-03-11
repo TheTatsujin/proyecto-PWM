@@ -13,7 +13,7 @@ function fillDocumentWithTemplates(){
     for(const documentEmptyElement of documentEmptyElementList){
         const templateName = documentEmptyElement.getAttribute("template-name");
 
-        fetchTemplateJsonDefinition(templateName, documentEmptyElement).then(templateJsonDefinition => {
+        fetchTemplateJsonDefinition(templateName).then(templateJsonDefinition => {
             const newElement = new DocumentFragment()
             newElement.appendChild(parseJsonTemplateToHtml(templateJsonDefinition));
             documentEmptyElement.appendChild(newElement);
