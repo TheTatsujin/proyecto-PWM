@@ -14,9 +14,9 @@ function fillDocumentWithTemplates(){
         const templateName = documentEmptyElement.getAttribute("template-name");
 
         fetchTemplateJsonDefinition(templateName).then(templateJsonDefinition => {
-            const newElement = new DocumentFragment()
-            newElement.appendChild(parseJsonTemplateToHtml(templateJsonDefinition));
-            documentEmptyElement.appendChild(newElement);
+            const newTemplateElement = new DocumentFragment()
+            newTemplateElement.appendChild(parseJsonTemplateToHtml(templateJsonDefinition));
+            documentEmptyElement.appendChild(newTemplateElement);
         }).catch(error => {
             console.error(`Error loading template: ${templateName}`, error)
             documentEmptyElement.appendChild(GET_NULL_ELEMENT());
@@ -25,12 +25,10 @@ function fillDocumentWithTemplates(){
 }
 
 function fetchTemplateJsonDefinition(templateName){
-    console.log(`Loading template: ${templateName}\n`);
+    console.log(`Fetching template: ${templateName}\n`);
     console.log(`directory: ../json/templates/${templateName}.json\n`);
 
-    return fetch(`../json/templates/${templateName}.json`)
-        .then(response => response.json())
-        .then(templateJsonDefinition => { return templateJsonDefinition; });
+    return fetch(`../json/templates/${templateName}.json`).then(response => response.json());
 }
 
 function parseJsonTemplateToHtml(templateJsonDefinition) {
