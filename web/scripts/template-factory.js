@@ -1,29 +1,9 @@
-// We have to fetch json but this is a dummy json --------
-
-const jsonDummy = {
-    tag: {
-        name: "div",
-        id: "test-id",
-        classes: ["blue-background", "absolute-screen-center"],
-        children: [{
-            tag: {
-                name: "span",
-                id: "test-span",
-                classes: ["big-text", "absolute-screen-center"],
-                innerText: "Hello World."
-            }
-        }]
-    }
-}
-// --------------------------------------------------------------
-
 // MAIN
-
 fillDocumentWithTemplates();
 
 // FUNCTIONS
 const GET_NULL_ELEMENT = function () {
-    let nullElement = document.createElement("div")
+    const nullElement = document.createElement("div")
     nullElement.classList.add("NULL_ELEMENT");
     return nullElement;
 }
@@ -32,17 +12,22 @@ function fillDocumentWithTemplates(){
     const documentEmptyElementList = document.querySelectorAll(".template");
     for(const documentEmptyElement of documentEmptyElementList){
         const templateName = documentEmptyElement.getAttribute("template-name");
-        const templateJsonDefinition = fetchJsonTemplateDefinition(templateName);
-        const newElement = document.createDocumentFragment().appendChild(parseJsonTemplateToHtml(templateJsonDefinition));
 
-        documentEmptyElement.appendChild(newElement);
+        fetchTemplateJsonDefinition(templateName, documentEmptyElement).then(templateJsonDefinition => {
+            const newElement = new DocumentFragment()
+            newElement.appendChild(parseJsonTemplateToHtml(templateJsonDefinition));
+            documentEmptyElement.appendChild(newElement);
+        }).catch(error => console.error(`Error loading template: ${templateName}`, error));
     }
 }
 
-function fetchJsonTemplateDefinition(templateName){
-    // TODO: Asynchronous template json definition fetch
-    console.log(`Loading template: ${templateName}`);
-    return jsonDummy;
+function fetchTemplateJsonDefinition(templateName){
+    console.log(`Loading template: ${templateName}\n`);
+    console.log(`directory: ../json/templates/${templateName}.json`);
+
+    return fetch(`../json/templates/${templateName}.json`)
+        .then(response => response.json())
+        .then(templateJsonDefinition => { return templateJsonDefinition; })
 }
 
 function parseJsonTemplateToHtml(templateJsonDefinition) {
