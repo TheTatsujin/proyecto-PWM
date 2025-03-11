@@ -18,10 +18,8 @@ const jsonDummy = {
 // --------------------------------------------------------------
 
 // MAIN
-const newElement = document.createDocumentFragment().appendChild(parseJsonTemplateToHtml(jsonDummy));
 
-document.querySelector("#template-name").appendChild(newElement);
-
+fillDocumentWithTemplates();
 
 // FUNCTIONS
 const GET_NULL_ELEMENT = function () {
@@ -30,6 +28,22 @@ const GET_NULL_ELEMENT = function () {
     return nullElement;
 }
 
+function fillDocumentWithTemplates(){
+    const documentEmptyTags = document.querySelectorAll(".template");
+    for(const elementKey of documentEmptyTags){
+        const templateName = documentEmptyTags[elementKey].getAttribute("template-name");
+        const templateJsonDefinition = fetchJsonTemplateDefinition(templateName);
+        const newElement = document.createDocumentFragment().appendChild(parseJsonTemplateToHtml(templateJsonDefinition));
+
+        documentEmptyTags[elementKey].appendChild(newElement);
+    }
+}
+
+function fetchJsonTemplateDefinition(templateName){
+    // TODO: Asynchronous template json definition fetch
+    console.log(templateName);
+    return jsonDummy;
+}
 
 function parseJsonTemplateToHtml(templateJsonDefinition) {
     if (!templateJsonDefinition || !templateJsonDefinition.tag || !templateJsonDefinition.tag.name)
