@@ -17,17 +17,20 @@ function fillDocumentWithTemplates(){
             const newElement = new DocumentFragment()
             newElement.appendChild(parseJsonTemplateToHtml(templateJsonDefinition));
             documentEmptyElement.appendChild(newElement);
-        }).catch(error => console.error(`Error loading template: ${templateName}`, error));
+        }).catch(error => {
+            console.error(`Error loading template: ${templateName}`, error)
+            documentEmptyElement.appendChild(GET_NULL_ELEMENT());
+        });
     }
 }
 
 function fetchTemplateJsonDefinition(templateName){
     console.log(`Loading template: ${templateName}\n`);
-    console.log(`directory: ../json/templates/${templateName}.json`);
+    console.log(`directory: ../json/templates/${templateName}.json\n`);
 
     return fetch(`../json/templates/${templateName}.json`)
         .then(response => response.json())
-        .then(templateJsonDefinition => { return templateJsonDefinition; })
+        .then(templateJsonDefinition => { return templateJsonDefinition; });
 }
 
 function parseJsonTemplateToHtml(templateJsonDefinition) {
