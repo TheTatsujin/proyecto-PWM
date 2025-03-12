@@ -14,16 +14,31 @@
 <header xlu-include-file="../templates/second-header.html" class="bg-black">
 </header>
 
-<main>
-  <article xlu-include-file="../templates/artist-banner.html"></article>
-  <article xlu-include-file="../templates/artist-banner.html"></article>
-  <article xlu-include-file="../templates/artist-banner.html"></article>
-  <article xlu-include-file="../templates/artist-banner.html"></article>
+<main id="artist-banner-container">
 </main>
 
 <footer xlu-include-file="../templates/footer.html">
 </footer>
 
 </body>
-<script>xLuIncludeFile();</script>
+
+<!-- TEMPLATES -->
+<template id="artist-banner-template" target-id="artist-banner-container" content-data-file="artists">
+    <figure class="artist-banner bg-black border-turquoise">
+        <img class="artist-image" src="" alt="Artist Banner" data-content-key="image">
+        <figcaption class="artist-caption color-turquoise bg-black border-turquoise" data-content-key="name">
+            NULL
+        </figcaption>
+        <figcaption class="date-caption color-white">
+            <h2>DATES</h2>
+            <ul>
+                <li><span data-content-key="location"></span><br><span data-content-key="date"></span></li>
+            </ul>
+        </figcaption>
+    </figure>
+</template>
+
 </html>
+
+<script src="../scripts/template-builder.js"></script>
+<script>xLuIncludeFile();</script>
