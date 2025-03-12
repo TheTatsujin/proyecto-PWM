@@ -14,7 +14,7 @@ function buildAllPageTemplates(){
 
         (!contentDataFileName) ? templateTargetElement.appendChild(templateDocumentFragment) :
         fetchContentDataFromFile(contentDataFileName)
-            .then(contentDataFileJson => buildAllTemplatesFromJson(templateDocumentFragment, contentDataFileJson, contentDataFileName))
+            .then(contentDataJson => buildAllTemplatesFromJson(templateDocumentFragment, contentDataJson[contentDataFileName]))
             .then(templateWithContentDataDocumentFragment =>
                 templateTargetElement.appendChild(templateWithContentDataDocumentFragment)
             );
@@ -22,13 +22,12 @@ function buildAllPageTemplates(){
 }
 
 // TODO: No añade todos los templates con los datos de json, solo el primero
-function buildAllTemplatesFromJson(templateDocumentFragment, contentDataFileJson, contentDataFileName){
+function buildAllTemplatesFromJson(templateDocumentFragment, contentDataList){
     const contentDataDocumentFragment = document.createDocumentFragment();
 
-    for (const contentData of contentDataFileJson[contentDataFileName]) {
+    for (const contentData of contentDataList) {
         console.log(contentData);
         for (const child of templateDocumentFragment.children) {
-
             contentDataDocumentFragment.appendChild(buildNodeContent(child, contentData));
         }
     }
