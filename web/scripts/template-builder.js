@@ -3,7 +3,6 @@
 buildAllPageTemplates();
 
 // FUNCTIONS
-
 function buildAllPageTemplates(){
     const templateList = document.querySelectorAll("template");
     for (const template of templateList){
@@ -15,24 +14,25 @@ function buildAllPageTemplates(){
         (!contentDataFileName) ? templateTargetElement.appendChild(templateDocumentFragment) :
         fetchContentDataFromFile(contentDataFileName)
             .then(contentDataJson => buildAllTemplatesFromJson(templateDocumentFragment, contentDataJson[contentDataFileName]))
-            .then(templateWithContentDataDocumentFragment =>
-                templateTargetElement.appendChild(templateWithContentDataDocumentFragment)
+            .then(allTemplatesWithContentDataDocumentFragment =>
+                templateTargetElement.appendChild(allTemplatesWithContentDataDocumentFragment)
             );
     }
 }
 
-// TODO: No añade todos los templates con los datos de json, solo el primero
 function buildAllTemplatesFromJson(templateDocumentFragment, contentDataList){
-    const contentDataDocumentFragment = document.createDocumentFragment();
+    const allContentDataTemplatesDocumentFragment = document.createDocumentFragment();
 
     for (const contentData of contentDataList) {
-        console.log(contentData);
+        const contentDataDocumentFragment = document.createDocumentFragment();
         for (const child of templateDocumentFragment.children) {
-            contentDataDocumentFragment.appendChild(buildNodeContent(child, contentData));
+            contentDataDocumentFragment.appendChild(buildElementContent(child.cloneNode(true), contentData));
         }
+
+        allContentDataTemplatesDocumentFragment.appendChild(contentDataDocumentFragment);
     }
 
-    return contentDataDocumentFragment;
+    return allContentDataTemplatesDocumentFragment;
 }
 
 
@@ -45,16 +45,17 @@ function fetchContentDataFromFile(contentDataFileName) {
         });
 }
 
-function buildNodeContent(node, nodeContentData){
-    if (!nodeContentData) return node;
+function buildElementContent(elementEmpty, elementContentData){
+    if (!elementContentData) return elementEmpty;
+    const contentDataKey = elementEmpty.getAttribute("data-content-key");
 
-    const contentDataKey = node.getAttribute("data-content-key");
-    // TODO: En (../pages/template-loading-test.html) no carga el text de "artist-caption"
     if (contentDataKey){
-        if (contentDataKey === "image") node.setAttribute("src", nodeContentData[contentDataKey]);
-        else node.innerText = nodeContentData[contentDataKey];
+        if (contentDataKey === "image") elementEmpty.setAttribute("src", elementContentData[contentDataKey]);
+        else elementEmpty.innerText = elementContentData[contentDataKey];
     }
 
-    for (const child of node.children) node.append(buildNodeContent(child, nodeContentData));
-    return node;
+    for (const child of Array.from(elementEmpty.children)) {
+        elementEmpty.append(buildElementContent(child, elementContentData));
+    }
+    return elementEmpty;
 }
