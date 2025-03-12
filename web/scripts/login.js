@@ -8,7 +8,7 @@ function addLoginSubmitEventListener() {
             const password = document.getElementById("login_password");
             isRegistered(mail, password).then(isLogged => {
                 if (isLogged) {
-                    sessionStorage.setItem("login", mail);
+                    sessionStorage.setItem("login", mail.value);
                     location.href = "../pages/index.html";
                 }
             });
