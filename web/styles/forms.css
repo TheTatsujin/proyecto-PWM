@@ -60,10 +60,9 @@ form > .form-fields > .form_input-column {
     justify-content: space-between;
 }
 
-form > .form-fields > .form_input-column > input {
+form > .form-fields > .form_input-column > input, div {
     margin-left: 1.5em;
 }
-
 
 /* TODO: Make the fields look like the mockup */
 
