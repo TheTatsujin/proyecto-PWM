@@ -1,0 +1,12 @@
+{
+  "locations": [
+    {
+      "id": 1,
+      "name": "Arquitectura"
+    },
+    {
+      "id": 2,
+      "name": "Telecomunicaciones"
+    }
+  ]
+}
