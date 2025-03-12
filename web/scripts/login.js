@@ -1,6 +1,13 @@
+// Timeout is for wait to xlu-include-file
+
+function validationInitialization() {
+    setTimeout(function() {
+        addClearValidationErrorsWhenInput()
+    }, 1000);
+}
+
 function addLoginSubmitEventListener() {
     setTimeout(function() {
-        addClearValidationErrorsWhenInput() // [TODO REMOVE THIS COMMENT] Just here to use the timeout
         const loginSubmit = document.getElementById("login_form");
         loginSubmit.addEventListener("submit", ev => {
             ev.preventDefault();
@@ -21,12 +28,12 @@ function isRegistered(mail, password) {
         .then(response => response.json())
         .then(userData => {
             if (userData["email"] !== mail.value) {
-                mail.setCustomValidity("This address is not registered.");
+                mail.setCustomValidity("Esta dirección de correo electrónica no está registrada.");
                 mail.reportValidity();
                 return false;
             }
             if (userData["password"] !== atob(password.value)) {
-                password.setCustomValidity("This password is not correct.");
+                password.setCustomValidity("La contraseña no es correcta.");
                 password.reportValidity();
                 return false;
             }
