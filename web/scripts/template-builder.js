@@ -9,7 +9,7 @@ function buildAllPageTemplates(){
         const templateDocumentFragment = template.content.cloneNode(true);
         const templateTargetID = template.getAttribute("target-id");
         const templateTargetElement = document.querySelector(`#${templateTargetID}`);
-        const contentDataFileName = template.getAttribute("data-content-file");
+        const contentDataFileName = template.getAttribute("content-data-file");
 
         (!contentDataFileName) ? templateTargetElement.appendChild(templateDocumentFragment) :
         fetchContentDataFromFile(contentDataFileName)
@@ -18,6 +18,16 @@ function buildAllPageTemplates(){
                 templateTargetElement.appendChild(allTemplatesWithContentDataDocumentFragment)
             );
     }
+}
+
+
+function fetchContentDataFromFile(contentDataFileName) {
+    return fetch(`../json/data/${contentDataFileName}.json`)
+        .then(response => response.json()).
+        catch(error => {
+            console.error(`Error fetching data from ${contentDataFileName} file: `, error)
+            return {};
+        });
 }
 
 function buildAllTemplatesFromJson(templateDocumentFragment, contentDataList){
@@ -35,15 +45,6 @@ function buildAllTemplatesFromJson(templateDocumentFragment, contentDataList){
     return allContentDataTemplatesDocumentFragment;
 }
 
-
-function fetchContentDataFromFile(contentDataFileName) {
-    return fetch(`../json/data/${contentDataFileName}.json`)
-        .then(response => response.json()).
-        catch(error => {
-            console.error(`Error fetching data from ${contentDataFileName} file: `, error)
-            return {};
-        });
-}
 
 function buildElementContent(elementEmpty, elementContentData){
     if (!elementContentData) return elementEmpty;
