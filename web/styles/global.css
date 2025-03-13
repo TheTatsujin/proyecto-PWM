@@ -134,6 +134,15 @@ header #logo {
     padding: .2em;
 }
 
+.text-medium {
+    font-size: 2.1em;
+}
+
+.center-content {
+    margin: auto;
+}
+
+
 /* Footer bar */
 
 footer {

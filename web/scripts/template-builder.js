@@ -1,16 +1,17 @@
+import {logoutButton, returnButtonDynamicRouting, updateHeaderWithUserSection} from "./session-manager.js";
+
 document.addEventListener('DOMContentLoaded', async () =>
-    templatesBuildAll().then(_ => updateHeaderWithUserSection())
+    templatesBuildAll()
+        .then(_ => updateHeaderWithUserSection())
+        .then(_ => returnButtonDynamicRouting())
+        .then(_ => logoutButton())
 );
-
-
-
 
 
 async function templatesBuildAll() {
     const allTemplateContainers = document.querySelectorAll(".template-container")
     for( const templateContainer of allTemplateContainers )
         await buildTemplateForElement(templateContainer);
-
 }
 
 async function buildTemplateForElement(targetElement){
