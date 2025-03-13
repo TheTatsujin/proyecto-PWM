@@ -7,6 +7,10 @@
     {
       "id": 2,
       "name": "Telecomunicaciones"
+    },
+    {
+      "id": 3,
+      "name": "Empresariales"
     }
   ]
 }
