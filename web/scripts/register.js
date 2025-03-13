@@ -14,6 +14,9 @@ function addRegisterListener() {
             const password = document.getElementById("password");
             const passwordConfirm = document.getElementById("confirm-password");
             if (checkRegister(email, phoneNumber, password, passwordConfirm)) {
+                const name = document.getElementById("name");
+                const birthdate = document.getElementById("birthdate");
+                sessionStorage.setItem("login", email.value);
                 location.href = "../pages/index.html";
             }
         })
@@ -22,7 +25,7 @@ function addRegisterListener() {
 
 function checkRegister(email, phoneNumber, password, passwordConfirm) {
 
-    if (!/[0-9]{3}[- ]?[0-9]{3}[- ]?[0-9]{3}/.test(phoneNumber)) {
+    if (!/[0-9]{3}[- ]?[0-9]{3}[- ]?[0-9]{3}/.test(phoneNumber.value)) {
         phoneNumber.setCustomValidity("Phone number must be only 9 numeric digits.");
         phoneNumber.reportValidity();
         return false;
@@ -34,14 +37,22 @@ function checkRegister(email, phoneNumber, password, passwordConfirm) {
         return false;
     }
 
-    if (!/(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}/.test(password)) {
+    if (!/(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}/.test(password.value)) {
         password.setCustomValidity("Password must contain at least 8 characters, lowercase and uppercase.");
         password.reportValidity();
         return false;
     }
 
-    return true;
-
+    fetch("../json/data/user.json")
+        .then(response => response.json())
+        .then(userData => {
+            if (userData["email"] === email.value) {
+                email.setCustomValidity("Email address already exists.");
+                email.reportValidity();
+                return false;
+            }
+            return true;
+        }).catch(err => console.log(err));
 }
 
 function addClearValidationErrorsWhenInput() {
@@ -57,7 +68,3 @@ function clearValidationErrors() {
     document.getElementById("confirm-password").setCustomValidity("");
     document.getElementById("phone-number").setCustomValidity("");
 }
-
-
-//phone pattern="6[0-9]{2}[- ]?[0-9]{3}[- ]?[0-9]{3}"
-// password pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}"
