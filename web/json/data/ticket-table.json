@@ -1,14 +1,16 @@
 {
-  "left-column-header": "One day Passes",
-  "center-column-header": "Two day Passes",
-  "right-column-header": "Three day Passes",
-  "normal-ticket-left": "Normal Ticket 150$",
-  "normal-ticket-center": "Normal Ticket 300$",
-  "normal-ticket-right": "Normal Ticket 400$",
-  "early-ticket-left": "Early Access Ticket 300$",
-  "early-ticket-center": "Early Access Ticket 600$",
-  "early-ticket-right": "Early Access Ticket 800$",
-  "vip-ticket-left": "VIP Ticket 1000$",
-  "vip-ticket-center": "VIP Ticket 1500$",
-  "vip-ticket-right": "VIP Ticket 2000$"
+  "ticket-table" : [{
+      "one-day-header": "One day Passes",
+      "two-day-header": "Two day Passes",
+      "three-day-header": "Three day Passes",
+      "one-day-normal-ticket": "Normal Ticket 150$",
+      "two-day-normal-ticket": "Normal Ticket 300$",
+      "three-day-normal-ticket": "Normal Ticket 400$",
+      "one-day-early-ticket": "Early Access Ticket 300$",
+      "two-day-early-ticket": "Early Access Ticket 600$",
+      "three-day-early-ticket": "Early Access Ticket 800$",
+      "one-day-vip-ticket": "VIP Ticket 1000$",
+      "two-day-vip-ticket": "VIP Ticket 1500$",
+      "three-day-vip-ticket": "VIP Ticket 2000$"
+    }]
 }

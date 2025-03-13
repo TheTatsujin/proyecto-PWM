@@ -1,12 +1,10 @@
-<head>
-  <script src="../scripts/xlu-include-file.js"></script>
-</head>
-<nav class="header_left-nav" xlu-include-file="../templates/return-button.html">
-</nav>
-<button class="btn-main font-sudovar color-violet bg-black border-violet header-text" id="account-section"
-        onclick="location.href='login.html'">
-  Iniciar Sesion
-</button>
-<script>
-  xLuIncludeFile();
-</script>
+<template>
+  <nav class="template-container header_left-nav">
+    <button class="btn-return color-turquoise border-turquoise bg-black"
+            onclick="location.href='../pages/index.html'"><</button>
+  </nav>
+  <button class="btn-main font-sudovar color-violet bg-black border-violet header-text" id="account-section"
+          onclick="location.href='login.html'">
+    Iniciar Sesion
+  </button>
+</template>

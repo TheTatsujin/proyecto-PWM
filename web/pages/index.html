@@ -2,7 +2,7 @@
 <html lang="es">
 <head>
     <meta charset="UTF-8">
-    <script src="../scripts/xlu-include-file.js"></script>
+    <script src="../scripts/template-builder.js"></script>
     <script src="../scripts/global.js"></script>
     <link rel="icon" type="image/x-icon" href="../images/icons/favicon.png">
     <link rel="stylesheet" href="../styles/global.css">
@@ -11,8 +11,7 @@
     <title>PWM</title>
 </head>
 <body class="bg-image">
-    <header xlu-include-file="../templates/header.html" class="bg-black">
-    </header>
+    <header class="template-container bg-black" template-id="header"></header>
     <main>
         <img id="main-image" src="../images/the-festival2.png" alt="The festival image">
         <section id="main-button-section">
@@ -33,15 +32,10 @@
             <figure>
                 <img class="border-violet" src="../images/monkey-faq.png" alt="Monkey FAQ image">
             </figure>
-            <section id="faq-questions">
-                <article xlu-include-file="../templates/accordion.html"></article>
-                <article    xlu-include-file="../templates/accordion.html"></article>
-                <article xlu-include-file="../templates/accordion.html"></article>
-                <article xlu-include-file="../templates/accordion.html"></article>
-            </section>
+            <section id="faq-questions" class="template-container" template-id="accordion"></section>
         </article>
     </main>
-    <footer xlu-include-file="../templates/footer.html"></footer>
+    <footer class="template-container" template-id="footer"></footer>
 </body>
 <script>
     xLuIncludeFile();
