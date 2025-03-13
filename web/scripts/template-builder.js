@@ -1,17 +1,27 @@
-document.addEventListener('DOMContentLoaded', () =>
-    document.querySelectorAll(".template-container")
-        .forEach(targetElement => buildTemplateForElement(targetElement))
+document.addEventListener('DOMContentLoaded', async () =>
+    templatesBuildAll().then(_ => updateHeaderWithUserSection())
 );
 
-function buildTemplateForElement(targetElement){
+
+
+
+
+async function templatesBuildAll() {
+    const allTemplateContainers = document.querySelectorAll(".template-container")
+    for( const templateContainer of allTemplateContainers )
+        await buildTemplateForElement(templateContainer);
+
+}
+
+async function buildTemplateForElement(targetElement){
     const templateId = targetElement.getAttribute("template-id");
 
     if (!templateId) {
         console.error("No template id found for\n", targetElement);
     }
     else {
-        fetchTemplateFromFile(templateId)
-            .then(template => buildTargetElementWithTemplate(targetElement, template));
+        const template = await fetchTemplateFromFile(templateId);
+        await buildTargetElementWithTemplate(targetElement, template);
     }
 }
 
@@ -24,15 +34,18 @@ function fetchTemplateFromFile(templateFileName){
 }
 
 
-function buildTargetElementWithTemplate(templateTargetElement, template){
+async function buildTargetElementWithTemplate(templateTargetElement, template){
     const templateDocumentFragment = template.content.cloneNode(true);
     const contentDataFileName = template.getAttribute("content-data-file");
-    (!contentDataFileName) ? templateTargetElement.appendChild(templateDocumentFragment) :
-        fetchContentDataFromFile(contentDataFileName)
-            .then(contentDataJson => buildAllTemplatesFromJson(templateDocumentFragment, contentDataJson[contentDataFileName]))
-            .then(allTemplatesWithContentDataDocumentFragment =>
-                templateTargetElement.appendChild(allTemplatesWithContentDataDocumentFragment)
-            );
+    if (!contentDataFileName) {
+        templateTargetElement.appendChild(templateDocumentFragment);
+    }
+    else {
+        const contentDataJson = await fetchContentDataFromFile(contentDataFileName);
+        const allTemplatesWithContentDataDocumentFragment =
+            buildAllTemplatesFromJson(templateDocumentFragment, contentDataJson[contentDataFileName]);
+        templateTargetElement.appendChild(allTemplatesWithContentDataDocumentFragment);
+    }
 
 }
 
@@ -53,7 +66,6 @@ function buildAllTemplatesFromJson(templateDocumentFragment, contentDataList){
         for (const child of templateDocumentFragment.children) {
             contentDataDocumentFragment.appendChild(buildTemplateElementContent(child.cloneNode(true), contentData));
         }
-
         allContentDataTemplatesDocumentFragment.appendChild(contentDataDocumentFragment);
     }
 
