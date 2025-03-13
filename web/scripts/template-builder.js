@@ -3,7 +3,6 @@ document.addEventListener('DOMContentLoaded', () =>
         .forEach(targetElement => buildTemplateForElement(targetElement))
 );
 
-
 function buildTemplateForElement(targetElement){
     const templateId = targetElement.getAttribute("template-id");
 
@@ -64,7 +63,7 @@ function buildAllTemplatesFromJson(templateDocumentFragment, contentDataList){
 
 function buildTemplateElementContent(elementEmpty, elementContentData){
     if (!elementContentData) return elementEmpty;
-    const contentDataKey = elementEmpty.getAttribute("data-content-key");
+    const contentDataKey = elementEmpty.getAttribute("content-data-key");
 
     if (contentDataKey){
         if (contentDataKey === "image") elementEmpty.setAttribute("src", elementContentData[contentDataKey]);
