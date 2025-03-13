@@ -1,24 +1,39 @@
-// MAIN
+document.addEventListener('DOMContentLoaded', () => buildAllPageTemplates());
 
-buildAllPageTemplates();
 
-// FUNCTIONS
 function buildAllPageTemplates(){
-    const templateList = document.querySelectorAll("template");
-    for (const template of templateList){
-        const templateDocumentFragment = template.content.cloneNode(true);
-        const templateTargetID = template.getAttribute("target-id");
-        const templateTargetElement = document.querySelector(`#${templateTargetID}`);
-        const contentDataFileName = template.getAttribute("content-data-file");
+    const targetElementList = document.querySelectorAll(".template-container");
+    for (const targetElement of targetElementList){
+        const templateId = targetElement.getAttribute("template-id");
 
-        (!contentDataFileName) ? templateTargetElement.appendChild(templateDocumentFragment) :
+        (!templateId) ? console.error("No template id found for\n", targetElement) :
+            fetchTemplateFromFile(templateId)
+            .then(template => buildTargetElementWithTemplate(targetElement, template));
+    }
+}
+
+function fetchTemplateFromFile(templateFileName){
+    return fetch(`../templates/${templateFileName}.html`)
+        .catch(error => console.error(`Error fetching data from template ${templateFileName}: `, error))
+        .then(response => response.text())
+        .then(htmlText =>  new DOMParser().parseFromString(htmlText, 'text/html') )
+        .then(templateDocument => templateDocument.querySelector("template"));
+}
+
+
+function buildTargetElementWithTemplate(templateTargetElement, template){
+    const templateDocumentFragment = template.content.cloneNode(true);
+    const contentDataFileName = template.getAttribute("content-data-file");
+
+    (!contentDataFileName) ? templateTargetElement.appendChild(templateDocumentFragment) :
         fetchContentDataFromFile(contentDataFileName)
             .then(contentDataJson => buildAllTemplatesFromJson(templateDocumentFragment, contentDataJson[contentDataFileName]))
             .then(allTemplatesWithContentDataDocumentFragment =>
                 templateTargetElement.appendChild(allTemplatesWithContentDataDocumentFragment)
             );
-    }
+
 }
+
 
 
 function fetchContentDataFromFile(contentDataFileName) {

@@ -2,8 +2,8 @@
 <html lang="es">
 <head>
     <meta charset="UTF-8">
-    <script src="../scripts/xlu-include-file.js"></script>
     <link rel="icon" type="image/x-icon" href="../images/icons/favicon.png">
+    <script src="../scripts/template-builder.js"></script>
     <link rel="stylesheet" href="../styles/global.css">
     <link rel="stylesheet" href="../styles/buttons.css">
     <link rel="stylesheet" href="../styles/banners.css">
@@ -11,34 +11,11 @@
 </head>
 <body class="bg-black">
 
-<header xlu-include-file="../templates/second-header.html" class="bg-black">
-</header>
+<header class="template-container" template-id="header"></header>
 
-<main id="artist-banner-container">
-</main>
+<main class="template-container" template-id="artist-banner"></main>
 
-<footer xlu-include-file="../templates/footer.html">
-</footer>
+<footer class="template-container" template-id="footer"></footer>
 
 </body>
-
-<!-- TEMPLATES -->
-<template id="artist-banner-template" target-id="artist-banner-container" content-data-file="artists">
-    <figure class="artist-banner bg-black border-turquoise">
-        <img class="artist-image" src="" alt="Artist Banner" data-content-key="image">
-        <figcaption class="artist-caption color-turquoise bg-black border-turquoise" data-content-key="name">
-            NULL
-        </figcaption>
-        <figcaption class="date-caption color-white">
-            <h2>DATES</h2>
-            <ul>
-                <li><span data-content-key="location"></span><br><span data-content-key="date"></span></li>
-            </ul>
-        </figcaption>
-    </figure>
-</template>
-
 </html>
-
-<script src="../scripts/template-builder.js"></script>
-<script>xLuIncludeFile();</script>

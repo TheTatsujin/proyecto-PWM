@@ -1,10 +1,13 @@
-<figure class="artist-banner bg-black border-turquoise">
-    <img class="artist-image" src="../images/artist3.png" alt="Artist Banner">
-    <figcaption class="artist-caption color-turquoise bg-black border-turquoise">_void()</figcaption>
-    <figcaption class="date-caption color-white">
-        <h2>DATES</h2>
-        <ul>
-            <li>TAFIRA 12-05-2025</li>
-        </ul>
-    </figcaption>
-</figure>
+<template id="artist-banner-template" content-data-file="artists">
+    <figure class="artist-banner bg-black border-turquoise">
+        <img class="artist-image" src="" alt="Artist Banner" data-content-key="image">
+        <figcaption class="artist-caption color-turquoise bg-black border-turquoise" data-content-key="name">
+        </figcaption>
+        <figcaption class="date-caption color-white">
+            <h2>DATES</h2>
+            <ul>
+                <li><span data-content-key="location"></span><br><span data-content-key="date"></span></li>
+            </ul>
+        </figcaption>
+    </figure>
+</template>
