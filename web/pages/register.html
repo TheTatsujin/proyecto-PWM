@@ -2,8 +2,8 @@
 <html lang="es" xmlns="">
 <head>
     <meta charset="UTF-8">
-    <script src="../scripts/xlu-include-file.js"></script>
     <script src="../scripts/register.js"></script>
+    <script src="../scripts/template-builder.js"></script>
     <link rel="icon" type="image/x-icon" href="../images/icons/favicon.png">
     <link rel="stylesheet" href="../styles/global.css">
     <link rel="stylesheet" href="../styles/buttons.css">
@@ -12,12 +12,9 @@
 </head>
 <body class="bg-black">
 
-    <main>
-        <article xlu-include-file="../templates/register-form.html"></article>
-    </main>
+    <main class="template-container" template-id="register-form"></main>
 
 </body>
-<script>xLuIncludeFile();</script>
 <script>clearValidationsListener();</script>
 <script>addRegisterListener();</script>
 </html>

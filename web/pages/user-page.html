@@ -2,51 +2,47 @@
 <html lang="es">
 <head>
     <meta charset="UTF-8">
-    <script src="../scripts/xlu-include-file.js"></script>
     <link rel="icon" type="image/x-icon" href="../images/icons/favicon.png">
+    <script src="../scripts/template-builder.js"></script>
     <link rel="stylesheet" href="../styles/global.css">
     <link rel="stylesheet" href="../styles/buttons.css">
     <link rel="stylesheet" href="../styles/forms.css">
     <title>Account</title>
 </head>
 <body class="bg-black">
-<header>
-    <button class="btn-return color-turquoise border-turquoise bg-black"
-            onclick="location.href='index.html'"><</button>
-</header>
-<main class="color-turquoise">
-    <section id = "user-page" class="bg-black border-turquoise form-box">
-        <div class="form-header">
-            <a id="profile-link" href="#">
-                <img id="profile-picture" src="../images/icons/man-user-circle-icon.svg" alt="profile picture" height="64" width="64">
-            </a>
-            <h1 class="color-turquoise font-tektur">Welcome pepe</h1>
-        </div>
-        <form id="user-page-form">
-            <div class="form-fields">
-                <div class="form_label-column">
-                    <label class="form-label color-turquoise font-sudovar">Full name: </label>
-                    <label class="form-label color-turquoise font-sudovar">Email: </label>
-                    <label class="form-label color-turquoise font-sudovar">Phone number :</label>
-                    <label class="form-label color-turquoise font-sudovar">Birthdate: </label>
-                    <label class="form-label color-turquoise font-sudovar">Your tickets:</label>
-                </div>
-                <div class="form_input-column">
-                    <label class="color-white font-sudovar" id="full-name-field" name=""> Pepe Jimenez</label>
-                    <label class="color-white font-sudovar" id="email-field" name=""> good@email.com</label>
-                    <label class="color-white font-sudovar" id="phone-number-field" name=""> 6AA-BBC-CEV</label>
-                    <label class="color-white font-sudovar" id="birthdate-number-field" name=""> 28/08/1981</label>
-                    <label class="color-white font-sudovar" id="tickets" name=""> [none]</label>
-                </div>
-
+    <header>
+        <button class="btn-return color-turquoise border-turquoise bg-black"
+                onclick="location.href='index.html'"><</button>
+    </header>
+    <main class="color-turquoise">
+        <section id = "user-page" class="bg-black border-turquoise form-box">
+            <div class="form-header">
+                <a id="profile-link" href="#">
+                    <img id="profile-picture" src="../images/icons/man-user-circle-icon.svg" alt="profile picture" height="64" width="64">
+                </a>
+                <h1 class="color-turquoise font-tektur">Welcome pepe</h1>
             </div>
-        </form>
-    </section>
-</main>
-<footer xlu-include-file="../templates/footer.html">
-</footer>
+            <form id="user-page-form">
+                <div class="form-fields">
+                    <div class="form_label-column">
+                        <label class="form-label color-turquoise font-sudovar">Full name: </label>
+                        <label class="form-label color-turquoise font-sudovar">Email: </label>
+                        <label class="form-label color-turquoise font-sudovar">Phone number :</label>
+                        <label class="form-label color-turquoise font-sudovar">Birthdate: </label>
+                        <label class="form-label color-turquoise font-sudovar">Your tickets:</label>
+                    </div>
+                    <div class="form_input-column">
+                        <label class="color-white font-sudovar" id="full-name-field" name=""> Pepe Jimenez</label>
+                        <label class="color-white font-sudovar" id="email-field" name=""> good@email.com</label>
+                        <label class="color-white font-sudovar" id="phone-number-field" name=""> 6AA-BBC-CEV</label>
+                        <label class="color-white font-sudovar" id="birthdate-number-field" name=""> 28/08/1981</label>
+                        <label class="color-white font-sudovar" id="tickets" name=""> [none]</label>
+                    </div>
+
+                </div>
+            </form>
+        </section>
+    </main>
+    <footer class="template-container" template-id="footer"></footer>
 </body>
-<script>
-    xLuIncludeFile();
-</script>
 </html>
