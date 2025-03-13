@@ -2,7 +2,7 @@
 <html lang="es">
 <head>
     <meta charset="UTF-8">
-    <script src="../scripts/xlu-include-file.js"></script>
+    <script src="../scripts/template-builder.js"></script>
     <link rel="icon" type="image/x-icon" href="../images/icons/favicon.png">
     <link rel="stylesheet" href="../styles/global.css">
     <link rel="stylesheet" href="../styles/buttons.css">
@@ -10,8 +10,7 @@
     <title>PWM</title>
 </head>
 <body class="bg-image">
-    <header xlu-include-file="../templates/header.html" class="bg-black">
-    </header>
+    <header class="template-container bg-black" template-id="header"></header>
     <main>
         <img id="main-image" src="../images/the-festival2.png" alt="The festival image">
         <section id="main-button-section">
@@ -42,7 +41,4 @@
     </main>
     <footer xlu-include-file="../templates/footer.html"></footer>
 </body>
-<script>
-    xLuIncludeFile();
-</script>
 </html>
