@@ -1,0 +1,12 @@
+{
+  "faq": [
+    {
+    "question": "How many owls can I carry to the event?",
+    "answer": "As many as you want because we are throwing a party!"
+    },
+    {
+      "question": "How much are the event tickets?",
+      "answer": "You can look at our prices at the tickets section"
+    }
+  ]
+}
