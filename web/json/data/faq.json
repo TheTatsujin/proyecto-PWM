@@ -7,6 +7,10 @@
     {
       "question": "How much are the event tickets?",
       "answer": "You can look at our prices at the tickets section"
+    },
+    {
+      "question": "Will there be an event next year?",
+      "answer": "Of course, we are looking forward to seeing you next year!"
     }
   ]
 }
