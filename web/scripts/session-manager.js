@@ -26,7 +26,7 @@ export function returnButtonDynamicRouting(){
 
 }
 
-export function logoutButton(){
+export function logoutButtonAction(){
     const logoutButton = document.querySelector("#btn-logout");
     if (!logoutButton) return;
     logoutButton.addEventListener("click", () => {

@@ -1,10 +1,10 @@
-import {logoutButton, returnButtonDynamicRouting, updateHeaderWithUserSection} from "./session-manager.js";
+import {logoutButtonAction, returnButtonDynamicRouting, updateHeaderWithUserSection} from "./session-manager.js";
 
 document.addEventListener('DOMContentLoaded', async () =>
     templatesBuildAll()
         .then(_ => updateHeaderWithUserSection())
         .then(_ => returnButtonDynamicRouting())
-        .then(_ => logoutButton())
+        .then(_ => logoutButtonAction())
 );
 
 
@@ -17,9 +17,7 @@ async function templatesBuildAll() {
 async function buildTemplateForElement(targetElement){
     const templateId = targetElement.getAttribute("template-id");
 
-    if (!templateId) {
-        console.error("No template id found for\n", targetElement);
-    }
+    if (!templateId) console.error("No template id found for\n", targetElement);
     else {
         const template = await fetchTemplateFromFile(templateId);
         await buildTargetElementWithTemplate(targetElement, template);
@@ -36,26 +34,20 @@ function fetchTemplateFromFile(templateFileName){
 
 
 async function buildTargetElementWithTemplate(templateTargetElement, template){
-    const templateDocumentFragment = template.content.cloneNode(true);
+    let templateDocumentFragment = template.content.cloneNode(true);
+    let contentDataJsonList = [];
     const contentDataFileName = template.getAttribute("content-data-file");
     const sessionDataKey = template.getAttribute("content-session-data-key");
 
-    if (contentDataFileName) {
-        const contentDataJson = await fetchContentDataFromFile(contentDataFileName);
-        const allTemplatesWithContentDataDocumentFragment =
-            buildAllTemplatesFromJson(templateDocumentFragment, contentDataJson[contentDataFileName]);
-        templateTargetElement.appendChild(allTemplatesWithContentDataDocumentFragment);
-    }
-    else if (sessionDataKey) {
-        // TODO: refactor
-        const contentDataJson = sessionStorage.getItem(sessionDataKey);
-        const allTemplatesWithContentDataDocumentFragment =
-        buildAllTemplatesFromJson(templateDocumentFragment, [contentDataJson]);
-        templateTargetElement.appendChild(allTemplatesWithContentDataDocumentFragment);
-    }
-    else {
-        templateTargetElement.appendChild(templateDocumentFragment);
-    }
+
+    if (contentDataFileName) contentDataJsonList = await fetchContentDataFromFile(contentDataFileName)
+        .then(contentDataJsonParent => contentDataJsonParent[contentDataFileName]);
+    else if (sessionDataKey) contentDataJsonList = [JSON.parse(sessionStorage.getItem(sessionDataKey))];
+
+
+    templateDocumentFragment = buildAllTemplatesFromJson(templateDocumentFragment, contentDataJsonList);
+    templateTargetElement.appendChild(templateDocumentFragment);
+
 }
 
 function fetchContentDataFromFile(contentDataFileName) {
@@ -68,6 +60,8 @@ function fetchContentDataFromFile(contentDataFileName) {
 }
 
 function buildAllTemplatesFromJson(templateDocumentFragment, contentDataList){
+    if (contentDataList.length === 0) return templateDocumentFragment;
+
     const allContentDataTemplatesDocumentFragment = document.createDocumentFragment();
 
     for (const contentData of contentDataList) {
