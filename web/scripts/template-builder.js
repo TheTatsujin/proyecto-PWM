@@ -38,16 +38,24 @@ function fetchTemplateFromFile(templateFileName){
 async function buildTargetElementWithTemplate(templateTargetElement, template){
     const templateDocumentFragment = template.content.cloneNode(true);
     const contentDataFileName = template.getAttribute("content-data-file");
-    if (!contentDataFileName) {
-        templateTargetElement.appendChild(templateDocumentFragment);
-    }
-    else {
+    const sessionDataKey = template.getAttribute("content-session-data-key");
+
+    if (contentDataFileName) {
         const contentDataJson = await fetchContentDataFromFile(contentDataFileName);
         const allTemplatesWithContentDataDocumentFragment =
             buildAllTemplatesFromJson(templateDocumentFragment, contentDataJson[contentDataFileName]);
         templateTargetElement.appendChild(allTemplatesWithContentDataDocumentFragment);
     }
-
+    else if (sessionDataKey) {
+        // TODO: refactor
+        const contentDataJson = sessionStorage.getItem(sessionDataKey);
+        const allTemplatesWithContentDataDocumentFragment =
+        buildAllTemplatesFromJson(templateDocumentFragment, [contentDataJson]);
+        templateTargetElement.appendChild(allTemplatesWithContentDataDocumentFragment);
+    }
+    else {
+        templateTargetElement.appendChild(templateDocumentFragment);
+    }
 }
 
 function fetchContentDataFromFile(contentDataFileName) {
