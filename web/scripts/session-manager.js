@@ -1,4 +1,10 @@
 window.addEventListener('load', () => storePageVisited(window.location.href));
+window.addEventListener("pageshow", (event) => {
+    if (event.persisted) {
+        sessionStorage.removeItem("login");
+        location.reload();
+    }
+});
 
 
 export async function updateHeaderWithUserSection() {
