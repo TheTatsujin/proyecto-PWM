@@ -26,7 +26,7 @@ function addLoginSubmitEventListener() {
 async function isRegisteredOnStrapi(mail, password) {
     try {
 
-        const response = await fetch("http://localhost:1337/api/userpages", {
+        const response = await fetch(`http://localhost:1337/api/userpages?filters[email][$eq]=${email.value}`, {
             method: "GET",
             headers: {"Content-Type": "application/json"
             },
