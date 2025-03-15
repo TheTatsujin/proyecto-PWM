@@ -13,7 +13,7 @@ function addLoginSubmitEventListener() {
             ev.preventDefault();
             const mail = document.getElementById("login_email");
             const password = document.getElementById("login_password");
-            isRegistered(mail, password).then(isLogged => {
+            isRegisteredOnStrapi(mail, password).then(isLogged => {
                 if (isLogged) {
                     sessionStorage.setItem("login", mail.value);
                     location.href = "../pages/index.html";
@@ -21,6 +21,24 @@ function addLoginSubmitEventListener() {
             });
         })
     }, 1000);
+}
+
+async function isRegisteredOnStrapi(mail, password) {
+    try {
+
+        const response = await fetch("http://localhost:1337/api/userpages", {
+            method: "GET",
+            headers: {"Content-Type": "application/json"
+            },
+        });
+        const result = await response.json();
+        console.log(result);
+
+        return response.ok;
+    } catch (error) {
+        console.error("Error:", error);
+    }
+    return false;
 }
 
 function isRegistered(mail, password) {

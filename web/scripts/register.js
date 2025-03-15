@@ -4,26 +4,59 @@ function clearValidationsListener() {
     }, 1000);
 }
 
-function addRegisterListener() {
+async function addRegisterListener() {
     setTimeout(function () {
         const register = document.getElementById("register-form");
-        register.addEventListener("submit", ev => {
+        register.addEventListener("submit", async ev => {
             ev.preventDefault();
-            const email = document.getElementById("register-email");
-            const phoneNumber = document.getElementById("phone-number");
+            const email = document.getElementById("email");
+            const phoneNumber = document.getElementById("phoneNumber");
             const password = document.getElementById("password");
-            const passwordConfirm = document.getElementById("confirm-password");
-            if (checkRegister(email, phoneNumber, password, passwordConfirm)) {
-                const name = document.getElementById("name");
-                const birthdate = document.getElementById("birthdate");
-                sessionStorage.setItem("login", email.value);
-                location.href = "../pages/index.html";
+            const passwordConfirm = document.getElementById("confirmPassword");
+            const valid = await checkRegister(email, phoneNumber, password, passwordConfirm);
+
+            if (valid) {
+
+                const dataForm = {
+                    data: {
+                        name: document.getElementById("name").value,
+                        email: email.value,
+                        phoneNumber: phoneNumber.value,
+                        birthdate: document.getElementById("birthdate").value,
+                        password: password.value,
+                        confirmPassword: passwordConfirm.value,
+                        termsConditions: !!document.getElementById("termsConditions").value,
+                        receiveInformation: !!document.getElementById("receiveInformation").value,
+                        notifications: !!document.getElementById("notifications").value,
+                    }
+                }
+                try {
+                    const response = await fetch("http://localhost:1337/api/userpages", {
+                        method: "POST",
+                        headers: {"Content-Type": "application/json"
+                        },
+                        body: JSON.stringify(dataForm),
+                    });
+                    const result = await response.json();
+                    console.log(result);
+
+                    if (response.ok) {
+                        sessionStorage.setItem("login", email.value);
+                        location.href = "../pages/index.html";
+                    }
+                    else {
+                        console.error(result);
+                    }
+                } catch (error) {
+                    console.error("Error:", error);
+                }
+
             }
         })
     }, 1000);
 }
 
-function checkRegister(email, phoneNumber, password, passwordConfirm) {
+async function checkRegister(email, phoneNumber, password, passwordConfirm) {
 
     if (!/[0-9]{3}[- ]?[0-9]{3}[- ]?[0-9]{3}/.test(phoneNumber.value)) {
         phoneNumber.setCustomValidity("Phone number must be only 9 numeric digits.");
@@ -43,7 +76,7 @@ function checkRegister(email, phoneNumber, password, passwordConfirm) {
         return false;
     }
 
-    fetch("../json/data/user.json")
+    return fetch("../json/data/user.json")
         .then(response => response.json())
         .then(userData => {
             if (userData["email"] === email.value) {
@@ -56,15 +89,15 @@ function checkRegister(email, phoneNumber, password, passwordConfirm) {
 }
 
 function addClearValidationErrorsWhenInput() {
-    document.getElementById("register-email").addEventListener("submit", () => clearValidationErrors());
+    document.getElementById("email").addEventListener("submit", () => clearValidationErrors());
     document.getElementById("password").addEventListener("submit", () => clearValidationErrors());
-    document.getElementById("confirm-password").addEventListener("submit", () => clearValidationErrors());
-    document.getElementById("phone-number").addEventListener("submit", () => clearValidationErrors());
+    document.getElementById("confirmPassword").addEventListener("submit", () => clearValidationErrors());
+    document.getElementById("phoneNumber").addEventListener("submit", () => clearValidationErrors());
 }
 
 function clearValidationErrors() {
-    document.getElementById("register-email").setCustomValidity("");
+    document.getElementById("email").setCustomValidity("");
     document.getElementById("password").setCustomValidity("");
-    document.getElementById("confirm-password").setCustomValidity("");
-    document.getElementById("phone-number").setCustomValidity("");
+    document.getElementById("confirmPassword").setCustomValidity("");
+    document.getElementById("phoneNumber").setCustomValidity("");
 }
