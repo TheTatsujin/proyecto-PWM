@@ -1,9 +1,33 @@
-// Timeout is for wait to xlu-include-file
+const userSessionKey = "user-session";
+const lastPageKey = "lastPage";
+const email = "email";
+const name = "name";
+const userData = "user-data";
 
+// Timeout is to wait templates to load
 function validationInitialization() {
+
     setTimeout(function() {
         addClearValidationErrorsWhenInput()
     }, 1000);
+
+}
+
+function startSessionFromJson() {
+    getUserDataFrom()
+        .then(response => response.json())
+        .then(data => data[userData])
+        .then(userData => {
+            sessionStorage.setItem(userSessionKey, JSON.stringify(userData));
+        })
+    .catch(error => console.log(error));
+}
+
+
+
+function redirectUser() {
+    const urlObj = new URL(sessionStorage.getItem(lastPageKey));
+    location.href = urlObj.pathname;
 }
 
 function addLoginSubmitEventListener() {
@@ -13,20 +37,24 @@ function addLoginSubmitEventListener() {
             ev.preventDefault();
             const mail = document.getElementById("login_email");
             const password = document.getElementById("login_password");
-            isRegisteredOnStrapi(mail, password).then(isLogged => {
+            isRegistered(mail, password).then(isLogged => {
                 if (isLogged) {
-                    sessionStorage.setItem("login", mail.value);
-                    location.href = "../pages/index.html";
+                    startSessionFromJson();
+                    redirectUser();
                 }
             });
         })
     }, 1000);
 }
 
+
+function getUserDataFrom() {
+    return fetch("../json/data/user.json");
+}
+
 async function isRegisteredOnStrapi(mail, password) {
     try {
-
-        const response = await fetch(`http://localhost:1337/api/userpages?filters[email][$eq]=${email.value}`, {
+        const response = await fetch(`http://localhost:1337/api/userpages?filters[email][$eq]=${mail.value}`, {
             method: "GET",
             headers: {"Content-Type": "application/json"
             },
@@ -42,10 +70,11 @@ async function isRegisteredOnStrapi(mail, password) {
 }
 
 function isRegistered(mail, password) {
-    return fetch("../json/data/user.json")
+    return getUserDataFrom()
         .then(response => response.json())
+        .then(response => response[userData])
         .then(userData => {
-            if (userData["email"] !== mail.value) {
+            if (userData[email] !== mail.value) {
                 mail.setCustomValidity("Esta dirección de correo electrónica no está registrada.");
                 mail.reportValidity();
                 return false;
