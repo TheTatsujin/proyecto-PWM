@@ -14,37 +14,9 @@
         <button class="btn-return color-turquoise border-turquoise bg-black"><</button>
     </header>
     <main class="color-turquoise">
-        <section id = "user-page" class="bg-black border-turquoise form-box">
-            <div class="form-header">
-                <a id="profile-link" href="#">
-                    <img id="profile-picture" src="../images/icons/man-user-circle-icon.svg" alt="profile picture" height="64" width="64">
-                </a>
-                <h1 class="color-turquoise font-tektur">Welcome pepe</h1>
-            </div>
-            <form id="user-page-form">
-                <div class="form-fields">
-                    <div class="form_label-column">
-                        <label class="form-label color-turquoise font-sudovar">Full name: </label>
-                        <label class="form-label color-turquoise font-sudovar">Email: </label>
-                        <label class="form-label color-turquoise font-sudovar">Phone number :</label>
-                        <label class="form-label color-turquoise font-sudovar">Birthdate: </label>
-                        <label class="form-label color-turquoise font-sudovar">Your tickets:</label>
-                    </div>
-                    <div class="form_input-column color-white font-sudovar">
-                        <label id="full-name-field" content-data-key="name"> Pepe Jimenez</label>
-                        <label id="email-field"> good@email.com</label>
-                        <label id="phone-number-field"> 6AA-BBC-CEV</label>
-                        <label id="birthdate-number-field"> 28/08/1981</label>
-                        <label id="tickets"> [none]</label>
-                    </div>
-
-                </div>
-
-            </form>
-            <button id="btn-logout" class="btn-main center-content text-medium font-sudovar bg-black border-violet color-violet">
-                Log out
-            </button>
+        <section id = "user-page" class="bg-black border-turquoise form-box template-container" template-id="user-page-template">
         </section>
+
     </main>
     <footer class="template-container" template-id="footer"></footer>
 </body>

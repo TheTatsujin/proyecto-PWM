@@ -1,5 +1,5 @@
 
-<template content-session-data-key="login">
+<template content-session-data-key="user-session">
   <div class="form-header">
     <a id="profile-link" href="#">
       <img id="profile-picture" src="../images/icons/man-user-circle-icon.svg" alt="profile picture" height="64" width="64">
@@ -17,13 +17,14 @@
       </div>
       <div class="form_input-column color-white font-sudovar">
         <label id="full-name-field" content-data-key="name"> Pepe Jimenez</label>
-        <label id="email-field"> good@email.com</label>
-        <label id="phone-number-field"> 6AA-BBC-CEV</label>
-        <label id="birthdate-number-field"> 28/08/1981</label>
-        <label id="tickets"> [none]</label>
+        <label id="email-field" content-data-key="email"> good@email.com</label>
+        <label id="phone-number-field" content-data-key="phone-number"> 6AA-BBC-CEV</label>
+        <label id="birthdate-number-field" content-data-key="birthdate"> 28/08/1981</label>
+        <label id="tickets" content-data-key="tickets"> [none]</label>
       </div>
-
     </div>
-
   </form>
+  <button id="btn-logout" class="btn-main center-content text-medium font-sudovar bg-black border-violet color-violet">
+    Log out
+  </button>
 </template>
