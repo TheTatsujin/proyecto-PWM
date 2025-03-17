@@ -8,6 +8,7 @@ async function addRegisterListener() {
     setTimeout(function () {
         const register = document.getElementById("register-form");
         register.addEventListener("submit", async ev => {
+            console.log("helo")
             ev.preventDefault();
             const email = document.getElementById("email");
             const phoneNumber = document.getElementById("phoneNumber");
@@ -89,10 +90,10 @@ async function checkRegister(email, phoneNumber, password, passwordConfirm) {
 }
 
 function addClearValidationErrorsWhenInput() {
-    document.getElementById("email").addEventListener("submit", () => clearValidationErrors());
-    document.getElementById("password").addEventListener("submit", () => clearValidationErrors());
-    document.getElementById("confirmPassword").addEventListener("submit", () => clearValidationErrors());
-    document.getElementById("phoneNumber").addEventListener("submit", () => clearValidationErrors());
+    document.getElementById("email").addEventListener("input", () => clearValidationErrors());
+    document.getElementById("password").addEventListener("input", () => clearValidationErrors());
+    document.getElementById("confirmPassword").addEventListener("input", () => clearValidationErrors());
+    document.getElementById("phoneNumber").addEventListener("input", () => clearValidationErrors());
 }
 
 function clearValidationErrors() {
