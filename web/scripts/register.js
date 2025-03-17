@@ -7,6 +7,13 @@ function clearValidationsListener() {
 async function addRegisterListener() {
     setTimeout(function () {
         const register = document.getElementById("register-form");
+        let phoneNumber = document.getElementById("phoneNumber")
+        phoneNumber.addEventListener("input", async _ =>  {
+            if (!/[0-9]{3}[- ]?[0-9]{3}[- ]?[0-9]{3}/.test(phoneNumber.value)) {
+                phoneNumber.setCustomValidity(phoneNumber.title);
+                phoneNumber.reportValidity();
+            } else phoneNumber.setCustomValidity("");
+        })
         register.addEventListener("submit", async ev => {
             console.log("helo")
             ev.preventDefault();
