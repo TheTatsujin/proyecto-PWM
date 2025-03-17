@@ -1,7 +1,7 @@
 window.addEventListener('load', () => storePageVisited(window.location.href));
 window.addEventListener("pageshow", (event) => {
     if (event.persisted) {
-        sessionStorage.removeItem("login");
+        sessionStorage.removeItem("user-session");
         location.reload();
     }
 });
@@ -30,7 +30,7 @@ export function logoutButtonAction(){
     const logoutButton = document.querySelector("#btn-logout");
     if (!logoutButton) return;
     logoutButton.addEventListener("click", () => {
-        sessionStorage.removeItem("login");
+        sessionStorage.removeItem("user-session");
         location.replace(location.origin + "/proyecto-PWM/web/pages/index.html");
     });
 }
@@ -38,7 +38,7 @@ export function logoutButtonAction(){
 
 
 function isUserLogged() {
-    return sessionStorage.getItem("login") != null;
+    return sessionStorage.getItem("user-session") != null;
 }
 
 function fetchUserIconTemplate() {
@@ -57,3 +57,23 @@ function storePageVisited(currentPageUrl) {
     sessionStorage.setItem("currentPage", currentPageUrl);
 }
 
+const userSessionKey = "user-session";
+
+export function updateSession() { // TODO I propose to call it before templates are loaded
+    getUserDataFrom()
+        .then(response => response.json())
+        .then(newUserData => {
+            const storedUserData = sessionStorage.getItem(userSessionKey);
+            if (storedUserData) {
+                const parsedStoredData = JSON.parse(storedUserData);
+                if (JSON.stringify(parsedStoredData) !== JSON.stringify(newUserData["user-data"])) {
+                    sessionStorage.setItem(userSessionKey, JSON.stringify(newUserData["user-data"]));
+                }
+            }
+        })
+        .catch(error => console.error("Error al obtener los datos:", error));
+}
+
+function getUserDataFrom() {
+    return fetch("../json/data/user.json");
+}
