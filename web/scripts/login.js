@@ -2,25 +2,18 @@ const userSessionKey = "user-session";
 const lastPageKey = "lastPage";
 const email = "email";
 const name = "name";
-const userData = "user-data";
 
 // Timeout is to wait templates to load
 function validationInitialization() {
-
     setTimeout(function() {
         addClearValidationErrorsWhenInput()
     }, 1000);
 
 }
 
-function startSessionFromJson() {
-    getUserDataFrom()
-        .then(response => response.json())
-        .then(data => data[userData])
-        .then(userData => {
-            sessionStorage.setItem(userSessionKey, JSON.stringify(userData));
-        })
-    .catch(error => console.log(error));
+function startSessionFromJson(mail) {
+    return getUserDataFromMail(mail)
+        .then(userData => sessionStorage.setItem(userSessionKey, JSON.stringify(userData)));
 }
 
 
@@ -38,18 +31,25 @@ function addLoginSubmitEventListener() {
             const mail = document.getElementById("login_email");
             const password = document.getElementById("login_password");
             isRegistered(mail, password).then(isLogged => {
-                if (isLogged) {
-                    startSessionFromJson();
-                    redirectUser();
-                }
+                if (isLogged)
+                    startSessionFromJson(mail.value).then(_ => redirectUser());
             });
         })
     }, 1000);
 }
 
 
-function getUserDataFrom() {
-    return fetch("../json/data/user.json");
+function getUserDataFromMail(mail) {
+    return fetch("../json/data/user.json")
+        .catch(err => console.log(err))
+        .then(response => response.json())
+        .then(userDataJson => {
+            const userDataList = userDataJson["user-data"];
+            for (const userData of userDataList) {
+                if (userData["email"] === mail) return userData;
+            }
+            return null;
+        });
 }
 
 async function isRegisteredOnStrapi(mail, password) {
@@ -70,23 +70,20 @@ async function isRegisteredOnStrapi(mail, password) {
 }
 
 function isRegistered(mail, password) {
-    return getUserDataFrom()
-        .then(response => response.json())
-        .then(response => response[userData])
+    return getUserDataFromMail(mail.value)
         .then(userData => {
-            if (userData[email] !== mail.value) {
-                mail.setCustomValidity("Esta dirección de correo electrónica no está registrada.");
-                mail.reportValidity();
+            if(!userData) {
+                mail.setCustomValidity("User is not registered");
                 return false;
             }
-            if (userData["password"] !== atob(password.value)) {
-                password.setCustomValidity("La contraseña no es correcta.");
-                password.reportValidity();
+
+            if (userData["password"] !== atob(password.value)){
+                password.setCustomValidity("Wrong password");
                 return false;
             }
+
             return true;
-        })
-        .catch(error => console.log(error));
+        });
 }
 
 function addClearValidationErrorsWhenInput() {
