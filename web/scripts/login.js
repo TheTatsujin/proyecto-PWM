@@ -3,20 +3,11 @@ const lastPageKey = "lastPage";
 const email = "email";
 const name = "name";
 
-// Timeout is to wait templates to load
-function validationInitialization() {
-    setTimeout(function() {
-        addClearValidationErrorsWhenInput()
-    }, 1000);
-
-}
 
 function startSessionFromJson(mail) {
     return getUserDataFromMail(mail)
         .then(userData => sessionStorage.setItem(userSessionKey, JSON.stringify(userData)));
 }
-
-
 
 function redirectUser() {
     const urlObj = new URL(sessionStorage.getItem(lastPageKey));
@@ -86,7 +77,7 @@ function isRegistered(mail, password) {
         });
 }
 
-function addClearValidationErrorsWhenInput() {
+export function addClearValidationErrorsWhenInput() {
     document.getElementById("login_email").addEventListener("input", () => clearValidationErrors());
     document.getElementById("login_password").addEventListener("input", () => clearValidationErrors());
 }

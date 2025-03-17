@@ -17,7 +17,6 @@ function addSubmitListener() {
             })
         })
     }, 1000)
-
 }
 
 function emailCheck(email) {

@@ -1,10 +1,14 @@
 import {logoutButtonAction, returnButtonDynamicRouting, updateHeaderWithUserSection} from "./session-manager.js";
+import {addClearValidationErrorsWhenInput} from "./login.js";
+import {registerFormActions} from "./register2.js";
 
 document.addEventListener('DOMContentLoaded', async () =>
     templatesBuildAll()
         .then(_ => updateHeaderWithUserSection())
         .then(_ => returnButtonDynamicRouting())
         .then(_ => logoutButtonAction())
+        //.then(_ => addClearValidationErrorsWhenInput())
+        .then(_ => registerFormActions())
 );
 
 
@@ -74,7 +78,6 @@ function buildAllTemplatesFromJson(templateDocumentFragment, contentDataList){
 
     return allContentDataTemplatesDocumentFragment;
 }
-
 
 function buildTemplateElementContent(elementEmpty, elementContentData){
     if (!elementContentData) return elementEmpty;

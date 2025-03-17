@@ -56,6 +56,7 @@ async function addRegisterListener() {
     }, 1000);
 }
 
+
 async function checkRegister(email, phoneNumber, password, passwordConfirm) {
 
     if (!/[0-9]{3}[- ]?[0-9]{3}[- ]?[0-9]{3}/.test(phoneNumber.value)) {
