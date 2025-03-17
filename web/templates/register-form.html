@@ -21,7 +21,9 @@
                     <input class="input-box color-white" type=email id="email" name="email" placeholder="Email"
                            required>
                     <input class="input-box color-white" type=tel id="phoneNumber" name="phoneNumber"
-                           placeholder="Phone number" required>
+                           placeholder="Phone number" required
+                           pattern="[0-9]{3}[- ]?[0-9]{3}[- ]?[0-9]{3}"
+                           title="Phone number must match XXX-XXX-XXX or XXXXXXXXX with only digits">
                     <input class="input-box color-white birth-input" type=date id="birthdate" name="birthdate" required>
                     <input class="input-box color-white" type=password id="password" name="password" placeholder="Password"
                            required>
