@@ -1,7 +1,5 @@
 const userSessionKey = "user-session";
 const lastPageKey = "lastPage";
-const email = "email";
-const name = "name";
 
 
 function startSessionFromJson(mail) {
@@ -14,19 +12,17 @@ function redirectUser() {
     location.href = urlObj.pathname;
 }
 
-function addLoginSubmitEventListener() {
-    setTimeout(function() {
-        const loginSubmit = document.getElementById("login_form");
-        loginSubmit.addEventListener("submit", ev => {
-            ev.preventDefault();
-            const mail = document.getElementById("login_email");
-            const password = document.getElementById("login_password");
-            isRegistered(mail, password).then(isLogged => {
-                if (isLogged)
-                    startSessionFromJson(mail.value).then(_ => redirectUser());
-            });
-        })
-    }, 1000);
+export function loginFormAction() {
+    const loginSubmit = document.querySelector("#login_form");
+    const mail = document.querySelector("#login_email");
+    const password = document.querySelector("#login_password");
+
+    loginSubmit.addEventListener("submit", ev => {
+        ev.preventDefault();
+        isRegistered(mail, password).then(isLogged => {
+            if (isLogged) startSessionFromJson(mail.value).then(_ => redirectUser());
+        });
+    })
 }
 
 
@@ -77,7 +73,8 @@ function isRegistered(mail, password) {
         });
 }
 
-export function addClearValidationErrorsWhenInput() {
+
+function addClearValidationErrorsWhenInput() {
     document.getElementById("login_email").addEventListener("input", () => clearValidationErrors());
     document.getElementById("login_password").addEventListener("input", () => clearValidationErrors());
 }
