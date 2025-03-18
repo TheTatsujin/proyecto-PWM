@@ -1,41 +1,28 @@
 const userSessionKey = "user-session";
 const lastPageKey = "lastPage";
-const email = "email";
-const name = "name";
 
-// Timeout is to wait templates to load
-function validationInitialization() {
-    setTimeout(function() {
-        addClearValidationErrorsWhenInput()
-    }, 1000);
-
-}
 
 function startSessionFromJson(mail) {
     return getUserDataFromMail(mail)
         .then(userData => sessionStorage.setItem(userSessionKey, JSON.stringify(userData)));
 }
 
-
-
 function redirectUser() {
     const urlObj = new URL(sessionStorage.getItem(lastPageKey));
     location.href = urlObj.pathname;
 }
 
-function addLoginSubmitEventListener() {
-    setTimeout(function() {
-        const loginSubmit = document.getElementById("login_form");
-        loginSubmit.addEventListener("submit", ev => {
-            ev.preventDefault();
-            const mail = document.getElementById("login_email");
-            const password = document.getElementById("login_password");
-            isRegistered(mail, password).then(isLogged => {
-                if (isLogged)
-                    startSessionFromJson(mail.value).then(_ => redirectUser());
-            });
-        })
-    }, 1000);
+export function loginFormAction() {
+    const loginSubmit = document.querySelector("#login_form");
+    const mail = document.querySelector("#login_email");
+    const password = document.querySelector("#login_password");
+
+    loginSubmit.addEventListener("submit", ev => {
+        ev.preventDefault();
+        isRegistered(mail, password).then(isLogged => {
+            if (isLogged) startSessionFromJson(mail.value).then(_ => redirectUser());
+        });
+    })
 }
 
 
@@ -86,6 +73,7 @@ function isRegistered(mail, password) {
             return true;
         });
 }
+
 
 function addClearValidationErrorsWhenInput() {
     document.getElementById("login_email").addEventListener("input", () => clearValidationErrors());

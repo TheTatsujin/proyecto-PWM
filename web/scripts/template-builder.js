@@ -1,11 +1,27 @@
 import {logoutButtonAction, returnButtonDynamicRouting, updateHeaderWithUserSection} from "./session-manager.js";
+import {loginFormAction} from "./login.js";
+import {registerFormActions} from "./register2.js";
 
-document.addEventListener('DOMContentLoaded', async () =>
-    templatesBuildAll()
-        .then(_ => updateHeaderWithUserSection())
-        .then(_ => returnButtonDynamicRouting())
-        .then(_ => logoutButtonAction())
-);
+const pageActionFor = {
+    "register": registerFormActions,
+    "login": loginFormAction,
+    "user-page": logoutButtonAction,
+}
+
+document.addEventListener('DOMContentLoaded', async () => {
+    await templatesBuildAll();
+    await updateHeaderWithUserSection();
+    returnButtonDynamicRouting();
+
+    const pageName = getPageName();
+    if (pageActionFor[pageName]) pageActionFor[pageName]();
+});
+
+
+function getPageName(){
+    const pathTree = window.location.pathname.split("/");
+    return pathTree[pathTree.length - 1].split(".")[0];
+}
 
 
 async function templatesBuildAll() {
@@ -74,7 +90,6 @@ function buildAllTemplatesFromJson(templateDocumentFragment, contentDataList){
 
     return allContentDataTemplatesDocumentFragment;
 }
-
 
 function buildTemplateElementContent(elementEmpty, elementContentData){
     if (!elementContentData) return elementEmpty;
