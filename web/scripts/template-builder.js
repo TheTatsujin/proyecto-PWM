@@ -1,4 +1,5 @@
-import {logoutButtonAction, returnButtonDynamicRouting, updateHeaderWithUserSection} from "./session-manager.js";
+import {logoutButtonAction, updateHeaderWithUserSection} from "./session-manager.js";
+import {returnButtonDynamicRouting} from "./return-feature.js";
 import {loginFormAction} from "./login.js";
 import {registerFormActions} from "./register2.js";
 

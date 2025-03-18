@@ -1,4 +1,3 @@
-window.addEventListener('load', () => storePageVisited(window.location.href));
 window.addEventListener("pageshow", (event) => {
     if (event.persisted) {
         sessionStorage.removeItem("user-session");
@@ -16,15 +15,6 @@ export async function updateHeaderWithUserSection() {
         headerEmptyUserSection.innerHTML = await fetchLoginButtonTemplate();
 }
 
-export function returnButtonDynamicRouting(){
-    const returnButton = document.querySelector(".btn-return");
-    if (!returnButton) return;
-    returnButton.addEventListener("click", () => {
-        const lastPageUrl = sessionStorage.getItem("lastPage");
-        if (lastPageUrl) location.replace(lastPageUrl);
-    });
-
-}
 
 export function logoutButtonAction(){
     const logoutButton = document.querySelector("#btn-logout");
@@ -47,14 +37,6 @@ function fetchUserIconTemplate() {
 
 function fetchLoginButtonTemplate() {
     return fetch("../templates/login-button.html").then(res => res.text());
-}
-
-function storePageVisited(currentPageUrl) {
-    const lastPageUrl = sessionStorage.getItem("currentPage");
-    if (lastPageUrl && lastPageUrl !== currentPageUrl)
-        sessionStorage.setItem("lastPage", lastPageUrl);
-
-    sessionStorage.setItem("currentPage", currentPageUrl);
 }
 
 const userSessionKey = "user-session";

@@ -1,16 +1,14 @@
-const userSessionKey = "user-session";
-const lastPageKey = "lastPage";
+import {returnBack} from "./return-feature.js";
 
+
+const userSessionKey = "user-session";
 
 function startSessionFromJson(mail) {
     return getUserDataFromMail(mail)
         .then(userData => sessionStorage.setItem(userSessionKey, JSON.stringify(userData)));
 }
 
-function redirectUser() {
-    const urlObj = new URL(sessionStorage.getItem(lastPageKey));
-    location.href = urlObj.pathname;
-}
+
 
 export function loginFormAction() {
     const loginSubmit = document.querySelector("#login_form");
@@ -22,7 +20,7 @@ export function loginFormAction() {
     loginSubmit.addEventListener("submit", ev => {
         ev.preventDefault();
         isRegistered(mail, password).then(isLogged => {
-            if (isLogged) startSessionFromJson(mail.value).then(_ => redirectUser());
+            if (isLogged) startSessionFromJson(mail.value).then(_ => returnBack());
         });
     })
 }
