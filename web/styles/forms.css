@@ -130,7 +130,7 @@
         margin: auto;
         padding: 1.2em;
         width: 55em;
-        height: 35em;
+        height: 37em;
         border-radius: 2em;
         border-width: 3px 3px 8px 3px;
         display: flex;
@@ -217,6 +217,7 @@
         display: flex;
         margin-top: 1em;
         margin-left: 10em;
+        line-height: 1.75em;
     }
 
     .form_checkbox-area_buttons {
@@ -227,7 +228,7 @@
 
     .form_checkbox-area_buttons > input {
         width: 6em;
-        height: 1.2em;
+        height: 1.75em;
         cursor: pointer;
     }
 
@@ -235,9 +236,9 @@
         display: flex;
         flex-direction: column;
         justify-content: space-evenly;
-
         margin-left: 1.5em;
-        font-size: 1.3em;
+        font-size: 1.35em;
+        line-height: 1.5em;
         text-align: left;
         font-style: italic;
         text-wrap: auto;
@@ -248,14 +249,13 @@
 /*Mobile screen*/
 @media (max-width: 440px) {
     main {
-        height: 30em;
+        height: 10em;
     }
 
     .form-box {
         margin: auto;
-        padding: 1.2em;
-        width: 15em;
-        height: 60em;
+        width: 17em;
+        height: 35em;
         border-radius: 2em;
         border-width: 3px 3px 8px 3px;
         display: flex;
@@ -266,13 +266,12 @@
     .form-box > .form-header {
         display: flex;
         align-items: center;
-        justify-content: flex-start;
     }
 
     .form-box > .form-header > h1 {
-        flex-grow: 1;
+        flex-grow: 0.5;
         text-align: center;
-        font-size: 5em;
+        font-size: 3em;
         font-weight: 900;
         text-shadow: 0 -2px 0 #FFFFFF
     }
@@ -284,6 +283,7 @@
     }
 
     form {
+        margin-left: -35%;
         display: flex;
         flex-direction: column;
         justify-content: flex-start;
@@ -339,7 +339,7 @@
     .form_checkbox-area {
         display: flex;
         margin-top: 1em;
-        margin-left: 10em;
+        margin-left: 1em;
     }
 
     .form_checkbox-area_buttons {
@@ -349,6 +349,7 @@
     }
 
     .form_checkbox-area_buttons > input {
+        margin-left: 30%;
         width: 6em;
         height: 1.2em;
         cursor: pointer;
@@ -358,11 +359,14 @@
         display: flex;
         flex-direction: column;
         justify-content: space-evenly;
-
         margin-left: 1.5em;
-        font-size: 1.1em;
+        font-size: 0.75em;
         text-align: left;
         font-style: italic;
         text-wrap: auto;
+    }
+
+    section {
+        overflow: hidden;
     }
 }
