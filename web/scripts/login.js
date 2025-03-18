@@ -8,8 +8,6 @@ function startSessionFromJson(mail) {
         .then(userData => sessionStorage.setItem(userSessionKey, JSON.stringify(userData)));
 }
 
-
-
 export function loginFormAction() {
     const loginSubmit = document.querySelector("#login_form");
     const mail = document.querySelector("#login_email");
@@ -37,23 +35,6 @@ function getUserDataFromMail(mail) {
             }
             return null;
         });
-}
-
-async function isRegisteredOnStrapi(mail, password) {
-    try {
-        const response = await fetch(`http://localhost:1337/api/userpages?filters[email][$eq]=${mail.value}`, {
-            method: "GET",
-            headers: {"Content-Type": "application/json"
-            },
-        });
-        const result = await response.json();
-        console.log(result);
-
-        return response.ok;
-    } catch (error) {
-        console.error("Error:", error);
-    }
-    return false;
 }
 
 function isRegistered(mail, password) {
@@ -95,4 +76,23 @@ function clearValidationErrors(passwordInput) {
 
 function isAValidEmail(mailInput) {
     return !/\w+@\w+\.\w+/.test(mailInput.value);
+}
+
+
+// STRAPI
+async function isRegisteredOnStrapi(mail, password) {
+    try {
+        const response = await fetch(`http://localhost:1337/api/userpages?filters[email][$eq]=${mail.value}`, {
+            method: "GET",
+            headers: {"Content-Type": "application/json"
+            },
+        });
+        const result = await response.json();
+        console.log(result);
+
+        return response.ok;
+    } catch (error) {
+        console.error("Error:", error);
+    }
+    return false;
 }

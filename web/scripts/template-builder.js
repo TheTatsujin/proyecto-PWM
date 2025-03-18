@@ -1,7 +1,7 @@
 import {logoutButtonAction, updateHeaderWithUserSection} from "./session-manager.js";
 import {returnButtonDynamicRouting} from "./return-feature.js";
 import {loginFormAction} from "./login.js";
-import {registerFormActions} from "./register2.js";
+import {registerFormActions} from "./register.js";
 
 const pageActionFor = {
     "register": registerFormActions,
@@ -17,7 +17,6 @@ document.addEventListener('DOMContentLoaded', async () => {
     const pageName = getPageName();
     if (pageActionFor[pageName]) pageActionFor[pageName]();
 });
-
 
 function getPageName(){
     const pathTree = window.location.pathname.split("/");

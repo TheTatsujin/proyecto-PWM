@@ -1,3 +1,5 @@
+const userSessionKey = "user-session";
+
 window.addEventListener("pageshow", (event) => {
     if (event.persisted) {
         sessionStorage.removeItem("user-session");
@@ -25,8 +27,6 @@ export function logoutButtonAction(){
     });
 }
 
-
-
 function isUserLogged() {
     return sessionStorage.getItem("user-session") != null;
 }
@@ -39,8 +39,11 @@ function fetchLoginButtonTemplate() {
     return fetch("../templates/login-button.html").then(res => res.text());
 }
 
-const userSessionKey = "user-session";
+function getUserDataFrom() {
+    return fetch("../json/data/user.json");
+}
 
+// STRAPI
 export function updateSession() { // TODO I propose to call it before templates are loaded
     getUserDataFrom()
         .then(response => response.json())
@@ -54,8 +57,4 @@ export function updateSession() { // TODO I propose to call it before templates 
             }
         })
         .catch(error => console.error("Error al obtener los datos:", error));
-}
-
-function getUserDataFrom() {
-    return fetch("../json/data/user.json");
 }
