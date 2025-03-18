@@ -66,7 +66,6 @@ function isRegistered(mail, password) {
 
             if (userData["password"] !== btoa(password.value)){
                 password.setCustomValidity("Wrong password");
-                password.reportValidity();
                 return false;
             }
 
