@@ -1,4 +1,5 @@
-window.addEventListener('load', () => storePageVisited(window.location.href));
+const userSessionKey = "user-session";
+
 window.addEventListener("pageshow", (event) => {
     if (event.persisted) {
         sessionStorage.removeItem("user-session");
@@ -16,15 +17,6 @@ export async function updateHeaderWithUserSection() {
         headerEmptyUserSection.innerHTML = await fetchLoginButtonTemplate();
 }
 
-export function returnButtonDynamicRouting(){
-    const returnButton = document.querySelector(".btn-return");
-    if (!returnButton) return;
-    returnButton.addEventListener("click", () => {
-        const lastPageUrl = sessionStorage.getItem("lastPage");
-        if (lastPageUrl) location.replace(lastPageUrl);
-    });
-
-}
 
 export function logoutButtonAction(){
     const logoutButton = document.querySelector("#btn-logout");
@@ -34,8 +26,6 @@ export function logoutButtonAction(){
         location.replace(location.origin + "/proyecto-PWM/web/pages/index.html");
     });
 }
-
-
 
 function isUserLogged() {
     return sessionStorage.getItem("user-session") != null;
@@ -49,16 +39,11 @@ function fetchLoginButtonTemplate() {
     return fetch("../templates/login-button.html").then(res => res.text());
 }
 
-function storePageVisited(currentPageUrl) {
-    const lastPageUrl = sessionStorage.getItem("currentPage");
-    if (lastPageUrl && lastPageUrl !== currentPageUrl)
-        sessionStorage.setItem("lastPage", lastPageUrl);
-
-    sessionStorage.setItem("currentPage", currentPageUrl);
+function getUserDataFrom() {
+    return fetch("../json/data/user.json");
 }
 
-const userSessionKey = "user-session";
-
+// STRAPI
 export function updateSession() { // TODO I propose to call it before templates are loaded
     getUserDataFrom()
         .then(response => response.json())
@@ -72,8 +57,4 @@ export function updateSession() { // TODO I propose to call it before templates 
             }
         })
         .catch(error => console.error("Error al obtener los datos:", error));
-}
-
-function getUserDataFrom() {
-    return fetch("../json/data/user.json");
 }

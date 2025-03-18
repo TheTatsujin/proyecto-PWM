@@ -1,15 +1,11 @@
-const userSessionKey = "user-session";
-const lastPageKey = "lastPage";
+import {returnBack} from "./return-feature.js";
 
+
+const userSessionKey = "user-session";
 
 function startSessionFromJson(mail) {
     return getUserDataFromMail(mail)
         .then(userData => sessionStorage.setItem(userSessionKey, JSON.stringify(userData)));
-}
-
-function redirectUser() {
-    const urlObj = new URL(sessionStorage.getItem(lastPageKey));
-    location.href = urlObj.pathname;
 }
 
 export function loginFormAction() {
@@ -22,7 +18,7 @@ export function loginFormAction() {
     loginSubmit.addEventListener("submit", ev => {
         ev.preventDefault();
         isRegistered(mail, password).then(isLogged => {
-            if (isLogged) startSessionFromJson(mail.value).then(_ => redirectUser());
+            if (isLogged) startSessionFromJson(mail.value).then(_ => returnBack());
         });
     })
 }
@@ -39,23 +35,6 @@ function getUserDataFromMail(mail) {
             }
             return null;
         });
-}
-
-async function isRegisteredOnStrapi(mail, password) {
-    try {
-        const response = await fetch(`http://localhost:1337/api/userpages?filters[email][$eq]=${mail.value}`, {
-            method: "GET",
-            headers: {"Content-Type": "application/json"
-            },
-        });
-        const result = await response.json();
-        console.log(result);
-
-        return response.ok;
-    } catch (error) {
-        console.error("Error:", error);
-    }
-    return false;
 }
 
 function isRegistered(mail, password) {
@@ -97,4 +76,23 @@ function clearValidationErrors(passwordInput) {
 
 function isAValidEmail(mailInput) {
     return !/\w+@\w+\.\w+/.test(mailInput.value);
+}
+
+
+// STRAPI
+async function isRegisteredOnStrapi(mail, password) {
+    try {
+        const response = await fetch(`http://localhost:1337/api/userpages?filters[email][$eq]=${mail.value}`, {
+            method: "GET",
+            headers: {"Content-Type": "application/json"
+            },
+        });
+        const result = await response.json();
+        console.log(result);
+
+        return response.ok;
+    } catch (error) {
+        console.error("Error:", error);
+    }
+    return false;
 }
