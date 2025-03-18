@@ -1,34 +1,110 @@
-.ticket-table {
-    margin: auto;
-    width: 65vw;
-    height: 370px;
-    border-width: 1px;
-    border-bottom-width: 6px;
-    border-style: solid;
-    border-radius: 8px;
+@media (min-width: 1367px) {
+    .ticket-table {
+        margin: auto;
+        width: 75rem;
+        height: 22rem;;
+        border-width: 1px;
+        border-bottom-width: 6px;
+        border-style: solid;
+        border-radius: 8px;
+    }
+
+    .ticket-table tr {
+        text-align: left;
+        font-style: italic;
+    }
+
+    .ticket-table th {
+        font-size: 3em;
+        font-weight: bold;
+        padding-top: 15px;
+        padding-left: 10px;
+    }
+
+    .ticket-table td {
+        font-size: 2em;
+        padding-top: 15px;
+        padding-left: 10px;
+    }
+
+    .dropdown-box {
+        margin-left: auto;
+        margin-right: auto;
+        margin-bottom: 5em;
+        display: flex;
+    }
 }
 
-.ticket-table tr {
-    text-align: left;
-    font-style: italic;
+/*Tablet screen*/
+@media (min-width: 440px) and (max-width: 1367px) {
+    .ticket-table {
+        height: 22rem;
+        margin-right: 1rem;
+    }
+
+    .ticket-table tr {
+        text-align: left;
+        font-style: italic;
+    }
+
+    .ticket-table th {
+        font-size: 3em;
+        font-weight: bold;
+        padding-top: 15px;
+        padding-left: 10px;
+    }
+
+    .ticket-table td {
+        font-size: 2em;
+        padding-top: 15px;
+        padding-left: 10px;
+    }
+
+    .dropdown-box {
+        margin-left: auto;
+        margin-right: auto;
+        margin-bottom: 5em;
+        display: flex;
+    }
 }
 
-.ticket-table th {
-    font-size: 3em;
-    font-weight: bold;
-    padding-top: 15px;
-    padding-left: 10px;
+/*Mobile screen*/
+@media (max-width: 440px) {
+    .ticket-table {
+        margin: auto;
+        height: 370px;
+        border-width: 1px;
+        border-bottom-width: 6px;
+        border-style: solid;
+        border-radius: 8px;
+    }
+
+    .ticket-table tr {
+        text-align: left;
+        font-style: italic;
+    }
+
+    .ticket-table th {
+        font-size: 3em;
+        font-weight: bold;
+        padding-top: 15px;
+        padding-left: 10px;
+    }
+
+    .ticket-table td {
+        font-size: 2em;
+        padding-top: 15px;
+        padding-left: 10px;
+    }
+
+    .dropdown-box {
+        margin-left: auto;
+        margin-right: auto;
+        margin-bottom: 5em;
+        display: flex;
+    }
 }
 
-.ticket-table td {
-    font-size: 2em;
-    padding-top: 15px;
-    padding-left: 10px;
-}
-
-.dropdown-box {
-    margin-left: auto;
-    margin-right: auto;
-    margin-bottom: 5em;
-    display: flex;
+@media screen {
+    
 }
