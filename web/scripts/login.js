@@ -17,6 +17,8 @@ export function loginFormAction() {
     const mail = document.querySelector("#login_email");
     const password = document.querySelector("#login_password");
 
+    addClearValidationErrorsWhenInput();
+
     loginSubmit.addEventListener("submit", ev => {
         ev.preventDefault();
         isRegistered(mail, password).then(isLogged => {
@@ -59,8 +61,9 @@ async function isRegisteredOnStrapi(mail, password) {
 function isRegistered(mail, password) {
     return getUserDataFromMail(mail.value)
         .then(userData => {
+
             if(!userData) {
-                mail.setCustomValidity("User is not registered");
+                mail.setCustomValidity("Email is not registered");
                 return false;
             }
 
@@ -75,11 +78,23 @@ function isRegistered(mail, password) {
 
 
 function addClearValidationErrorsWhenInput() {
-    document.getElementById("login_email").addEventListener("input", () => clearValidationErrors());
-    document.getElementById("login_password").addEventListener("input", () => clearValidationErrors());
+    document.getElementById("login_email").addEventListener("input", (event) => validateEmailFormat(event.target));
+    document.getElementById("login_password").addEventListener("input", (event) => clearValidationErrors(event.target));
 }
 
-function clearValidationErrors() {
-    document.getElementById("login_email").setCustomValidity("");
-    document.getElementById("login_password").setCustomValidity("");
+function validateEmailFormat(mailInput) {
+    if (isAValidEmail(mailInput)) {
+        mailInput.setCustomValidity("Please enter a valid email address");
+        mailInput.reportValidity();
+    } else {
+        mailInput.setCustomValidity("");
+    }
+}
+
+function clearValidationErrors(passwordInput) {
+    passwordInput.setCustomValidity("");
+}
+
+function isAValidEmail(mailInput) {
+    return !/\w+@\w+\.\w+/.test(mailInput.value);
 }
