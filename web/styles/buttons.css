@@ -1,44 +1,141 @@
-button:hover {
-    cursor: pointer;
+@media (min-width: 1367px) {
+    button:hover {
+        cursor: pointer;
+    }
+
+
+    .btn-return {
+        padding: 0.5em 0.75em;
+        font-size: 1.3em;
+        border-radius: 100%;
+        margin: 0.5em 0.5em;
+    }
+
+
+    .btn-submit {
+        font-weight: bold;
+        margin-top: 1em;
+        padding: .5em;
+        font-size: 2em;
+        width: 9em;
+        text-wrap: nowrap;
+    }
+
+    .btn-main {
+        border-radius: 0.5em;
+        text-wrap: nowrap;
+        border-width: 3px;
+        font-style: italic;
+        font-weight: bold;
+        text-align: center;
+        padding: .5em;
+        max-width: 300px;
+    }
+
+    #dropdown {
+        width: 15em;
+        border-radius: 0.3em;
+        font-style: italic;
+        font-size: 1.2em;
+        padding-left: .3em;
+    }
+
+    #dropdown option {
+        font-style: italic;
+    }
+}
+
+@media (min-width: 440px) and (max-width: 1367px) {
+    button:hover {
+        cursor: pointer;
+    }
+
+
+    .btn-return {
+        padding: 1em 1.25em;
+        font-size: 1.5em;
+        border-radius: 100%;
+        margin: 0.25em 0.25em;
+    }
+
+
+    .btn-submit {
+        font-weight: bold;
+        margin-top: 1em;
+        padding: .5em;
+        font-size: 2.5em;
+        width: 9em;
+        text-wrap: nowrap;
+    }
+
+    .btn-main {
+        border-radius: 0.5em;
+        text-wrap: nowrap;
+        border-width: 3px;
+        font-style: italic;
+        font-weight: bold;
+        text-align: center;
+        padding: .5em;
+        max-width: 300px;
+    }
+
+    #dropdown {
+        width: 15em;
+        border-radius: 0.3em;
+        font-style: italic;
+        font-size: 1.2em;
+        padding-left: .3em;
+    }
+
+    #dropdown option {
+        font-style: italic;
+    }
 }
 
 
-.btn-return {
-    padding: 0.5em 0.75em;
-    font-size: 1.3em;
-    border-radius: 100%;
-    margin: 0.5em 0.5em;
-}
+@media (max-width: 440px) {
+    button:hover {
+        cursor: pointer;
+    }
 
 
-.btn-submit {
-    font-weight: bold;
-    margin-top: 1em;
-    padding: .5em;
-    font-size: 2em;
-    width: 9em;
-    text-wrap: nowrap;
-}
+    .btn-return {
+        padding: 0.5em 0.75em;
+        font-size: 1.3em;
+        border-radius: 100%;
+        margin: 0.5em 0.5em;
+    }
 
-.btn-main {
-    border-radius: 0.5em;
-    text-wrap: nowrap;
-    border-width: 3px;
-    font-style: italic;
-    font-weight: bold;
-    text-align: center;
-    padding: .5em;
-    max-width: 300px;
-}
 
-#dropdown {
-    width: 15em;
-    border-radius: 0.3em;
-    font-style: italic;
-    font-size: 1.2em;
-    padding-left: .3em;
-}
+    .btn-submit {
+        font-weight: bold;
+        margin-top: 1em;
+        padding: .5em;
+        font-size: 2em;
+        width: 9em;
+        text-wrap: nowrap;
+    }
 
-#dropdown option {
-    font-style: italic;
+    .btn-main {
+        border-radius: 0.5em;
+        text-wrap: nowrap;
+        border-width: 3px;
+        font-style: italic;
+        font-weight: bold;
+        text-align: center;
+        padding: .5em;
+        max-width: 300px;
+    }
+
+    #dropdown {
+        width: 15em;
+        border-radius: 0.3em;
+        font-style: italic;
+        font-size: 1.2em;
+        padding-left: .3em;
+    }
+
+    #dropdown option {
+        font-style: italic;
+    }
 }

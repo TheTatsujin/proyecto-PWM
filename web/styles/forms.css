@@ -1,4 +1,4 @@
-@media (min-width: 835px) {
+@media (min-width: 1367px) {
     main {
         height: 30em;
     }
@@ -121,7 +121,7 @@
 
 
 /*Tablet screen*/
-@media (max-width: 835px){
+@media (min-width: 440px) and (max-width: 1367px){
     main {
         height: 30em;
     }
@@ -129,8 +129,8 @@
     .form-box {
         margin: auto;
         padding: 1.2em;
-        width: 30em;
-        height: 30em;
+        width: 55em;
+        height: 35em;
         border-radius: 2em;
         border-width: 3px 3px 8px 3px;
         display: flex;
@@ -185,16 +185,17 @@
 
     form > .form-fields > .form_input-column > input, div {
         margin-left: 1.5em;
+        justify-content: space-between;
     }
 
     .form-fields label {
-        font-size: 1.5em;
+        font-size: 2.4em;
         font-weight: bold;
         text-align: right;
     }
 
     .form-fields input {
-        font-size: 1.5em;
+        font-size: 1.8em;
         margin-left: 1em;
         border: none;
         border-bottom: 1px solid #FFFFFF;
@@ -202,13 +203,14 @@
     }
 
     .form-alternative-link {
-        font-size: 1.2em;
+        font-size: 1.8em;
         font-style: italic;
         text-align: center;
         justify-content: center;
         display: block;
         text-decoration: none;
         letter-spacing: .01rem;
+        line-height: 1.5em;
     }
 
     .form_checkbox-area {
@@ -235,7 +237,7 @@
         justify-content: space-evenly;
 
         margin-left: 1.5em;
-        font-size: 1.1em;
+        font-size: 1.3em;
         text-align: left;
         font-style: italic;
         text-wrap: auto;
