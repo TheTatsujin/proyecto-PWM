@@ -5,7 +5,7 @@
       "email": "good@email.com",
       "phone-number": "6AA-BBC-CEV",
       "birthdate": "28/11/1981",
-      "password": "¥ê^",
+      "password": "cGVwZQ==",
       "tickets": "1 - Normal Ticket"
     },
     {
@@ -13,7 +13,7 @@
       "email": "bad@email.com",
       "phone-number": "655-123-124",
       "birthdate": "30/01/1951",
-      "password": "¥ê^",
+      "password": "cGVwZQ==",
       "tickets": "5 - VIP Ticket"
     }
   ]

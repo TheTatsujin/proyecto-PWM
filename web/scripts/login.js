@@ -77,8 +77,9 @@ function isRegistered(mail, password) {
                 return false;
             }
 
-            if (userData["password"] !== atob(password.value)){
+            if (userData["password"] !== btoa(password.value)){
                 password.setCustomValidity("Wrong password");
+                password.reportValidity();
                 return false;
             }
 
