@@ -54,7 +54,7 @@
     .artist-banner > .artist-caption {
         border-width: 2px;
         position: absolute;
-        margin-right: 52.3rem;
+        margin-right: 4rem;
         margin-top: 17rem;
         width: 20rem;
         text-align: center;
@@ -71,11 +71,12 @@
         display: flex;
         overflow: hidden;
         justify-content: space-around;
+        z-index: 2;
     }
 
     .artist-banner > img {
         margin-top: -11rem;
-        margin-left: -20rem;
+        margin-left: -30rem;
         height: 60rem;
         width: auto;
     }
@@ -87,12 +88,13 @@
     .artist-banner > .artist-caption {
         border-width: 2px;
         position: absolute;
-        margin-right: 52.3rem;
+        margin-left: 2rem;
         margin-top: 17rem;
         width: 20rem;
         text-align: center;
         padding: 0.4em 0 0.4em 0;
         font-size: 2em;
         font-weight: bold;
+        z-index: 1;
     }
 }

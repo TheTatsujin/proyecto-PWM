@@ -86,3 +86,29 @@ main {
     }
 
 }
+
+@media (max-width: 576px){
+    #main-image {
+        width: 20rem;
+        height: auto;
+        margin: auto;
+    }
+
+    #calendar-section {
+        z-index: -1;
+        width: 30rem;
+        overflow: hidden;
+        transform: translate(-5%);
+    }
+
+    #calendar-section > img {
+        width: 270%;
+        margin-left: -137%;
+    }
+
+    #main-button-section > button {
+        font-size: 3rem;
+        text-wrap: wrap;
+    }
+
+}

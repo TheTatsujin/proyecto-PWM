@@ -122,7 +122,7 @@ header > img {
 
 header #logo {
     height: auto;
-    transform: translate(-7.75vw, 50px);
+    transform: translate(-4.5rem, 50px);
 }
 
 /* Sections */
@@ -202,7 +202,38 @@ footer {
     header button {
         margin-right: 2vw;
         text-wrap: wrap;
+        z-index: -1;
     }
 
+}
 
+
+@media (max-width: 576px){
+    #header_left-nav {
+        padding: 0;
+        display: flex;
+        justify-content: flex-start;
+        align-items: center;
+        width: 20vw;
+        margin-left: 0;
+    }
+
+    #header_left-nav > a {
+        font-size: .8rem;
+        letter-spacing: 0;
+        font-weight: bold;
+        text-decoration: none;
+    }
+
+    header #logo {
+        width: 40vw;
+        height: auto;
+        transform: translate(0, 50px);
+    }
+
+    header button {
+        margin-left: -15vw;
+        text-wrap: wrap;
+        z-index: -4;
+    }
 }
