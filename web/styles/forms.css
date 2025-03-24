@@ -1,7 +1,8 @@
-@media (min-width: 835px) {
-    main {
-        height: 30em;
-    }
+@media (min-width: 992px) {
+    /*    main {
+            height: 30em;
+        }
+    */
 
     .form-box {
         margin: auto;
@@ -121,16 +122,17 @@
 
 
 /*Tablet screen*/
-@media (max-width: 835px){
-    main {
-        height: 30em;
-    }
+@media (min-width: 576px) and (max-width: 992px){
+    /*    main {
+            height: 30em;
+        }
+    */
 
     .form-box {
         margin: auto;
         padding: 1.2em;
-        width: 30em;
-        height: 30em;
+        width: 55em;
+        height: 37em;
         border-radius: 2em;
         border-width: 3px 3px 8px 3px;
         display: flex;
@@ -185,16 +187,17 @@
 
     form > .form-fields > .form_input-column > input, div {
         margin-left: 1.5em;
+        justify-content: space-between;
     }
 
     .form-fields label {
-        font-size: 1.5em;
+        font-size: 2.4em;
         font-weight: bold;
         text-align: right;
     }
 
     .form-fields input {
-        font-size: 1.5em;
+        font-size: 1.8em;
         margin-left: 1em;
         border: none;
         border-bottom: 1px solid #FFFFFF;
@@ -202,19 +205,21 @@
     }
 
     .form-alternative-link {
-        font-size: 1.2em;
+        font-size: 1.8em;
         font-style: italic;
         text-align: center;
         justify-content: center;
         display: block;
         text-decoration: none;
         letter-spacing: .01rem;
+        line-height: 1.5em;
     }
 
     .form_checkbox-area {
         display: flex;
         margin-top: 1em;
         margin-left: 10em;
+        line-height: 1.75em;
     }
 
     .form_checkbox-area_buttons {
@@ -225,7 +230,7 @@
 
     .form_checkbox-area_buttons > input {
         width: 6em;
-        height: 1.2em;
+        height: 1.75em;
         cursor: pointer;
     }
 
@@ -233,9 +238,9 @@
         display: flex;
         flex-direction: column;
         justify-content: space-evenly;
-
         margin-left: 1.5em;
-        font-size: 1.1em;
+        font-size: 1.35em;
+        line-height: 1.5em;
         text-align: left;
         font-style: italic;
         text-wrap: auto;
@@ -244,100 +249,86 @@
 
 
 /*Mobile screen*/
-@media (max-width: 440px) {
-    main {
+@media (max-width: 576px) {
+/*    main {
         height: 30em;
+    }
+*/
+
+    section {
+        margin: auto;
+
+    }
+
+    .form-description {
+        display: none;
     }
 
     .form-box {
-        margin: auto;
-        padding: 1.2em;
-        width: 15em;
-        height: 60em;
+        width: 20rem;
+        height: 30rem;
         border-radius: 2em;
         border-width: 3px 3px 8px 3px;
         display: flex;
         flex-direction: column;
         justify-content: space-evenly;
+        align-items: center;
     }
 
     .form-box > .form-header {
         display: flex;
         align-items: center;
-        justify-content: flex-start;
+        font-size: 1rem;
     }
 
     .form-box > .form-header > h1 {
-        flex-grow: 1;
+        flex-grow: 0.5;
         text-align: center;
-        font-size: 5em;
+        font-size: 3em;
         font-weight: 900;
         text-shadow: 0 -2px 0 #FFFFFF
     }
 
-    .form-box > .form-description {
-        padding: 2em 3em 1em 3em;
-        font-size: 2em;
-        text-align: left;
-    }
 
     form {
         display: flex;
         flex-direction: column;
-        justify-content: flex-start;
         align-items: center;
     }
 
-    form > .form-fields {
-        display: flex;
-    }
-
     form > .form-fields > .form_label-column {
-        display: flex;
-        flex-direction: column;
-        align-items: end;
-        justify-content: space-between;
+        display: none;
     }
 
     form > .form-fields > .form_input-column {
         display: flex;
         flex-direction: column;
-        align-items: start;
-        justify-content: space-between;
-    }
-
-    form > .form-fields > .form_input-column > input, div {
-        margin-left: 1.5em;
-    }
-
-    .form-fields label {
-        font-size: 1.5em;
-        font-weight: bold;
-        text-align: right;
+        align-items: center;
+        justify-content: center;
+        font-size: small;
     }
 
     .form-fields input {
         font-size: 1.5em;
-        margin-left: 1em;
         border: none;
         border-bottom: 1px solid #FFFFFF;
         background: transparent;
+        line-height: 1.75rem;
     }
 
     .form-alternative-link {
         font-size: 1.2em;
         font-style: italic;
+        display: flex;
         text-align: center;
         justify-content: center;
-        display: block;
         text-decoration: none;
-        letter-spacing: .01rem;
     }
 
     .form_checkbox-area {
         display: flex;
         margin-top: 1em;
-        margin-left: 10em;
+        margin-left: 1em;
     }
 
     .form_checkbox-area_buttons {
@@ -347,6 +338,7 @@
     }
 
     .form_checkbox-area_buttons > input {
+        margin-left: 30%;
         width: 6em;
         height: 1.2em;
         cursor: pointer;
@@ -356,11 +348,13 @@
         display: flex;
         flex-direction: column;
         justify-content: space-evenly;
-
-        margin-left: 1.5em;
-        font-size: 1.1em;
+        font-size: 0.75em;
         text-align: left;
         font-style: italic;
-        text-wrap: auto;
+        line-height: 1rem;
+    }
+
+    section {
+        overflow: hidden;
     }
 }
