@@ -116,7 +116,7 @@ header div {
     justify-content: center;
 }
 
-header img {
+header > img {
     margin-left: 8.7em;
 }
 
@@ -175,3 +175,34 @@ footer {
     padding-right: 0.5em;
 }
 
+@media (max-width: 835px){
+    #header_left-nav {
+        padding: 0;
+        display: flex;
+        justify-content: flex-start;
+        align-items: center;
+        width: 30vw;
+        margin-left: 2em;
+    }
+
+    #header_left-nav > a {
+        letter-spacing: 0;
+        font-weight: bold;
+        padding: 1vw;
+        margin-left: -.5em;
+        text-decoration: none;
+    }
+
+    header #logo {
+        width: 40vw;
+        height: auto;
+        transform: translate(-3.7vw, 50px);
+    }
+
+    header button {
+        margin-right: 2vw;
+        text-wrap: wrap;
+    }
+
+
+}
