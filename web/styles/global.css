@@ -62,15 +62,15 @@
     padding: 0;
 }
 
-body {
-    height: 100%;
+main {
+    margin-top: 6.66rem;
+    margin-left: 4rem;
+    width: 74.75rem;
+    margin-bottom: 12.43rem;
 }
 
-main {
-    margin-top: 15vh;
-    margin-left: 10vw;
-    width: 80vw;
-    margin-bottom: 28vh;
+body {
+    height: 100%;
 }
 
 /* Header bar */
@@ -176,6 +176,13 @@ footer {
 }
 
 @media (max-width: 835px){
+    main {
+        margin-top: 6.66rem;
+        margin-left: 4rem;
+        width: 74.75rem;
+        margin-bottom: 12.43rem;
+    }
+
     #header_left-nav {
         padding: 0;
         display: flex;
@@ -209,6 +216,13 @@ footer {
 
 
 @media (max-width: 576px){
+    main {
+        margin-top: 15vh;
+        margin-left: 10vw;
+        width: 80vw;
+        margin-bottom: 28vh;
+    }
+
     #header_left-nav {
         padding: 0;
         display: flex;
