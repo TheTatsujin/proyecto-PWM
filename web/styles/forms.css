@@ -54,6 +54,13 @@
         justify-content: space-between;
     }
 
+    form > .form-fields > .form_data-column {
+        display: flex;
+        flex-direction: column;
+        align-items: end;
+        justify-content: space-between;
+    }
+
     form > .form-fields > .form_input-column {
         display: flex;
         flex-direction: column;
@@ -178,6 +185,13 @@
         justify-content: space-between;
     }
 
+    form > .form-fields > .form_data-column {
+        display: flex;
+        flex-direction: column;
+        align-items: end;
+        justify-content: space-between;
+    }
+
     form > .form-fields > .form_input-column {
         display: flex;
         flex-direction: column;
@@ -289,7 +303,6 @@
         text-shadow: 0 -2px 0 #FFFFFF
     }
 
-
     form {
         display: flex;
         flex-direction: column;
@@ -298,6 +311,16 @@
 
     form > .form-fields > .form_label-column {
         display: none;
+    }
+
+    form > .form-fields > .form_data-column {
+        margin-top: 2rem;
+        display: flex;
+        flex-direction: column;
+        align-items: end;
+        justify-content: space-between;
+        font-size: x-large;
+        line-height: 2rem;
     }
 
     form > .form-fields > .form_input-column {
