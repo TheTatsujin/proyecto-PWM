@@ -1,4 +1,4 @@
-@media (min-width: 1367px) {
+@media (min-width: 992px) {
     .ticket-table {
         margin: auto;
         width: 75rem;
@@ -36,7 +36,7 @@
 }
 
 /*Tablet screen*/
-@media (min-width: 440px) and (max-width: 1367px) {
+@media (min-width: 576px) and (max-width: 992px) {
     .ticket-table {
         height: 22rem;
         margin-right: 1rem;
@@ -69,7 +69,7 @@
 }
 
 /*Mobile screen*/
-@media (max-width: 440px) {
+@media (max-width: 576px) {
     .ticket-table {
         margin: auto;
         height: 370px;
@@ -103,8 +103,4 @@
         margin-bottom: 5em;
         display: flex;
     }
-}
-
-@media screen {
-    
 }

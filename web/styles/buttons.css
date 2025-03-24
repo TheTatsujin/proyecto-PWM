@@ -1,4 +1,4 @@
-@media (min-width: 1367px) {
+@media (min-width: 992px) {
     button:hover {
         cursor: pointer;
     }
@@ -45,7 +45,7 @@
     }
 }
 
-@media (min-width: 440px) and (max-width: 1367px) {
+@media (min-width: 576px) and (max-width: 992px) {
     button:hover {
         cursor: pointer;
     }
@@ -93,7 +93,7 @@
 }
 
 
-@media (max-width: 440px) {
+@media (max-width: 576px) {
     button:hover {
         cursor: pointer;
     }
@@ -108,11 +108,10 @@
 
 
     .btn-submit {
-        margin-left: 25%;
         font-weight: bold;
         margin-top: 1em;
         padding: .5em;
-        font-size: 1.5em;
+        font-size: 1.2rem;
         width: 9em;
         text-wrap: nowrap;
     }
