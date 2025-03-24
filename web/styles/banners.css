@@ -1,30 +1,100 @@
-.artist-banner {
-    margin-top: 2vh;
-    height: 20vh;
-    display: flex;
-    overflow: hidden;
-    justify-content: space-around;
+@media (min-width: 992px) {
+    .artist-banner {
+        margin-top: 2rem;
+        height: 10rem;
+        display: flex;
+        overflow: hidden;
+        justify-content: space-evenly;
+    }
+
+    .artist-banner > img {
+        margin-top: -4rem;
+        margin-left: -16rem;
+        height: 20rem;
+        width: auto;
+    }
+
+    .artist-banner > .date-caption {
+        padding: 1.5em;
+    }
+
+    .artist-banner > .artist-caption {
+        border-width: 2px;
+        position: absolute;
+        margin-top: 7rem;
+        margin-right: 52.3rem;
+        width: 20rem;
+        text-align: center;
+        padding: 0.4rem 0 1rem 0;
+        font-size: 2em;
+        font-weight: bold;
+    }
 }
 
-.artist-banner > img {
-    margin-top: -11vh;
-    margin-left: -20vh;
-    height: 60vh;
-    width: auto;
+@media (min-width: 576px) and (max-width: 992px){
+    .artist-banner {
+        margin-top: 2rem;
+        height: 20rem;
+        display: flex;
+        overflow: hidden;
+        justify-content: space-around;
+    }
+
+    .artist-banner > img {
+        margin-top: -11rem;
+        margin-left: -20rem;
+        height: 60rem;
+        width: auto;
+    }
+
+    .artist-banner > .date-caption {
+        padding: 1.5em;
+    }
+
+    .artist-banner > .artist-caption {
+        border-width: 2px;
+        position: absolute;
+        margin-right: 4rem;
+        margin-top: 17rem;
+        width: 20rem;
+        text-align: center;
+        padding: 0.4em 0 0.4em 0;
+        font-size: 2em;
+        font-weight: bold;
+    }
 }
 
-.artist-banner > .date-caption {
-    padding: 1.5em;
-}
+@media (max-width: 576px) {
+    .artist-banner {
+        margin-top: 2rem;
+        height: 20rem;
+        display: flex;
+        overflow: hidden;
+        justify-content: space-around;
+        z-index: 2;
+    }
 
-.artist-banner > .artist-caption {
-    border-width: 2px;
-    position: absolute;
-    margin-right: 52.3vw;
-    margin-top: 17vh;
-    width: 20vw;
-    text-align: center;
-    padding: 0.4em 0 0.4em 0;
-    font-size: 2em;
-    font-weight: bold;
+    .artist-banner > img {
+        margin-top: -11rem;
+        margin-left: -30rem;
+        height: 60rem;
+        width: auto;
+    }
+
+    .artist-banner > .date-caption {
+        padding: 1.5em;
+    }
+
+    .artist-banner > .artist-caption {
+        border-width: 2px;
+        position: absolute;
+        margin-left: 2rem;
+        margin-top: 17rem;
+        width: 20rem;
+        text-align: center;
+        padding: 0.4em 0 0.4em 0;
+        font-size: 2em;
+        font-weight: bold;
+        z-index: 1;
+    }
 }
