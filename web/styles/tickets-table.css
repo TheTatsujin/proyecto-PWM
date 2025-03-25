@@ -1,8 +1,7 @@
-@media (min-width: 992px) {
     .ticket-table {
         margin: auto;
         width: 100%;
-        height: 22rem;;
+        height: 22rem;
         border-width: 1px;
         border-bottom-width: 6px;
         border-style: solid;
@@ -33,48 +32,13 @@
         margin-bottom: 5em;
         display: flex;
     }
-}
+
 
 /*Tablet screen*/
 @media (min-width: 576px) and (max-width: 992px) {
 
     .section-header {
-        font-size: 8rem;
-    }
-
-    .ticket-table {
-        margin: auto;
-        width: 100%;
-        height: 22rem;;
-        border-width: 1px;
-        border-bottom-width: 6px;
-        border-style: solid;
-        border-radius: 8px;
-    }
-
-    .ticket-table tr {
-        text-align: left;
-        font-style: italic;
-    }
-
-    .ticket-table th {
-        font-size: 3em;
-        font-weight: bold;
-        padding-top: 15px;
-        padding-left: 10px;
-    }
-
-    .ticket-table td {
-        font-size: 2em;
-        padding-top: 15px;
-        padding-left: 10px;
-    }
-
-    .dropdown-box {
-        margin-left: auto;
-        margin-right: auto;
-        margin-bottom: 5em;
-        display: flex;
+        font-size: 6rem;
     }
 
 }
@@ -83,41 +47,21 @@
 @media (max-width: 576px) {
 
     .section-header {
-        font-size: 6rem;
+        font-size: 4rem;
     }
 
     .ticket-table {
         margin: auto;
         width: 100%;
-        height: 22rem;;
-        border-width: 1px;
-        border-bottom-width: 6px;
-        border-style: solid;
-        border-radius: 8px;
-    }
-
-    .ticket-table tr {
-        text-align: left;
-        font-style: italic;
+        height: 11rem;
     }
 
     .ticket-table th {
-        font-size: 3rem;
-        font-weight: bold;
-        padding-top: 15px;
-        padding-left: 10px;
+        font-size: 1.5em;
     }
 
     .ticket-table td {
-        font-size: 2rem;
-        padding-top: 15px;
-        padding-left: 10px;
+        font-size: 1.5em;
     }
 
-    .dropdown-box {
-        margin-left: auto;
-        margin-right: auto;
-        margin-bottom: 5em;
-        display: flex;
-    }
 }
