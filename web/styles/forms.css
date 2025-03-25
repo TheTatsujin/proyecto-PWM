@@ -1,10 +1,9 @@
 @media (min-width: 992px) {
 
-    section {
-        margin: auto;
-    }
-
     .form-box {
+        margin: auto;
+        max-width: 100%;
+        max-height: 100%;
         width: 60rem;
         height: 30rem;
         border-radius: 2em;
@@ -55,7 +54,7 @@
     form > .form-fields > .form_data-column {
         display: flex;
         flex-direction: column;
-        align-items: end;
+        align-items: start;
         justify-content: space-between;
     }
 
@@ -130,12 +129,13 @@
 @media (min-width: 576px) and (max-width: 992px){
 
     section {
-        margin: auto;
+        overflow: hidden;
     }
 
     .form-box {
+        max-width: 100%;
         width: 55rem;
-        height: 37rem;
+        height: 55rem;
         border-radius: 2em;
         border-width: 3px 3px 8px 3px;
         display: flex;
@@ -152,7 +152,7 @@
     .form-box > .form-header > h1 {
         flex-grow: 1;
         text-align: center;
-        font-size: 5em;
+        font-size: 3em;
         font-weight: 900;
         text-shadow: 0 -2px 0 #FFFFFF
     }
@@ -184,7 +184,7 @@
     form > .form-fields > .form_data-column {
         display: flex;
         flex-direction: column;
-        align-items: end;
+        align-items: start;
         justify-content: space-between;
     }
 
@@ -201,13 +201,14 @@
     }
 
     .form-fields label {
-        font-size: 2.4em;
+        font-size: 1.5em;
         font-weight: bold;
         text-align: right;
+        line-height: 1.75em;
     }
 
     .form-fields input {
-        font-size: 1.8em;
+        font-size: 1.5em;
         margin-left: 1em;
         border: none;
         border-bottom: 1px solid #FFFFFF;
@@ -262,7 +263,6 @@
 @media (max-width: 576px) {
 
     section {
-        margin: auto;
         overflow: hidden;
     }
 
@@ -271,6 +271,7 @@
     }
 
     .form-box {
+        max-width: 100%;
         width: 20rem;
         height: 30rem;
         border-radius: 2em;
@@ -308,10 +309,10 @@
         margin-top: 2rem;
         display: flex;
         flex-direction: column;
-        align-items: end;
+        align-items: center;
         justify-content: space-between;
-        font-size: x-large;
-        line-height: 2rem;
+        font-size: xx-large;
+        line-height: 2.5rem;
     }
 
     form > .form-fields > .form_input-column {
@@ -346,15 +347,16 @@
     }
 
     .form_checkbox-area_buttons {
+        margin-left: -10%;
         display: flex;
         flex-direction: column;
         justify-content: space-evenly;
+        align-items: start;
     }
 
     .form_checkbox-area_buttons > input {
-        margin-left: 30%;
-        width: 6em;
-        height: 1.2em;
+        width: 8em;
+        height: 1.5em;
         cursor: pointer;
     }
 
@@ -362,9 +364,9 @@
         display: flex;
         flex-direction: column;
         justify-content: space-evenly;
-        font-size: 0.75em;
+        font-size: 1em;
         text-align: left;
         font-style: italic;
-        line-height: 1rem;
+        line-height: 1.25rem;
     }
 }
