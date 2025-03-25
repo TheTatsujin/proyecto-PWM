@@ -38,16 +38,15 @@
 @media (min-width: 576px) and (max-width: 992px) {
 
     .section-header {
-        font-size: 6rem;
+        font-size: 8rem;
     }
-
 }
 
 /*Mobile screen*/
 @media (max-width: 576px) {
 
     .section-header {
-        font-size: 4rem;
+        font-size: 4.5rem;
     }
 
     .ticket-table {
@@ -61,7 +60,7 @@
     }
 
     .ticket-table td {
-        font-size: 1.5em;
+        font-size: 1em;
     }
 
 }

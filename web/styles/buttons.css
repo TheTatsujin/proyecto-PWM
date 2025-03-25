@@ -80,7 +80,7 @@
     }
 
     #dropdown {
-        width: 15em;
+        width: 10em;
         border-radius: 0.3em;
         font-style: italic;
         font-size: 1.2em;
@@ -127,11 +127,11 @@
     }
 
     #dropdown {
-        width: 10em;
+        width: 9em;
         border-radius: 0.3em;
         font-style: italic;
         font-size: 1.2em;
-        padding-left: .3em;
+        padding-left: .5em;
     }
 
     #dropdown option {
