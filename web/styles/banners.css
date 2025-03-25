@@ -1,100 +1,67 @@
-@media (min-width: 992px) {
-    .artist-banner {
-        margin-top: 2rem;
-        height: 10rem;
-        display: flex;
-        overflow: hidden;
-        justify-content: space-evenly;
-    }
+.artist-banner {
+    margin-top: 2rem;
+    height: 10rem;
+    display: flex;
+    overflow: hidden;
+    justify-content: space-between;
+}
 
+.artist-banner > img {
+    margin-left: -5vw;
+    margin-top: -8vh;
+    height: 40vh;
+    width: auto;
+}
+
+.artist-banner > .date-caption {
+    padding: 1.5em;
+    width: 10rem;
+    text-align: left;
+}
+
+.artist-banner > .artist-caption {
+    border-width: 2px;
+    position: absolute;
+    margin-top: 7rem;
+    left: 6.5vw;
+    width: 20rem;
+    text-align: center;
+    padding: 0.4rem 0 1rem 0;
+    font-size: 2em;
+    font-weight: bold;
+}
+
+
+
+@media (max-width: 758px){
     .artist-banner > img {
-        margin-top: -4rem;
-        margin-left: -16rem;
-        height: 20rem;
+        height: 30vh;
+        margin-top: .001vh;
+        margin-left: -10vw;
         width: auto;
-    }
-
-    .artist-banner > .date-caption {
-        padding: 1.5em;
-    }
-
-    .artist-banner > .artist-caption {
-        border-width: 2px;
-        position: absolute;
-        margin-top: 7rem;
-        margin-right: 52.3rem;
-        width: 20rem;
-        text-align: center;
-        padding: 0.4rem 0 1rem 0;
-        font-size: 2em;
-        font-weight: bold;
     }
 }
 
-@media (min-width: 576px) and (max-width: 992px){
-    .artist-banner {
-        margin-top: 2rem;
-        height: 20rem;
-        display: flex;
-        overflow: hidden;
-        justify-content: space-around;
-    }
 
+@media (max-width: 615px){
+    .artist-banner {
+        display: flex;
+        flex-direction: column;
+        height: 20rem;
+    }
     .artist-banner > img {
-        margin-top: -11rem;
-        margin-left: -20rem;
-        height: 60rem;
+        flex-shrink: 0;
+        height: 30vh;
+        margin-top: .001vh;
+        margin-left: -10vw;
         width: auto;
     }
 
-    .artist-banner > .date-caption {
-        padding: 1.5em;
-    }
-
     .artist-banner > .artist-caption {
-        border-width: 2px;
-        position: absolute;
-        margin-right: 4rem;
-        margin-top: 17rem;
-        width: 20rem;
-        text-align: center;
-        padding: 0.4em 0 0.4em 0;
-        font-size: 2em;
-        font-weight: bold;
-    }
-}
-
-@media (max-width: 576px) {
-    .artist-banner {
-        margin-top: 2rem;
-        height: 20rem;
-        display: flex;
-        overflow: hidden;
-        justify-content: space-around;
-        z-index: 2;
+        margin-top: 11rem;
+        font-size: 1.2rem;
+        width: 10rem;
     }
 
-    .artist-banner > img {
-        margin-top: -11rem;
-        margin-left: -30rem;
-        height: 60rem;
-        width: auto;
-    }
 
-    .artist-banner > .date-caption {
-        padding: 1.5em;
-    }
-
-    .artist-banner > .artist-caption {
-        border-width: 2px;
-        position: absolute;
-        margin-left: 2rem;
-        margin-top: 17rem;
-        width: 20rem;
-        text-align: center;
-        padding: 0.4em 0 0.4em 0;
-        font-size: 2em;
-        font-weight: bold;
-        z-index: 1;
-    }
 }
