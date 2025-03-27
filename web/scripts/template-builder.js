@@ -58,8 +58,10 @@ async function buildTargetElementWithTemplate(templateTargetElement, template){
 
     if (contentDataFileName) contentDataJsonList = await fetchContentDataFromFile(contentDataFileName)
         .then(contentDataJsonParent => contentDataJsonParent[contentDataFileName]);
-    else if (sessionDataKey) contentDataJsonList = [JSON.parse(sessionStorage.getItem(sessionDataKey))];
-
+    else if (sessionDataKey) {
+        const storedData = sessionStorage.getItem(sessionDataKey) || localStorage.getItem(sessionDataKey);
+        contentDataJsonList = storedData ? [JSON.parse(storedData)] : [];
+    }
 
     templateDocumentFragment = buildAllTemplatesFromJson(templateDocumentFragment, contentDataJsonList);
     templateTargetElement.appendChild(templateDocumentFragment);
