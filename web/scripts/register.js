@@ -15,7 +15,7 @@ export function registerFormActions(){
         addValidation(e, e.target.value === document.querySelector("#password").value, "Passwords must match")
     );
 
-    document.querySelector("#register-form").addEventListener("submit", async _=> registerUser());
+    document.querySelector("#register-form").addEventListener("submit", async (e)=> registerUser(e));
 }
 
 
@@ -44,7 +44,27 @@ function getFormData(){
     }
 }
 
-async function registerUser() {
+async function registerUser(e) {
+    e.preventDefault();
+    const dataForm = getFormData();
+    const NO_TICKETS = "None";
+    const userData = {
+        name: dataForm.data.name,
+        email: dataForm.data.email,
+        "phone-number": dataForm.data.phoneNumber,
+        birthdate: dataForm.data.birthdate,
+        tickets: NO_TICKETS
+    };
+    localStorage.setItem("user-session", JSON.stringify(userData));
+    backToMainPage()
+}
+
+
+function backToMainPage() {
+    location.href = "../pages/index.html";
+}
+
+async function registerUserOnStrapi() {
     const dataForm = getFormData();
     let response;
 
@@ -61,8 +81,7 @@ async function registerUser() {
 
     if (response.ok) {
         sessionStorage.setItem("login", dataForm.email);
-        location.href = "../pages/index.html";
+        backToMainPage();
     }
     else response.json().then(err => console.log(err));
-
 }
