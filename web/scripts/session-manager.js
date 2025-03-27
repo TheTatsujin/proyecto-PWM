@@ -23,12 +23,13 @@ export function logoutButtonAction(){
     if (!logoutButton) return;
     logoutButton.addEventListener("click", () => {
         sessionStorage.removeItem("user-session");
+        localStorage.removeItem("user-session");
         location.replace(location.origin + "/proyecto-PWM/web/pages/index.html");
     });
 }
 
 function isUserLogged() {
-    return sessionStorage.getItem("user-session") != null;
+    return sessionStorage.getItem("user-session") != null || localStorage.getItem("user-session") !== null;
 }
 
 function fetchUserIconTemplate() {
@@ -44,7 +45,7 @@ function getUserDataFrom() {
 }
 
 // STRAPI
-export function updateSession() { // TODO I propose to call it before templates are loaded
+export function updateSession() {
     getUserDataFrom()
         .then(response => response.json())
         .then(newUserData => {
