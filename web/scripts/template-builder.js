@@ -40,7 +40,7 @@ async function buildTemplateForElement(targetElement){
     }
 }
 
-function fetchTemplateFromFile(templateFileName){
+export function fetchTemplateFromFile(templateFileName){
     return fetch(`../templates/${templateFileName}.html`)
         .catch(error => console.error(`Error fetching data from template ${templateFileName}: `, error))
         .then(response => response.text())
@@ -49,7 +49,7 @@ function fetchTemplateFromFile(templateFileName){
 }
 
 
-async function buildTargetElementWithTemplate(templateTargetElement, template){
+export async function buildTargetElementWithTemplate(templateTargetElement, template){
     let templateDocumentFragment = template.content.cloneNode(true);
     let contentDataJsonList = [];
     const contentDataFileName = template.getAttribute("content-data-file");
