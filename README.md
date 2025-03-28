@@ -1,4 +1,6 @@
-# Grupo 41.6: Festival Pulse Width Modulation
+# Sprint 2
+
+## Grupo 41.6: Festival Pulse Width Modulation
 
 ### Miembros del grupo
 - Luis Martín Pérez
@@ -65,7 +67,7 @@ Los templates se encuentran en el directorio ```web/templates/```.
 Las hojas de estilo se encuentran en ```web/styles/``` y siguen la siguiente filosofía para separarlas:
 - Todos los estilos comunes en toda la web se especifican en ```web/styles/global.css```.
 - Todos los botones quedan definidos en ```web/styles/buttons.css```.
-- Las hojas de estilo específcas a las páginas son:
+- Las hojas de estilo específicas a las páginas son:
 	- ```index.css``` para ```index.html```.
 	- ```forms.css``` para todos los formularios, que son: ```login.html```, ```register.html```, ```recovery.html``` y ```user-page.html```.
 	- ```tickets-table.css``` para ```tickets.html```.
@@ -74,8 +76,12 @@ Las hojas de estilo se encuentran en ```web/styles/``` y siguen la siguiente fil
 #### Respecto a tareas implementadas con JavaScript
 - Los scripts de JavaScript se encuentran en el directorio ```web/scripts/``` 
 - En este primer sprint se han implementado dos tareas con JavaScript:
-  - Cargar los templates mediante el uso del script ```xlu-include-file.js``` proporcionado en el material de la asginatura.
+  - Cargar los templates mediante el uso del script ```template-builder.js```, así como ```return-feature.js``` para evitar
+bucles cuando se utiliza el botón de retorno y ```session-manager.js``` para mantener el inicio de sesión y cargar correctamente
+los cambios en las páginas.
   - Para navegar cuando se presiona sobre un botón mediante el evento ```onclick``` en las etíquetas ```<button>```.
+- En cuanto a los formularios, tenemos los siguientes scripts:
+
 
 #### Aspectos de Look and Feel
 La paleta de colores elegida para la página web ha sido diseñada teniendo en cuenta 
@@ -86,6 +92,6 @@ eventos en donde predominan muchas luces, que resaltan aún más cuando hay meno
 solar.
 
 ### Enlaces de interés
-- Link al repositorio de github: [Github](https://github.com/TheTatsujin/proyecto-PWM/tree/sprint-1)
+- Link al repositorio de Github: [Github](https://github.com/TheTatsujin/proyecto-PWM/tree/sprint-1)
 - Link al proyecto en Figma: [Figma](https://www.figma.com/design/OS85H9410fIBWvIavd12EM/Pagina?node-id=6-3&t=SEwRmkqbCGws3CMv-1)
 - Link al Trello: [Trello](https://trello.com/b/USUG6x1w/pwm-pulse-width-modulation-web)
