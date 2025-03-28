@@ -75,11 +75,13 @@ Las hojas de estilo se encuentran en ```web/styles/``` y siguen la siguiente fil
 	- ```tickets-table.css``` para ```tickets.html```.
 	- ```banners.css``` para ```artists.html```.
 
+
+
 #### Respecto a tareas implementadas con JavaScript
 - Los scripts de JavaScript se encuentran en el directorio ```web/scripts/``` 
 - En este segundo sprint se han implementado las siguientes tareas con JavaScript:
   - Cargar los templates mediante el uso del script ```template-builder.js```, así como ```return-feature.js``` para evitar
-  bules cuando se utiliza el botón de retorno y ```session-manager.js``` para mantener el inicio de sesión y cargar correctamente
+  bucles cuando se utiliza el botón de retorno y ```session-manager.js``` para mantener el inicio de sesión y cargar correctamente
   los cambios en las páginas.
   - Para navegar cuando se presiona sobre un botón mediante el evento ```onclick``` en las etíquetas ```<button>```.
 - En cuanto a los formularios, tenemos los siguientes scripts:
@@ -108,6 +110,12 @@ imagen y tanto la ubicación como la fecha de su actuación.
     - ```ticket-table-A.json``` con las entradas y los precios de la ubicación "Arquitectura".
     - ```ticket-table-E.json``` con las entradas y los precios de la ubicación "Empresariales".
     - ```ticket-table-T.json``` con las entradas y los precios de la ubicación "Telecomunicaciones".
+
+#### Validación nativa de HTML5
+En los formularios de la página web se ha usado, además de JavaScript, la validación nativa de HTML5. Esta validación 
+ofrece una retroalimentación instantánea al usuario  cuando está cumplimentando los campos del formularios, facilitando 
+a los mismos que no se equivoquen al rellenar el formulario e indicandoles que y como deben rellenar para poder enviar
+el formulario.
 
 
 #### Aspectos de Look and Feel
