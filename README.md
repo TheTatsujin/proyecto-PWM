@@ -81,7 +81,8 @@ bucles cuando se utiliza el botón de retorno y ```session-manager.js``` para ma
 los cambios en las páginas.
   - Para navegar cuando se presiona sobre un botón mediante el evento ```onclick``` en las etíquetas ```<button>```.
 - En cuanto a los formularios, tenemos los siguientes scripts:
-
+	- En ```register.js``` encontramos, además de la validación y creación del usuario, un apoyo en tiempo real de los posibles
+  campos que estén mal para que no sea necesario pulsar el botón de submit.
 
 #### Aspectos de Look and Feel
 La paleta de colores elegida para la página web ha sido diseñada teniendo en cuenta 
