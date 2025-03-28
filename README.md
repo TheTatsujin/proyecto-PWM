@@ -34,13 +34,13 @@ La página de inicio ```index.html``` se encuentra en el directorio ```web/pages
 
 | Mockup                                                             | HTML |
 |--------------------------------------------------------------------| ---  |
-| [Mockup Main Page.png](mockups/Mockup-Main-Page.png)               | [index.html](web/pages/index.html)|
-| [Mockup artistas.png](mockups/Mockup-artistas.png)                 | [artists.html](web/pages/artists.html)|
-| [Mockup login.png](mockups/Mockup-login.png)                       | [login.html](web/pages/login.html) |
-| [Mockup recuperar cuenta.png](mockups/Mockup-recuperar-cuenta.png) | [recovery.html](web/pages/recovery.html)|
-| [Mockup register.png](mockups/Mockup-register.png)                 | [register.html](web/pages/register.html)|
-| [Mockup tickets.png](mockups/Mockup-Tickets.png)                   | [tickets.html](web/pages/tickets.html)|
-| [Mockup usuario.png](mockups/Mockup-usuario.png)                   | [user-page.html](web/pages/user-page.html)|
+| [Mockup Main Page.png](mockups/desktop/Mockup-Main-Page.png)               | [index.html](web/pages/index.html)|
+| [Mockup artistas.png](mockups/desktop/Mockup-artistas.png)                 | [artists.html](web/pages/artists.html)|
+| [Mockup login.png](mockups/desktop/Mockup-login.png)                       | [login.html](web/pages/login.html) |
+| [Mockup recuperar cuenta.png](mockups/desktop/Mockup-recuperar-cuenta.png) | [recovery.html](web/pages/recovery.html)|
+| [Mockup register.png](mockups/desktop/Mockup-register.png)                 | [register.html](web/pages/register.html)|
+| [Mockup tickets.png](mockups/desktop/Mockup-Tickets.png)                   | [tickets.html](web/pages/tickets.html)|
+| [Mockup usuario.png](mockups/desktop/Mockup-usuario.png)                   | [user-page.html](web/pages/user-page.html)|
 
 ### Listado de templates
 
