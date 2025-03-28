@@ -32,35 +32,36 @@ de entradas.
 
 La página de inicio ```index.html``` se encuentra en el directorio ```web/pages/index.html``` y las demás páginas en ```web/pages/```.
 
-| Mockup                                                             | HTML |
-|--------------------------------------------------------------------| ---  |
-| [Mockup Main Page.png](mockups/desktop/Mockup-Main-Page.png)               | [index.html](web/pages/index.html)|
-| [Mockup artistas.png](mockups/desktop/Mockup-artistas.png)                 | [artists.html](web/pages/artists.html)|
-| [Mockup login.png](mockups/desktop/Mockup-login.png)                       | [login.html](web/pages/login.html) |
-| [Mockup recuperar cuenta.png](mockups/desktop/Mockup-recuperar-cuenta.png) | [recovery.html](web/pages/recovery.html)|
-| [Mockup register.png](mockups/desktop/Mockup-register.png)                 | [register.html](web/pages/register.html)|
-| [Mockup tickets.png](mockups/desktop/Mockup-Tickets.png)                   | [tickets.html](web/pages/tickets.html)|
-| [Mockup usuario.png](mockups/desktop/Mockup-usuario.png)                   | [user-page.html](web/pages/user-page.html)|
+| Mockup Dektop                                                              | Mockup Tablet 												                                                | Mockup Mobile												                                                 | HTML                                       |                                       
+|----------------------------------------------------------------------------|---------------------------------------------------------------------------|---------------------------------------------------------------------------|--------------------------------------------|
+| [Mockup Main Page.png](mockups/desktop/Mockup-Main-Page.png)               | [Mockup Main Page.png](mockups/tablet/Mockup-Main-Page.png)               | [Mockup Main Page.png](mockups/mobile/Mockup-Main-Page.png)               | [index.html](web/pages/index.html)         |
+| [Mockup artistas.png](mockups/desktop/Mockup-artistas.png)                 | [Mockup artistas.png](mockups/tablet/Mockup-artistas.png)                 | [Mockup artistas.png](mockups/mobile/Mockup-artistas.png)                 | [artists.html](web/pages/artists.html)     |
+| [Mockup login.png](mockups/desktop/Mockup-login.png)                       | [Mockup login.png](mockups/tablet/Mockup-login.png)                       | [Mockup login.png](mockups/mobile/Mockup-login.png)                       | [login.html](web/pages/login.html)         |
+| [Mockup recuperar cuenta.png](mockups/desktop/Mockup-recuperar-cuenta.png) | [Mockup recuperar cuenta.png](mockups/tablet/Mockup-recuperar-cuenta.png) | [Mockup recuperar cuenta.png](mockups/mobile/Mockup-recuperar-cuenta.png) | [recovery.html](web/pages/recovery.html)   |
+| [Mockup register.png](mockups/desktop/Mockup-register.png)                 | [Mockup register.png](mockups/tablet/Mockup-register.png)                 | [Mockup register.png](mockups/mobile/Mockup-register.png)                 | [register.html](web/pages/register.html)   |
+| [Mockup tickets.png](mockups/desktop/Mockup-Tickets.png)                   | [Mockup tickets.png](mockups/tablet/Mockup-Tickets.png)                   | [Mockup tickets.png](mockups/mobile/Mockup-Tickets.png)                   | [tickets.html](web/pages/tickets.html)     |
+| [Mockup usuario.png](mockups/desktop/Mockup-usuario.png)                   | [Mockup usuario.png](mockups/tablet/Mockup-usuario.png)                   | [Mockup usuario.png](mockups/mobile/Mockup-usuario.png)                   | [user-page.html](web/pages/user-page.html) |
+
 
 ### Listado de templates
 
 Los templates se encuentran en el directorio ```web/templates/```.
 
-| Nombre de template | HTML |
-| ---    | ---  |
-| Artist Banner | [artist-banner.html](web/templates/artist-banner.html)|
-| Header A | [header.html](web/templates/header.html)|
-| Header B | [second-header.html](web/templates/second-header.html)|
-| Footer | [footer.html](web/templates/footer.html)|
-| Main Button | [main-button.html](web/templates/main-button.html)|
-| Return Button | [return-button.html](web/templates/return-button.html)|
-| Dropdown selector | [dropdown.html](web/templates/dropdown.html)|
-| Ticket Table | [ticket-table.html](web/templates/ticket-table.html)|
-| User Icon | [user-icon.html](web/templates/user-icon.html)|
-| Login Form | [login-form.html](web/templates/login-form.html)|
-| Register Form | [register-form.html](web/templates/register-form.html)|
-| Account Recovery Form | [account-recovery.html](web/templates/account-recovery.html)|
-| Accordion | [accordion.html](web/templates/accordion.html)|
+| Nombre de template    | HTML                                                         |
+|-----------------------|--------------------------------------------------------------|
+| Artist Banner         | [artist-banner.html](web/templates/artist-banner.html)       |
+| Header A              | [header.html](web/templates/header.html)                     |
+| Header B              | [second-header.html](web/templates/second-header.html)       |
+| Footer                | [footer.html](web/templates/footer.html)                     |
+| Main Button           | [main-button.html](web/templates/main-button.html)           |
+| Return Button         | [return-button.html](web/templates/return-button.html)       |
+| Dropdown selector     | [dropdown.html](web/templates/dropdown.html)                 |
+| Ticket Table          | [ticket-table.html](web/templates/ticket-table.html)         |
+| User Icon             | [user-icon.html](web/templates/user-icon.html)               |
+| Login Form            | [login-form.html](web/templates/login-form.html)             |
+| Register Form         | [register-form.html](web/templates/register-form.html)       |
+| Account Recovery Form | [account-recovery.html](web/templates/account-recovery.html) |
+| Accordion             | [accordion.html](web/templates/accordion.html)               |
 
 ### Otros aspectos
 #### Respecto a la hojas de estilo.
