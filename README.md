@@ -77,14 +77,38 @@ Las hojas de estilo se encuentran en ```web/styles/``` y siguen la siguiente fil
 
 #### Respecto a tareas implementadas con JavaScript
 - Los scripts de JavaScript se encuentran en el directorio ```web/scripts/``` 
-- En este primer sprint se han implementado dos tareas con JavaScript:
+- En este segundo sprint se han implementado las siguientes tareas con JavaScript:
   - Cargar los templates mediante el uso del script ```template-builder.js```, así como ```return-feature.js``` para evitar
-bucles cuando se utiliza el botón de retorno y ```session-manager.js``` para mantener el inicio de sesión y cargar correctamente
-los cambios en las páginas.
+  bules cuando se utiliza el botón de retorno y ```session-manager.js``` para mantener el inicio de sesión y cargar correctamente
+  los cambios en las páginas.
   - Para navegar cuando se presiona sobre un botón mediante el evento ```onclick``` en las etíquetas ```<button>```.
 - En cuanto a los formularios, tenemos los siguientes scripts:
 	- En ```register.js``` encontramos, además de la validación y creación del usuario, un apoyo en tiempo real de los posibles
-  campos que estén mal para que no sea necesario pulsar el botón de submit.
+  campos que estén mal para que no sea necesario pulsar el botón de submit. Por otro lado, creamos el código para realizar el
+  registro con Strapi, sin embargo, al no poder añadir la base de datos al repositorio decidimos no implementarlo. Finalmente,
+  en caso de validarse el registro, se realizará un localStorage para implementar las funcionalidades del inicio de sesión.
+    - En ```login.js``` encontramos, al igual también una validación para el botón ```submit``` y otra para ir actualizando en
+  	tiempo real. En este código también implementamos una llamada a Strapi que se quedó sin usar. Una vez se valida el inicio de
+  	sesión, se realiza un sessionStorage para implementar las funcionalidades del inicio de sesión.
+    - En ```recovery-account.js``` se encuentra tanto la validación del botón ```submit``` como la validación en tiempo real. Por
+  	último, cuando se acepta la validación, aparece un mensaje emergente indicando que se ha enviado un correo.
+- Finalmente, tenemos el script ```dropdown.js``` el cual se encarga de actualizar dinámicamente los precios de los tickets según
+la ubicación. Estos precios se encuentran en distintos ficheros ```.json```.
+
+#### Ficheros .json como base de datos.
+Para dinamizar la página web, se hizo uso de varios ficheros en distintas páginas.
+- Para la página principal tenemos el fichero ```faq.json```, el cual se encarga de cargar las preguntas y respuestas que se
+muestran en el último apartado de la página.
+- Para los formularios se hizo uso del fichero ```user.json```, aquí se crearon varios usuarios de prueba para probar las
+validaciones de los tres formularios, así como la visualización de la página de usuario con los datos de este.
+- Pasando con la página de artistas encontramos el fichero ```artists.json``` donde se encuentra el nombre del artista, su
+imagen y tanto la ubicación como la fecha de su actuación.
+- Por último, en la página de tickets podemos encontrar varios ficheros:
+	- ```event-location.json``` para el dropdown donde se puede elegir la ubicación del festival al que se quiera asistir.
+    - ```ticket-table-A.json``` con las entradas y los precios de la ubicación "Arquitectura".
+    - ```ticket-table-E.json``` con las entradas y los precios de la ubicación "Empresariales".
+    - ```ticket-table-T.json``` con las entradas y los precios de la ubicación "Telecomunicaciones".
+
 
 #### Aspectos de Look and Feel
 La paleta de colores elegida para la página web ha sido diseñada teniendo en cuenta 
