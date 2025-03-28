@@ -2,11 +2,13 @@ import {logoutButtonAction, updateHeaderWithUserSection} from "./session-manager
 import {returnButtonDynamicRouting} from "./return-feature.js";
 import {loginFormAction} from "./login.js";
 import {registerFormActions} from "./register.js";
+import {recoveryFormAction} from "./recovery-account.js";
 
 const pageActionFor = {
     "register": registerFormActions,
     "login": loginFormAction,
-    "user-page": logoutButtonAction,
+    "recovery": recoveryFormAction,
+    "user-page": logoutButtonAction
 }
 
 document.addEventListener('DOMContentLoaded', async () => {
