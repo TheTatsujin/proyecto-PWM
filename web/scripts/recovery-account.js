@@ -16,9 +16,7 @@ function emailCheck(email) {
     return fetch("../json/data/user.json")
         .then(res => res.json())
         .then(userData => {
-            console.log(email.value);
             for (const user of userData["user-data"]) {
-                console.log(user["email"]);
                 if (user["email"] === email.value) return true;
             }
             email.setCustomValidity("Enter a registered email address.");
