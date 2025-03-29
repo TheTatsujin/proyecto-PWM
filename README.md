@@ -75,6 +75,33 @@ Las hojas de estilo se encuentran en ```web/styles/``` y siguen la siguiente fil
 	- ```tickets-table.css``` para ```tickets.html```.
 	- ```banners.css``` para ```artists.html```.
 
+#### Implantación de diseño "_responsive_"
+En el proceso de implantación de un diseño _responsive_ en nuestra página web, hemos optado por usar las _media queries_
+especificando para diferentes anchos de pantalla como queremos que se apliquen los estilos. Para determinar los breakpoints
+partimos de unos mencionado en parte de la documentación de teoría ofrecida por la asignatura. Para dispositivos de tamaño
+mediano, resoluciones inferiores a 992 píxeles, y para dispositivos de tamaño pequeño, inferiores a 576 píxeles. A partir
+de ahí se comenzó a hacer pruebas y a fijarlas acorde a cada página web. Las siguientes hojas de estilo nos se quedaron con los
+valores inciales como breakpoints:
+- ```banners.css```: Quedó con 758 píxeles para dispositivos medianos y 615 píxeles para dispositivos pequeños.
+- ```global.css``` e ```index.css```: Quedaron con  835 píxeles para dispositivos medianos y 576 píxeles píxeles para dispositivos pequeños.
+
+Como punto más bajo a considerar hemos tomado 320 píxeles. Esta es la medida más pequeña que ofrecen por defecto los
+navegadores con las herramientas de desarrollador para variar la resolución de la página web, sin tener que elegir manualmente
+los valores de ancho y alto de la misma.
+
+Los principales cambios que fueron realizados en cada página para tener un diseño "_responsive_" han sido:
+- ```index.html```:
+  - En resoluciones de tamaño mediano: Se hace la imagen principal más pequeña y se fijan valores máximos de altura y anchura para ella. El calendario se ha ampliado bastante y desplazado para mostrar solo la parte relevante, ocultando todo lo que sobresalga. Se hacen más grandes el texto de los botones y se fija su anchura, asi como el título de la sección del FAQ. En esta última, además, se le quita el borde morado a la imagen de la sección
+  - En resoluciones de tamaño pequeño: Se disminuye el tamaño del texto de los botontes, y el ancho fijado disminuye porcentualmente. El calendario, se muestra más grande la parte relevante del mismo. Se disminuye el tamaño de la fuente del título de la sección del FAQ, nuevamente se eliminan los bordes de la imagen, y a esta última se le pide que ocupe todo el ancho y que la altura y el margen se establezcan automáticamente 
+- ```artist.html```:
+  - En resoluciones de tamaño mediano: Se han ajustado el ancho y el alto, asi como el margen por la izquierda y el superior de las imagenes de los banners
+  - En resoluciones de tamaño pequeño: Se ha convertido el banner en un contendor flex que muestra los elementos por columnas, y se ha ajustado la imagen, variandole la altura, el ancho y estableciendo que no se encoja. Finalmente el texto asociado a cada artista se ha desplazado debajo del banner para que se vea mejor en estas resoluciones con menor ancho.
+- ```login.html```, ```user-page.html```, ```recovery.html``` y ```register.html```:
+  - En resoluciones de tamaño mediano: Se ha reducido el tamaño del título y del cuadrado del formulario. Se añade espaciado entre las etíquetas y entre las checkbox, se agranda el tamaño de la fuente de los enlaces y se hacen más grande las checkbox y el texto asociado.  
+  - En resoluciones de tamaño pequeño: No se muestran las etíquetas ni la descripción del formulario. También se reduce el tamaño del cuadrado del formulario y del título, y se reorganizan los inputs y se elimina el margen izquierdo de los checkbox.
+- ```tickets.html```:
+  - En resoluciones de tamaño mediano: Se ha cambiado el tamaño de la fuente del título.
+  - En resoluciones de tamaño pequeño: Se ha cambiado tanto el tamaño de la fuente del título como el de la tabla. Además se ha ajustado el tamaño de la tabla
 
 
 #### Respecto a tareas implementadas con JavaScript
