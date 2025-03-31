@@ -1,0 +1,74 @@
+{
+  "kind": "collectionType",
+  "collectionName": "userpages",
+  "info": {
+    "singularName": "userpage",
+    "pluralName": "userpages",
+    "displayName": "Userpage",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "name": {
+      "type": "string",
+      "required": true,
+      "pluginOptions": {}
+    },
+    "email": {
+      "type": "string",
+      "required": true,
+      "unique": true,
+      "pluginOptions": {}
+    },
+    "phoneNumber": {
+      "type": "biginteger",
+      "required": true,
+      "pluginOptions": {}
+    },
+    "birthdate": {
+      "type": "date",
+      "required": true,
+      "pluginOptions": {}
+    },
+    "password": {
+      "type": "password",
+      "required": true,
+      "minLength": 8,
+      "private": true,
+      "pluginOptions": {}
+    },
+    "confirmPassword": {
+      "type": "password",
+      "required": true,
+      "private": true,
+      "minLength": 8,
+      "pluginOptions": {}
+    },
+    "termsConditions": {
+      "type": "boolean",
+      "default": false,
+      "required": true,
+      "pluginOptions": {}
+    },
+    "receiveInformation": {
+      "type": "boolean",
+      "default": false,
+      "required": false,
+      "pluginOptions": {}
+    },
+    "notifications": {
+      "type": "boolean",
+      "default": false,
+      "required": false,
+      "pluginOptions": {}
+    },
+    "emailID": {
+      "type": "uid",
+      "targetField": "email",
+      "required": true
+    }
+  }
+}
