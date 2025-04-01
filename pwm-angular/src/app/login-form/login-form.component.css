@@ -1,9 +1,15 @@
+button:hover {
+  cursor: pointer;
+}
+
+
 .btn-return {
   padding: 0.5em 0.75em;
   font-size: 1.3em;
   border-radius: 100%;
   margin: 0.5em 0.5em;
 }
+
 
 .btn-submit {
   font-weight: bold;
@@ -13,7 +19,6 @@
   width: 9em;
   text-wrap: nowrap;
 }
-
 
 .form-box {
   margin: auto;
@@ -126,18 +131,11 @@ form {
 }
 
 @media (min-width: 992px) {
-  .form-box {
-    width: 60rem;
-    height: 30rem;
+
+  button:hover {
+    cursor: pointer;
   }
 
-  .form-box > .form-header > h1 {
-    font-size: 5em;
-  }
-
-  .form_checkbox-area {
-    margin-left: 10em;
-  }
 
   .btn-return {
     padding: 1rem 1.25rem;
@@ -156,6 +154,18 @@ form {
     text-wrap: nowrap;
   }
 
+  .form-box {
+    width: 60rem;
+    height: 30rem;
+  }
+
+  .form-box > .form-header > h1 {
+    font-size: 5em;
+  }
+
+  .form_checkbox-area {
+    margin-left: 10em;
+  }
 }
 
 @media (min-width: 576px) and (max-width: 992px) {
@@ -225,25 +235,5 @@ form {
 
   .form_label-column {
     display: none;
-  }
-
-  button:hover {
-    cursor: pointer;
-  }
-
-  .btn-return {
-    padding: 0.5em 0.75em;
-    font-size: 1.3em;
-    border-radius: 100%;
-    margin: 0.5em 0.5em;
-  }
-
-  .btn-submit {
-    font-weight: bold;
-    margin-top: 1em;
-    padding: .5em;
-    font-size: 1.2rem;
-    width: 9em;
-    text-wrap: nowrap;
   }
 }
