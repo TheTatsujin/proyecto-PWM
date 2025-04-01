@@ -12,7 +12,7 @@ import {NgForOf} from '@angular/common';
   styleUrl: './dropdown.component.css'
 })
 export class DropdownComponent {
-  Locations: any = ['Arquitectura', 'Teleco', 'Empresariales'];
+  Locations: any = ['Arquitectura', 'Telecomunicaciones', 'Empresariales'];
   dropdownForm = new FormGroup({
     eventLocation: new FormControl('', Validators.required)
   });
