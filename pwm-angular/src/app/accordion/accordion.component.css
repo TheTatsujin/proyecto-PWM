@@ -1,0 +1,16 @@
+.accordion {
+  font-size: 1em;
+  display: flex;
+  flex-direction: column;
+}
+
+.accordion > summary {
+  cursor: pointer;
+  font-size: 1.2em;
+  padding: 0.6em;
+  text-align: left;
+}
+
+.accordion > p {
+  padding: 1em;
+}
