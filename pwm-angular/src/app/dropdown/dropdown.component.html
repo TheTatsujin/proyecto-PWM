@@ -1,0 +1,5 @@
+<div [formGroup]="dropdownForm">
+  <select formControlName="eventLocation" id="dropdown" name="dropdown" class="template-container dropdown-box border-turquoise color-turquoise bg-black">
+    <option *ngFor="let location of Locations" [ngValue]="location">{{location}}</option>
+  </select>
+</div>
