@@ -14,7 +14,6 @@
   margin-left: auto;
   margin-right: auto;
   margin-bottom: 5em;
-  display: flex;
 }
 
 @media (min-width: 576px) and (max-width: 992px) {
@@ -29,18 +28,18 @@
   #dropdown option {
     font-style: italic;
   }
+}
 
-  @media (max-width: 576px) {
-    #dropdown {
-      width: 9em;
-      border-radius: 0.3em;
-      font-style: italic;
-      font-size: 1.2em;
-      padding-left: .5em;
-    }
+@media (max-width: 576px) {
+  #dropdown {
+    width: 9em;
+    border-radius: 0.3em;
+    font-style: italic;
+    font-size: 1.2em;
+    padding-left: .5em;
+  }
 
-    #dropdown option {
-      font-style: italic;
-    }
-
+  #dropdown option {
+    font-style: italic;
+  }
 }
