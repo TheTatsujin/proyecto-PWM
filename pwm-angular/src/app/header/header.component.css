@@ -1,0 +1,129 @@
+/* Header bar */
+header {
+  justify-content: space-between;
+  align-items: center;
+  display: flex;
+  position: fixed;
+  height: 6em;
+  width: 100%;
+  top: 0;
+}
+
+#header_left-nav {
+  padding: 0;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  width: 20vw;
+}
+
+#header_left-nav > a {
+  letter-spacing: 0.25em;
+  font-weight: bold;
+  padding: 1vw;
+  margin: 1.5em;
+  text-decoration: none;
+}
+
+header > button {
+  margin-right: 1vw;
+}
+
+.header-text {
+  font-style: italic;
+  text-align: center;
+  text-wrap: auto;
+  font-size: 1.5em;
+}
+
+header div {
+  display: block;
+  justify-content: center;
+}
+
+header > img {
+  margin-left: 8.7em;
+}
+
+header #logo {
+  height: auto;
+  transform: translate(-4.5rem, 50px);
+}
+
+/* Sections */
+.section-header {
+  text-align: center;
+  font-size: 10em;
+  font-weight: 900;
+  text-shadow: 0 -.035em 0 #AA12FE;
+  padding: .2em;
+}
+
+.text-medium {
+  font-size: 2.1em;
+}
+
+.center-content {
+  margin: auto;
+}
+
+@media (max-width: 835px) {
+  #header_left-nav {
+    padding: 0;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    width: 30vw;
+    margin-left: 2em;
+  }
+
+  #header_left-nav > a {
+    letter-spacing: 0;
+    font-weight: bold;
+    padding: 1vw;
+    margin-left: -.5em;
+    text-decoration: none;
+  }
+
+  header #logo {
+    width: 40vw;
+    height: auto;
+    transform: translate(-3.7vw, 50px);
+  }
+
+  header button {
+    margin-right: 2vw;
+    text-wrap: wrap;
+    z-index: -1;
+  }
+}
+
+@media (max-width: 576px) {
+  #header_left-nav {
+    padding: 0;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    width: 20vw;
+    margin-left: 0;
+  }
+
+  #header_left-nav > a {
+    font-size: .8rem;
+    letter-spacing: 0;
+    font-weight: bold;
+    text-decoration: none;
+  }
+
+  header #logo {
+    width: 40vw;
+    height: auto;
+    transform: translate(0, 50px);
+  }
+
+  header button {
+    margin-left: -15vw;
+    text-wrap: wrap;
+    z-index: -4;
+  }
+}
