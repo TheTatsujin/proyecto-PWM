@@ -1,0 +1,10 @@
+  .btn-main {
+    margin-top: 1em;
+    border-radius: 0.5em;
+    font-style: italic;
+    font-weight: bold;
+    text-align: center;
+    padding: 1em;
+    max-width: 300px;
+    font-size: .4em;
+}

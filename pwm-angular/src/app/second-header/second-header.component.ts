@@ -1,11 +1,19 @@
 import { Component } from '@angular/core';
+import {CommonModule} from '@angular/common';
+import {MatButtonModule} from '@angular/material/button';
+import {ReturnButtonComponent} from '../return-button/return-button.component';
+import {LoginButtonComponent} from '../login-button/login-button.component';
 
 @Component({
   selector: 'app-second-header',
-  imports: [],
+  imports: [CommonModule, MatButtonModule, ReturnButtonComponent, LoginButtonComponent],
   templateUrl: './second-header.component.html',
   styleUrl: './second-header.component.css'
 })
 export class SecondHeaderComponent {
+  isLogged:boolean;
 
+  constructor() {
+    this.isLogged = false;
+}
 }

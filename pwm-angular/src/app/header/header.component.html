@@ -1,11 +1,17 @@
-<header>
+<header class="section-header">
   <nav id="header_left-nav">
-    <a href="#faq-section"><h3 class="color-violet header-text font-sudovar">Preguntas frecuentes</h3></a>
-    <a href="#main-button-section"><h3 class="color-violet header-text font-sudovar">Calendario</h3></a>
+    <a mat-button href="https://www.google.com/" class="color-violet header-text font-sudovar">Preguntas frecuentes</a>
+    <a mat-button href="https://www.google.com/" class="color-violet header-text font-sudovar">Calendario</a>
   </nav>
   <div class="header-logo-area">
     <img id="logo" src="../images/logo.png" alt="Logo de pagina">
   </div>
   <nav id="header_right-nav">
+    <a *ngIf="isLogged; else loginButton" id="profile-link" href="../pages/user-page.html">
+      <img id="profile-picture" src="../images/icons/man-user-circle-icon.svg" alt="profile picture" height="64" width="64">
+    </a>
+    <ng-template #loginButton>
+      <app-login-button></app-login-button>
+    </ng-template>
   </nav>
 </header>
