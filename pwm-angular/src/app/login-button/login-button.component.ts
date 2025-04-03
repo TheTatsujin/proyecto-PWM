@@ -8,5 +8,4 @@ import {MatButtonModule} from '@angular/material/button';
   styleUrl: './login-button.component.css'
 })
 export class LoginButtonComponent {
-
 }

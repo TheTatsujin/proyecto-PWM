@@ -1,11 +1,16 @@
 <header class="section-header">
   <nav id="header_left-nav">
-    <a mat-button href="https://www.google.com/" target="_blank">Preguntas frecuentes</a>
-    <a mat-button href="https://www.google.com/" target="_blank">Calendario</a>
+    <a mat-button href="https://www.google.com/" class="color-violet header-text font-sudovar">Preguntas frecuentes</a>
+    <a mat-button href="https://www.google.com/" class="color-violet header-text font-sudovar">Calendario</a>
   </nav>
   <div class="header-logo-area">
   </div>
   <nav id="header_right-nav">
-    <app-login-button></app-login-button>
+    <a *ngIf="isLogged; else loginButton" id="profile-link" href="../pages/user-page.html">
+      <img id="profile-picture" src="../images/icons/man-user-circle-icon.svg" alt="profile picture" height="64" width="64">
+    </a>
+    <ng-template #loginButton>
+      <app-login-button></app-login-button>
+    </ng-template>
   </nav>
 </header>
