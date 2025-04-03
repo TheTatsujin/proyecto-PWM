@@ -20,8 +20,8 @@ export class LoginFormComponent {
     password: new FormControl('', [Validators.required])});
   }
 
-  get email() { return this.loginForm.get('email')!; }
-  get password() { return this.loginForm.get('password')!; }
+  get email() { return this.loginForm.get('email'); }
+  get password() { return this.loginForm.get('password'); }
 
   onFormSubmit() {
     if (this.email?.errors || this.password?.errors) return;
