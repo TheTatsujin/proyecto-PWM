@@ -11,7 +11,7 @@
         </div>
         <div class="form_input-column">
           <input formControlName="email" class="color-white font-sudovar" id="login_email" type="email" name="email" placeholder="email" required>
-          @if (email.invalid && (email.dirty || email["touched"])) {
+          @if (email.invalid && (email.dirty || email.touched)) {
             <div class="error font-sudovar">
               @if (email.hasError('required')) {
                 <div>
