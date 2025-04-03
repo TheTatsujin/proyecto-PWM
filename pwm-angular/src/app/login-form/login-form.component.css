@@ -1,20 +1,8 @@
-button:hover {
-  cursor: pointer;
-}
-
 .error {
   color: red;
   font-size: 0.8rem;
-  margin-top: 4px;
+  margin-top: -10px;
 }
-
-.btn-return {
-  padding: 0.5em 0.75em;
-  font-size: 1.3em;
-  border-radius: 100%;
-  margin: 0.5em 0.5em;
-}
-
 
 .btn-submit {
   font-weight: bold;
@@ -48,11 +36,6 @@ button:hover {
   text-shadow: 0 -2px 0 #FFFFFF;
 }
 
-.form-box > .form-description {
-  padding: 2em 3em 1em 3em;
-  text-align: center;
-}
-
 form {
   display: flex;
   flex-direction: column;
@@ -65,18 +48,17 @@ form {
 }
 
 .form_label-column,
-.form_data-column,
 .form_input-column {
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
+  justify-content: space-around;
+  gap: 1em;
 }
 
 .form_label-column {
   align-items: end;
 }
 
-.form_data-column,
 .form_input-column {
   align-items: start;
 }
@@ -109,47 +91,7 @@ form {
   letter-spacing: .01rem;
 }
 
-.form_checkbox-area {
-  display: flex;
-  margin-top: 1em;
-}
-
-.form_checkbox-area_buttons,
-.form_checkbox-area_labels {
-  display: flex;
-  flex-direction: column;
-  justify-content: space-evenly;
-}
-
-.form_checkbox-area_buttons > input {
-  width: 6em;
-  height: 1.2em;
-  cursor: pointer;
-}
-
-.form_checkbox-area_labels {
-  margin-left: 1.5em;
-  font-size: 1.1em;
-  text-align: left;
-  font-style: italic;
-  text-wrap: auto;
-}
-
 @media (min-width: 992px) {
-
-  button:hover {
-    cursor: pointer;
-  }
-
-
-  .btn-return {
-    padding: 1rem 1.25rem;
-    font-size: 1.5rem;
-    border-radius: 100%;
-    margin: 0.25rem 0.25rem;
-  }
-
-
   .btn-submit {
     font-weight: bold;
     margin-top: 1em;
@@ -166,10 +108,6 @@ form {
 
   .form-box > .form-header > h1 {
     font-size: 5em;
-  }
-
-  .form_checkbox-area {
-    margin-left: 10em;
   }
 }
 
@@ -195,29 +133,11 @@ form {
     font-size: 1.8em;
     line-height: 1.5em;
   }
-
-  .form_checkbox-area {
-    margin-left: 10em;
-    line-height: 1.75em;
-  }
-
-  .form_checkbox-area_buttons > input {
-    height: 1.75em;
-  }
-
-  .form_checkbox-area_labels {
-    font-size: 1.35em;
-    line-height: 1.5em;
-  }
 }
 
 @media (max-width: 576px) {
   section {
     overflow: hidden;
-  }
-
-  .form-description {
-    display: none;
   }
 
   .form-box {
@@ -232,10 +152,6 @@ form {
   .form_input-column > input,
   .form_input-column > div {
     justify-content: space-between;
-  }
-
-  .form_checkbox-area {
-    margin-left: 0;
   }
 
   .form_label-column {

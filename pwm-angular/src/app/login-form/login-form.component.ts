@@ -1,12 +1,14 @@
 import { Component } from '@angular/core';
 import {FormBuilder, FormControl, FormGroup, ReactiveFormsModule, Validators} from '@angular/forms';
 import { CommonModule } from '@angular/common';
+import {ReturnButtonComponent} from '../return-button/return-button.component';
 
 @Component({
   selector: 'app-login-form',
   imports: [
     ReactiveFormsModule,
-    CommonModule
+    CommonModule,
+    ReturnButtonComponent
   ],
   standalone: true,
   templateUrl: './login-form.component.html',

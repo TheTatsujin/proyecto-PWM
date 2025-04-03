@@ -1,74 +1,74 @@
-@media (min-width: 992px) {
-  button:hover {
-    cursor: pointer;
-  }
-
-
-  .btn-return {
-    padding: 0.5em 0.75em;
-    font-size: 1.3em;
-    border-radius: 100%;
-    margin: 0.5em 0.5em;
-  }
-
-  .btn-main {
-    border-radius: 0.5em;
-    text-wrap: nowrap;
-    border-width: 3px;
-    font-style: italic;
-    font-weight: bold;
-    text-align: center;
-    padding: .5em;
-    max-width: 300px;
-  }
+/* Header bar */
+header {
+  justify-content: space-between;
+  align-items: start;
+  display: flex;
+  position: fixed;
+  height: 6em;
+  width: 100%;
+  top: 0;
 }
 
-@media (min-width: 576px) and (max-width: 992px) {
-  button:hover {
-    cursor: pointer;
-  }
-
-
-  .btn-return {
-    padding: 1rem 1.25rem;
-    font-size: 1.5rem;
-    border-radius: 100%;
-    margin: 0.25rem 0.25rem;
-  }
-
-  .btn-main {
-    border-radius: 0.5em;
-    text-wrap: nowrap;
-    border-width: 3px;
-    font-style: italic;
-    font-weight: bold;
-    text-align: center;
-    padding: .5em;
-    max-width: 300px;
-  }
+#header_right-nav {
+  margin-right: 0.5em;
 }
 
+#header_left-nav {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  width: 20vw;
+}
+
+.header-text {
+  font-style: italic;
+  text-align: center;
+  text-wrap: auto;
+  font-size: 0.3em;
+}
+
+header > img {
+  margin-left: 5em;
+}
+
+/* Sections */
+.section-header {
+  text-align: center;
+  font-size: 4em;
+  font-weight: 900;
+  text-shadow: 0 -.035em 0 #AA12FE;
+}
+
+@media (max-width: 835px) {
+  #header_left-nav {
+    padding: 0;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    width: 30vw;
+  }
+
+  header button {
+    margin-right: 2vw;
+    text-wrap: wrap;
+    z-index: -1;
+  }
+}
 
 @media (max-width: 576px) {
-  button:hover {
-    cursor: pointer;
+  #header_left-nav {
+    padding: 0;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    width: 20vw;
+    margin-left: 0;
   }
 
-  .btn-return {
-    padding: 0.5em 0.75em;
-    font-size: 1.3em;
-    border-radius: 100%;
-    margin: 0.5em 0.5em;
-  }
-
-  .btn-main {
-    border-radius: 0.5em;
-    text-wrap: nowrap;
-    border-width: 3px;
-    font-style: italic;
-    font-weight: bold;
-    text-align: center;
-    padding: .4rem;
-    max-width: 300px;
+  header button {
+    margin-left: -15vw;
+    text-wrap: wrap;
+    z-index: -4;
   }
 }
+
