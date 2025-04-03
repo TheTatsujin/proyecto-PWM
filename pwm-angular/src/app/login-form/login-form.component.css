@@ -1,7 +1,13 @@
+.error-zone {
+  margin-top: 1rem;
+}
+
 .error {
+  border-bottom: 1px solid red !important;
+}
+
+.text-error {
   color: red;
-  font-size: 0.8rem;
-  margin-top: -10px;
 }
 
 .btn-submit {

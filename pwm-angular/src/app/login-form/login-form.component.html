@@ -10,24 +10,26 @@
         <label class="form-label color-turquoise font-sudovar" for="login_password">Password:</label>
       </div>
       <div class="form_input-column">
-        <input formControlName="email" class="color-white font-sudovar" id="login_email" type="email" name="email" placeholder="email" required>
-        <div *ngIf="email?.invalid" class="error">
-          <div *ngIf="email?.errors?.['required']">
-            Email required.
-          </div>
-          <div *ngIf="email?.errors?.['email']">
-            Introduce a valid email
-          </div>
-        </div>
-        <input formControlName="password" id="login_password" class="color-white font-sudovar" type="password" name="password" placeholder="password" required>
-        <div *ngIf="password?.errors?.['required']" class="error">
-            Password required.
-        </div>
+        <input formControlName="email" class="color-white font-sudovar" id="login_email" type="email" name="email" placeholder="email"
+               [ngClass]="{ 'error': email?.errors?.['required'] || email?.errors?.['email']}" required>
+        <input formControlName="password" id="login_password" class="color-white font-sudovar" type="password" name="password" placeholder="password"
+               [ngClass]="{ 'error': email?.errors?.['required'] || email?.errors?.['email']}" required>
       </div>
     </div>
     <button class="btn-submit color-turquoise border-turquoise font-sudovar bg-black" id="login-submit" type="submit">
       OK
     </button>
+    <div class="error-zone">
+      <div *ngIf="email?.errors?.['required']" class="text-error">
+        Email required.
+      </div>
+      <div *ngIf="email?.errors?.['email']"  class="text-error">
+        Introduce a valid email
+      </div>
+      <div *ngIf="password?.errors?.['required']" class="text-error">
+        Password required.
+      </div>
+    </div>
   </form>
   <p>
     <a class="form-alternative-link font-sudovar color-beige" href="../pages/recovery.html">Forgot password? Click here</a>
