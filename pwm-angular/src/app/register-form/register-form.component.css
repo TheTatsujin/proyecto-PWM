@@ -7,11 +7,14 @@
 }
 
 .btn-submit {
+  height: 2em;
+  width: 9em;
+  font-family: 'Sudo Var', sans-serif !important;
+  border-radius: 0;
   font-weight: bold;
   margin-top: 1em;
   padding: .5em;
   font-size: 2em;
-  width: 9em;
   text-wrap: nowrap;
 }
 
@@ -97,11 +100,6 @@ form {
   font-size: 1.1em;
   text-align: left;
   text-wrap: auto;
-}
-
-mat-checkbox .mat-checkbox-label {
-  color: white !important;
-  opacity: 1 !important;
 }
 
 @media (min-width: 992px) {

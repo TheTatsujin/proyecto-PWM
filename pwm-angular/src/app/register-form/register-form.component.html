@@ -3,7 +3,7 @@
     <app-return-button></app-return-button>
     <h1 class="form-header font-tektur color-turquoise">Sign up</h1>
   </div>
-  <form [formGroup]="registerForm" id="register-form" method="POST">
+  <form [formGroup]="registerForm" (ngSubmit)="onFormSubmit()" id="register-form" method="POST">
     <div class="form-fields">
       <div class="form_label-column">
         <label for="name" class="form-label font-sudovar color-turquoise">Full name:</label>
@@ -46,20 +46,20 @@
       </div>
     </div>
 
-      <div class="form_checkbox-area_buttons font-sudovar font-style-italic">
-        <mat-checkbox id="termsConditions" name="termsConditions" required>
+      <div class="form_checkbox-area_buttons font-style-italic">
+        <mat-checkbox formGroupName="termConditions" id="termsConditions" name="termsConditions" required>
           I accept terms of service.
         </mat-checkbox>
-        <mat-checkbox id="receiveInformation" name="receiveInformation">
+        <mat-checkbox formGroupName="receiver" id="receiveInformation" name="receiveInformation">
           Receive information on event updates.
         </mat-checkbox>
-        <mat-checkbox id="notifications" name="notifications">
+        <mat-checkbox formGroupName="notifications" id="notifications" name="notifications">
           I don't allow notifications.
         </mat-checkbox>
       </div>
 
-    <button class="btn-submit font-sudovar border-turquoise color-turquoise bg-black" id="register-submit"
-            type="submit">OK
+    <button mat-stroked-button class="btn-submit font-sudovar border-turquoise color-turquoise bg-black"
+            id="register-submit" type="submit">Register
     </button>
   </form>
 </section>

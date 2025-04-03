@@ -1,13 +1,14 @@
 import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import {MatCheckboxModule} from '@angular/material/checkbox';
+import {MatButtonModule} from '@angular/material/button';
 import { ReturnButtonComponent} from '../return-button/return-button.component';
 import {FormBuilder, FormControl, FormGroup, ReactiveFormsModule, Validators} from '@angular/forms';
+import {MatCheckboxModule} from '@angular/material/checkbox';
 
 
 @Component({
   selector: 'app-register-form',
-  imports: [CommonModule, ReturnButtonComponent, MatCheckboxModule, ReactiveFormsModule],
+  imports: [CommonModule, ReturnButtonComponent, MatCheckboxModule, ReactiveFormsModule, MatButtonModule],
   templateUrl: './register-form.component.html',
   styleUrl: './register-form.component.css'
 })
@@ -22,6 +23,9 @@ export class RegisterFormComponent {
       birthdate: new FormControl('', [Validators.required]),
       password: new FormControl('', [Validators.required]),
       confirm: new FormControl('', [Validators.required]),
+      termConditions: new FormControl('', [Validators.required]),
+      receiver: new FormControl('', [Validators.required]),
+      notifications: new FormControl('', [Validators.required])
     });
   }
 
@@ -31,6 +35,14 @@ export class RegisterFormComponent {
   get birthdate() { return this.registerForm.get('birthdate'); }
   get password() { return this.registerForm.get('password'); }
   get confirm() { return this.registerForm.get('confirm'); }
+  get termConditions() { return this.registerForm.get('termConditions'); }
+  get receiver() { return this.registerForm.get('receiver'); }
+  get notifications() { return this.registerForm.get('notification'); }
 
 
+  onFormSubmit() {
+    if (this.password != this.confirm) {
+      return;
+    }
+  }
 }
