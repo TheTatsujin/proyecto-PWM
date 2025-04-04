@@ -73,6 +73,14 @@ body {
     background: #000000;
 }
 
+.text-medium {
+  font-size: 2.1em;
+}
+
+.center-content {
+  margin: auto;
+}
+
 @media (max-width: 835px){
     main {
         margin-top: 15vh;
