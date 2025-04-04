@@ -45,6 +45,12 @@
   text-shadow: 0 -2px 0 #FFFFFF;
 }
 
+.form-box > .form-description {
+  padding: 2em 3em 1em 3em;
+  text-align: center;
+  font-size: 1.5em;
+}
+
 form {
   display: flex;
   flex-direction: column;
@@ -60,8 +66,7 @@ form {
 .form_input-column {
   display: flex;
   flex-direction: column;
-  justify-content: space-around;
-  gap: 1em;
+  justify-content: space-between;
 }
 
 .form_label-column {
@@ -91,25 +96,7 @@ form {
   background: transparent;
 }
 
-.form-alternative-link {
-  font-size: 1.2em;
-  font-style: italic;
-  text-align: center;
-  display: block;
-  text-decoration: none;
-  letter-spacing: .01rem;
-}
-
 @media (min-width: 992px) {
-  .btn-submit {
-    font-weight: bold;
-    margin-top: 1em;
-    padding: .5em;
-    font-size: 2.5em;
-    width: 9em;
-    text-wrap: nowrap;
-  }
-
   .form-box {
     width: 60rem;
     height: 30rem;
@@ -137,16 +124,15 @@ form {
   .form-fields label {
     line-height: 1.75em;
   }
-
-  .form-alternative-link {
-    font-size: 1.8em;
-    line-height: 1.5em;
-  }
 }
 
 @media (max-width: 576px) {
   section {
     overflow: hidden;
+  }
+
+  .form-description {
+    display: none;
   }
 
   .form-box {

@@ -1,0 +1,26 @@
+  <section id="account-recovery" class="form-box bg-black border-turquoise">
+    <div class="form-header">
+      <app-return-button></app-return-button>
+      <h1 class="color-turquoise font-tektur">Account recovery</h1>
+    </div>
+    <p class="color-faint-white form-description font-style-italic font-sudovar">We will send to you an email to verify your identity and help you recovery your account with us.</p>
+    <form [formGroup]="recoveryForm" (ngSubmit)="onFormSubmit()" id="recovery-form" method="POST" action="#">
+      <div class="form-fields">
+        <div class="form_label-column">
+          <label for="email" class="form-label color-turquoise font-sudovar">Email: </label>
+        </div>
+        <div class="form_input-column">
+          <input [ngClass]="{ 'error': email?.errors?.['required'] || email?.errors?.['email'] }" class="color-white font-sudovar"
+                 type=email id="email" name="email" placeholder="Email" required>
+        </div>
+      </div>
+      <button mat-stroked-button class="btn-submit color-turquoise border-turquoise font-sudovar bg-black" id="recovery-submit" type="submit">
+        Send mail
+      </button>
+      <div class="error-zone">
+        <div *ngIf="email?.errors?.['email']"  class="text-error">
+          Introduce a valid email
+        </div>
+      </div>
+    </form>
+  </section>

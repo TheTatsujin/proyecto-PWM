@@ -7,9 +7,9 @@
 }
 
 .btn-submit {
+  --mat-sys-primary: #05FCFE;
   height: 2em;
   width: 9em;
-  font-family: 'Sudo Var', sans-serif !important;
   border-radius: 0;
   font-weight: bold;
   margin-top: 1em;
@@ -19,7 +19,7 @@
 }
 
 .form-box {
-  margin: auto;
+  margin: 1.5em auto;
   max-width: 100%;
   border-radius: 2em;
   border-width: 3px 3px 8px 3px;
@@ -88,6 +88,7 @@ form {
 }
 
 .form_checkbox-area_buttons{
+  --mat-sys-primary: #05FCFE;
   --mat-checkbox-label-text-color: #FFEEFF;
   margin-top: 1em;
   display: flex;
