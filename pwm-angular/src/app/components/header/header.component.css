@@ -4,7 +4,6 @@ header {
   align-items: start;
   display: flex;
   position: fixed;
-  height: 6em;
   width: 100%;
   top: 0;
 }
@@ -53,7 +52,6 @@ header #logo {
   text-align: center;
   font-size: 4em;
   font-weight: 900;
-  text-shadow: 0 -.035em 0 #AA12FE;
 }
 
 @media (max-width: 835px) {
