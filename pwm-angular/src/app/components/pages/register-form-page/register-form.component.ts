@@ -1,13 +1,13 @@
 import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import {MatButtonModule} from '@angular/material/button';
-import { ReturnButtonComponent} from '../return-button/return-button.component';
+import { ReturnButtonComponent} from '../../return-button/return-button.component';
 import {FormBuilder, FormControl, FormGroup, ReactiveFormsModule, Validators} from '@angular/forms';
 import {MatCheckboxModule} from '@angular/material/checkbox';
 
 
 @Component({
-  selector: 'app-register-form',
+  selector: 'app-register-form-page',
   imports: [CommonModule, ReturnButtonComponent, MatCheckboxModule, ReactiveFormsModule, MatButtonModule],
   templateUrl: './register-form.component.html',
   styleUrl: './register-form.component.css'
