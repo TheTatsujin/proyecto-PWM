@@ -1,13 +1,17 @@
 import { Component } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
-import {FooterComponent} from './footer/footer.component';
-import {DropdownComponent} from './dropdown/dropdown.component';
-import {LoginFormComponent} from './login-form/login-form.component';
-import {RegisterFormComponent} from './register-form/register-form.component';
+import {FooterComponent} from './components/footer/footer.component';
+import {DropdownComponent} from './components/dropdown/dropdown.component';
+import {LoginFormComponent} from './components/login-form/login-form.component';
+import {RegisterFormComponent} from './components/register-form/register-form.component';
+import {TicketPageComponent} from './components/pages/ticket-page/ticket-page.component';
 
 @Component({
   selector: 'app-root',
-  imports: [LoginFormComponent],
+  imports: [
+    DropdownComponent,
+    TicketPageComponent
+  ],
   templateUrl: './app.component.html',
   styleUrl: './app.component.css'
 })
