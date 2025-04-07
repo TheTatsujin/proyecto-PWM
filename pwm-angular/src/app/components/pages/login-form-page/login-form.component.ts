@@ -1,11 +1,11 @@
 import { Component } from '@angular/core';
 import {FormBuilder, FormControl, FormGroup, ReactiveFormsModule, Validators} from '@angular/forms';
 import { CommonModule } from '@angular/common';
-import {ReturnButtonComponent} from '../return-button/return-button.component';
+import {ReturnButtonComponent} from '../../return-button/return-button.component';
 import { MatButtonModule } from '@angular/material/button';
 
 @Component({
-  selector: 'app-login-form',
+  selector: 'app-login-form-page',
   imports: [
     ReactiveFormsModule,
     CommonModule,
