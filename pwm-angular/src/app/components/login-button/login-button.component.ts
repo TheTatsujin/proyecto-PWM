@@ -1,9 +1,10 @@
 import { Component } from '@angular/core';
 import {MatButtonModule} from '@angular/material/button';
+import {RouterLink} from '@angular/router';
 
 @Component({
   selector: 'app-login-button',
-  imports: [MatButtonModule],
+  imports: [MatButtonModule, RouterLink],
   templateUrl: './login-button.component.html',
   styleUrl: './login-button.component.css'
 })

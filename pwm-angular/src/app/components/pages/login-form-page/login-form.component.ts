@@ -3,6 +3,7 @@ import {FormBuilder, FormControl, FormGroup, ReactiveFormsModule, Validators} fr
 import { CommonModule } from '@angular/common';
 import {ReturnButtonComponent} from '../../return-button/return-button.component';
 import { MatButtonModule } from '@angular/material/button';
+import {RouterLink} from '@angular/router';
 
 @Component({
   selector: 'app-login-form-page',
@@ -10,7 +11,8 @@ import { MatButtonModule } from '@angular/material/button';
     ReactiveFormsModule,
     CommonModule,
     ReturnButtonComponent,
-    MatButtonModule
+    MatButtonModule,
+    RouterLink
   ],
   standalone: true,
   templateUrl: './login-form.component.html',
