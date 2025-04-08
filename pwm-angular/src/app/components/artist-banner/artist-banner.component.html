@@ -1,37 +1,13 @@
-<mat-card class="example-card" appearance="outlined">
-  <mat-card-header>
-    <div mat-card-avatar class="example-header-image"></div>
-    <mat-card-title>Shiba Inu</mat-card-title>
-    <mat-card-subtitle>Dog Breed</mat-card-subtitle>
-  </mat-card-header>
-  <img mat-card-image src="https://material.angular.io/assets/img/examples/shiba2.jpg" alt="Photo of a Shiba Inu">
-  <mat-card-content>
-    <h4>
-      Dates
-    </h4>
+<figure class="artist-banner bg-black border-turquoise">
+  <img class="artist-image" src="https://material.angular.io/assets/img/examples/shiba2.jpg" alt="Artist Banner">
+  <figcaption class="artist-caption color-turquoise bg-black border-turquoise">
+    {{ artistName }}
+  </figcaption>
+  <figcaption class="color-white">
+    <h2>DATES</h2>
     <ul>
-      <li>Arquitectura</li>
-      <li>Telecomunicaciones</li>
+      <li>{{ eventLocation }}</li>
+      <li>{{ eventDate }}</li>
     </ul>
-  </mat-card-content>
-  <mat-card-actions>
-    <button mat-button>LIKE</button>
-    <button mat-button>More info</button>
-  </mat-card-actions>
-</mat-card>
-
-<template>
-  <div id="artist-banner-template" content-data-file="artists">
-    <figure class="artist-banner bg-black border-turquoise">
-      <img class="artist-image" src="" alt="Artist Banner" content-data-key="image">
-      <figcaption class="artist-caption color-turquoise bg-black border-turquoise" content-data-key="name">
-      </figcaption>
-      <figcaption class="date-caption color-white">
-        <h2>DATES</h2>
-        <ul>
-          <li><span content-data-key="location"></span><br><span content-data-key="date"></span></li>
-        </ul>
-      </figcaption>
-    </figure>
-  </div>
-</template>
+  </figcaption>
+</figure>

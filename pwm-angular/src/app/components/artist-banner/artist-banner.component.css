@@ -1,11 +1,68 @@
-
-
-.example-card {
-  max-width: 400px;
-  background: #fff;
+.artist-banner {
+  margin-top: 2rem;
+  height: 10rem;
+  display: flex;
+  overflow: hidden;
+  justify-content: space-between;
+  border-radius: .5rem;
 }
 
-.example-header-image {
-  background-image: url('https://material.angular.io/assets/img/examples/shiba1.jpg');
-  background-size: cover;
+.artist-banner > img {
+  margin-left: -5vw;
+  margin-top: -8vh;
+  height: 40vh;
+  width: auto;
+  flex-grow: 0;
+}
+
+.artist-banner > .date-caption {
+  width: 20rem;
+  text-align: left;
+}
+
+.artist-banner > .artist-caption {
+  border-width: 2px;
+  position: absolute;
+  margin-top: 7rem;
+  left: 6.5vw;
+  width: 20rem;
+  text-align: center;
+  padding: 0.4rem 0 1rem 0;
+  font-size: 2em;
+  font-weight: bold;
+}
+
+
+
+@media (max-width: 758px){
+  .artist-banner > img {
+    height: 30vh;
+    margin-top: .001vh;
+    margin-left: -10vw;
+    width: auto;
+  }
+}
+
+
+@media (max-width: 615px){
+  .artist-banner {
+    display: flex;
+    flex-direction: column;
+    height: 20rem;
+  }
+  .artist-banner > img {
+    flex-shrink: 0;
+    height: 30vh;
+    margin-top: .001vh;
+    margin-left: -10vw;
+    width: auto;
+  }
+
+  .artist-banner > .artist-caption {
+    margin-top: 11rem;
+    font-size: 1.2rem;
+    width: 10rem;
+  }
+
+
 }
