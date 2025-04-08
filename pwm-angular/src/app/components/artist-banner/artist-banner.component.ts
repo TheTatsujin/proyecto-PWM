@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import {Component, input} from '@angular/core';
 
 @Component({
   selector: 'app-artist-banner',
@@ -7,7 +7,8 @@ import { Component } from '@angular/core';
   styleUrl: './artist-banner.component.css'
 })
 export class ArtistBannerComponent {
-  artistName: string = "Pedro el guaperas";
-  eventLocation: string = "Telecomunicaciones";
-  eventDate: string = "20/08/3421";
+  artistName =  input.required<string>();
+  artistImage = input.required<string>();
+  eventLocation = input.required<string>();
+  eventDate = input.required<string>();
 }

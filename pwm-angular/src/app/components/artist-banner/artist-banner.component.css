@@ -12,11 +12,11 @@
   margin-top: -8vh;
   height: 40vh;
   width: auto;
-  flex-grow: 0;
 }
 
 .artist-banner > .date-caption {
-  width: 20rem;
+  padding: 1rem;
+  width: 10rem;
   text-align: left;
 }
 

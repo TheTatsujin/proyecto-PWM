@@ -12,7 +12,13 @@ export const routes: Routes = [
     path: 'tickets',
     loadComponent: () =>
       import("./components/pages/ticket-page/ticket-page.component")
-        .then((m) => m.TicketPageComponent)
+        .then((m) => m.TicketPageComponent),
+  },
+  {
+    path: 'artists',
+    loadComponent: () =>
+      import("./components/pages/artist-page/artist-page.component")
+        .then((m) => m.ArtistPageComponent),
   },
   {
     path: 'login',
@@ -24,7 +30,7 @@ export const routes: Routes = [
     path: 'register',
     loadComponent: () =>
       import("./components/pages/register-form-page/register-form.component")
-    .then((m) => m.RegisterFormComponent)
+        .then((m) => m.RegisterFormComponent)
   },
   {
     path: 'recovery',
@@ -36,6 +42,6 @@ export const routes: Routes = [
     path: 'user',
     loadComponent: () =>
       import("./components/pages/user-page/user-page.component")
-    .then((m) => m.UserPageComponent)
+        .then((m) => m.UserPageComponent)
   }
 ];

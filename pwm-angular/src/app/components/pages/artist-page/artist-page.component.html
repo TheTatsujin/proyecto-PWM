@@ -1,1 +1,9 @@
-<p>artist-page works!</p>
+@for (artist of artistData(); track artist.id) {
+  <app-artist-banner
+    [artistImage]="artist.image"
+    [artistName]="artist.name"
+    [eventLocation]="artist.debutLocation"
+    [eventDate]="artist.debutDate"
+  />
+}
+
