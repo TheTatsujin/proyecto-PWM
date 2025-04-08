@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import {FormBuilder, FormControl, FormGroup, ReactiveFormsModule, Validators} from '@angular/forms';
-import { ReturnButtonComponent} from '../return-button/return-button.component';
+import { ReturnButtonComponent} from '../../return-button/return-button.component';
 import { MatButtonModule } from '@angular/material/button';
 import { CommonModule } from '@angular/common';
 
