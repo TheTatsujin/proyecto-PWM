@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import {Location} from '@angular/common';
 import {MatButtonModule} from '@angular/material/button';
 
 @Component({
@@ -8,5 +9,9 @@ import {MatButtonModule} from '@angular/material/button';
   styleUrl: './return-button.component.css'
 })
 export class ReturnButtonComponent {
+  constructor(private location: Location) {}
 
+  goBack(): void {
+    this.location.back();
+  }
 }

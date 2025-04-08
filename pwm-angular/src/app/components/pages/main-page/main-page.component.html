@@ -1,0 +1,27 @@
+<main>
+  <img id="main-image" src="../images/the-festival2.png" alt="The festival image">
+  <section id="main-button-section">
+    <button class="btn-main font-sudovar border-violet color-violet bg-black"
+            onclick="location.href='tickets.html'">
+      Comprar Entradas
+    </button>
+    <button class="btn-main font-sudovar border-violet color-violet bg-black"
+            onclick="location.href='artists.html'">
+      Artistas
+    </button>
+  </section>
+  <section id="calendar-section" class="bg-transparent border-turquoise">
+    <img src="../images/calendar.png" alt="Event calendar image">
+  </section>
+  <article id="faq-section">
+    <h1 class="color-turquoise font-tektur section-header">FAQ</h1>
+    <figure>
+      <img class="border-violet" src="../images/monkey-faq.png" alt="Monkey FAQ image">
+    </figure>
+    <section id="faq-questions" class="template-container">
+      @for (question of questions; track questions; let i = $index) {
+        <app-accordion [question]=question [answer]=answers[i]></app-accordion>
+      }
+    </section>
+  </article>
+</main>
