@@ -1,13 +1,13 @@
 <figure class="artist-banner bg-black border-turquoise">
-  <img class="artist-image" src="https://material.angular.io/assets/img/examples/shiba2.jpg" alt="Artist Banner">
+  <img class="artist-image" [attr.src]="artistImage()" alt="Artist Banner">
   <figcaption class="artist-caption color-turquoise bg-black border-turquoise">
-    {{ artistName }}
+    {{ artistName() }}
   </figcaption>
-  <figcaption class="color-white">
+  <figcaption class="date-caption color-white">
     <h2>DATES</h2>
     <ul>
-      <li>{{ eventLocation }}</li>
-      <li>{{ eventDate }}</li>
+      <li>{{ eventLocation() }}</li>
+      <li>{{ eventDate() }}</li>
     </ul>
   </figcaption>
 </figure>
