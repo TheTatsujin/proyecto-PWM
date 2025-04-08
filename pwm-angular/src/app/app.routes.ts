@@ -9,9 +9,15 @@ export const routes: Routes = [
         .then((m) => m.MainPageComponent),
   },
   {
-    path: '/tickets',
+    path: 'tickets',
     loadComponent: () =>
       import("./components/pages/ticket-page/ticket-page.component")
         .then((m) => m.TicketPageComponent),
+  },
+  {
+    path: 'artists',
+    loadComponent: () =>
+      import("./components/pages/artist-page/artist-page.component")
+        .then((m) => m.ArtistPageComponent),
   }
 ];
