@@ -1,4 +1,4 @@
-import {Component, inject} from '@angular/core';
+import {Component, inject, Input} from '@angular/core';
 import {TicketTableService} from '../../services/ticket-table.service';
 import {HttpClientModule} from '@angular/common/http';
 import {Subscription} from 'rxjs';
@@ -12,14 +12,14 @@ import {Subscription} from 'rxjs';
 })
 export class TicketTableComponent {
   protected tablePrices: any;
-  defaultLocation = 'A';
-  key;
+  @Input() defaultLocation: string = "";
+  key: string = "";
   private subscription: Subscription | undefined;
   constructor(private ticketTableService: TicketTableService) {
-    this.key = `ticket-table-${this.defaultLocation}`;
   }
 
   ngOnInit() {
+    this.key = `ticket-table-${this.defaultLocation}`;
     this.subscription = this.ticketTableService.getTicketsOf(this.defaultLocation).subscribe(data => {
       this.tablePrices = data;
     })
