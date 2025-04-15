@@ -12,5 +12,5 @@ import {TicketTableComponent} from '../../ticket-table/ticket-table.component';
   styleUrl: './ticket-page.component.css'
 })
 export class TicketPageComponent {
-
+    defaultLocation = "A";
 }
