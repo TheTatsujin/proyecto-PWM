@@ -1,6 +1,6 @@
 <div [formGroup]="dropdownForm">
   <select formControlName="eventLocation" id="dropdown" name="dropdown" class="dropdown-box border-turquoise color-turquoise bg-black">
-      @for (location of Locations; track location.id) {
+      @for (location of Locations; track location) {
           <option>{{location}}</option>
       }
   </select>
