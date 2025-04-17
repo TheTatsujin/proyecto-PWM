@@ -1,4 +1,4 @@
-import {Component, inject, Input} from '@angular/core';
+import {Component, inject, Input, SimpleChanges} from '@angular/core';
 import {TicketTableService} from '../../services/ticket-table.service';
 import {HttpClientModule} from '@angular/common/http';
 import {Subscription} from 'rxjs';
@@ -23,6 +23,18 @@ export class TicketTableComponent {
     this.subscription = this.ticketTableService.getTicketsOf(this.defaultLocation).subscribe(data => {
       this.tablePrices = data;
     })
+  }
+
+  ngOnChanges(changes: SimpleChanges) {
+    if (changes['defaultLocation']) {
+      const cambio = changes['defaultLocation'];
+      this.defaultLocation = cambio.currentValue;
+      this.subscription?.unsubscribe();
+      this.key = `ticket-table-${this.defaultLocation}`;
+      this.subscription = this.ticketTableService.getTicketsOf(this.defaultLocation).subscribe(data => {
+        this.tablePrices = data;
+      })
+    }
   }
 
   ngOnDestroy() {
