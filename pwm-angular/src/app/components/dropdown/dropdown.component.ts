@@ -1,8 +1,9 @@
-import { Component } from '@angular/core';
+import {Component, EventEmitter, Input, Output, SimpleChanges} from '@angular/core';
 import {FormBuilder, FormControl, FormGroup, ReactiveFormsModule, Validators} from '@angular/forms';
 
 @Component({
   selector: 'app-dropdown',
+  standalone: true,
   imports: [
     ReactiveFormsModule,
   ],
@@ -10,13 +11,20 @@ import {FormBuilder, FormControl, FormGroup, ReactiveFormsModule, Validators} fr
   styleUrl: './dropdown.component.css'
 })
 export class DropdownComponent {
+  @Input() defaultChoice: string = "Arquitectura";
+  dropdownForm!: FormGroup;
   Locations: any = ['Arquitectura', 'Telecomunicaciones', 'Empresariales'];
-  dropdownForm = new FormGroup({
-    eventLocation: new FormControl('', Validators.required)
-  });
+  @Output()
+  choice = new EventEmitter<string>();
 
-  get dropDownValue(){
-    return this.dropdownForm.controls;
+  ngOnInit() {
+    this.dropdownForm = new FormGroup({
+      eventLocation: new FormControl(this.defaultChoice, Validators.required)
+    });
   }
 
+  onChange() {
+    const locationChosed = this.dropdownForm.value.eventLocation as string;
+    this.choice.emit(locationChosed);
+  }
 }
