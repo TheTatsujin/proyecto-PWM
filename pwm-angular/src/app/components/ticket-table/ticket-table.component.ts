@@ -1,26 +1,43 @@
-import { Component } from '@angular/core';
+import {Component, inject, Input, SimpleChanges} from '@angular/core';
+import {TicketTableService} from '../../services/ticket-table.service';
+import {HttpClientModule} from '@angular/common/http';
+import {Subscription} from 'rxjs';
 
 @Component({
   selector: 'app-ticket-table',
-  imports: [],
+  imports: [HttpClientModule],
   templateUrl: './ticket-table.component.html',
-  styleUrl: './ticket-table.component.css'
+  styleUrl: './ticket-table.component.css',
+  standalone: true
 })
 export class TicketTableComponent {
-  tablePrices = {
-    "ticket-table-A": [{
-      "one-day-header": "One day Passes",
-      "two-day-header": "Two day Passes",
-      "three-day-header": "Three day Passes",
-      "one-day-normal-ticket": "Normal Ticket 150$",
-      "two-day-normal-ticket": "Normal Ticket 300$",
-      "three-day-normal-ticket": "Normal Ticket 400$",
-      "one-day-early-ticket": "Early Access Ticket 300$",
-      "two-day-early-ticket": "Early Access Ticket 600$",
-      "three-day-early-ticket": "Early Access Ticket 800$",
-      "one-day-vip-ticket": "VIP Ticket 1000$",
-      "two-day-vip-ticket": "VIP Ticket 1500$",
-      "three-day-vip-ticket": "VIP Ticket 2000$"
-    }]
-  };
+  protected tablePrices: any;
+  @Input() defaultLocation: string = "";
+  key: string = "";
+  private subscription: Subscription | undefined;
+  constructor(private ticketTableService: TicketTableService) {
+  }
+
+  ngOnInit() {
+    this.key = `ticket-table-${this.defaultLocation}`;
+    this.subscription = this.ticketTableService.getTicketsOf(this.defaultLocation).subscribe(data => {
+      this.tablePrices = data;
+    })
+  }
+
+  ngOnChanges(changes: SimpleChanges) {
+    if (changes['defaultLocation']) {
+      const cambio = changes['defaultLocation'];
+      this.defaultLocation = cambio.currentValue;
+      this.subscription?.unsubscribe();
+      this.key = `ticket-table-${this.defaultLocation}`;
+      this.subscription = this.ticketTableService.getTicketsOf(this.defaultLocation).subscribe(data => {
+        this.tablePrices = data;
+      })
+    }
+  }
+
+  ngOnDestroy() {
+    this.subscription?.unsubscribe();
+  }
 }

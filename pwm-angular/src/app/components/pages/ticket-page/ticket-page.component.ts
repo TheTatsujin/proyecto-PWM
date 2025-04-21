@@ -4,6 +4,7 @@ import {TicketTableComponent} from '../../ticket-table/ticket-table.component';
 
 @Component({
   selector: 'app-ticket-page',
+  standalone: true,
   imports: [
     DropdownComponent,
     TicketTableComponent
@@ -12,5 +13,23 @@ import {TicketTableComponent} from '../../ticket-table/ticket-table.component';
   styleUrl: './ticket-page.component.css'
 })
 export class TicketPageComponent {
+  defaultLocation = "A";
+  defaultChoice = "Arquitectura";
 
+
+  ngOnInit() {
+    if (typeof window !== 'undefined' && window.localStorage) {
+      const saved = localStorage.getItem('selectedLocation');
+      if (saved) {
+        this.defaultLocation = saved.substring(0, 1);
+        this.defaultChoice = saved
+      }
+    }
+  }
+
+  onChoiceSelected(selectedValue: string) {
+    this.defaultLocation = selectedValue.substring(0, 1);
+    this.defaultChoice = selectedValue
+    localStorage.setItem('selectedLocation', selectedValue);
+  }
 }

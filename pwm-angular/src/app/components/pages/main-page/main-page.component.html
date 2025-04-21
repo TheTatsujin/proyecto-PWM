@@ -1,12 +1,12 @@
 <main>
   <img id="main-image" src="../images/the-festival2.png" alt="The festival image">
   <section id="main-button-section">
-    <button class="btn-main font-sudovar border-violet color-violet bg-black"
-            onclick="location.href='tickets.html'">
+    <button mat-stroked-button class="btn-main font-sudovar border-violet color-violet bg-black"
+            routerLink="tickets">
       Comprar Entradas
     </button>
-    <button class="btn-main font-sudovar border-violet color-violet bg-black"
-            onclick="location.href='artists.html'">
+    <button mat-stroked-button class="btn-main font-sudovar border-violet color-violet bg-black"
+            routerLink="artists">
       Artistas
     </button>
   </section>
@@ -19,7 +19,7 @@
       <img class="border-violet" src="../images/monkey-faq.png" alt="Monkey FAQ image">
     </figure>
     <section id="faq-questions" class="template-container">
-      @for (question of questions; track questions; let i = $index) {
+      @for (question of questions; track question; let i = $index) {
         <app-accordion [question]=question [answer]=answers[i]></app-accordion>
       }
     </section>

@@ -1,7 +1,7 @@
-<div [formGroup]="dropdownForm">
-  <select formControlName="eventLocation" id="dropdown" name="dropdown" class="dropdown-box border-turquoise color-turquoise bg-black">
-      @for (location of Locations; track location.id) {
-          <option>{{location}}</option>
-      }
-  </select>
-</div>
+  <div [formGroup]="dropdownForm">
+    <select formControlName="eventLocation" id="dropdown" name="dropdown" class="dropdown-box border-turquoise color-turquoise bg-black" (change)="onChange()">
+        @for (location of Locations; track location) {
+            <option>{{location}}</option>
+        }
+    </select>
+  </div>

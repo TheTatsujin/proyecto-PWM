@@ -1,18 +1,7 @@
-<!DOCTYPE html>
-<html lang="es">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <link rel="icon" type="image/x-icon" href="../images/icons/favicon.png">
-  <title>Tickets</title>
-</head>
-<body class="bg-image">
 <main>
   <h1 class="font-tektur color-turquoise section-header">
     Tickets
   </h1>
-  <app-dropdown></app-dropdown>
-  <app-ticket-table></app-ticket-table>
+  <app-dropdown [defaultChoice]="defaultChoice" (choice)="onChoiceSelected($event)"></app-dropdown>
+  <app-ticket-table [defaultLocation]="defaultLocation"></app-ticket-table>
 </main>
-</body>
-</html>

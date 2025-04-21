@@ -1,10 +1,14 @@
 import { Component } from '@angular/core';
 import {AccordionComponent} from '../../accordion/accordion.component';
+import {RouterLink} from '@angular/router';
+import {MatButton} from '@angular/material/button';
 
 @Component({
   selector: 'app-main-page',
   imports: [
-    AccordionComponent
+    AccordionComponent,
+    RouterLink,
+    MatButton,
   ],
   templateUrl: './main-page.component.html',
   styleUrl: './main-page.component.css'
