@@ -1,7 +1,10 @@
-import { Component } from '@angular/core';
+import {Component, inject} from '@angular/core';
 import {AccordionComponent} from '../../accordion/accordion.component';
 import {RouterLink} from '@angular/router';
 import {MatButton} from '@angular/material/button';
+import {FaqService} from '../../../services/faq.service';
+import {Subscription} from 'rxjs';
+import {Faq} from '../../../model/faq';
 
 @Component({
   selector: 'app-main-page',
@@ -14,17 +17,16 @@ import {MatButton} from '@angular/material/button';
   styleUrl: './main-page.component.css'
 })
 export class MainPageComponent {
-  questions = [
-    "How many owls can I carry to the event?",
-    "How much are the event tickets?",
-    "Will there be an event next year?",
-    "Will there be DJ Santa?"
-  ]
-  answers = [
-    "As many as you want because we are throwing a party!",
-    "You can look at our prices at the tickets section",
-    "Of course, we are looking forward to seeing you next year!",
-    "Yes, he will party as hard as ever!"
-  ]
+  faqService = inject(FaqService);
+  private subscription: Subscription | undefined;
+  protected retrievedFaq: Faq[] |undefined;
+
+  ngOnInit() {
+    this.subscription = this.faqService.getFrequentlyAskedQuestions().subscribe(faq => this.retrievedFaq = faq);
+  }
+
+  ngOnDestroy() {
+    this.subscription?.unsubscribe();
+  }
   /* TODO -> Load images */
 }

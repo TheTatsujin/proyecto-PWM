@@ -19,8 +19,8 @@
       <img class="border-violet" src="../images/monkey-faq.png" alt="Monkey FAQ image">
     </figure>
     <section id="faq-questions" class="template-container">
-      @for (question of questions; track question; let i = $index) {
-        <app-accordion [question]=question [answer]=answers[i]></app-accordion>
+      @for (faqEntry of retrievedFaq; track faqEntry['id']; let i = $index) {
+        <app-accordion [question]="faqEntry['question']" [answer]="faqEntry['answer']"></app-accordion>
       }
     </section>
   </article>
