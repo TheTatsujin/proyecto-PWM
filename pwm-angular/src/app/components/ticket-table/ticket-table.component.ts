@@ -19,7 +19,8 @@ export class TicketTableComponent {
   constructor() {
   }
 
-  ngOnInit() {
+  ngOnChanges() {
+    this.subscription?.unsubscribe();
     this.subscription = this.ticketTableService.getTicketsOf().subscribe(tickets => {
       this.tablePrices = tickets.find(ticket => ticket.Evento === this.currentLocation);
       console.log(this.tablePrices);
