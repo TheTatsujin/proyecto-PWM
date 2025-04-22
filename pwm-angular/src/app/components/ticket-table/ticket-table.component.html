@@ -1,27 +1,27 @@
-@if (tablePrices?.[key]) { // Avoid errors when trying to access to tablePrices when is undefined
+@if (tablePrices) { // Avoid errors when trying to access to tablePrices when is undefined
   <table class="border-violet ticket-table bg-transparent font-sudovar">
     <thead>
     <tr class="color-turquoise">
-      <th>{{tablePrices[key][0]['one-day-header']}}</th>
-      <th>{{tablePrices[key][0]['two-day-header']}}</th>
-      <th>{{tablePrices[key][0]['three-day-header']}}</th>
+      <th>{{tablePrices['one-day-header']}}</th>
+      <th>{{tablePrices['two-day-header']}}</th>
+      <th>{{tablePrices['three-day-header']}}</th>
     </tr>
     </thead>
     <tbody>
     <tr class="color-turquoise">
-      <td>{{tablePrices[key][0]['one-day-normal-ticket']}}</td>
-      <td>{{tablePrices[key][0]['two-day-normal-ticket']}}</td>
-      <td>{{tablePrices[key][0]['three-day-normal-ticket']}}</td>
+      <td>{{tablePrices['one-day-normal-ticket']}}</td>
+      <td>{{tablePrices['two-day-normal-ticket']}}</td>
+      <td>{{tablePrices['three-day-normal-ticket']}}</td>
     </tr>
     <tr class="color-turquoise">
-      <td>{{tablePrices[key][0]['one-day-early-ticket']}}</td>
-      <td>{{tablePrices[key][0]['two-day-early-ticket']}}</td>
-      <td>{{tablePrices[key][0]['three-day-early-ticket']}}</td>
+      <td>{{tablePrices['one-day-early-ticket']}}</td>
+      <td>{{tablePrices['two-day-early-ticket']}}</td>
+      <td>{{tablePrices['three-day-early-ticket']}}</td>
     </tr>
     <tr class="color-turquoise">
-      <td>{{tablePrices[key][0]['one-day-vip-ticket']}}</td>
-      <td>{{tablePrices[key][0]['two-day-vip-ticket']}}</td>
-      <td>{{tablePrices[key][0]['three-day-vip-ticket']}}</td>
+      <td>{{tablePrices['one-day-vip-ticket']}}</td>
+      <td>{{tablePrices['two-day-vip-ticket']}}</td>
+      <td>{{tablePrices['three-day-vip-ticket']}}</td>
     </tr>
     </tbody>
   </table>

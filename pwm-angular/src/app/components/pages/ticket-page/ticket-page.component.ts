@@ -13,7 +13,7 @@ import {TicketTableComponent} from '../../ticket-table/ticket-table.component';
   styleUrl: './ticket-page.component.css'
 })
 export class TicketPageComponent {
-  defaultLocation = "A";
+  defaultLocation = "Arquitectura";
   defaultChoice = "Arquitectura";
 
 
@@ -21,14 +21,14 @@ export class TicketPageComponent {
     if (typeof window !== 'undefined' && window.localStorage) {
       const saved = localStorage.getItem('selectedLocation');
       if (saved) {
-        this.defaultLocation = saved.substring(0, 1);
-        this.defaultChoice = saved
+        this.defaultLocation = saved;
+        this.defaultChoice = saved;
       }
     }
   }
 
   onChoiceSelected(selectedValue: string) {
-    this.defaultLocation = selectedValue.substring(0, 1);
+    this.defaultLocation = selectedValue;
     this.defaultChoice = selectedValue
     localStorage.setItem('selectedLocation', selectedValue);
   }

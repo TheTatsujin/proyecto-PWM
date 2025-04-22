@@ -8,10 +8,10 @@ import {Tickets} from '../model/tickets';
   providedIn: 'root'
 })
 export class TicketTableService {
-  private firestore = inject(Firestore);
+  firestore =  inject(Firestore);
   constructor() {}
 
-  getTicketsOf(Location: String): Observable<Tickets[]> {
+  getTicketsOf(): Observable<Tickets[]> {
     const ticketsRef = collection(this.firestore, 'Tickets');
     return collectionData(ticketsRef, {idField: 'id'}) as Observable<Tickets[]>;
   }
