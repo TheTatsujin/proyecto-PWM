@@ -1,4 +1,4 @@
-export interface Tickets {
+export interface TicketsInterface {
   id?: string;
   Evento: String;
   'one-day-header': string;
