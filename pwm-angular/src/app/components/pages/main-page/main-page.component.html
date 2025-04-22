@@ -2,7 +2,7 @@
   <img id="main-image" src="../images/the-festival2.png" alt="The festival image">
   <section id="main-button-section">
     <button mat-stroked-button class="btn-main font-sudovar border-violet color-violet bg-black"
-            routerLink="tickets">
+            [routerLink] ="'tickets'" [queryParams] = "{ header:2, footer:true}">
       Comprar Entradas
     </button>
     <button mat-stroked-button class="btn-main font-sudovar border-violet color-violet bg-black"
