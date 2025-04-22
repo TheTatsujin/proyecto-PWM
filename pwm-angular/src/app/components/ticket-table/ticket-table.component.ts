@@ -5,7 +5,7 @@ import {Subscription} from 'rxjs';
 
 @Component({
   selector: 'app-ticket-table',
-  imports: [HttpClientModule],
+  imports: [],
   templateUrl: './ticket-table.component.html',
   styleUrl: './ticket-table.component.css',
   standalone: true
