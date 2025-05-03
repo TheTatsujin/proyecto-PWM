@@ -52,9 +52,9 @@ export class LoginFormComponent {
 
     if (user.password === this.loginForm.value.password) {
       this.authService.authenticate();
+      localStorage.setItem('userId', user.id);
       await this.router.navigate([''], {
         queryParams: {
-          userId: user.id,
           header: 1,
           footer: true
         }

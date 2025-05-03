@@ -8,7 +8,7 @@
   </div>
   <nav id="header_right-nav">
     <a *ngIf="isLogged; else loginButton" id="profile-link" routerLink="user" [queryParams] = "{ header:0, footer:true}">
-      <img id="profile-picture" src="../images/icons/man-user-circle-icon.svg" alt="profile picture" height="64" width="64">
+      <img id="profile-picture" ngSrc="../images/icons/man-user-circle-icon.svg" alt="profile picture" height="64" width="64">
     </a>
     <ng-template #loginButton>
       <app-login-button></app-login-button>
