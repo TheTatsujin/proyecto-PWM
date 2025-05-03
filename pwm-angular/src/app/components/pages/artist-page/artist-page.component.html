@@ -1,9 +1,10 @@
-@for (artist of artistData(); track artist.id) {
-  <app-artist-banner
-    [artistImage]="artist.image"
-    [artistName]="artist.name"
-    [eventLocation]="artist.location"
-    [eventDate]="artist.date"
-  />
-}
-
+<main>
+  @for (artist of artistData(); track artist.id) {
+    <app-artist-banner
+      [artistImage]="artist.image"
+      [artistName]="artist.name"
+      [eventLocation]="artist.location"
+      [eventDate]="artist.date"
+    />
+  }
+</main>

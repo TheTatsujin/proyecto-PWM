@@ -16,8 +16,7 @@ export class UserService {
 
   constructor(private firestore: Firestore) {}
 
-  async getUserByEmail(user: FormGroup) {
-    const email = user.value.email;
+  async getUserByEmail(email: string) {
     const usersRef = collection(this.firestore, 'Users');
     const q = query(usersRef, where('email', '==', email));
     const querySnapshot = await getDocs(q);

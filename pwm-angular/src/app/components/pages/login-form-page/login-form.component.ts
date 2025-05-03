@@ -43,7 +43,7 @@ export class LoginFormComponent {
   async onFormSubmit() {
     if (this.loginForm.invalid) {return;}
 
-    const user = await this.userService.getUserByEmail(this.loginForm);
+    const user = await this.userService.getUserByEmail(this.loginForm.value.email);
 
     if (!user) {
       this.notFound = true;

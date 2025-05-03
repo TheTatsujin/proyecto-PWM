@@ -38,7 +38,7 @@
     </div>
   </form>
   <p>
-    <a class="form-alternative-link font-sudovar color-beige" routerLink="../recovery">Forgot password? Click here</a>
-    <a class="form-alternative-link font-sudovar color-beige" routerLink="../register">Register here</a>
+    <a class="form-alternative-link font-sudovar color-beige" routerLink="../recovery" [queryParams] = "{ header:0, footer:false}">Forgot password? Click here</a>
+    <a class="form-alternative-link font-sudovar color-beige" routerLink="../register" [queryParams] = "{ header:0, footer:false}">Register here</a>
   </p>
 </section>
