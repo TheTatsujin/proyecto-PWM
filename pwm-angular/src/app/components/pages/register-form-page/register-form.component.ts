@@ -1,9 +1,10 @@
-import { Component } from '@angular/core';
+import {Component, inject} from '@angular/core';
 import { CommonModule } from '@angular/common';
 import {MatButtonModule} from '@angular/material/button';
 import { ReturnButtonComponent} from '../../return-button/return-button.component';
 import {FormBuilder, FormControl, FormGroup, ReactiveFormsModule, Validators} from '@angular/forms';
 import {MatCheckboxModule} from '@angular/material/checkbox';
+import {UserService} from '../../../services/user.service';
 
 
 @Component({
@@ -14,6 +15,7 @@ import {MatCheckboxModule} from '@angular/material/checkbox';
 })
 export class RegisterFormComponent {
   registerForm: FormGroup;
+  userService = inject(UserService);
 
   constructor(private formBuilder: FormBuilder) {
     this.registerForm = this.formBuilder.group( {
@@ -44,5 +46,6 @@ export class RegisterFormComponent {
     if (this.password != this.confirm) {
       return;
     }
+    this.userService.addUsers(this.registerForm.value)
   }
 }

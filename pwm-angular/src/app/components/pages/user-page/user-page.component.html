@@ -1,7 +1,7 @@
 <section id = "user-page" class="bg-black form-box">
 <div class="form-header">
   <app-return-button></app-return-button>
-  <a id="profile-link" href="#">
+  <a id="profile-link" href="">
     <img id="profile-picture" src="../images/icons/man-user-circle-icon.svg" alt="profile picture" height="64" width="64">
   </a>
   <h1 class="color-turquoise font-tektur">Welcome pepe</h1>
@@ -24,7 +24,8 @@
     </div>
   </div>
 </form>
-<button mat-stroked-button id="btn-logout" class="btn-main center-content text-medium font-sudovar bg-black border-violet color-violet">
+<button mat-stroked-button id="btn-logout" class="btn-main center-content text-medium
+  font-sudovar bg-black border-violet color-violet" (click)="logoutClick()">
   Log out
 </button>
 </section>
