@@ -17,9 +17,9 @@
         <input formControlName="name" class="input-box color-white" type=text id="name"
                [ngClass]="{ 'error': name?.errors?.['required'] }" name="name" placeholder="Full name" required>
 
-        <input formControlName="email" class="input-box color-white" type=email id="email" name="email" placeholder="Email"
+        <input (click)="this.alreadyRegisteredEmailMessage=false" formControlName="email" class="input-box color-white" type=email id="email" name="email" placeholder="Email"
                [ngClass]="{ 'error': email?.errors?.['required'] }" required>
-        <div *ngIf="email?.errors?.['email']" class="text-error">
+        <div  *ngIf="email?.errors?.['email']" class="text-error">
           Introduce a valid email
         </div>
 
@@ -38,26 +38,35 @@
           Introduce a valid password.
         </div>
 
-        <input formControlName="confirm" class="input-box color-white" type=password id="confirmPassword" name="confirmPassword"
+        <input (click)="this.notEqualPasswordsMessage = false" formControlName="confirm" class="input-box color-white" type=password id="confirmPassword" name="confirmPassword"
                [ngClass]="{ 'error': confirm?.errors?.['required'] }" placeholder="Confirm password" required>
         <div *ngIf="confirm?.errors?.['confirm']" class="text-error">
           Confirmation does not match.
         </div>
       </div>
     </div>
-
       <div class="form_checkbox-area_buttons font-style-italic">
-        <mat-checkbox formGroupName="termConditions" id="termsConditions" name="termsConditions" required>
+        <mat-checkbox formControlName="termConditions" id="termsConditions" name="termsConditions" required>
           I accept terms of service.
         </mat-checkbox>
-        <mat-checkbox formGroupName="receiver" id="receiveInformation" name="receiveInformation">
+        <div *ngIf="termConditions?.errors?.['required'] || termConditions?.errors?.['requiredTrue']"
+             class="text-error"
+             [hidden]="!termConditions?.touched && !termConditions?.dirty">
+          You must accept the terms and conditions.
+        </div>
+        <mat-checkbox formControlName="receiver" id="receiveInformation" name="receiveInformation">
           Receive information on event updates.
         </mat-checkbox>
-        <mat-checkbox formGroupName="notifications" id="notifications" name="notifications">
+        <mat-checkbox formControlName="notifications" id="notifications" name="notifications">
           I don't allow notifications.
         </mat-checkbox>
       </div>
-
+    <div *ngIf="this.alreadyRegisteredEmailMessage " class="text-error">
+      Email already registered, try to log in!
+    </div>
+    <div *ngIf="this.notEqualPasswordsMessage" class="text-error">
+      Password and confirmation must match
+    </div>
     <button mat-stroked-button class="btn-submit font-sudovar border-turquoise color-turquoise bg-black"
             id="register-submit" type="submit">Register
     </button>
