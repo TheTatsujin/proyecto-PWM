@@ -38,7 +38,7 @@ export class UserService {
     return docData(userDoc, { idField: 'id' }) as Observable<UserInterface>;
   }
 
-  addUser(user: FormGroup, id: string): Promise<void> {
+  async addUser(user: FormGroup, id: string): Promise<void> {
     const usersRef = doc(this.firestore, `Users/${id}`);
     return setDoc(usersRef, user);
   }

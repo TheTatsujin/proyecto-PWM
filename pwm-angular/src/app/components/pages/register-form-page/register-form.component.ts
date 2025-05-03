@@ -6,6 +6,7 @@ import {FormBuilder, FormControl, FormGroup, ReactiveFormsModule, Validators} fr
 import {MatCheckboxModule} from '@angular/material/checkbox';
 import {UserService} from '../../../services/user.service';
 import {AuthService} from '../../../services/auth.service';
+import {Router} from '@angular/router';
 
 
 @Component({
@@ -18,6 +19,7 @@ export class RegisterFormComponent {
   registerForm: FormGroup;
   userService = inject(UserService);
   authService = inject(AuthService);
+  router = inject(Router);
   notEqualPasswordsMessage: boolean = false;
   alreadyRegisteredEmailMessage: boolean = false;
 
@@ -44,7 +46,7 @@ export class RegisterFormComponent {
   get confirm() { return this.registerForm.get('confirm'); }
   get termConditions() { return this.registerForm.get('termConditions'); }
   get receiver() { return this.registerForm.get('receiver'); }
-  get notifications() { return this.registerForm.get('notification'); }
+  get notifications() { return this.registerForm.get('notifications'); }
 
   private notEqualPasswords() { this.notEqualPasswordsMessage = true;}
 
@@ -59,19 +61,31 @@ export class RegisterFormComponent {
       return;
     }
 
-    const user = await this.userService.getUserByEmail(this.registerForm.value.email);
-    if (user) {
-      this.emailAlreadyRegistered();
-      return;
-    }
+    try {
+      const user = await this.userService.getUserByEmail(this.registerForm.value.email);
+      if (user) {
+        this.emailAlreadyRegistered();
+        return;
+      }
 
-    if (this.registerForm.value.password != this.registerForm.value.confirm) {
-      this.notEqualPasswords()
-      return;
-    }
+      if (this.registerForm.value.password !== this.registerForm.value.confirm) {
+        this.notEqualPasswords();
+        return;
+      }
 
-    this.authService.registerUser(this.registerForm.value)
-      .then(userCredentials => {this.userService.addUser(this.registerForm.value, userCredentials.user.uid);})
+      const userCredentials = await this.authService.registerUser(this.registerForm.value);
+      await this.userService.addUser(this.registerForm.value, userCredentials.user.uid);
+      this.authService.authenticate();
+      localStorage.setItem('userId', userCredentials.user.uid);
+      await this.router.navigate([''], {
+        queryParams: {
+          header: 1,
+          footer: true
+        }
+      });
+    } catch (error) {
+      console.error('Error durante el registro:', error);
+    }
   }
 
   private showTermAcceptanceMessage() {
