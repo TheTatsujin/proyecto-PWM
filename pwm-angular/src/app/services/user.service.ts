@@ -2,7 +2,7 @@ import { Injectable } from '@angular/core';
 import {
   addDoc, collection, doc,
   docData, Firestore, getDocs,
-  query, where
+  query, setDoc, where
 } from '@angular/fire/firestore';
 import {FormGroup} from '@angular/forms';
 import {Observable} from 'rxjs';
@@ -38,8 +38,8 @@ export class UserService {
     return docData(userDoc, { idField: 'id' }) as Observable<UserInterface>;
   }
 
-  addUsers(user: FormGroup) {
-    const usersRef = collection(this.firestore, 'Users');
-    return addDoc(usersRef, user);
+  addUser(user: FormGroup, id: string): Promise<void> {
+    const usersRef = doc(this.firestore, `Users/${id}`);
+    return setDoc(usersRef, user);
   }
 }
