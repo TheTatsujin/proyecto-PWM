@@ -5,6 +5,7 @@ import { ReturnButtonComponent} from '../../return-button/return-button.componen
 import {FormBuilder, FormControl, FormGroup, ReactiveFormsModule, Validators} from '@angular/forms';
 import {MatCheckboxModule} from '@angular/material/checkbox';
 import {UserService} from '../../../services/user.service';
+import {AuthService} from '../../../services/auth.service';
 
 
 @Component({
@@ -16,6 +17,9 @@ import {UserService} from '../../../services/user.service';
 export class RegisterFormComponent {
   registerForm: FormGroup;
   userService = inject(UserService);
+  authService = inject(AuthService);
+  notEqualPasswordsMessage: boolean = false;
+  alreadyRegisteredEmailMessage: boolean = false;
 
   constructor(private formBuilder: FormBuilder) {
     this.registerForm = this.formBuilder.group( {
@@ -23,11 +27,12 @@ export class RegisterFormComponent {
       email: new FormControl('', [Validators.required, Validators.email]),
       phone: new FormControl('', [Validators.required]),
       birthdate: new FormControl('', [Validators.required]),
-      password: new FormControl('', [Validators.required]),
-      confirm: new FormControl('', [Validators.required]),
+      password: new FormControl('', [Validators.required, Validators.minLength(8)]),
+      confirm: new FormControl('', [Validators.required, Validators.minLength(8)]),
       termConditions: new FormControl('', [Validators.required]),
-      receiver: new FormControl('', [Validators.required]),
-      notifications: new FormControl('', [Validators.required])
+      receiver: new FormControl(false, []),
+      notifications: new FormControl(false, []),
+      tickets: new FormControl(''),
     });
   }
 
@@ -41,11 +46,36 @@ export class RegisterFormComponent {
   get receiver() { return this.registerForm.get('receiver'); }
   get notifications() { return this.registerForm.get('notification'); }
 
+  private notEqualPasswords() { this.notEqualPasswordsMessage = true;}
 
-  onFormSubmit() {
-    if (this.password != this.confirm) {
+  private emailAlreadyRegistered() {this.alreadyRegisteredEmailMessage = true;}
+
+  async onFormSubmit() {
+    this.notEqualPasswordsMessage = false;
+    this.alreadyRegisteredEmailMessage = false;
+
+    if (this.registerForm.invalid) {
+      this.showTermAcceptanceMessage();
       return;
     }
-    this.userService.addUsers(this.registerForm.value)
+
+    const user = await this.userService.getUserByEmail(this.registerForm.value.email);
+    if (user) {
+      this.emailAlreadyRegistered();
+      return;
+    }
+
+    if (this.registerForm.value.password != this.registerForm.value.confirm) {
+      this.notEqualPasswords()
+      return;
+    }
+
+    this.authService.registerUser(this.registerForm.value)
+      .then(userCredentials => {this.userService.addUser(this.registerForm.value, userCredentials.user.uid);})
+  }
+
+  private showTermAcceptanceMessage() {
+    this.registerForm.markAllAsTouched();
+    return;
   }
 }
