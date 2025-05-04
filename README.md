@@ -28,7 +28,7 @@ de entradas.
 - Los storyboards se encuentran en el directorio ```mockups/storyboard/```.
 - Adicionalmente las capturas del progreso de trello se encuentran en ```trello/```, el nombre del archivo corresponde con la fecha de la captura.
 
-## Listado de componentes de angular
+### Listado de componentes de angular
 
 Los componentes de angular se encuentran en el directorio ```pwm-angular/src/app/components```.
 
