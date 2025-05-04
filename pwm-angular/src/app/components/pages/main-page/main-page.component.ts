@@ -32,5 +32,4 @@ export class MainPageComponent implements OnInit {
   ngOnDestroy() {
     this.subscription?.unsubscribe();
   }
-  /* TODO -> Load images */
 }
