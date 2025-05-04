@@ -22,14 +22,14 @@ export class FooterComponent {
   @Input() youtubeIconLink: string = "#";
   @Input() twitterIconLink: string = "#";
 
-  @Input() telephoneIconLink: string = "";
-  @Input() messageIconLink: string = "";
-  @Input() emailIconLink: string = "";
+  @Input() telephoneIconLink: string = "#";
+  @Input() messageIconLink: string = "#";
+  @Input() emailIconLink: string = "#";
 
 
   // Contact info
-  @Input() telephoneNumber: string = "";
-  @Input() messageNumber: string = "";
-  @Input() email: string = "";
+  @Input() telephoneNumber: string = "#";
+  @Input() messageNumber: string = "#";
+  @Input() email: string = "#";
 
 }
