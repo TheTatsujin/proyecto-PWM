@@ -7,9 +7,7 @@ import { Observable } from 'rxjs';
   providedIn: 'root'
 })
 export class ArtistDataService {
-
   firestore: Firestore = inject(Firestore);
-  artists: Array<Artist> = [];
 
   getArtistData(): Observable<Artist[]> {
     const artistRef = collection(this.firestore, 'Artists');

@@ -307,8 +307,8 @@ export interface AdminUser extends Struct.CollectionTypeSchema {
   collectionName: 'admin_users';
   info: {
     description: '';
-    displayName: 'User';
-    name: 'User';
+    displayName: 'UserInterface';
+    name: 'UserInterface';
     pluralName: 'users';
     singularName: 'user';
   };
@@ -870,7 +870,7 @@ export interface PluginUsersPermissionsUser
   collectionName: 'up_users';
   info: {
     description: '';
-    displayName: 'User';
+    displayName: 'UserInterface';
     name: 'user';
     pluralName: 'users';
     singularName: 'user';

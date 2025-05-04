@@ -1,6 +1,5 @@
 import {Component, inject, Input} from '@angular/core';
 import {TicketTableService} from '../../services/ticket-table.service';
-import {HttpClientModule} from '@angular/common/http';
 import {Subscription} from 'rxjs';
 
 @Component({

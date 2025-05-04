@@ -58,7 +58,7 @@ Los templates se encuentran en el directorio ```web/templates/```.
 | Return Button         | [return-button.html](web/templates/return-button.html)       |
 | Dropdown selector     | [dropdown.html](web/templates/dropdown.html)                 |
 | Ticket Table          | [ticket-table.html](web/templates/ticket-table.html)         |
-| User Icon             | [user-icon.html](web/templates/user-icon.html)               |
+| UserInterface Icon             | [user-icon.html](web/templates/user-icon.html)               |
 | Login Form            | [login-form.html](web/templates/login-form.html)             |
 | Register Form         | [register-form.html](web/templates/register-form.html)       |
 | Account Recovery Form | [account-recovery.html](web/templates/account-recovery.html) |
