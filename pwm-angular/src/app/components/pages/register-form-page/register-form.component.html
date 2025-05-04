@@ -24,8 +24,8 @@
         </div>
 
         <input class="input-box color-white" type=tel id="phoneNumber" name="phoneNumber"
-               formControlName="phone" placeholder="Phone number" pattern="[0-9]{3}[- ]?[0-9]{3}[- ]?[0-9]{3}"
-               [ngClass]="{ 'error': phone?.errors?.['required'] }"
+               formControlName="phoneNumber" placeholder="Phone number" pattern="[0-9]{3}[- ]?[0-9]{3}[- ]?[0-9]{3}"
+               [ngClass]="{ 'error': phoneNumber?.errors?.['required'] }"
                title="Phone number must match XXX-XXX-XXX or XXXXXXXXX with only digits" required>
 
         <input formControlName="birthdate" class="input-box color-white birth-input" type=date
