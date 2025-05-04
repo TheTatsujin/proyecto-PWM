@@ -29,10 +29,16 @@
       <div *ngIf="password?.errors?.['required']" class="text-error">
         Password required.
       </div>
+      <div *ngIf="notFound" class="text-error">
+        User not found, register first to continue.
+      </div>
+      <div *ngIf="badPassword" class="text-error">
+        Password incorrect.
+      </div>
     </div>
   </form>
   <p>
-    <a class="form-alternative-link font-sudovar color-beige" routerLink="../recovery">Forgot password? Click here</a>
-    <a class="form-alternative-link font-sudovar color-beige" routerLink="../register">Register here</a>
+    <a class="form-alternative-link font-sudovar color-beige" routerLink="../recovery" [queryParams] = "{ header:0, footer:false}">Forgot password? Click here</a>
+    <a class="form-alternative-link font-sudovar color-beige" routerLink="../register" [queryParams] = "{ header:0, footer:false}">Register here</a>
   </p>
 </section>

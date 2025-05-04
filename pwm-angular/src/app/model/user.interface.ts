@@ -7,4 +7,7 @@ export interface UserInterface {
   birthdate: string;
   password: string;
   tickets: string;
+  termConditions: boolean;
+  receiver: boolean;
+  notifications: boolean;
 }
