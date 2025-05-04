@@ -6,11 +6,12 @@ import {AuthService} from '../../../services/auth.service';
 import {UserService} from '../../../services/user.service';
 import {UserInterface} from '../../../model/user.interface';
 import {NgIf, NgOptimizedImage} from '@angular/common';
+import {UploadComponent} from '../../upload/upload.component';
 
 
 @Component({
   selector: 'app-user-page',
-  imports: [MatButtonModule, ReturnButtonComponent, NgIf, NgOptimizedImage],
+  imports: [MatButtonModule, ReturnButtonComponent, NgIf, NgOptimizedImage, UploadComponent],
   templateUrl: './user-page.component.html',
   styleUrl: './user-page.component.css'
 })
@@ -23,15 +24,15 @@ export class UserPageComponent implements OnInit {
   constructor(private router: Router) {}
 
   ngOnInit() {
-    const userId = localStorage.getItem('userId');
-    if (userId) {
-      this.userService.getUserById(userId)
-        .subscribe((userData: UserInterface | null) => {
-          if (userData) {
-            this.userData.set(userData);
-          }
-        });
-    }
+      const userId = localStorage.getItem('userId');
+      if (userId) {
+        this.userService.getUserById(userId)
+          .subscribe((userData: UserInterface | null) => {
+            if (userData) {
+              this.userData.set(userData);
+            }
+          });
+      }
   }
 
   user = computed(() => this.userData());

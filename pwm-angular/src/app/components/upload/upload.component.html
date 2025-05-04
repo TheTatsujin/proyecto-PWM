@@ -1,0 +1,4 @@
+<h1 class="color-turquoise font-sudovar center-content">Upload an image</h1>
+<input type="file" (change)="onFileSelected($event)">
+<button type="button" (click)="onUpload()">Upload</button>
+<p class="color-turquoise font-sudovar" *ngIf="selectedFile">Selected file: {{ selectedFile.name }}</p>
