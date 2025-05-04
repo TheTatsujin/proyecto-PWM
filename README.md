@@ -100,7 +100,17 @@ Colección para controlar los tickets disponibles para cada evento y su precio.
 - evento: ***'string'*** = Localización
 
 #### Users
-Información relevante de cada usuario.
+Contiene la información de cada usuario:
+- email: ***'string'*** = Dirección de correo electrónico 
+- name: ***'string'*** = Nombre
+- password: ***'string'*** = Contraseña
+- confirm: ***'string'*** = Confirmación de la contraseña
+- birthdate: ***'string'*** = Fecha de nacimiento
+- phoneNumber: ***'string'*** = Número telefónico
+- tickets: ***'string'*** = Información acerca de las entradas adquiridas
+- termConditions: ***'boolean'*** = Aceptación de los términos de servicio
+- receiver: ***'boolean'*** = Aceptación para recibir información sobre actualizaciones del evento
+- notifications: ***'boolean'*** = Denegación del envío de notificaciones
 
 #### Uploads
 
