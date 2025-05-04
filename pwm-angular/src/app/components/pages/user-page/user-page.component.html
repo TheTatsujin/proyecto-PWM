@@ -4,7 +4,7 @@
   <a id="profile-link" href="">
     <img id="profile-picture" ngSrc="https://github.com/TheTatsujin/proyecto-PWM/raw/refs/heads/sprint-2/web/images/icons/man-user-circle-icon.svg" alt="profile picture" height="64" width="64">
   </a>
-  <h1 class="color-turquoise font-tektur">Welcome pepe</h1>
+  <h1 class="color-turquoise font-tektur" *ngIf="user() as u">Welcome {{u.name}}</h1>
 </div>
 <form id="user-page-form">
   <div class="form-fields">
@@ -20,7 +20,7 @@
       <label id="email-field">{{ u.email }}</label>
       <label id="phone-number-field">{{ u.phoneNumber }}</label>
       <label id="birthdate-field">{{ u.birthdate }}</label>
-      <label id="tickets">{{ u.tickets }}</label>
+      <label id="tickets">{{ u.tickets === '' ? 'None' : u.tickets }}</label>
     </div>
   </div>
 </form>
