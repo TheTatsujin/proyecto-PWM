@@ -112,12 +112,13 @@ Contiene la información de cada usuario:
 - receiver: ***'boolean'*** = Aceptación para recibir información sobre actualizaciones del evento
 - notifications: ***'boolean'*** = Denegación del envío de notificaciones
 
-#### Uploads
-
-Imágenes que usuarios suben durante la experiencia en el evento.
+#### uploads
+Imágenes que usuarios suben durante la experiencia en el evento. Se almacena la siguiente información:
+- name: ***'string'*** = Nombre de la imagen, con extensión incluida
+- value: ***'boolean'*** = Valor de la imagen **codificada en base 64** para posteriormente poder decodificarla si fuese necesario. Se trabaja asi ya que firestorage requiere de una subscripción.
 
 
 ### Enlaces de interés
-- Link al repositorio de Github: [Github](https://github.com/TheTatsujin/proyecto-PWM/tree/sprint-1)
+- Link al repositorio de Github: [Github](https://github.com/TheTatsujin/proyecto-PWM/tree/sprint-3)
 - Link al proyecto en Figma: [Figma](https://www.figma.com/design/OS85H9410fIBWvIavd12EM/Pagina?node-id=6-3&t=SEwRmkqbCGws3CMv-1)
 - Link al Trello: [Trello](https://trello.com/invite/b/67a25b4aab7e9795c62e20c7/ATTI65e1187cfe5f881104daf1df712c6473AA3BB91A/pwm-pulse-width-modulation-web)
