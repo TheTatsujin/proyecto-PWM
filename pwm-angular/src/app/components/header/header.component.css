@@ -44,7 +44,7 @@ header > img {
 
 header #logo {
   height: auto;
-  transform: translate(-4.5rem, 50px);
+  transform: translate(-4.5rem, 5px);
 }
 
 /* Sections */

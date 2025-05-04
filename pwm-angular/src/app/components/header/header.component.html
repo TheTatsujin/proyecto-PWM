@@ -4,11 +4,11 @@
     <a mat-button href="#main-button-section" class="color-violet header-text font-sudovar">Calendario</a>
   </nav>
   <div class="header-logo-area">
-    <img id="logo" src="../images/logo.png" alt="Logo de pagina">
+    <img id="logo" src="https://i.imgur.com/UHfgkRa.png" alt="Logo de pagina">
   </div>
   <nav id="header_right-nav">
     <a *ngIf="isLogged; else loginButton" id="profile-link" routerLink="user" [queryParams] = "{ header:0, footer:true}">
-      <img id="profile-picture" ngSrc="../images/icons/man-user-circle-icon.svg" alt="profile picture" height="64" width="64">
+      <img id="profile-picture" ngSrc="https://github.com/TheTatsujin/proyecto-PWM/raw/refs/heads/sprint-2/web/images/icons/man-user-circle-icon.svg" alt="profile picture" height="64" width="64">
     </a>
     <ng-template #loginButton>
       <app-login-button></app-login-button>
