@@ -48,16 +48,35 @@ _**Nota: Figma no exporta correctamente el mockup de la página principal para d
 
 Los componentes de angular se encuentran en el directorio ```pwm-angular/src/app/components```.
 
-| Nombre del Componente | Ruta                                                                    |
-|----------------------|-------------------------------------------------------------------------|
-| Artist Banner        | [artist-banner-component](pwm-angular/src/app/components/artist-banner) |
-| Header A             | [header-component](pwm-angular/src/app/components/header)               |
-| Header B             | [second-header-component](pwm-angular/src/app/components/second-header) |
-| Footer               | [footer-component](pwm-angular/src/app/components/footer)               |
-| Login Button         | [login-button-component](pwm-angular/src/app/components/login-button)   |
-| Return Button        | [return-button-component](pwm-angular/src/app/components/return-button) |
-| Dropdown selector    | [dropdown-component](pwm-angular/src/app/components/dropdown)           |
-| Ticket Table         | [ticket-table-component](pwm-angular/src/app/components/ticket-table)   |
+| Nombre del Componente | Ruta                                                                    | Funcionalidad (Si procede)                                                                |
+|-----------------------|-------------------------------------------------------------------------|-------------------------------------------------------------------------------------------|
+| Artist Banner         | [artist-banner-component](pwm-angular/src/app/components/artist-banner) | Mostrar información concreta acerca de la asistencia de un artista al evento              |
+| Header A              | [header-component](pwm-angular/src/app/components/header)               |                                                                                           |
+| Header B              | [second-header-component](pwm-angular/src/app/components/second-header) |                                                                                           |
+| Footer                | [footer-component](pwm-angular/src/app/components/footer)               |                                                                                           |
+| Login Button          | [login-button-component](pwm-angular/src/app/components/login-button)   | Permitir al usuario entrar en la página para iniciar sesión                               |
+| Return Button         | [return-button-component](pwm-angular/src/app/components/return-button) | Retroceder en la navegación de la página web                                              |
+| Dropdown selector     | [dropdown-component](pwm-angular/src/app/components/dropdown)           | Permite seleccionar entre las diferentes ubicaciones en las que se llevará acabo el vento |
+| Ticket Table          | [ticket-table-component](pwm-angular/src/app/components/ticket-table)   | Muestra los precios de las entradas en función de la ubicación seleccionada               |
+| Accordion             | [accordion-component](pwm-angular/src/app/components/accordion)         | Mostrar la respuesta a preguntas frecuentes de los usuarios                               |
+| Upload | [upload-component](pwm-angular/src/app/components/upload)               | Permitir a los usuarios subir imágenes                                                    |  
+
+Por otro lado dentro del directorio [```pwm-angular/src/app/components/pages```](pwm-angular/src/app/components/pages) se encuentran los 
+componentes que conforman las páginas que se iran mostrando al usuario según navege por la página web. A continuación
+una tabla con una correspondencia con los mockups
+
+
+| Mockup Dektop                                                              | Mockup Tablet 												                                                | Mockup Mobile												                                                 | Componente en angular                                                         |                                       
+|----------------------------------------------------------------------------|---------------------------------------------------------------------------|---------------------------------------------------------------------------|-------------------------------------------------------------------------------|
+| [Mockup Main Page.png](mockups/desktop/Mockup-Main-Page.png)               | [Mockup Main Page.png](mockups/tablet/Mockup-Main-Page.png)               | [Mockup Main Page.png](mockups/mobile/Mockup-Main-Page.png)               | [main-page](pwm-angular/src/app/components/pages/main-page)                   |
+| [Mockup artistas.png](mockups/desktop/Mockup-artistas.png)                 | [Mockup artistas.png](mockups/tablet/Mockup-artistas.png)                 | [Mockup artistas.png](mockups/mobile/Mockup-artistas.png)                 | [artist-page](pwm-angular/src/app/components/pages/artist-page)               |
+| [Mockup login.png](mockups/desktop/Mockup-login.png)                       | [Mockup login.png](mockups/tablet/Mockup-login.png)                       | [Mockup login.png](mockups/mobile/Mockup-login.png)                       | [login-form-page](pwm-angular/src/app/components/pages/login-form-page)       |
+| [Mockup recuperar cuenta.png](mockups/desktop/Mockup-recuperar-cuenta.png) | [Mockup recuperar cuenta.png](mockups/tablet/Mockup-recuperar-cuenta.png) | [Mockup recuperar cuenta.png](mockups/mobile/Mockup-recuperar-cuenta.png) | [recovery-form](pwm-angular/src/app/components/pages/recovery-form)           |
+| [Mockup register.png](mockups/desktop/Mockup-register.png)                 | [Mockup register.png](mockups/tablet/Mockup-register.png)                 | [Mockup register.png](mockups/mobile/Mockup-register.png)                 | [register-form-page](pwm-angular/src/app/components/pages/register-form-page) |
+| [Mockup tickets.png](mockups/desktop/Mockup-Tickets.png)                   | [Mockup tickets.png](mockups/tablet/Mockup-Tickets.png)                   | [Mockup tickets.png](mockups/mobile/Mockup-Tickets.png)                   | [ticket-page](pwm-angular/src/app/components/pages/ticket-page)             |
+| [Mockup usuario.png](mockups/desktop/Mockup-usuario.png)                   | [Mockup usuario.png](mockups/tablet/Mockup-usuario.png)                   | [Mockup usuario.png](mockups/mobile/Mockup-usuario.png)                   | [user-page](pwm-angular/src/app/components/pages/user-page)              |
+
+
 
 ### Estructuración de los datos en Firebase
 
