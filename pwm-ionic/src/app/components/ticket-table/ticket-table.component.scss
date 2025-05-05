@@ -1,0 +1,46 @@
+.ticket-table {
+  margin: auto;
+  width: 100%;
+  height: 22rem;
+  border-width: 1px;
+  border-bottom-width: 6px;
+  border-style: solid;
+  border-radius: 8px;
+}
+
+.ticket-table tr {
+  text-align: left;
+  font-style: italic;
+}
+
+.ticket-table th {
+  font-size: 3em;
+  font-weight: bold;
+  padding-top: 15px;
+  padding-left: 10px;
+}
+
+.ticket-table td {
+  font-size: 2em;
+  padding-top: 15px;
+  padding-left: 10px;
+}
+
+/*Mobile screen*/
+@media (max-width: 576px) {
+
+  .ticket-table {
+    margin: auto;
+    width: 100%;
+    height: 11rem;
+  }
+
+  .ticket-table th {
+    font-size: 1.5em;
+  }
+
+  .ticket-table td {
+    font-size: 1em;
+  }
+
+}
