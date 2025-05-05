@@ -1,17 +1,26 @@
-<ion-header [translucent]="true">
-  <ion-toolbar>
-    <ion-title>
-      Tab 2
-    </ion-title>
-  </ion-toolbar>
-</ion-header>
-
 <ion-content [fullscreen]="true">
-  <ion-header collapse="condense">
-    <ion-toolbar>
-      <ion-title size="large">Tab 2</ion-title>
-    </ion-toolbar>
-  </ion-header>
-
-  <app-explore-container name="Home"></app-explore-container>
+  <main>
+    <img id="main-image" src="https://i.imgur.com/PtJuAA4.png" alt="The festival image">
+    <section id="main-button-section">
+      <button class="btn-main font-sudovar border-violet color-violet bg-black"
+              [routerLink] ="'tickets'" [queryParams] = "{ header:2, footer:true}">
+        Comprar Entradas
+      </button>
+      <button class="btn-main font-sudovar border-violet color-violet bg-black"
+              [routerLink]="'artists'" [queryParams] = "{ header:2, footer:true}">
+        Artistas
+      </button>
+    </section>
+    <section id="calendar-section" class="bg-transparent border-turquoise">
+      <img src="https://i.imgur.com/jZ3eKMq.png" alt="Event calendar image">
+    </section>
+    <article id="faq-section">
+      <h1 class="color-turquoise font-tektur section-header">FAQ</h1>
+      <figure>
+        <img class="border-violet" src="https://i.imgur.com/8Yt6Iyo.png" alt="Monkey FAQ image">
+      </figure>
+      <section id="faq-questions" class="template-container">
+      </section>
+    </article>
+  </main>
 </ion-content>
