@@ -6,15 +6,17 @@ import { Tab3Page } from './tab3.page';
 import { ExploreContainerComponentModule } from '../explore-container/explore-container.module';
 
 import { Tab3PageRoutingModule } from './tab3-routing.module';
+import {ArtistPageComponent} from "../pages/artist-page/artist-page.component";
 
 @NgModule({
-  imports: [
-    IonicModule,
-    CommonModule,
-    FormsModule,
-    ExploreContainerComponentModule,
-    Tab3PageRoutingModule
-  ],
+    imports: [
+        IonicModule,
+        CommonModule,
+        FormsModule,
+        ExploreContainerComponentModule,
+        Tab3PageRoutingModule,
+        ArtistPageComponent
+    ],
   declarations: [Tab3Page]
 })
 export class Tab3PageModule {}

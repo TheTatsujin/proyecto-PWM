@@ -1,0 +1,13 @@
+<figure class="artist-banner bg-black border-turquoise">
+  <img class="artist-image" [attr.src]="artistImage()" alt="Artist Banner">
+  <figcaption class="artist-caption color-turquoise bg-black border-turquoise">
+    {{ artistName() }}
+  </figcaption>
+  <figcaption class="date-caption color-white">
+    <h2>DATES</h2>
+    <ul>
+      <li>{{ eventLocation() }}</li>
+      <li>{{ eventDate() }}</li>
+    </ul>
+  </figcaption>
+</figure>
