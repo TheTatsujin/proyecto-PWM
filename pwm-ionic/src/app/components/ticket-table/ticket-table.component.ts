@@ -6,7 +6,7 @@ import {Subscription} from 'rxjs';
   selector: 'app-ticket-table',
   imports: [],
   templateUrl: './ticket-table.component.html',
-  styleUrl: './ticket-table.component.css',
+  styleUrl: './ticket-table.component.scss',
   standalone: true
 })
 export class TicketTableComponent {

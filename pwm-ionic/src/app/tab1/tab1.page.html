@@ -1,6 +1,9 @@
-<ion-list>
-  <ion-item>
-    <ion-select aria-label="fruit" placeholder="Select fruit">
-    </ion-select>
-  </ion-item>
-</ion-list>
+<ion-content [fullscreen]="true">
+  <main>
+    <h1 class="font-tektur color-turquoise section-header">
+      Tickets
+    </h1>
+    <app-dropdown [defaultChoice]="defaultChoice" (choice)="onChoiceSelected($event)"></app-dropdown>
+    <app-ticket-table [currentLocation]="defaultLocation"></app-ticket-table>
+  </main>
+</ion-content>

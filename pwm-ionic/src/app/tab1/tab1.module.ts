@@ -5,6 +5,8 @@ import { FormsModule } from '@angular/forms';
 import { Tab1Page } from './tab1.page';
 import { ExploreContainerComponentModule } from '../explore-container/explore-container.module';
 import { Tab1PageRoutingModule } from './tab1-routing.module';
+import {DropdownComponent} from "../components/dropdown/dropdown.component";
+import {TicketTableComponent} from "../components/ticket-table/ticket-table.component";
 
 @NgModule({
   imports: [
@@ -12,7 +14,9 @@ import { Tab1PageRoutingModule } from './tab1-routing.module';
     CommonModule,
     FormsModule,
     ExploreContainerComponentModule,
-    Tab1PageRoutingModule
+    Tab1PageRoutingModule,
+    DropdownComponent,
+    TicketTableComponent
   ],
   declarations: [Tab1Page]
 })

@@ -1,0 +1,30 @@
+.section-header {
+  text-align: center;
+  font-size: 10em;
+  font-weight: 900;
+  text-shadow: 0 -.035em 0 #AA12FE;
+  padding: .2em;
+}
+
+main {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  width: 100vw;
+  padding: 2rem 1rem;
+  overflow-x: hidden;
+}
+
+@media (min-width: 576px) and (max-width: 992px) {
+
+  .section-header {
+    font-size: 8rem;
+  }
+}
+
+@media (max-width: 576px) {
+  .section-header {
+    font-size: 4rem;
+  }
+}
