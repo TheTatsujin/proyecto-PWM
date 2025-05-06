@@ -1,4 +1,6 @@
-import { Component } from '@angular/core';
+import {Component, inject, OnInit, signal} from '@angular/core';
+import { ArtistDataService } from '../services/artist-data.service';
+import { Artist } from '../model/artist.interface';
 
 @Component({
   selector: 'app-tab3',
@@ -6,8 +8,11 @@ import { Component } from '@angular/core';
   styleUrls: ['tab3.page.scss'],
   standalone: false,
 })
-export class Tab3Page {
-
-  constructor() {}
-
+export class Tab3Page implements OnInit {
+  artistDataService = inject(ArtistDataService);
+  artistData = signal<Array<Artist>>([])
+  ngOnInit() {
+    this.artistDataService.getArtistData()
+      .subscribe((artistDataList: Artist[]) => this.artistData.set(artistDataList))
+  }
 }

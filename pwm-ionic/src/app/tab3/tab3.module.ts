@@ -7,16 +7,18 @@ import { ExploreContainerComponentModule } from '../explore-container/explore-co
 
 import { Tab3PageRoutingModule } from './tab3-routing.module';
 import {ArtistPageComponent} from "../pages/artist-page/artist-page.component";
+import {ArtistBannerComponent} from "../components/artist-banner/artist-banner.component";
 
 @NgModule({
-    imports: [
-        IonicModule,
-        CommonModule,
-        FormsModule,
-        ExploreContainerComponentModule,
-        Tab3PageRoutingModule,
-        ArtistPageComponent
-    ],
+  imports: [
+    IonicModule,
+    CommonModule,
+    FormsModule,
+    ExploreContainerComponentModule,
+    Tab3PageRoutingModule,
+    ArtistPageComponent,
+    ArtistBannerComponent
+  ],
   declarations: [Tab3Page]
 })
 export class Tab3PageModule {}
