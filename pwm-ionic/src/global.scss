@@ -95,7 +95,7 @@ main {
     background-size: 100% auto;
     background-attachment: fixed;
     overflow-x: hidden;
-    max-width: 100%;
+    width: 100%;
 }
 
 .text-medium {
@@ -106,21 +106,3 @@ main {
   margin: auto;
 }
 
-@media (max-width: 835px){
-    main {
-        margin-top: 15vh;
-        margin-left: 10vw;
-        width: 80vw;
-        margin-bottom: 28vh;
-    }
-}
-
-
-@media (max-width: 576px){
-    main {
-        margin-top: 15vh;
-        margin-left: 10vw;
-        width: 80vw;
-        margin-bottom: 28vh;
-    }
-}
