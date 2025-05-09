@@ -8,6 +8,8 @@ import { Component } from '@angular/core';
 })
 export class TabsPage {
 
-  constructor() {}
-
+  authenticated: boolean;
+  constructor() {
+    this.authenticated = false;
+  }
 }
