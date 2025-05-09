@@ -1,0 +1,77 @@
+<ion-content [fullscreen]="true">
+  <main>
+    <section id="register" class="form-box bg-black border-turquoise">
+      <div class="form-header">
+        <h1 class="form-header font-tektur color-turquoise">Sign up</h1>
+      </div>
+      <form [formGroup]="registerForm" (ngSubmit)="onFormSubmit()" id="register-form" method="POST">
+        <div class="form-fields">
+          <div class="form_label-column">
+            <label for="name" class="form-label font-sudovar color-turquoise">Full name:</label>
+            <label for="email" class="form-label font-sudovar color-turquoise">Email:</label>
+            <label for="phoneNumber" class="form-label font-sudovar color-turquoise">PhoneNumber:</label>
+            <label for="birthdate" class="form-label font-sudovar color-turquoise">Birthdate:</label>
+            <label for="password" class="form-label font-sudovar color-turquoise">Password:</label>
+            <label for="confirmPassword" class="form-label font-sudovar color-turquoise">Confirm:</label>
+          </div>
+          <div class="form_input-column">
+            <input formControlName="name" class="input-box color-white" type=text id="name"
+                   [ngClass]="{ 'error': name?.errors?.['required'] }" name="name" placeholder="Full name" required>
+
+            <input (click)="this.alreadyRegisteredEmailMessage=false" formControlName="email" class="input-box color-white" type=email id="email" name="email" placeholder="Email"
+                   [ngClass]="{ 'error': email?.errors?.['required'] }" required>
+            <div  *ngIf="email?.errors?.['email']" class="text-error">
+              Introduce a valid email
+            </div>
+
+            <input class="input-box color-white" type=tel id="phoneNumber" name="phoneNumber"
+                   formControlName="phoneNumber" placeholder="Phone number" pattern="[0-9]{3}[- ]?[0-9]{3}[- ]?[0-9]{3}"
+                   [ngClass]="{ 'error': phoneNumber?.errors?.['required'] }"
+                   title="Phone number must match XXX-XXX-XXX or XXXXXXXXX with only digits" required>
+
+            <input formControlName="birthdate" class="input-box color-white birth-input" type=date
+                   id="birthdate" name="birthdate" [ngClass]="{ 'error': birthdate?.errors?.['required'] }" required>
+
+            <input formControlName="password" class="input-box color-white" type=password id="password" name="password"
+                   [ngClass]="{'error': password?.errors?.['required']}" placeholder="Password" required>
+            <p class="color-turquoise font-sudovar">(At least 8 characters, uppercase, lowercase and a number)</p>
+            <div *ngIf="password?.errors?.['password']" class="text-error">
+              Introduce a valid password.
+            </div>
+
+            <input (click)="this.notEqualPasswordsMessage = false" formControlName="confirm" class="input-box color-white" type=password id="confirmPassword" name="confirmPassword"
+                   [ngClass]="{ 'error': confirm?.errors?.['required'] }" placeholder="Confirm password" required>
+            <div *ngIf="confirm?.errors?.['confirm']" class="text-error">
+              Confirmation does not match.
+            </div>
+          </div>
+        </div>
+        <div class="form_checkbox-area_buttons font-style-italic">
+          <ion-checkbox formControlName="termConditions" id="termsConditions" name="termsConditions" required>
+            I accept terms of service.
+          </ion-checkbox>
+          <div *ngIf="termConditions?.errors?.['required'] || termConditions?.errors?.['requiredTrue']"
+               class="text-error"
+               [hidden]="!termConditions?.touched && !termConditions?.dirty">
+            You must accept the terms and conditions.
+          </div>
+          <ion-checkbox formControlName="receiver" id="receiveInformation" name="receiveInformation">
+            Receive information on event updates.
+          </ion-checkbox>
+          <ion-checkbox formControlName="notifications" id="notifications" name="notifications">
+            I don't allow notifications.
+          </ion-checkbox>
+        </div>
+        <div *ngIf="this.alreadyRegisteredEmailMessage " class="text-error">
+          Email already registered, try to log in!
+        </div>
+        <div *ngIf="this.notEqualPasswordsMessage" class="text-error">
+          Password and confirmation must match
+        </div>
+        <button class="btn-submit font-sudovar border-turquoise color-turquoise bg-black"
+                id="register-submit" type="submit">Register
+        </button>
+      </form>
+    </section>
+  </main>
+</ion-content>
