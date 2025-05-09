@@ -1,4 +1,4 @@
-import {Component, inject} from '@angular/core';
+import {Component} from '@angular/core';
 import {FormBuilder, FormControl, FormGroup, Validators} from "@angular/forms";
 import {Router} from "@angular/router";
 import {UserService} from "../services/user.service";
@@ -13,14 +13,11 @@ import {AuthService} from "../services/auth.service";
 })
 export class LoginPage {
 
-  userService = inject(UserService);
-  authService = inject(AuthService);
-
   loginForm: FormGroup;
   notFound = false;
   badPassword = false;
 
-  constructor(private formBuilder: FormBuilder, private router: Router) {
+  constructor(private formBuilder: FormBuilder, private router: Router, private userService: UserService, private authService: AuthService) {
     this.loginForm = this.formBuilder.group( {
       email: new FormControl('', [Validators.required, Validators.email]),
       password: new FormControl('', [Validators.required])});

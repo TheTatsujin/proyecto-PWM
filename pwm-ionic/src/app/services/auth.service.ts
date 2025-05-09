@@ -1,29 +1,35 @@
-import {inject, Injectable} from '@angular/core';
-import {Auth, createUserWithEmailAndPassword, UserCredential} from "@angular/fire/auth";
-import {UserInterface} from "../model/user.interface";
-
+import { Injectable } from '@angular/core';
+import { Auth, createUserWithEmailAndPassword, onAuthStateChanged, User, UserCredential } from '@angular/fire/auth';
+import { BehaviorSubject } from 'rxjs';
+import { UserInterface } from '../model/user.interface';
 
 @Injectable({
   providedIn: 'root'
 })
 export class AuthService {
-  isLoggedIn: boolean = false;
-  firebaseAuth = inject(Auth);
-  constructor() { }
+  private isLoggedInSubject = new BehaviorSubject<boolean>(false);
+  isAuthenticated$ = this.isLoggedInSubject.asObservable();
 
-  isAuthenticated() {
-    return this.isLoggedIn;
+  constructor(private firebaseAuth: Auth) {
+    onAuthStateChanged(this.firebaseAuth, (user: User | null) => {
+      this.isLoggedInSubject.next(!!user);
+    });
   }
 
-  authenticate(){
-    this.isLoggedIn = true;
+  isAuthenticated(): boolean {
+    return this.isLoggedInSubject.value;
   }
 
-  logout(){
-    this.isLoggedIn = false;
+  authenticate() {
+    this.isLoggedInSubject.next(true);
+  }
+
+  logout() {
+    this.firebaseAuth.signOut();
+    this.isLoggedInSubject.next(false);
   }
 
   registerUser(newUser: UserInterface): Promise<UserCredential> {
-    return createUserWithEmailAndPassword(this.firebaseAuth, newUser.email, newUser.password)
+    return createUserWithEmailAndPassword(this.firebaseAuth, newUser.email, newUser.password);
   }
 }
