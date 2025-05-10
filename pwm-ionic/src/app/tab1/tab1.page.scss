@@ -8,12 +8,6 @@
 
 main {
   min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-evenly;
-  width: 100vw;
-  padding: 2rem 1rem;
-  overflow-x: hidden;
 }
 
 @media (min-width: 576px) and (max-width: 992px) {
