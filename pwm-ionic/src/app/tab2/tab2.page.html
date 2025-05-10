@@ -10,6 +10,9 @@
         <img class="border-violet" src="https://i.imgur.com/8Yt6Iyo.png" alt="Monkey FAQ image">
       </figure>
       <section id="faq-questions" class="template-container">
+        @for (faqEntry of retrievedFaq; track faqEntry['id']; let i = $index) {
+          <app-accordion [question]="faqEntry['question']" [answer]="faqEntry['answer']"></app-accordion>
+        }
       </section>
     </article>
   </main>
