@@ -73,12 +73,7 @@ export class RegisterFormPageComponent {
       await this.userService.addUser(this.registerForm.value, userCredentials.user.uid);
       this.authService.authenticate();
       localStorage.setItem('userId', userCredentials.user.uid);
-      await this.router.navigate([''], {
-        queryParams: {
-          header: 1,
-          footer: true
-        }
-      });
+      await this.router.navigate([''], {});
     } catch (error) {
       console.error('Error durante el registro:', error);
     }
