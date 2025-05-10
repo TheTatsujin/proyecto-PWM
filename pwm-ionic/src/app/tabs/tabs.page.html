@@ -18,13 +18,13 @@
 
     <!-- tabs.page.html -->
     <ion-tab-button *ngIf="(authenticated$ | async); else loginTab" tab="user-page" href="/tabs/user-page">
-      <ion-icon name="person-outline"></ion-icon>
+      <ion-icon name="person-circle-outline"></ion-icon>
       <ion-label>User</ion-label>
     </ion-tab-button>
 
     <ng-template #loginTab>
       <ion-tab-button tab="login" href="/tabs/login">
-        <ion-icon name="person-circle-outline"></ion-icon>
+        <ion-icon name="log-in-outline"></ion-icon>
         <ion-label>Login</ion-label>
       </ion-tab-button>
     </ng-template>

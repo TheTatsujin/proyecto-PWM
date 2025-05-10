@@ -1,46 +1,47 @@
 <ion-content [fullscreen]="true">
-  <section id="login" class="bg-black border-turquoise form-box">
-    <div class="form-header">
-      <h1 class="color-turquoise form-header font-tektur">Login</h1>
-    </div>
-    <form [formGroup]="loginForm" (ngSubmit)="onFormSubmit()" id="login_form" method="POST">
-      <div class="form-fields">
-        <div class="form_label-column">
-          <label class="form-label color-turquoise font-sudovar" for="login_email">Email:</label>
-          <label class="form-label color-turquoise font-sudovar" for="login_password">Password:</label>
+  <main>
+    <section id="login" class="bg-black border-turquoise form-box">
+        <div class="form-header">
+          <h1 class="color-turquoise form-header font-tektur">Login</h1>
         </div>
-        <div class="form_input-column">
-          <input formControlName="email" class="color-white font-sudovar" id="login_email" type="email" name="email" placeholder="email"
-                 [ngClass]="{ 'error': email?.errors?.['required'] || email?.errors?.['email']}" required>
-          <input formControlName="password" id="login_password" class="color-white font-sudovar" type="password" name="password" placeholder="password"
-                 [ngClass]="{ 'error': email?.errors?.['required'] || email?.errors?.['email']}" required>
-        </div>
-      </div>
-      <button class="btn-submit color-turquoise border-turquoise font-sudovar bg-black" id="login-submit" type="submit">
-        OK
-      </button>
-      <div class="error-zone">
-        <div *ngIf="email?.errors?.['required']" class="text-error">
-          Email required.
-        </div>
-        <div *ngIf="email?.errors?.['email']"  class="text-error">
-          Introduce a valid email
-        </div>
-        <div *ngIf="password?.errors?.['required']" class="text-error">
-          Password required.
-        </div>
-        <div *ngIf="notFound" class="text-error">
-          User not found, register first to continue.
-        </div>
-        <div *ngIf="badPassword" class="text-error">
-          Password incorrect.
-        </div>
-      </div>
-    </form>
-    <p>
-      <a class="form-alternative-link font-sudovar color-beige" routerLink="../recovery" [queryParams] = "{ header:0, footer:false}">Forgot password? Click here</a>
-      <a class="form-alternative-link font-sudovar color-beige" routerLink="../register" [queryParams] = "{ header:0, footer:false}">Register here</a>
-    </p>
-  </section>
-
+        <form [formGroup]="loginForm" (ngSubmit)="onFormSubmit()" id="login_form" method="POST">
+          <div class="form-fields">
+            <div class="form_label-column">
+              <label class="form-label color-turquoise font-sudovar" for="login_email">Email:</label>
+              <label class="form-label color-turquoise font-sudovar" for="login_password">Password:</label>
+            </div>
+            <div class="form_input-column">
+              <input formControlName="email" class="color-white font-sudovar" id="login_email" type="email" name="email" placeholder="email"
+                    [ngClass]="{ 'error': email?.errors?.['required'] || email?.errors?.['email']}" required>
+              <input formControlName="password" id="login_password" class="color-white font-sudovar" type="password" name="password" placeholder="password"
+                    [ngClass]="{ 'error': email?.errors?.['required'] || email?.errors?.['email']}" required>
+            </div>
+          </div>
+          <button class="btn-submit color-turquoise border-turquoise font-sudovar bg-black" id="login-submit" type="submit">
+            OK
+          </button>
+          <div class="error-zone">
+            <div *ngIf="email?.errors?.['required']" class="text-error">
+              Email required.
+            </div>
+            <div *ngIf="email?.errors?.['email']"  class="text-error">
+              Introduce a valid email
+            </div>
+            <div *ngIf="password?.errors?.['required']" class="text-error">
+              Password required.
+            </div>
+            <div *ngIf="notFound" class="text-error">
+              User not found, register first to continue.
+            </div>
+            <div *ngIf="badPassword" class="text-error">
+              Password incorrect.
+            </div>
+          </div>
+        </form>
+        <p>
+          <a class="form-alternative-link font-sudovar color-beige" routerLink="../recovery" [queryParams] = "{ header:0, footer:false}">Forgot password? Click here</a>
+          <a class="form-alternative-link font-sudovar color-beige" routerLink="/register" [queryParams] = "{ header:0, footer:false}">Register here</a>
+        </p>
+      </section>
+  </main>
 </ion-content>
