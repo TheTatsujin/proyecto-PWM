@@ -25,8 +25,9 @@ export class AuthService {
   }
 
   logout() {
-    this.firebaseAuth.signOut();
-    this.isLoggedInSubject.next(false);
+    this.firebaseAuth.signOut().then(() => {
+      this.isLoggedInSubject.next(false);
+    })
   }
 
   registerUser(newUser: UserInterface): Promise<UserCredential> {

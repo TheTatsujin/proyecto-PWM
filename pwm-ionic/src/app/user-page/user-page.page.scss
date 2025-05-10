@@ -1,0 +1,143 @@
+#user-page {
+  flex: 1;
+  height: 100%;
+}
+
+.form-box {
+  margin: 5em auto;
+  max-width: 100%;
+  border-radius: 2em;
+  border: #05FCFE solid 1px;
+  border-bottom-width: 8px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+}
+
+.form-box > .form-header {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+}
+
+.form-box > .form-header > h1 {
+  flex-grow: 1;
+  text-align: center;
+  font-weight: 900;
+  text-shadow: 0 -2px 0 #FFFFFF;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  line-height: 3em;
+}
+
+.form-fields {
+  display: flex;
+  gap: 2rem; // Espacio entre columnas
+}
+
+.form_label-column,
+.form_data-column {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: 1.5rem; // Espacio entre elementos verticales
+}
+
+.form_data-column {
+  align-items: start;
+}
+
+.form-fields label {
+  font-size: 1.5em;
+  font-weight: bold;
+  text-align: right;
+}
+
+.btn-main {
+  border-radius: 0.5em;
+  height: 2em;
+  width: 8em;
+  text-wrap: nowrap;
+  border-width: 3px;
+  font-style: italic;
+  font-weight: bold;
+  text-align: center;
+  font-size: 2em;
+  max-width: 300px;
+}
+
+@media (min-width: 992px) {
+  .form-box {
+    width: 60rem;
+    height: 25rem; // Reducida de 30rem
+    border-width: 3px 3px 8px 3px;
+  }
+
+  .form-box > .form-header > h1 {
+    font-size: 5em;
+  }
+}
+
+@media (min-width: 576px) and (max-width: 992px) {
+  section {
+    overflow: hidden;
+  }
+
+  .form-box {
+    width: 55rem;
+    height: 45rem; // Reducida de 55rem
+  }
+
+  .form-box > .form-header > h1 {
+    font-size: 3.5em;
+  }
+
+  .form-fields label {
+    line-height: 1.75em;
+  }
+
+  .btn-main {
+    border-radius: 0.5em;
+    height: 2em;
+    width: 7em;
+    text-wrap: nowrap;
+    border-width: 3px;
+    font-style: italic;
+    font-weight: bold;
+    text-align: center;
+    padding: .5em;
+    max-width: 300px;
+  }
+
+}
+
+@media (max-width: 576px) {
+  section {
+    overflow: hidden;
+  }
+
+  .form-box {
+    width: 20rem;
+    height: 25rem; // Reducida de 30rem
+  }
+
+  .form-box > .form-header > h1 {
+    font-size: 2.5em;
+  }
+
+  .btn-main {
+    border-radius: 0.5em;
+    text-wrap: nowrap;
+    border-width: 3px;
+    font-style: italic;
+    font-weight: bold;
+    text-align: center;
+    padding: .4rem;
+    max-width: 300px;
+  }
+}

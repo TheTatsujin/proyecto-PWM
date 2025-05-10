@@ -1,13 +1,34 @@
-<ion-header [translucent]="true">
-  <ion-toolbar>
-    <ion-title>user-page</ion-title>
-  </ion-toolbar>
-</ion-header>
-
 <ion-content [fullscreen]="true">
-  <ion-header collapse="condense">
-    <ion-toolbar>
-      <ion-title size="large">user-page</ion-title>
-    </ion-toolbar>
-  </ion-header>
+  <section id = "user-page" class="bg-black form-box">
+    <div class="form-header">
+      <a id="profile-link" href="">
+        <img id="profile-picture" ngSrc="https://github.com/TheTatsujin/proyecto-PWM/raw/refs/heads/sprint-2/web/images/icons/man-user-circle-icon.svg" alt="profile picture" height="64" width="64">
+      </a>
+      <h1 class="color-turquoise font-tektur" *ngIf="user() as u">Welcome {{u.name}}</h1>
+    </div>
+    <form id="user-page-form">
+      <div class="form-fields">
+        <div class="form_label-column">
+          <label class="form-label color-turquoise font-sudovar">Full name: </label>
+          <label class="form-label color-turquoise font-sudovar">Email: </label>
+          <label class="form-label color-turquoise font-sudovar">Phone number :</label>
+          <label class="form-label color-turquoise font-sudovar">Birthdate: </label>
+          <label class="form-label color-turquoise font-sudovar">Your tickets:</label>
+        </div>
+        <div class="form_data-column color-white font-sudovar" *ngIf="user() as u">
+          <label id="full-name-field">{{ u.name }}</label>
+          <label id="email-field">{{ u.email }}</label>
+          <label id="phone-number-field">{{ u.phoneNumber }}</label>
+          <label id="birthdate-field">{{ u.birthdate }}</label>
+          <label id="tickets">{{ u.tickets === '' ? 'None' : u.tickets }}</label>
+        </div>
+      </div>
+      <app-upload></app-upload>
+    </form>
+    <button mat-stroked-button id="btn-logout" class="btn-main center-content text-medium
+  font-sudovar bg-black border-violet color-violet" (click)="logoutClick()">
+      Log out
+    </button>
+  </section>
+
 </ion-content>

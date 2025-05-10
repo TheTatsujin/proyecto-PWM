@@ -39,12 +39,7 @@ export class LoginPage {
     if (user.password === this.loginForm.value.password) {
       this.authService.authenticate();
       localStorage.setItem('userId', user.id);
-      await this.router.navigate([''], {
-        queryParams: {
-          header: 1,
-          footer: true
-        }
-      });
+      await this.router.navigate(['']);
     } else {
       this.badPassword = true;
     }

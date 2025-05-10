@@ -1,5 +1,9 @@
-import { Component, OnInit } from '@angular/core';
-import {IonicModule} from "@ionic/angular";
+import {Component, computed, OnInit, signal} from '@angular/core';
+import {Router} from "@angular/router";
+import {UserService} from "../services/user.service";
+import {AuthService} from "../services/auth.service";
+import { UserInterface } from '../model/user.interface';
+
 
 @Component({
   selector: 'app-user-page',
@@ -9,9 +13,27 @@ import {IonicModule} from "@ionic/angular";
 })
 export class UserPagePage implements OnInit {
 
-  constructor() { }
+  userData = signal<UserInterface | null>(null);
+
+  constructor(private router: Router, private userService: UserService, private authService: AuthService) {}
 
   ngOnInit() {
+    const userId = localStorage.getItem('userId');
+    if (userId) {
+      this.userService.getUserById(userId)
+        .subscribe((userData: UserInterface | null) => {
+          if (userData) {
+            this.userData.set(userData);
+          }
+        });
+    }
   }
 
+  user = computed(() => this.userData());
+
+  async logoutClick() {
+    this.authService.logout();
+    localStorage.removeItem('userId');
+    await this.router.navigate(['']);
+  }
 }
