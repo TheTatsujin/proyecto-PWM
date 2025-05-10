@@ -1,5 +1,7 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, inject, OnInit} from '@angular/core';
 import {IonicModule} from "@ionic/angular";
+import {logOut} from "ionicons/icons";
+import {AuthService} from "../services/auth.service";
 
 @Component({
   selector: 'app-user-page',
@@ -9,9 +11,13 @@ import {IonicModule} from "@ionic/angular";
 })
 export class UserPagePage implements OnInit {
 
+  authService = inject(AuthService);
   constructor() { }
 
   ngOnInit() {
   }
 
+  logout() {
+    this.authService.logout();
+  }
 }
