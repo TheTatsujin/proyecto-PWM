@@ -47,7 +47,7 @@
           </div>
         </div>
         <div class="form_checkbox-area_buttons font-style-italic">
-          <ion-checkbox formControlName="termConditions" id="termsConditions" name="termsConditions" required>
+          <ion-checkbox class="color-turquoise font-sudovar" formControlName="termConditions" id="termsConditions" name="termsConditions" required>
             I accept terms of service.
           </ion-checkbox>
           <div *ngIf="termConditions?.errors?.['required'] || termConditions?.errors?.['requiredTrue']"
@@ -55,10 +55,10 @@
                [hidden]="!termConditions?.touched && !termConditions?.dirty">
             You must accept the terms and conditions.
           </div>
-          <ion-checkbox formControlName="receiver" id="receiveInformation" name="receiveInformation">
+          <ion-checkbox class="color-turquoise font-sudovar" formControlName="receiver" id="receiveInformation" name="receiveInformation">
             Receive information on event updates.
           </ion-checkbox>
-          <ion-checkbox formControlName="notifications" id="notifications" name="notifications">
+          <ion-checkbox class="color-turquoise font-sudovar" formControlName="notifications" id="notifications" name="notifications">
             I don't allow notifications.
           </ion-checkbox>
         </div>
