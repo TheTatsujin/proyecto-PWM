@@ -27,7 +27,7 @@ export class RegisterFormPageComponent {
       birthdate: new FormControl('', [Validators.required]),
       password: new FormControl('', [Validators.required, Validators.minLength(8)]),
       confirm: new FormControl('', [Validators.required, Validators.minLength(8)]),
-      termConditions: new FormControl('', [Validators.required]),
+      termConditions: new FormControl(false, [Validators.requiredTrue]),
       receiver: new FormControl(false, []),
       notifications: new FormControl(false, []),
       tickets: new FormControl(''),
@@ -48,7 +48,8 @@ export class RegisterFormPageComponent {
 
   private emailAlreadyRegistered() {this.alreadyRegisteredEmailMessage = true;}
 
-  async onFormSubmit() {
+  async onFormSubmit($event: any) {
+    $event.preventDefault();
     this.notEqualPasswordsMessage = false;
     this.alreadyRegisteredEmailMessage = false;
 

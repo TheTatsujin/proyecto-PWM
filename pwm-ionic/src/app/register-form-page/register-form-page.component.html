@@ -4,7 +4,7 @@
       <div class="form-header">
         <h1 class="form-header font-tektur color-turquoise">Sign up</h1>
       </div>
-      <form [formGroup]="registerForm" (ngSubmit)="onFormSubmit()" id="register-form" method="POST">
+      <form [formGroup]="registerForm" (ngSubmit)="onFormSubmit($event)" id="register-form" method="POST">
         <div class="form-fields">
           <div class="form_label-column">
             <label for="name" class="form-label font-sudovar color-turquoise">Full name:</label>
