@@ -3,20 +3,12 @@ import {FormBuilder, FormControl, FormGroup, ReactiveFormsModule, Validators} fr
 import {Router} from '@angular/router';
 import { UserService } from '../services/user.service';
 import {AuthService} from "../services/auth.service";
-import {IonCheckbox, IonContent} from "@ionic/angular/standalone";
-import {NgClass, NgIf} from "@angular/common";
 
 @Component({
   selector: 'app-register-form-page',
   templateUrl: './register-form-page.component.html',
   styleUrls: ['./register-form-page.component.scss'],
-  imports: [
-    IonContent,
-    ReactiveFormsModule,
-    NgClass,
-    IonCheckbox,
-    NgIf
-  ]
+  standalone: false
 })
 export class RegisterFormPageComponent {
 
