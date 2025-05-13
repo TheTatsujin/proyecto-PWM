@@ -1,0 +1,8 @@
+{
+  "dependencies": {
+    "@angular/fire": "^19.1.0",
+    "@angular/material": "^19.2.15",
+    "@ionic/angular": "^8.5.7",
+    "ionic": "^5.4.16"
+  }
+}
