@@ -1,15 +1,26 @@
 import { Component } from '@angular/core';
-import {AuthService} from "../services/auth.service";
+import { AuthService } from '../services/auth.service';
+import {IonicModule} from "@ionic/angular";
+import {AsyncPipe, NgIf} from "@angular/common";
+import {Observable} from "rxjs";
 
 @Component({
   selector: 'app-tabs',
   templateUrl: 'tabs.page.html',
   styleUrls: ['tabs.page.scss'],
-  standalone: false,
+  imports: [
+    IonicModule,
+    AsyncPipe,
+    NgIf
+  ]
 })
+
 export class TabsPage {
+  authReady$: Observable<boolean>;
+  authenticated$: Observable<boolean>;
 
-  authenticated$ = this.authService.isAuthenticated$;
-
-  constructor(private authService: AuthService) {}
+  constructor(private authService: AuthService) {
+    this.authReady$ = this.authService.authCheckCompleted$;
+    this.authenticated$ = this.authService.isAuthenticated$;
+  }
 }

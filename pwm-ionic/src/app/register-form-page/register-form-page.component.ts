@@ -1,8 +1,8 @@
-import {Component, inject} from '@angular/core';
-import {FormBuilder, FormControl, FormGroup, ReactiveFormsModule, Validators} from '@angular/forms';
-import {Router} from '@angular/router';
+import { Component, inject } from '@angular/core';
+import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
+import { Router } from '@angular/router';
 import { UserService } from '../services/user.service';
-import {AuthService} from "../services/auth.service";
+import { AuthService } from "../services/auth.service";
 
 @Component({
   selector: 'app-register-form-page',
@@ -20,7 +20,7 @@ export class RegisterFormPageComponent {
   alreadyRegisteredEmailMessage: boolean = false;
 
   constructor(private formBuilder: FormBuilder) {
-    this.registerForm = this.formBuilder.group( {
+    this.registerForm = this.formBuilder.group({
       name: new FormControl('', [Validators.required]),
       email: new FormControl('', [Validators.required, Validators.email]),
       phoneNumber: new FormControl('', [Validators.required]),
@@ -44,9 +44,9 @@ export class RegisterFormPageComponent {
   get receiver() { return this.registerForm.get('receiver'); }
   get notifications() { return this.registerForm.get('notifications'); }
 
-  private notEqualPasswords() { this.notEqualPasswordsMessage = true;}
+  private notEqualPasswords() { this.notEqualPasswordsMessage = true; }
 
-  private emailAlreadyRegistered() {this.alreadyRegisteredEmailMessage = true;}
+  private emailAlreadyRegistered() { this.alreadyRegisteredEmailMessage = true; }
 
   async onFormSubmit($event: any) {
     $event.preventDefault();
@@ -72,11 +72,10 @@ export class RegisterFormPageComponent {
 
       const userCredentials = await this.authService.registerUser(this.registerForm.value);
       await this.userService.addUser(this.registerForm.value, userCredentials.user.uid);
-      this.authService.authenticate();
       localStorage.setItem('userId', userCredentials.user.uid);
       await this.router.navigate([''], {});
     } catch (error) {
-      console.error('Error durante el registro:', error);
+      console.error('Error during registration:', error);
     }
   }
 
