@@ -9,17 +9,18 @@ import {
 import { BehaviorSubject } from 'rxjs';
 import { UserInterface } from '../model/user.interface';
 
+
 @Injectable({
   providedIn: 'root'
 })
 export class AuthService {
-  private isLoggedInSubject = new BehaviorSubject<boolean>(false);
+    private isLoggedInSubject = new BehaviorSubject<boolean>(false);
   isAuthenticated$ = this.isLoggedInSubject.asObservable();
 
   private authCheckCompletedSubject = new BehaviorSubject<boolean>(false);
   authCheckCompleted$ = this.authCheckCompletedSubject.asObservable();
 
-  private user = new BehaviorSubject<User>;
+  private user = new BehaviorSubject<User | null>(null);
   user$ = this.user.asObservable();
 
   constructor(private firebaseAuth: Auth) {
