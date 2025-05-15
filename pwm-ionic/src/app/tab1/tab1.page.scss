@@ -7,11 +7,12 @@
 }
 
 main {
-  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 @media (min-width: 576px) and (max-width: 992px) {
-
   .section-header {
     font-size: 8rem;
   }
