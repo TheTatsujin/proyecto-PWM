@@ -1,30 +1,32 @@
-#user-page {
-  flex: 1;
-  height: 100%;
-}
+$form-border-color: #05FCFE;
+$form-border-radius: 2em;
+$form-header-text-shadow: 0 -2px 0 #FFFFFF;
+$btn-border-width: 3px;
+$btn-border-radius: 0.5em;
 
 .form-box {
+  height: 35rem !important;
   margin: 5em auto;
   max-width: 100%;
-  border-radius: 2em;
-  border: #05FCFE solid 1px;
+  border-radius: $form-border-radius;
+  border: $form-border-color solid 1px;
   border-bottom-width: 8px;
   display: flex;
   flex-direction: column;
   justify-content: space-evenly;
-}
 
-.form-box > .form-header {
-  display: flex;
-  align-items: center;
-  justify-content: flex-start;
-}
+  > .form-header {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
 
-.form-box > .form-header > h1 {
-  flex-grow: 1;
-  text-align: center;
-  font-weight: 900;
-  text-shadow: 0 -2px 0 #FFFFFF;
+    > h1 {
+      flex-grow: 1;
+      text-align: center;
+      font-weight: 900;
+      text-shadow: $form-header-text-shadow;
+    }
+  }
 }
 
 form {
@@ -37,33 +39,33 @@ form {
 
 .form-fields {
   display: flex;
-  gap: 2rem; // Espacio entre columnas
-}
+  gap: 2rem;
 
-.form_label-column,
-.form_data-column {
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  gap: 1.5rem; // Espacio entre elementos verticales
-}
+  .form_label-column,
+  .form_data-column {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    gap: 1.5rem;
+  }
 
-.form_data-column {
-  align-items: start;
-}
+  .form_data-column {
+    align-items: start;
+  }
 
-.form-fields label {
-  font-size: 1.5em;
-  font-weight: bold;
-  text-align: right;
+  label {
+    font-size: 1.5em;
+    font-weight: bold;
+    text-align: right;
+  }
 }
 
 .btn-main {
-  border-radius: 0.5em;
+  border-radius: $btn-border-radius;
   height: 2em;
   width: 8em;
-  text-wrap: nowrap;
-  border-width: 3px;
+  white-space: nowrap;
+  border-width: $btn-border-width;
   font-style: italic;
   font-weight: bold;
   text-align: center;
@@ -74,7 +76,7 @@ form {
 @media (min-width: 992px) {
   .form-box {
     width: 60rem;
-    height: 25rem; // Reducida de 30rem
+    height: 25rem;
     border-width: 3px 3px 8px 3px;
   }
 
@@ -90,7 +92,7 @@ form {
 
   .form-box {
     width: 55rem;
-    height: 45rem; // Reducida de 55rem
+    height: 45rem;
   }
 
   .form-box > .form-header > h1 {
@@ -102,18 +104,17 @@ form {
   }
 
   .btn-main {
-    border-radius: 0.5em;
+    border-radius: $btn-border-radius;
     height: 2em;
     width: 7em;
-    text-wrap: nowrap;
-    border-width: 3px;
+    white-space: nowrap;
+    border-width: $btn-border-width;
     font-style: italic;
     font-weight: bold;
     text-align: center;
-    padding: .5em;
+    padding: 0.5em;
     max-width: 300px;
   }
-
 }
 
 @media (max-width: 576px) {
@@ -123,7 +124,7 @@ form {
 
   .form-box {
     width: 20rem;
-    height: 25rem; // Reducida de 30rem
+    height: 25rem;
   }
 
   .form-box > .form-header > h1 {
@@ -131,13 +132,13 @@ form {
   }
 
   .btn-main {
-    border-radius: 0.5em;
-    text-wrap: nowrap;
-    border-width: 3px;
+    border-radius: $btn-border-radius;
+    white-space: nowrap;
+    border-width: $btn-border-width;
     font-style: italic;
     font-weight: bold;
     text-align: center;
-    padding: .4rem;
+    padding: 0.4rem;
     max-width: 300px;
   }
 }

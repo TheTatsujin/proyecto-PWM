@@ -15,8 +15,9 @@ import {UploadComponent} from "../components/upload/upload.component";
         UserPagePageRoutingModule,
         NgIf,
         NgOptimizedImage,
-        UploadComponent
+        UploadComponent,
+        UserPagePage
     ],
-  declarations: [UserPagePage]
+  declarations: []
 })
 export class UserPagePageModule {}

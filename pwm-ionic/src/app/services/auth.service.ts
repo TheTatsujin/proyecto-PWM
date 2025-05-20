@@ -20,8 +20,12 @@ export class AuthService {
   private authCheckCompletedSubject = new BehaviorSubject<boolean>(false);
   authCheckCompleted$ = this.authCheckCompletedSubject.asObservable();
 
-  private user = new BehaviorSubject<User | null>(null);
+  private user = new BehaviorSubject<UserInterface | null>(null);
   user$ = this.user.asObservable();
+
+  setUser(user: UserInterface) {
+    this.user.next(user);
+  }
 
   constructor(private firebaseAuth: Auth) {
     onAuthStateChanged(this.firebaseAuth, (user: User | null) => {

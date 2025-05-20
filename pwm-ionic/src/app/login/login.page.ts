@@ -42,7 +42,7 @@ export class LoginPage {
 
     try {
       const userCredential = await signInWithEmailAndPassword(this.firebaseAuth, email, password);
-
+      localStorage.setItem('userId', userCredential.user.uid);
       await this.router.navigate(['/tabs/home']);
 
     } catch (error: any) {
