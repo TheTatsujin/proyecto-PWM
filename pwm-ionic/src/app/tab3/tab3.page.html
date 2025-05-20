@@ -1,14 +1,13 @@
 <ion-content [fullscreen]="true">
   <main>
-    @for (artist of artistData(); track artist.id) {
-      <app-artist-banner
-        class="artist-card"
-        [artistImage]="artist.image"
-        [artistName]="artist.name"
-        [eventLocation]="artist.location"
-        [eventDate]="artist.date"
-      />
-    }
+      @for (artist of artistData(); track artist.id) {
+          <app-artist-banner
+            class="artist-card"
+            [artistImage]="artist.image"
+            [artistName]="artist.name"
+            [eventLocation]="artist.location"
+            [eventDate]="artist.date"
+          />
+      }
   </main>
-
 </ion-content>

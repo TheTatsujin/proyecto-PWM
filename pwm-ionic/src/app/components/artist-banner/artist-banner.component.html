@@ -1,4 +1,4 @@
-<ion-card class="bg-black border-turquoise">
+<ion-card id="{{artistName()}}" class="bg-black border-turquoise">
   <figure>
     <img class="artist-image" [attr.src]="artistImage()" alt="Artist Banner">
   </figure>
@@ -10,3 +10,8 @@
     {{ eventDate() }}
   </ion-card-content>
 </ion-card>
+
+<app-artist-detail
+  [artistName]="artistName()"
+  [artistImage]="artistImage()"
+  ></app-artist-detail>
