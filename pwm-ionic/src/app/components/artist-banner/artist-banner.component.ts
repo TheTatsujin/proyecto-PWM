@@ -1,8 +1,15 @@
 import {Component, input} from '@angular/core';
+import {IonCard, IonCardContent, IonCardHeader, IonCardSubtitle, IonCardTitle} from "@ionic/angular/standalone";
 
 @Component({
   selector: 'app-artist-banner',
-  imports: [],
+  imports: [
+    IonCard,
+    IonCardHeader,
+    IonCardTitle,
+    IonCardSubtitle,
+    IonCardContent
+  ],
   templateUrl: './artist-banner.component.html',
   styleUrl: './artist-banner.component.scss'
 })
