@@ -1,0 +1,21 @@
+<ion-modal trigger="{{artistName}}">
+  <ng-template>
+    <ion-header>
+      <ion-toolbar>
+        <ion-buttons slot="start">
+          <ion-button class="color-turquoise" (click)="closeModal()"><ion-icon name="close-outline"></ion-icon></ion-button>
+        </ion-buttons>
+        <ion-title class="color-turquoise artist-caption font-tektur">{{artistName}}'s profile</ion-title>
+        <ion-icon name="star-outline"></ion-icon>
+      </ion-toolbar>
+    </ion-header>
+    <ion-content>
+      <figure>
+        <img class="artist-image" [attr.src]="artistImage" alt="Artist Banner">
+      </figure>
+      <section>
+        From North Pole Come DJ SANTA!
+      </section>
+    </ion-content>
+  </ng-template>
+</ion-modal>
