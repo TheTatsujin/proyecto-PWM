@@ -4,9 +4,7 @@ import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import { Tab3Page } from './tab3.page';
 import { ExploreContainerComponentModule } from '../explore-container/explore-container.module';
-
 import { Tab3PageRoutingModule } from './tab3-routing.module';
-import {ArtistPageComponent} from "../pages/artist-page/artist-page.component";
 import {ArtistBannerComponent} from "../components/artist-banner/artist-banner.component";
 
 @NgModule({
@@ -16,7 +14,6 @@ import {ArtistBannerComponent} from "../components/artist-banner/artist-banner.c
     FormsModule,
     ExploreContainerComponentModule,
     Tab3PageRoutingModule,
-    ArtistPageComponent,
     ArtistBannerComponent
   ],
   declarations: [Tab3Page]

@@ -17,19 +17,8 @@ import {ArtistDetailComponent} from "../artist-detail/artist-detail.component";
     IonCard,
     IonCardHeader,
     IonCardTitle,
-    IonCardSubtitle,
     IonCardContent,
-    IonModal,
-    IonContent,
-    IonItem,
-    IonInput,
-    IonButton,
-    IonButtons,
-    IonTitle,
-    IonToolbar,
-    IonHeader,
     FormsModule,
-    IonIcon,
     ArtistDetailComponent
   ],
   templateUrl: './artist-banner.component.html',
@@ -41,12 +30,5 @@ export class ArtistBannerComponent {
   artistImage = input.required<string>();
   eventLocation = input.required<string>();
   eventDate = input.required<string>();
-
-  closeModal() {
-    this.modal.dismiss(null, 'cancel');
-  }
-
-  setFavourite() {
-    this.modal.dismiss();
-  }
+  description =  input.required<string>();
 }

@@ -5,7 +5,7 @@ import {
   IonContent,
   IonHeader,
   IonIcon,
-  IonModal,
+  IonModal, IonText,
   IonTitle,
   IonToolbar
 } from "@ionic/angular/standalone";
@@ -22,13 +22,15 @@ import {
     IonButton,
     IonTitle,
     IonIcon,
-    IonContent
+    IonContent,
+    IonText
   ]
 })
 export class ArtistDetailComponent  implements OnInit {
   @ViewChild(IonModal) modal!: IonModal;
   @Input() artistName: string = '';
   @Input() artistImage: string = '';
+  @Input() artistDescription: string = '';
   constructor() { }
 
   ngOnInit() {}
@@ -37,8 +39,7 @@ export class ArtistDetailComponent  implements OnInit {
     this.modal.dismiss(null, 'cancel');
   }
 
-  setFavourite() {
-    this.modal.dismiss();
+  toggleFavorite() {
+    console.log('TogleFavorite');
   }
-
 }

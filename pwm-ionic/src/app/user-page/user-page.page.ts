@@ -15,8 +15,7 @@ import {MatButton} from "@angular/material/button";
   imports: [
     UploadComponent,
     NgIf,
-    IonicModule,
-    MatButton
+    IonicModule
   ],
   standalone: true
 })

@@ -2,19 +2,28 @@
   <ng-template>
     <ion-header>
       <ion-toolbar>
-        <ion-buttons slot="start">
-          <ion-button class="color-turquoise" (click)="closeModal()"><ion-icon name="close-outline"></ion-icon></ion-button>
+        <ion-buttons class="header-button" slot="start">
+          <ion-button (click)="closeModal()"><ion-icon class="color-turquoise" name="close-outline"></ion-icon></ion-button>
         </ion-buttons>
-        <ion-title class="color-turquoise artist-caption font-tektur">{{artistName}}'s profile</ion-title>
-        <ion-icon name="star-outline"></ion-icon>
+        <ion-title class="color-turquoise artist-caption font-tektur">
+          <span>{{artistName}}'s profile</span>
+        </ion-title>
+        <ion-buttons slot="end">
+          <ion-button (click)="toggleFavorite()" fill="clear">
+            <ion-icon class="color-turquoise header-button" name="star-outline"></ion-icon>
+          </ion-button>
+        </ion-buttons>
       </ion-toolbar>
     </ion-header>
     <ion-content>
       <figure>
         <img class="artist-image" [attr.src]="artistImage" alt="Artist Banner">
       </figure>
-      <section>
-        From North Pole Come DJ SANTA!
+      <section class="color-turquoise font-tektur">
+      <ion-text>
+        <h1>About {{artistName}}</h1>
+        {{this.artistDescription}}
+      </ion-text>
       </section>
     </ion-content>
   </ng-template>
