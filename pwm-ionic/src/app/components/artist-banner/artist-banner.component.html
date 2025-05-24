@@ -2,8 +2,12 @@
   <figure>
     <img class="artist-image" [attr.src]="artistImage()" alt="Artist Banner">
   </figure>
-  <ion-card-header>
+  <ion-card-header class="ion-align-items-center">
     <ion-card-title class="color-turquoise artist-caption"> {{ artistName() }}</ion-card-title>
+      <ion-icon
+        class="color-turquoise header-button"
+        [name]="isFavorite ? 'star' : 'star-outline'">
+      </ion-icon>
   </ion-card-header>
   <ion-card-content class="color-white date-caption">
     {{ eventLocation() }}

@@ -1,12 +1,11 @@
-import {Component, input, ViewChild} from '@angular/core';
+import {Component, inject, Input, input, ViewChild} from '@angular/core';
 import {
   IonButton, IonButtons,
   IonCard,
   IonCardContent,
   IonCardHeader,
-  IonCardSubtitle,
-  IonCardTitle, IonContent, IonHeader, IonIcon, IonInput, IonItem,
-  IonModal, IonTitle, IonToolbar
+  IonCardTitle, IonIcon,
+  IonModal
 } from "@ionic/angular/standalone";
 import {FormsModule} from "@angular/forms";
 import {ArtistDetailComponent} from "../artist-detail/artist-detail.component";
@@ -19,7 +18,8 @@ import {ArtistDetailComponent} from "../artist-detail/artist-detail.component";
     IonCardTitle,
     IonCardContent,
     FormsModule,
-    ArtistDetailComponent
+    ArtistDetailComponent,
+    IonIcon,
   ],
   templateUrl: './artist-banner.component.html',
   styleUrl: './artist-banner.component.scss'
@@ -32,4 +32,6 @@ export class ArtistBannerComponent {
   eventLocation = input.required<string>();
   eventDate = input.required<string>();
   description =  input.required<string>();
+  @Input() isFavorite: Boolean = false;
 }
+

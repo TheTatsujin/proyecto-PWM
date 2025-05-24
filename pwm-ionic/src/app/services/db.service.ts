@@ -20,16 +20,18 @@ export class DbService {
   }
 
   private async init() {
+    console.log("Initializing Database");
     await this.platform.ready();
     this.isWeb = Capacitor.getPlatform() === 'web';
-
-    if (!this.isWeb) {
+    console.log(this.isWeb);
+    if (this.isWeb) {
       try {
         const db = await this.sqlite.createConnection(
           this.STORAGE_DB, false, 'no-encryption', 1, false
         );
         await db.open();
         this.db = db;
+        console.log("Database Connected");
         await db.execute(`
           CREATE TABLE IF NOT EXISTS favorites (
             id TEXT PRIMARY KEY
@@ -42,7 +44,9 @@ export class DbService {
   }
 
   async addFavorite(id: String) {
+    console.log(this.db)
     if (this.db) {
+      console.log("addFavorite", id);
       await this.db.run(`INSERT INTO favorites (id) VALUES (?)`, [id]);
     }
   }
@@ -59,7 +63,7 @@ export class DbService {
     return false;
   }
 
-  async getFavorites(): Promise<String[]> {
+  async getFavorites(): Promise<string[]> {
     if (this.db) {
       const res = await this.db.query(`SELECT * FROM favorites`);
       return res.values ?? [];
