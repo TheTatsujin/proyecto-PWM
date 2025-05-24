@@ -1,4 +1,4 @@
-import {Component, inject, Input, input, ViewChild} from '@angular/core';
+import {Component, EventEmitter, inject, Input, input, Output, ViewChild} from '@angular/core';
 import {
   IonButton, IonButtons,
   IonCard,
@@ -33,5 +33,9 @@ export class ArtistBannerComponent {
   eventDate = input.required<string>();
   description =  input.required<string>();
   @Input() isFavorite: Boolean = false;
+
+  onFavoriteChanged(event: boolean) {
+    this.isFavorite = event;
+  }
 }
 

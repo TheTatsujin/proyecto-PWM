@@ -24,7 +24,7 @@ export class DbService {
     await this.platform.ready();
     this.isWeb = Capacitor.getPlatform() === 'web';
     console.log(this.isWeb);
-    if (this.isWeb) {
+    if (!this.isWeb) {
       try {
         const db = await this.sqlite.createConnection(
           this.STORAGE_DB, false, 'no-encryption', 1, false
@@ -57,6 +57,7 @@ export class DbService {
 
   async isFavorite(id: String) {
     if (this.db) {
+      console.log("IsFavorite", id);
       let response = await this.db.query(`SELECT * FROM favorites WHERE id = ?`, [id]);
       return response.values && response.values.length > 0;
     }
@@ -66,7 +67,7 @@ export class DbService {
   async getFavorites(): Promise<string[]> {
     if (this.db) {
       const res = await this.db.query(`SELECT * FROM favorites`);
-      return res.values ?? [];
+      return (res.values ?? []).map(item => item.id);
     }
     return [];
   }

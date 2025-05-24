@@ -1,4 +1,4 @@
-import {Component, inject, Input, OnInit, ViewChild} from '@angular/core';
+import {Component, EventEmitter, inject, Input, OnInit, Output, ViewChild} from '@angular/core';
 import {
   IonButton,
   IonButtons,
@@ -10,7 +10,6 @@ import {
   IonToolbar
 } from "@ionic/angular/standalone";
 import {DbService} from "../../services/db.service";
-import {ViewWillEnter} from "@ionic/angular";
 
 @Component({
   selector: 'app-artist-detail',
@@ -28,7 +27,7 @@ import {ViewWillEnter} from "@ionic/angular";
     IonText
   ]
 })
-export class ArtistDetailComponent  implements OnInit, ViewWillEnter {
+export class ArtistDetailComponent  implements OnInit {
   @ViewChild(IonModal) modal!: IonModal;
   @Input() artistId: string = '';
   @Input() artistName: string = '';
@@ -36,13 +35,12 @@ export class ArtistDetailComponent  implements OnInit, ViewWillEnter {
   @Input() artistDescription: string = '';
   private databaseService = inject(DbService);
   protected isFavorite: boolean = false;
+  @Output() favoriteChanged = new EventEmitter<boolean>();
   constructor() { }
 
-  ngOnInit() {}
 
-  async ionViewWillEnter() {
-    const favorite = await this.databaseService.isFavorite(this.artistId);
-    if (favorite) this.isFavorite = true;
+  ngOnInit() {
+    this.databaseService.isFavorite(this.artistId).then(favorite => this.isFavorite = favorite!);
   }
 
 
@@ -51,7 +49,16 @@ export class ArtistDetailComponent  implements OnInit, ViewWillEnter {
   }
 
   toggleFavorite() {
-    if (this.isFavorite) this.databaseService.deleteFavorite(this.artistId).then(r => this.isFavorite = false);
-    else this.databaseService.addFavorite(this.artistId).then(r => this.isFavorite = true);
+    if (this.isFavorite) {
+      this.databaseService.deleteFavorite(this.artistId).then(() => {
+        this.isFavorite = false;
+        this.favoriteChanged.emit(false);
+      });
+    } else {
+      this.databaseService.addFavorite(this.artistId).then(() => {
+        this.isFavorite = true;
+        this.favoriteChanged.emit(true);
+      });
+    }
   }
 }

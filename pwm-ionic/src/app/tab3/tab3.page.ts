@@ -23,7 +23,6 @@ export class Tab3Page {
       .subscribe(async (artistDataList: Artist[]) => {
         this.artistData.set(artistDataList);
         const favoritesIds = await this.databaseService.getFavorites();
-        console.log(favoritesIds);
         const favs: Record<string, boolean> = {};
         favoritesIds.forEach((favId: string) => {
           favs[favId] = true;
@@ -35,13 +34,5 @@ export class Tab3Page {
 
   ionViewWillLeave() {
     this.subscription?.unsubscribe();
-  }
-
-  async isFavorite(artistId: string) {
-    return await this.databaseService.isFavorite(artistId).then();
-  }
-
-  private async loadFavorites() {
-
   }
 }
