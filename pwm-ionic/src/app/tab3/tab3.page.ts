@@ -1,6 +1,7 @@
 import {Component, inject, OnInit, signal} from '@angular/core';
 import { ArtistDataService } from '../services/artist-data.service';
 import { Artist } from '../model/artist.interface';
+import {Subscription} from "rxjs";
 
 @Component({
   selector: 'app-tab3',
@@ -8,11 +9,18 @@ import { Artist } from '../model/artist.interface';
   styleUrls: ['tab3.page.scss'],
   standalone: false,
 })
-export class Tab3Page implements OnInit {
+export class Tab3Page {
   artistDataService = inject(ArtistDataService);
   artistData = signal<Array<Artist>>([])
-  ngOnInit() {
-    this.artistDataService.getArtistData()
+  private subscription: Subscription | undefined;
+
+  ionViewWillEnter() {
+    this.subscription = this.artistDataService.getArtistData()
       .subscribe((artistDataList: Artist[]) => this.artistData.set(artistDataList))
   }
+
+  ionViewWillLeave() {
+    this.subscription?.unsubscribe();
+  }
+
 }
