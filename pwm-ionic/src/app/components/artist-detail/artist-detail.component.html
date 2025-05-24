@@ -10,7 +10,10 @@
         </ion-title>
         <ion-buttons slot="end">
           <ion-button (click)="toggleFavorite()" fill="clear">
-            <ion-icon class="color-turquoise header-button" name="star-outline"></ion-icon>
+            <ion-icon
+              class="color-turquoise header-button"
+              [name]="isFavorite ? 'star' : 'star-outline'">
+            </ion-icon>
           </ion-button>
         </ion-buttons>
       </ion-toolbar>
