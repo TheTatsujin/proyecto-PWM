@@ -26,6 +26,7 @@ import {ArtistDetailComponent} from "../artist-detail/artist-detail.component";
 })
 export class ArtistBannerComponent {
   @ViewChild(IonModal) modal!: IonModal;
+  artistId =  input.required<string>();
   artistName =  input.required<string>();
   artistImage = input.required<string>();
   eventLocation = input.required<string>();
