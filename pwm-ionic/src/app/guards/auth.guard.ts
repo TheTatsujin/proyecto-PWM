@@ -20,7 +20,6 @@ export class AuthGuard implements CanActivate {
     route: ActivatedRouteSnapshot,
     state: RouterStateSnapshot
   ): Observable<boolean | UrlTree> {
-    console.log('🛡️ AuthGuard#canActivate invoked for URL:', state.url);
     return combineLatest([
       this.authService.isAuthenticated$,
       this.authService.authCheckCompleted$
