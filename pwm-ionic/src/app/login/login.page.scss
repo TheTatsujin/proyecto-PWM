@@ -145,6 +145,13 @@ form {
 }
 
 @media (max-width: 576px) {
+
+  main {
+    height: 100%;
+    width: 100%;
+    padding: 1rem;
+  }
+
   section {
     overflow: hidden;
   }
