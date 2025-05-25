@@ -169,7 +169,7 @@ form {
     width: 20rem;
     height: 38rem;
     min-width: 25vh;
-    min-height: 80vh;
+    min-height: 90vh;
   }
 
   .form-box > .form-header > h1 {
@@ -200,5 +200,34 @@ form {
     color: red;
     font-size: 0.875rem;
     margin-top: 0.25rem;
+  }
+
+  .btn-submit {
+    --mat-sys-primary: #05FCFE;
+    height: 2em;
+    width: 5em;
+  }
+
+  .component {
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: center !important;
+  }
+
+  #file
+  {
+    position: absolute;
+    visibility: hidden;
+  }
+
+  #file-label
+  {
+    border: solid #05FCFE;
+    padding: 2px 4px;
+  }
+
+  .button-section {
+    margin-top: 1rem;
+    margin-bottom: 1rem;
   }
 }

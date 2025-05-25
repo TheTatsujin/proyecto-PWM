@@ -1,9 +1,10 @@
-import { Component, inject } from '@angular/core';
-import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
-import { Router } from '@angular/router';
-import { UserService } from '../services/user.service';
-import { AuthService } from "../services/auth.service";
-import { NavController } from '@ionic/angular';
+import {Component, inject} from '@angular/core';
+import {FormBuilder, FormControl, FormGroup, Validators} from '@angular/forms';
+import {Router} from '@angular/router';
+import {UserService} from '../services/user.service';
+import {AuthService} from "../services/auth.service";
+import {NavController} from '@ionic/angular';
+import {UploadImageService} from "../services/upload.service";
 
 @Component({
   selector: 'app-register-form-page',
@@ -19,8 +20,10 @@ export class RegisterFormPageComponent {
   router = inject(Router);
   notEqualPasswordsMessage: boolean = false;
   alreadyRegisteredEmailMessage: boolean = false;
+  selectedFile: File | null = null;
+  public imageTooLarge: boolean = false;
 
-  constructor(private formBuilder: FormBuilder, private navCtrl: NavController) {
+  constructor(private formBuilder: FormBuilder, private navCtrl: NavController, private uploadImageService: UploadImageService) {
     this.registerForm = this.formBuilder.group({
       name: new FormControl('', [Validators.required]),
       email: new FormControl('', [Validators.required, Validators.email]),
@@ -71,8 +74,21 @@ export class RegisterFormPageComponent {
         return;
       }
 
+      const formData = {
+        ...this.registerForm.value,
+      };
+
+      if (this.selectedFile) {
+        const base64 = await this.uploadImageService['fileToBase64'](this.selectedFile);
+        if (this.uploadImageService.isImageTooLarge(base64)) {
+          this.imageTooLarge = true;
+          return;
+        }
+        formData.profileImage = base64;
+      }
+
       const userCredentials = await this.authService.registerUser(this.registerForm.value);
-      await this.userService.addUser(this.registerForm.value, userCredentials.user.uid);
+      await this.userService.addUser(formData, userCredentials.user.uid);
       localStorage.setItem('userId', userCredentials.user.uid);
       await this.router.navigate([''], {});
     } catch (error) {
@@ -87,5 +103,13 @@ export class RegisterFormPageComponent {
 
   goBack(): void {
     this.navCtrl.back();
+  }
+
+  onFileSelected(event: Event): void {
+    this.imageTooLarge = false;
+    const target = event.target as HTMLInputElement;
+    if (target.files && target.files.length > 0) {
+      this.selectedFile = target.files[0];
+    }
   }
 }

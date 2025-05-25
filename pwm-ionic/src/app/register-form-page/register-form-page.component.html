@@ -62,7 +62,15 @@
             </div>
           </div>
         </div>
-
+        <section class="component">
+          <h1 class="color-turquoise font-sudovar center-content">Upload an image</h1>
+          <label id="file-label" class="color-turquoise font-sudovar" for="file">Search</label>
+          <input id="file" type="file" class="color-turquoise font-sudovar" (change)="onFileSelected($event)">
+          <p class="color-turquoise font-sudovar" *ngIf="selectedFile">Selected file: {{ selectedFile.name }}</p>
+          <ion-text color="danger" *ngIf="imageTooLarge">
+            La imagen seleccionada es demasiado grande. Por favor, elige una menor a 900KB.
+          </ion-text>
+        </section>
         <!-- Terms & Conditions -->
         <div class="form_checkbox-area_buttons font-style-italic">
           <ion-checkbox class="color-turquoise font-sudovar" formControlName="termConditions" id="termsConditions" name="termsConditions" required>

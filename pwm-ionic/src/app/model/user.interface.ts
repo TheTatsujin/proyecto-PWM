@@ -10,4 +10,5 @@ export interface UserInterface {
   termConditions: boolean;
   receiver: boolean;
   notifications: boolean;
+  profileImage?: string;
 }
