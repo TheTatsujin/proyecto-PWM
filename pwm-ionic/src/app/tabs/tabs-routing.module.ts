@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { TabsPage } from './tabs.page';
+import {AuthGuard} from "../guards/auth.guard";
 
 const routes: Routes = [
   {
@@ -9,7 +10,7 @@ const routes: Routes = [
     children: [
       {
         path: 'tickets',
-        loadChildren: () => import('../tab1/tab1.module').then(m => m.Tab1PageModule)
+        loadChildren: () => import('../tab1/tab1.module').then(m => m.Tab1PageModule),
       },
       {
         path: 'home',
@@ -17,7 +18,8 @@ const routes: Routes = [
       },
       {
         path: 'lineup',
-        loadChildren: () => import('../tab3/tab3.module').then(m => m.Tab3PageModule)
+        loadChildren: () => import('../tab3/tab3.module').then(m => m.Tab3PageModule),
+        canActivate: [AuthGuard],
       },
       {
         path: 'user-page',
@@ -31,6 +33,10 @@ const routes: Routes = [
         path: '',
         redirectTo: '/tabs/home',
         pathMatch: 'full'
+      },
+      {
+        path: 'register',
+        loadChildren: () => import ('../register-form-page/register.module').then(m => m.RegisterModule)
       }
     ]
   },
