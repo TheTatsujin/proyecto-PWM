@@ -3,6 +3,7 @@ import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms'
 import { Router } from '@angular/router';
 import { UserService } from '../services/user.service';
 import { AuthService } from "../services/auth.service";
+import { NavController } from '@ionic/angular';
 
 @Component({
   selector: 'app-register-form-page',
@@ -19,7 +20,7 @@ export class RegisterFormPageComponent {
   notEqualPasswordsMessage: boolean = false;
   alreadyRegisteredEmailMessage: boolean = false;
 
-  constructor(private formBuilder: FormBuilder) {
+  constructor(private formBuilder: FormBuilder, private navCtrl: NavController) {
     this.registerForm = this.formBuilder.group({
       name: new FormControl('', [Validators.required]),
       email: new FormControl('', [Validators.required, Validators.email]),
@@ -82,5 +83,9 @@ export class RegisterFormPageComponent {
   private showTermAcceptanceMessage() {
     this.registerForm.markAllAsTouched();
     return;
+  }
+
+  goBack(): void {
+    this.navCtrl.back();
   }
 }

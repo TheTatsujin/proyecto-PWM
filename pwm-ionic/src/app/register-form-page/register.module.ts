@@ -11,7 +11,7 @@ import {ReactiveFormsModule} from "@angular/forms";
     CommonModule,
     RegisterRoutingModule,
     IonicModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
   ],
   declarations: [RegisterFormPageComponent]
 })
