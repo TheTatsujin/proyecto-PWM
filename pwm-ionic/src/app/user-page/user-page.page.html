@@ -29,9 +29,10 @@
             <label id="tickets">{{ u.tickets === '' ? 'None' : u.tickets }}</label>
           </div>
         </div>
-
-        <app-upload></app-upload>
       </form>
+      <div class="upload-section">
+        <app-upload></app-upload>
+      </div>
       <button id="btn-logout" class="btn-main center-content text-medium
        font-sudovar bg-black border-violet color-violet" (click)="logoutClick()">
         Log out

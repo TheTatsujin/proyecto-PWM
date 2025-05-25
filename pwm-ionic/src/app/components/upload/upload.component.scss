@@ -1,3 +1,22 @@
-h1 {
-  text-align: center;
+.component {
+  display: flex !important;
+  flex-direction: column !important;
+  align-items: center !important;
+}
+
+#file
+{
+  position: absolute;
+  visibility: hidden;
+}
+
+#file-label
+{
+  border: solid #05FCFE;
+  padding: 2px 4px;
+}
+
+.button-section {
+  margin-top: 1rem;
+  margin-bottom: 1rem;
 }

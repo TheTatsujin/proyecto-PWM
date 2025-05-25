@@ -92,7 +92,7 @@ form {
 
   .form-box {
     width: 55rem;
-    height: 45rem;
+    height: 55rem;
   }
 
   .form-box > .form-header > h1 {
@@ -140,5 +140,11 @@ form {
     text-align: center;
     padding: 0.4rem;
     max-width: 300px;
+  }
+
+  .upload-section {
+    display: flex;
+    justify-content: center;
+    width: 100%;
   }
 }
