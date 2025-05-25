@@ -44,7 +44,6 @@ export class DbService {
   }
 
   async addFavorite(id: String) {
-    console.log(this.db)
     if (this.db) {
       console.log("addFavorite", id);
       await this.db.run(`INSERT INTO favorites (id) VALUES (?)`, [id]);
@@ -53,15 +52,6 @@ export class DbService {
 
   async deleteFavorite(id: String) {
     if (this.db) await this.db.run(`DELETE FROM favorites WHERE id = ?`, [id]);
-  }
-
-  async isFavorite(id: String) {
-    if (this.db) {
-      console.log("IsFavorite", id);
-      let response = await this.db.query(`SELECT * FROM favorites WHERE id = ?`, [id]);
-      return response.values && response.values.length > 0;
-    }
-    return false;
   }
 
   async getFavorites(): Promise<string[]> {

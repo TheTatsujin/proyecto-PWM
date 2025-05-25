@@ -27,7 +27,7 @@ import {DbService} from "../../services/db.service";
     IonText
   ]
 })
-export class ArtistDetailComponent  implements OnInit {
+export class ArtistDetailComponent {
   @ViewChild(IonModal) modal!: IonModal;
   @Input() artistId: string = '';
   @Input() artistName: string = '';
@@ -37,12 +37,6 @@ export class ArtistDetailComponent  implements OnInit {
   protected isFavorite: boolean = false;
   @Output() favoriteChanged = new EventEmitter<boolean>();
   constructor() { }
-
-
-  ngOnInit() {
-    this.databaseService.isFavorite(this.artistId).then(favorite => this.isFavorite = favorite!);
-  }
-
 
   closeModal() {
     this.modal.dismiss(null, 'cancel');
