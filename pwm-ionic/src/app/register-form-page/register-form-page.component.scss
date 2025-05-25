@@ -1,7 +1,3 @@
-main {
-  min-height: 100vh;
-}
-
 .error {
   border-bottom: 1px solid red !important;
 }
@@ -153,6 +149,13 @@ form {
 }
 
 @media (max-width: 576px) {
+
+  main {
+    height: 100%;
+    width: 100%;
+    padding: 1rem;
+  }
+
   section {
     overflow: hidden;
   }
@@ -160,18 +163,37 @@ form {
   .form-box {
     width: 20rem;
     height: 38rem;
+    min-width: 25vh;
+    min-height: 80vh;
   }
 
   .form-box > .form-header > h1 {
     font-size: 2.5em;
   }
 
+  ion-text {
+    font-size: 0.75em;
+    text-align: right;
+  }
+
+  ion-checkbox {
+    font-size: 0.85em;
+  }
+
   .form_input-column > input,
   .form_input-column > div {
     justify-content: space-between;
+    align-items: stretch;
+    width: 100%;
   }
 
   .form_label-column {
     display: none;
+  }
+
+  .text-error {
+    color: red;
+    font-size: 0.875rem;
+    margin-top: 0.25rem;
   }
 }

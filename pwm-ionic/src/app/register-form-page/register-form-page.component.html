@@ -48,7 +48,7 @@
             <!-- Password -->
             <input formControlName="password" class="input-box color-white" type="password" id="password" name="password"
                    [ngClass]="{'error': password?.errors?.['required']}" placeholder="Password" required>
-            <p class="color-turquoise font-sudovar">(At least 8 characters, uppercase, lowercase, and a number)</p>
+            <ion-text id="password-hint" class="color-turquoise font-sudovar">(8 characters, an uppercase, a lowercase, and a number)</ion-text>
             <div *ngIf="password?.errors?.['required']" class="text-error">
               Password is required.
             </div>
